@@ -103,8 +103,8 @@ func hash_df(alg crypto.Hash, input []byte, requestedBytes int) []byte {
 type hashDRBG struct {
 	h crypto.Hash
 
-	v []byte
-	c []byte
+	v             []byte
+	c             []byte
 	reseedCounter uint64
 }
 
@@ -191,7 +191,7 @@ func NewHashDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 	}
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
-	if err := d.instantiate(personalization, entropySource, h.Size() / 2); err != nil {
+	if err := d.instantiate(personalization, entropySource, h.Size()/2); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
 	}
 
@@ -205,6 +205,6 @@ func NewHashDRBGWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personal
 	}
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
-	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size() / 2)
+	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2)
 	return d, nil
 }

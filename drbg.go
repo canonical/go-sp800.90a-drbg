@@ -25,9 +25,9 @@ type drbgImpl interface {
 }
 
 type DRBG struct {
-	entropySource io.Reader
+	entropySource    io.Reader
 	securityStrength int
-	impl drbgImpl
+	impl             drbgImpl
 }
 
 func (d *DRBG) instantiate(personalization []byte, entropySource io.Reader, securityStrength int) error {
@@ -43,7 +43,7 @@ func (d *DRBG) instantiate(personalization []byte, entropySource io.Reader, secu
 		return xerrors.Errorf("cannot get entropy: %w", err)
 	}
 
-	nonce := make([]byte, securityStrength / 2)
+	nonce := make([]byte, securityStrength/2)
 	if _, err := d.entropySource.Read(nonce); err != nil {
 		return xerrors.Errorf("cannot get nonce: %w", err)
 	}

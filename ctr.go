@@ -33,7 +33,7 @@ func block_encrypt(key, data []byte) (out []byte) {
 
 func bcc(key, data []byte) (out []byte) {
 	out = make([]byte, aes.BlockSize)
-	n := len(data)/aes.BlockSize
+	n := len(data) / aes.BlockSize
 
 	for i := 0; i < n; i++ {
 		input := make([]byte, aes.BlockSize)
@@ -91,8 +91,8 @@ func block_cipher_df(keyLen int, input []byte, requestedBytes int) []byte {
 }
 
 type ctrDRBG struct {
-	v []byte
-	key []byte
+	v             []byte
+	key           []byte
 	reseedCounter uint64
 }
 

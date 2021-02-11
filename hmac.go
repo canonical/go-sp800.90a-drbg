@@ -13,8 +13,8 @@ import (
 type hmacDRBG struct {
 	h crypto.Hash
 
-	v []byte
-	key []byte
+	v             []byte
+	key           []byte
 	reseedCounter uint64
 }
 
@@ -99,7 +99,7 @@ func (d *hmacDRBG) generate(additionalInput, data []byte) error {
 func NewHMACDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hmacDRBG{h: h}}
-	if err := d.instantiate(personalization, entropySource, h.Size() / 2); err != nil {
+	if err := d.instantiate(personalization, entropySource, h.Size()/2); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
 	}
 
@@ -109,6 +109,6 @@ func NewHMACDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 func NewHMACDRBGWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) *DRBG {
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hmacDRBG{h: h}}
-	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size() / 2)
+	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2)
 	return d
 }

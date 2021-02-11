@@ -19,7 +19,7 @@ func decodeHexString(c *C, s string) []byte {
 	return x
 }
 
-type drbgSuite struct {}
+type drbgSuite struct{}
 
 var _ = Suite(&drbgSuite{})
 
@@ -46,13 +46,13 @@ func makeEntropySource(data ...[]byte) (out *entropySource) {
 }
 
 type testData struct {
-	entropyInput []byte
-	nonce []byte
-	personalization []byte
+	entropyInput       []byte
+	nonce              []byte
+	personalization    []byte
 	entropyInputReseed []byte
-	additionalInput1 []byte
-	additionalInput2 []byte
-	expected []byte
+	additionalInput1   []byte
+	additionalInput2   []byte
+	expected           []byte
 }
 
 func (s *drbgSuite) testHash(c *C, h crypto.Hash, data *testData) {
