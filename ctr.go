@@ -209,6 +209,14 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 	return nil
 }
 
+// NewCTRDRBG creates a new block cipher based DRBG as specified in section 10.2 of SP-800-90A.
+// The DRBG uses the AES block cipher.
+//
+// The optional personalization argument is combined with entropy input to derive the
+// initial seed. This argument can be used to differentiate this instantiation from others.
+//
+// The optional entropySource argument allows the default entropy source (rand.Reader from
+// the crypto/rand package) to be overridden.
 func NewCTRDRBG(keyLen int, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	switch keyLen {
 	case 16, 24, 32:
@@ -225,6 +233,15 @@ func NewCTRDRBG(keyLen int, personalization []byte, entropySource io.Reader) (*D
 	return d, nil
 }
 
+// NewCTRDRBGWithExternalEntropy creates a new block cipher based DRBG as specified in
+// section 10.2 of SP-800-90A. The DRBG uses the AES block cipher. The entropyInput and
+// nonce arguments provide the initial entropy to seed the created DRBG.
+//
+// The optional personalization argument is combined with entropy input to derive the
+// initial seed. This argument can be used to differentiate this instantiation from others.
+//
+// The optional entropySource argument provides the entropy source for future reseeding. If
+// it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
 func NewCTRDRBGWithExternalEntropy(keyLen int, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	switch keyLen {
 	case 16, 24, 32:
