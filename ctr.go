@@ -20,7 +20,16 @@ var (
 		0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f}
 )
 
-func block_encrypt(key, data []byte) (out []byte) {
+type blockCipher interface {
+	encrypt(key, data []byte) []byte
+	blockSize() int
+}
+
+type aesBlockCipherImpl struct{}
+
+var aesBlockCipher = aesBlockCipherImpl{}
+
+func (b aesBlockCipherImpl) encrypt(key, data []byte) (out []byte) {
 	c, err := aes.NewCipher(key)
 	if err != nil {
 		panic(fmt.Sprintf("cannot create cipher: %v", err))
@@ -31,29 +40,33 @@ func block_encrypt(key, data []byte) (out []byte) {
 	return
 }
 
-func bcc(key, data []byte) (out []byte) {
-	out = make([]byte, aes.BlockSize)
-	n := len(data) / aes.BlockSize
+func (b aesBlockCipherImpl) blockSize() int {
+	return aes.BlockSize
+}
+
+func bcc(b blockCipher, key, data []byte) (out []byte) {
+	out = make([]byte, b.blockSize())
+	n := len(data) / b.blockSize()
 
 	for i := 0; i < n; i++ {
-		input := make([]byte, aes.BlockSize)
+		input := make([]byte, b.blockSize())
 		for j := 0; j < len(input); j++ {
-			input[j] = out[j] ^ data[(i*aes.BlockSize)+j]
+			input[j] = out[j] ^ data[(i*b.blockSize())+j]
 		}
-		out = block_encrypt(key, input)
+		out = b.encrypt(key, input)
 	}
 
 	return
 }
 
-func block_cipher_df(keyLen int, input []byte, requestedBytes int) []byte {
+func block_cipher_df(b blockCipher, keyLen int, input []byte, requestedBytes int) []byte {
 	var s bytes.Buffer
 	binary.Write(&s, binary.BigEndian, uint32(len(input)))
 	binary.Write(&s, binary.BigEndian, uint32(requestedBytes))
 	s.Write(input)
 	s.Write([]byte{0x80})
 
-	for s.Len()%aes.BlockSize != 0 {
+	for s.Len()%b.blockSize() != 0 {
 		s.Write([]byte{0x00})
 	}
 
@@ -62,28 +75,28 @@ func block_cipher_df(keyLen int, input []byte, requestedBytes int) []byte {
 	k := dfKey[:keyLen]
 	i := uint32(0)
 
-	for temp.Len() < (keyLen + aes.BlockSize) {
-		iv := make([]byte, aes.BlockSize)
+	for temp.Len() < (keyLen + b.blockSize()) {
+		iv := make([]byte, b.blockSize())
 		binary.BigEndian.PutUint32(iv, i)
 
 		var data bytes.Buffer
 		data.Write(iv)
 		data.Write(s.Bytes())
 
-		temp.Write(bcc(k, data.Bytes()))
+		temp.Write(bcc(b, k, data.Bytes()))
 
 		i += 1
 	}
 
 	k = make([]byte, keyLen)
 	copy(k, temp.Bytes()[:keyLen])
-	x := make([]byte, aes.BlockSize)
-	copy(x, temp.Bytes()[keyLen:keyLen+aes.BlockSize])
+	x := make([]byte, b.blockSize())
+	copy(x, temp.Bytes()[keyLen:keyLen+b.blockSize()])
 
 	temp.Reset()
 
 	for temp.Len() < requestedBytes {
-		x = block_encrypt(k, x)
+		x = b.encrypt(k, x)
 		temp.Write(x)
 	}
 
@@ -91,26 +104,36 @@ func block_cipher_df(keyLen int, input []byte, requestedBytes int) []byte {
 }
 
 type ctrDRBG struct {
+	b blockCipher
+
 	v             []byte
 	key           []byte
 	reseedCounter uint64
 }
 
+func (d *ctrDRBG) keyLen() int {
+	return len(d.key)
+}
+
+func (d *ctrDRBG) blockSize() int {
+	return d.b.blockSize()
+}
+
 func (d *ctrDRBG) update(providedData []byte) {
-	seedLength := len(d.v) + len(d.key)
+	seedLength := d.blockSize() + d.keyLen()
 	var temp bytes.Buffer
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
-	mod.Exp(big.NewInt(2), big.NewInt(int64(len(d.v)*8)), nil)
+	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
 
 	for temp.Len() < seedLength {
 		v := new(big.Int).SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
-		d.v = zeroExtendBytes(v, len(d.v))
+		d.v = zeroExtendBytes(v, d.blockSize())
 
-		temp.Write(block_encrypt(d.key, d.v))
+		temp.Write(d.b.encrypt(d.key, d.v))
 	}
 
 	temp.Truncate(seedLength)
@@ -118,8 +141,8 @@ func (d *ctrDRBG) update(providedData []byte) {
 		temp.Bytes()[i] ^= providedData[i]
 	}
 
-	d.key = temp.Bytes()[:len(d.key)]
-	d.v = temp.Bytes()[len(d.key):]
+	d.key = temp.Bytes()[:d.keyLen()]
+	d.v = temp.Bytes()[d.keyLen():]
 }
 
 func (d *ctrDRBG) instantiate(entropyInput, nonce, personalization []byte, securityStrength int) {
@@ -128,11 +151,10 @@ func (d *ctrDRBG) instantiate(entropyInput, nonce, personalization []byte, secur
 	seedMaterial.Write(nonce)
 	seedMaterial.Write(personalization)
 
-	seedLength := aes.BlockSize + len(d.key)
+	seedLength := d.blockSize() + d.keyLen()
 
-	d.v = make([]byte, aes.BlockSize)
-
-	seed := block_cipher_df(len(d.key), seedMaterial.Bytes(), seedLength)
+	seed := block_cipher_df(d.b, d.keyLen(), seedMaterial.Bytes(), seedLength)
+	d.v = make([]byte, d.blockSize())
 	d.update(seed)
 
 	d.reseedCounter = 1
@@ -143,8 +165,8 @@ func (d *ctrDRBG) reseed(entropyInput, additionalInput []byte) {
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(additionalInput)
 
-	seedLength := len(d.v) + len(d.key)
-	seed := block_cipher_df(len(d.key), seedMaterial.Bytes(), seedLength)
+	seedLength := d.blockSize() + d.keyLen()
+	seed := block_cipher_df(d.b, d.keyLen(), seedMaterial.Bytes(), seedLength)
 	d.update(seed)
 
 	d.reseedCounter = 1
@@ -155,10 +177,10 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 		return ErrReseedRequired
 	}
 
-	seedLength := len(d.v) + len(d.key)
+	seedLength := d.blockSize() + d.keyLen()
 
 	if len(additionalInput) > 0 {
-		additionalInput = block_cipher_df(len(d.key), additionalInput, seedLength)
+		additionalInput = block_cipher_df(d.b, d.keyLen(), additionalInput, seedLength)
 		d.update(additionalInput)
 	} else {
 		additionalInput = make([]byte, seedLength)
@@ -168,15 +190,15 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
-	mod.Exp(big.NewInt(2), big.NewInt(int64(len(d.v)*8)), nil)
+	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
 
 	for temp.Len() < len(data) {
 		v := new(big.Int).SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
-		d.v = zeroExtendBytes(v, len(d.v))
+		d.v = zeroExtendBytes(v, d.blockSize())
 
-		temp.Write(block_encrypt(d.key, d.v))
+		temp.Write(d.b.encrypt(d.key, d.v))
 	}
 
 	copy(data, temp.Bytes())
@@ -195,7 +217,7 @@ func NewCTRDRBG(keyLen int, personalization []byte, entropySource io.Reader) (*D
 	}
 
 	// TODO: Limit the length of personalization to 2^35bits
-	d := &DRBG{impl: &ctrDRBG{key: make([]byte, keyLen)}}
+	d := &DRBG{impl: &ctrDRBG{b: aesBlockCipher, key: make([]byte, keyLen)}}
 	if err := d.instantiate(personalization, entropySource, keyLen); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
 	}
@@ -211,7 +233,7 @@ func NewCTRDRBGWithExternalEntropy(keyLen int, entropyInput, nonce, personalizat
 	}
 
 	// TODO: Limit the length of personalization to 2^35bits
-	d := &DRBG{impl: &ctrDRBG{key: make([]byte, keyLen)}}
+	d := &DRBG{impl: &ctrDRBG{b: aesBlockCipher, key: make([]byte, keyLen)}}
 	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, keyLen)
 	return d, nil
 }

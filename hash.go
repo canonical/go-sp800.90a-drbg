@@ -108,16 +108,20 @@ type hashDRBG struct {
 	reseedCounter uint64
 }
 
+func (d *hashDRBG) seedLen() int {
+	return len(d.v)
+}
+
 func (d *hashDRBG) instantiate(entropyInput, nonce, personalization []byte, securityStrength int) {
 	var seedMaterial bytes.Buffer
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(nonce)
 	seedMaterial.Write(personalization)
 
-	seed := hash_df(d.h, seedMaterial.Bytes(), len(d.v))
+	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen())
 	d.v = seed
 
-	d.c = hash_df(d.h, append([]byte{0x00}, seed...), len(d.v))
+	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen())
 
 	d.reseedCounter = 1
 }
@@ -129,10 +133,10 @@ func (d *hashDRBG) reseed(entropyInput, additionalInput []byte) {
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(additionalInput)
 
-	seed := hash_df(d.h, seedMaterial.Bytes(), len(d.v))
+	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen())
 	d.v = seed
 
-	d.c = hash_df(d.h, append([]byte{0x00}, seed...), len(d.v))
+	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen())
 
 	d.reseedCounter = 1
 }
@@ -143,7 +147,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 	}
 
 	mod := new(big.Int)
-	switch len(d.v) {
+	switch d.seedLen() {
 	case 55:
 		mod.SetBytes(modulus55[:])
 	case 111:
@@ -161,7 +165,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 		v := new(big.Int).SetBytes(d.v)
 		v.Add(v, new(big.Int).SetBytes(h.Sum(nil)))
 		v.Mod(v, mod)
-		d.v = zeroExtendBytes(v, len(d.v))
+		d.v = zeroExtendBytes(v, d.seedLen())
 	}
 
 	returnedBytes := hash_gen(d.h, d.v, len(data))
@@ -178,7 +182,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 	v.Add(v, big.NewInt(int64(d.reseedCounter)))
 	v.Mod(v, mod)
 
-	d.v = zeroExtendBytes(v, len(d.v))
+	d.v = zeroExtendBytes(v, d.seedLen())
 	d.reseedCounter += 1
 
 	return nil
