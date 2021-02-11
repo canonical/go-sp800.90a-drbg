@@ -102,7 +102,6 @@ func hash_df(alg crypto.Hash, input []byte, requestedBytes int) []byte {
 
 type hashDRBG struct {
 	h crypto.Hash
-	seedLen int
 
 	v []byte
 	c []byte
@@ -115,10 +114,10 @@ func (d *hashDRBG) instantiate(entropyInput, nonce, personalization []byte, secu
 	seedMaterial.Write(nonce)
 	seedMaterial.Write(personalization)
 
-	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen)
+	seed := hash_df(d.h, seedMaterial.Bytes(), len(d.v))
 	d.v = seed
 
-	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen)
+	d.c = hash_df(d.h, append([]byte{0x00}, seed...), len(d.v))
 
 	d.reseedCounter = 1
 }
@@ -130,10 +129,10 @@ func (d *hashDRBG) reseed(entropyInput, additionalInput []byte) {
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(additionalInput)
 
-	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen)
+	seed := hash_df(d.h, seedMaterial.Bytes(), len(d.v))
 	d.v = seed
 
-	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen)
+	d.c = hash_df(d.h, append([]byte{0x00}, seed...), len(d.v))
 
 	d.reseedCounter = 1
 }
@@ -191,7 +190,7 @@ func NewHashDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)
 	}
 	// TODO: Limit the length of personalization to 2^35bits
-	d := &DRBG{impl: &hashDRBG{h: h, seedLen: seedLen}}
+	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
 	if err := d.instantiate(personalization, entropySource, h.Size() / 2); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
 	}
@@ -205,7 +204,7 @@ func NewHashDRBGWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personal
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)
 	}
 	// TODO: Limit the length of personalization to 2^35bits
-	d := &DRBG{impl: &hashDRBG{h: h, seedLen: seedLen}}
+	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
 	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size() / 2)
 	return d, nil
 }
