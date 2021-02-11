@@ -188,7 +188,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 	return nil
 }
 
-// NewHashDRBG creates a new hash based DRBG as specified in section 10.1.1 of SP-800-90A.
+// NewHash creates a new hash based DRBG as specified in section 10.1.1 of SP-800-90A.
 // The DRBG uses the supplied hash algorithm.
 //
 // The optional personalization argument is combined with entropy input to derive the
@@ -196,7 +196,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 //
 // The optional entropySource argument allows the default entropy source (rand.Reader from
 // the crypto/rand package) to be overridden.
-func NewHashDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
+func NewHash(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	seedLen, err := seedLength(h)
 	if err != nil {
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)
@@ -210,7 +210,7 @@ func NewHashDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 	return d, nil
 }
 
-// NewHashDRBGWithExternalEntropy creates a new hash based DRBG as specified in section
+// NewHashWithExternalEntropy creates a new hash based DRBG as specified in section
 // 10.1.1 of SP-800-90A. The DRBG uses the supplied hash algorithm. The entropyInput and
 // nonce arguments provide the initial entropy to seed the created DRBG.
 //
@@ -219,7 +219,7 @@ func NewHashDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
-func NewHashDRBGWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
+func NewHashWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	seedLen, err := seedLength(h)
 	if err != nil {
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)

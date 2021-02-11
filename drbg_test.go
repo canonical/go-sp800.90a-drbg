@@ -56,7 +56,7 @@ type testData struct {
 }
 
 func (s *drbgSuite) testHash(c *C, h crypto.Hash, data *testData) {
-	d, err := NewHashDRBGWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewHashWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
 	c.Assert(err, IsNil)
 
 	r := make([]byte, len(data.expected))
@@ -72,7 +72,7 @@ func (s *drbgSuite) testHash(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testHashAfterReseed(c *C, h crypto.Hash, data *testData) {
-	d, err := NewHashDRBGWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewHashWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
 	c.Assert(err, IsNil)
 
 	d.ReseedWithExternalEntropy(data.entropyInputReseed, nil)
@@ -90,7 +90,7 @@ func (s *drbgSuite) testHashAfterReseed(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testHMAC(c *C, h crypto.Hash, data *testData) {
-	d := NewHMACDRBGWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
 
 	r := make([]byte, len(data.expected))
 	n, err := d.Read(r)
@@ -105,7 +105,7 @@ func (s *drbgSuite) testHMAC(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testHMACAfterReseed(c *C, h crypto.Hash, data *testData) {
-	d := NewHMACDRBGWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
 
 	d.ReseedWithExternalEntropy(data.entropyInputReseed, nil)
 
@@ -122,7 +122,7 @@ func (s *drbgSuite) testHMACAfterReseed(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testCTR(c *C, keyLen int, data *testData) {
-	d, err := NewCTRDRBGWithExternalEntropy(keyLen, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewCTRWithExternalEntropy(keyLen, data.entropyInput, data.nonce, data.personalization, nil)
 	c.Assert(err, IsNil)
 
 	r := make([]byte, len(data.expected))
@@ -138,7 +138,7 @@ func (s *drbgSuite) testCTR(c *C, keyLen int, data *testData) {
 }
 
 func (s *drbgSuite) testCTRAfterReseed(c *C, keyLen int, data *testData) {
-	d, err := NewCTRDRBGWithExternalEntropy(keyLen, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewCTRWithExternalEntropy(keyLen, data.entropyInput, data.nonce, data.personalization, nil)
 	c.Assert(err, IsNil)
 
 	d.ReseedWithExternalEntropy(data.entropyInputReseed, nil)

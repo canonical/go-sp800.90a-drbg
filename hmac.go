@@ -96,7 +96,7 @@ func (d *hmacDRBG) generate(additionalInput, data []byte) error {
 	return nil
 }
 
-// NewHMACDRBG creates a new HMAC based DRBG as specified in section 10.1.2 of SP-800-90A.
+// NewHMAC creates a new HMAC based DRBG as specified in section 10.1.2 of SP-800-90A.
 // The DRBG uses the supplied hash algorithm.
 //
 // The optional personalization argument is combined with entropy input to derive the
@@ -104,7 +104,7 @@ func (d *hmacDRBG) generate(additionalInput, data []byte) error {
 //
 // The optional entropySource argument allows the default entropy source (rand.Reader from
 // the crypto/rand package) to be overridden.
-func NewHMACDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
+func NewHMAC(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hmacDRBG{h: h}}
 	if err := d.instantiate(personalization, entropySource, h.Size()/2); err != nil {
@@ -114,7 +114,7 @@ func NewHMACDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 	return d, nil
 }
 
-// NewHMACDRBGWithExternalEntropy creates a new hash based DRBG as specified in section
+// NewHMACWithExternalEntropy creates a new hash based DRBG as specified in section
 // 10.1.2 of SP-800-90A. The DRBG uses the supplied hash algorithm. The entropyInput and
 // nonce arguments provide the initial entropy to seed the created DRBG.
 //
@@ -123,7 +123,7 @@ func NewHMACDRBG(h crypto.Hash, personalization []byte, entropySource io.Reader)
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
-func NewHMACDRBGWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) *DRBG {
+func NewHMACWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) *DRBG {
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hmacDRBG{h: h}}
 	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2)
