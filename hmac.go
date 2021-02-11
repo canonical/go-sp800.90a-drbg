@@ -127,9 +127,11 @@ func NewHMAC(h crypto.Hash, personalization []byte, entropySource io.Reader) (*D
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
-func NewHMACWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) *DRBG {
+func NewHMACWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hmacDRBG{h: h}}
-	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2)
-	return d
+	if err := d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2); err != nil {
+		return nil, err
+	}
+	return d, nil
 }

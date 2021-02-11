@@ -42,6 +42,10 @@ type DRBG struct {
 }
 
 func (d *DRBG) instantiate(personalization []byte, entropySource io.Reader, securityStrength int) error {
+	if int64(len(personalization)) > 1<<32 {
+		return errors.New("personalization too large")
+	}
+
 	d.entropySource = rand.Reader
 	if entropySource != nil {
 		d.entropySource = entropySource
@@ -63,26 +67,49 @@ func (d *DRBG) instantiate(personalization []byte, entropySource io.Reader, secu
 	return nil
 }
 
-func (d *DRBG) instantiateWithExternalEntropy(entropyInput, nonce, personalization []byte, entropySource io.Reader, securityStrength int) {
+func (d *DRBG) instantiateWithExternalEntropy(entropyInput, nonce, personalization []byte, entropySource io.Reader, securityStrength int) error {
+	if len(entropyInput) < securityStrength {
+		return errors.New("entropyInput too small")
+	}
+	if int64(len(entropyInput)) > 1<<32 {
+		return errors.New("entropyInput too large")
+	}
+	if int64(len(personalization)) > 1<<32 {
+		return errors.New("personalization too large")
+	}
+
 	d.entropySource = entropySource
 	d.securityStrength = securityStrength
 	d.impl.instantiate(entropyInput, nonce, personalization, securityStrength)
+	return nil
 }
 
 // ReseedWithExternalEntropy will reseed the DRBG with the supplied entropy.
-func (d *DRBG) ReseedWithExternalEntropy(entropyInput, additionalInput []byte) {
-	// TODO: Limit the length of additionalInput to 2^35bits
+func (d *DRBG) ReseedWithExternalEntropy(entropyInput, additionalInput []byte) error {
+	if len(entropyInput) < d.securityStrength {
+		return errors.New("entropyInput too small")
+	}
+	if int64(len(entropyInput)) > 1<<32 {
+		return errors.New("entropyInput too large")
+	}
+	if int64(len(additionalInput)) > 1<<32 {
+		return errors.New("additionalInput too large")
+	}
 	d.impl.reseed(entropyInput, additionalInput)
+	return nil
 }
 
 // Reseed will reseed the DRBG with additional entropy using the entropy source
 // it was initialized with.
 func (d *DRBG) Reseed(additionalInput []byte) error {
+	if int64(len(additionalInput)) > 1<<32 {
+		return errors.New("additionalInput too large")
+	}
+
 	if d.entropySource == nil {
 		return errors.New("cannot reseed without external entropy")
 	}
 
-	// TODO: Limit the length of additionalInput to 2^35bits
 	entropyInput := make([]byte, d.securityStrength)
 	if _, err := d.entropySource.Read(entropyInput); err != nil {
 		return xerrors.Errorf("cannot get entropy: %w", err)
@@ -101,7 +128,10 @@ func (d *DRBG) Reseed(additionalInput []byte) error {
 //
 // If the length of data is greater than 65536 bytes, an error will be returned.
 func (d *DRBG) Generate(additionalInput, data []byte) error {
-	// TODO: Limit the length of additionalInput to 2^35bits
+	if int64(len(additionalInput)) > 1<<32 {
+		return errors.New("additionalInput too large")
+	}
+
 	if len(data) > 65536 {
 		return errors.New("too many bytes requested")
 	}

@@ -90,7 +90,8 @@ func (s *drbgSuite) testHashAfterReseed(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testHMAC(c *C, h crypto.Hash, data *testData) {
-	d := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	c.Assert(err, IsNil)
 
 	r := make([]byte, len(data.expected))
 	n, err := d.Read(r)
@@ -105,7 +106,8 @@ func (s *drbgSuite) testHMAC(c *C, h crypto.Hash, data *testData) {
 }
 
 func (s *drbgSuite) testHMACAfterReseed(c *C, h crypto.Hash, data *testData) {
-	d := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	d, err := NewHMACWithExternalEntropy(h, data.entropyInput, data.nonce, data.personalization, nil)
+	c.Assert(err, IsNil)
 
 	d.ReseedWithExternalEntropy(data.entropyInputReseed, nil)
 

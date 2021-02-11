@@ -255,6 +255,8 @@ func NewCTRWithExternalEntropy(keyLen int, entropyInput, nonce, personalization 
 
 	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &ctrDRBG{b: aesBlockCipher, key: make([]byte, keyLen)}}
-	d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, keyLen)
+	if err := d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, keyLen); err != nil {
+		return nil, err
+	}
 	return d, nil
 }
