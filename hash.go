@@ -205,7 +205,6 @@ func NewHash(h crypto.Hash, personalization []byte, entropySource io.Reader) (*D
 	if err != nil {
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)
 	}
-	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
 	if err := d.instantiate(personalization, entropySource, h.Size()/2); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
@@ -228,7 +227,6 @@ func NewHashWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalizat
 	if err != nil {
 		return nil, xerrors.Errorf("cannot compute seed length: %w", err)
 	}
-	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &hashDRBG{h: h, v: make([]byte, seedLen)}}
 	if err := d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2); err != nil {
 		return nil, err

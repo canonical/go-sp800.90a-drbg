@@ -228,7 +228,6 @@ func NewCTR(keyLen int, personalization []byte, entropySource io.Reader) (*DRBG,
 		return nil, errors.New("invalid key size")
 	}
 
-	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &ctrDRBG{b: aesBlockCipher, key: make([]byte, keyLen)}}
 	if err := d.instantiate(personalization, entropySource, keyLen); err != nil {
 		return nil, xerrors.Errorf("cannot instantiate: %w", err)
@@ -253,7 +252,6 @@ func NewCTRWithExternalEntropy(keyLen int, entropyInput, nonce, personalization 
 		return nil, errors.New("invalid key size")
 	}
 
-	// TODO: Limit the length of personalization to 2^35bits
 	d := &DRBG{impl: &ctrDRBG{b: aesBlockCipher, key: make([]byte, keyLen)}}
 	if err := d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, keyLen); err != nil {
 		return nil, err
