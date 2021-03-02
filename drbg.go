@@ -3,7 +3,8 @@
 // See LICENCE file for details.
 
 /*
-Package drbg implements several DRBGs as recommended by NIST SP-800-90A.
+Package drbg implements several DRBGs as recommended by NIST SP-800-90A (see
+http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf).
 */
 package drbg
 
