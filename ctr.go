@@ -220,7 +220,8 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 // initial seed. This argument can be used to differentiate this instantiation from others.
 //
 // The optional entropySource argument allows the default entropy source (rand.Reader from
-// the crypto/rand package) to be overridden.
+// the crypto/rand package) to be overridden. The supplied entropy source must be truly
+// random.
 func NewCTR(keyLen int, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	switch keyLen {
 	case 16, 24, 32:
@@ -245,6 +246,7 @@ func NewCTR(keyLen int, personalization []byte, entropySource io.Reader) (*DRBG,
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
+// The supplied entropy source must be truly random.
 func NewCTRWithExternalEntropy(keyLen int, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	switch keyLen {
 	case 16, 24, 32:

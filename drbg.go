@@ -5,6 +5,23 @@
 /*
 Package drbg implements several DRBGs as recommended by NIST SP-800-90A (see
 http://csrc.nist.gov/publications/nistpubs/800-90A/SP800-90A.pdf).
+
+The hash, HMAC and block cipher mode DRBGs are implemented.
+
+DRBG instances are automatically reseeded once the current seed period
+expires.
+
+All DRBGs are instantiated with the maximum security strength associated
+with the requested configuration. The security strength cannot be specified
+via the API.
+
+DRBGs are instantiated by default using the platform's default entropy source
+(via the crypto/rand package). This entropy source can be overridden, but it
+must provide truly random data in order to achieve the selected security
+strength.
+
+Note that prediction resistance is not implemented. Prediction resistance
+requires that the supplied entropy source is non-deterministic.
 */
 package drbg
 

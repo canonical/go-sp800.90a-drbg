@@ -199,7 +199,8 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 // initial seed. This argument can be used to differentiate this instantiation from others.
 //
 // The optional entropySource argument allows the default entropy source (rand.Reader from
-// the crypto/rand package) to be overridden.
+// the crypto/rand package) to be overridden. The supplied entropy source must be truly
+// random.
 func NewHash(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	seedLen, err := seedLength(h)
 	if err != nil {
@@ -222,6 +223,7 @@ func NewHash(h crypto.Hash, personalization []byte, entropySource io.Reader) (*D
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
+// The supplied entropy source must be truly random.
 func NewHashWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	seedLen, err := seedLength(h)
 	if err != nil {

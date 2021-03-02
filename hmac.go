@@ -107,7 +107,8 @@ func (d *hmacDRBG) generate(additionalInput, data []byte) error {
 // initial seed. This argument can be used to differentiate this instantiation from others.
 //
 // The optional entropySource argument allows the default entropy source (rand.Reader from
-// the crypto/rand package) to be overridden.
+// the crypto/rand package) to be overridden. The supplied entropy source must be truly
+// random.
 func NewHMAC(h crypto.Hash, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	d := &DRBG{impl: &hmacDRBG{h: h}}
 	if err := d.instantiate(personalization, entropySource, h.Size()/2); err != nil {
@@ -126,6 +127,7 @@ func NewHMAC(h crypto.Hash, personalization []byte, entropySource io.Reader) (*D
 //
 // The optional entropySource argument provides the entropy source for future reseeding. If
 // it is not supplied, then the DRBG can only be reseeded with externally supplied entropy.
+// The supplied entropy source must be truly random.
 func NewHMACWithExternalEntropy(h crypto.Hash, entropyInput, nonce, personalization []byte, entropySource io.Reader) (*DRBG, error) {
 	d := &DRBG{impl: &hmacDRBG{h: h}}
 	if err := d.instantiateWithExternalEntropy(entropyInput, nonce, personalization, entropySource, h.Size()/2); err != nil {
