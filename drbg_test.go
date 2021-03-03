@@ -6,7 +6,7 @@ import (
 	"io"
 	"testing"
 
-	. "github.com/chrisccoulson/go-sp800.90a-drbg"
+	. "github.com/canonical/go-sp800.90a-drbg"
 
 	. "gopkg.in/check.v1"
 )

@@ -3,12 +3,6 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "UYaC0DQdVERzqFs9+pICKOgSV7c=",
-			"path": "github.com/chrisccoulson/go-sp800.90a-drbg",
-			"revision": "5853391a132a75bbac9da007af667a43e8b8f087",
-			"revisionTime": "2021-03-02T22:26:10Z"
-		},
-		{
 			"checksumSHA1": "3ohk4dFYrERZ6WTdKkIwnTA0HSI=",
 			"path": "github.com/kr/pretty",
 			"revision": "73f6ac0b30a98e433b289500d779f50c1a6f0712",
