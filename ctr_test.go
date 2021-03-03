@@ -3346,6 +3346,4782 @@ func (s *drbgSuite) TestCTR62_AES256_14(c *C) {
 	})
 }
 
+func (s *drbgSuite) testCTRGenerate17_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_0(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "b408cefb5bc7157d3f26cb95a8b1d7ac"),
+		nonce:           decodeHexString(c, "026c768fd577b92a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5737ef81dee365b6dadb3feebf5d1084"),
+			decodeHexString(c, "3368a516b3431a3daaa60dc8743c8297"),
+		},
+		expected: decodeHexString(c, "4e909ebb24147a0004063a5e47ee044fead610d62324bd0f963f756fb91361e8b87e3a76a398143fe88130fe1b547b661a6480c711b739f18a9df3ae51d41bc9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_1(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "71bdce35427d20bf58cf1774ce72d833"),
+		nonce:           decodeHexString(c, "34502d8f5b14c4dd"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "66ef42d69a8c3d6d4a9e95a6914d8156"),
+			decodeHexString(c, "e31883d94b5ec4ccaa612fbb4a55d1c6"),
+		},
+		expected: decodeHexString(c, "9733e82012e27ba1468ff234b3c9b66b20b24fee27d80b218cff63736929fbf385cd888e432c718ba255d20f1d7fe3e12aa3e92c2589c714529956ccc3dfb381"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_2(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "9c0e4aeafc357ff8e3f540a455678d7e"),
+		nonce:           decodeHexString(c, "efd83dc5c531d167"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "58a11814081c1c35af8988f13140f6cc"),
+			decodeHexString(c, "19192270d61a43264a30ba9ebc728a5b"),
+		},
+		expected: decodeHexString(c, "1eff1cf6b575315590703882359b6adb3c21ebcfda5d3b5d6e88acab6e879e0a6f75375c02d1d3fbae943c3443e39c299b80e241cd365d4af8cd1ad5d9d54c58"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_3(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "9507019b1fe87984bec1d09ceccf3635"),
+		nonce:           decodeHexString(c, "47586274fa753e0d"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f17de4ceef9f2f234220cb71d8ceb70d"),
+			decodeHexString(c, "99d48d9ce2fe76dcb8d05fa4ec071aec"),
+		},
+		expected: decodeHexString(c, "25a0d1678e25b19439d8334ca902db6347a9a42b86f354b9e0b3c4f4e8ba9d192a5d765aae5f4c5a74a0177d3eb6137062e6d98b651822265bfefc929a3969dd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_4(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "12e8b3da3a3b3e773afc2305bda86db6"),
+		nonce:           decodeHexString(c, "c49f261a9ab9d9f8"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "86b638524196159dea0176e5462ae65c"),
+			decodeHexString(c, "5eadb76772be3ce847af6b7794e002e3"),
+		},
+		expected: decodeHexString(c, "1bbf85e02c1fc04bea5fc47f236a071c13f8f52eb113cb83c4152ac832627abba6ecdec17a9ff0305b7a49817983fa5b665145e7ba9a5df57226eccfc164e3bb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_5(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "b608b149cf44fe060613b1661da0df63"),
+		nonce:           decodeHexString(c, "9517c993f1503477"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "559cb812c3758b2b319dd9f5768e8d3d"),
+			decodeHexString(c, "c9af987efce4700fa9c8ebb9fecf00da"),
+		},
+		expected: decodeHexString(c, "5b48134dc7e6589f1b402cf5c4f6e3a3ebfda8267250e8e811ec05986ff21c78a16930a8e08103077608c06fa5e2a048e85dd6f395cee201d3cde635e17e203e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_6(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "e92fd07a09f2bccb43424c575773b0f0"),
+		nonce:           decodeHexString(c, "b4e3ca71ae15a036"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e1b4b04013dc12188c623d1011d408f1"),
+			decodeHexString(c, "7956bf5b16580b3e720a81333eae2483"),
+		},
+		expected: decodeHexString(c, "21a46722424656370c475b69a1fbc70c8cbf442dc2bc28e0ab34bb6ffed06d10f490df7e787c12b652d219a577306f04a9c878b6cfdff43e1355c4d110fb0fb2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_7(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "de0b4ea1a440ce680ed004cf64afbe0f"),
+		nonce:           decodeHexString(c, "abb31a3ab15ed449"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "45e710100cad00f3d293db755ee1990d"),
+			decodeHexString(c, "b911c9a4389e7167982a51248ee2937e"),
+		},
+		expected: decodeHexString(c, "01c3af83557c632dd822833f18e548fb6036e9ccacc3b433c5a700793993308916220e5a741639861c2f17719b32512206e36e947b2860073b113ccda3fe3168"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_8(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "7227e11cfc1a6b84b40eca24e77f8c64"),
+		nonce:           decodeHexString(c, "ab7e9fc45e5863fb"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "caebb3cd32c9d3e1f5d38f8bdd89587d"),
+			decodeHexString(c, "31380926b8608006b7c79361f0f91d5e"),
+		},
+		expected: decodeHexString(c, "3ad7b93259c6d0fdb514277ae9950122fb971133742de8e517dd2269dd5a3c257e3d106b555660cfdd6a92c2cddf1e53c4945ed772ee303804d056f242bf5399"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_9(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "3b9ee20c8242b3f358dbe8ea589e6e7c"),
+		nonce:           decodeHexString(c, "b1dc3a4703685215"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "473334478673e7b4a43e9ae6a8ac98bf"),
+			decodeHexString(c, "061fe4455a17087498fe209c2cba7a91"),
+		},
+		expected: decodeHexString(c, "8e5062b1fb2905c157c526fa5f67cc99c6d7080a3d3142fa37c209cf534af16a9a2f2861b894ea84a373d4a804c3dcd51fcc09dd0f5b3945697aacd0b8f3eafd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_10(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8ff757b21169b3fd6e8800aac0e3c41f"),
+		nonce:           decodeHexString(c, "494d4251e88815b4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e0199fb9f0f0a1a8dd9d19d14368fa1e"),
+			decodeHexString(c, "2191abe72441285636c11bdee983ed8c"),
+		},
+		expected: decodeHexString(c, "0675b2254b71318eb3a3604d7b6d77806cd7df325c7ce89e16d3bd5616b0faec330cfe6b84b68761adf70cc14e46253e115572c1a4acbbaeee1ad681b538d6c9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_11(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "460c0a1e929b7518dbcf44e4e7ee4d83"),
+		nonce:           decodeHexString(c, "8865d5015348259e"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f932789140a0a76f07b25b5f8e1d00dc"),
+			decodeHexString(c, "e6446ae2c6626673e18e373deb12bd26"),
+		},
+		expected: decodeHexString(c, "c5de2e1a2aa70a28ace68e620c94b888a07b0780b31438c5e11c5d76dfd615f41d4ba324d22c12fee38f58935dad35e00fe6a6e61186c7881c306e9631cc15ec"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_12(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "b2da44bc3be2d17a9ac2088085e926f8"),
+		nonce:           decodeHexString(c, "04be54493526c578"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "67be89195965cd7dc984271b497d6190"),
+			decodeHexString(c, "c9956b004b0c26b3f657c6c155d360cc"),
+		},
+		expected: decodeHexString(c, "c77456621948f60838e3779a146063225296da38180e2c4c5835ea27b28424a8831cee8c8df739a2b173b37be2c02bff38e0b367d482fb76545fb3c98d82b6e7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_13(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "f177bc8af75c49e1d379b5722692bb3f"),
+		nonce:           decodeHexString(c, "d8b5fbdc5da7ea7b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "374194383554a421410af5de2fc2ec82"),
+			decodeHexString(c, "000be9ac8e4b0cd1245d7b7dbf8d874f"),
+		},
+		expected: decodeHexString(c, "b4a00cd6e5f47ea87b1207c3a218d8988d4cb7ed52b14b79bba56aa7e57e6364057025ab8f60d97b84717bbf2558dd431f4bc38cf1f61ec0e7c2b4aeb54b2faa"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate17_AES128_14(c *C) {
+	s.testCTRGenerate17_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "526bc8b797ad67eb9b11bb5d17320087"),
+		nonce:           decodeHexString(c, "647bd232ad4d1300"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "58c8bf950fab027119ee4a592727aa02"),
+			decodeHexString(c, "2539e123926b74ab23414d6350b89287"),
+		},
+		expected: decodeHexString(c, "359c560834bbebdb4134cc3e66bc0695cefdb4fe5663752b6eba974c4b85924a01dcd4ea3ed77f2af3957b8751f7371574bb8b090bc0d512c157c6559c16d0fd"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate19_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_0(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "cae48dd80d298103ef1ec0bf1bb96270"),
+		nonce:           decodeHexString(c, "d827f91613e0b47f"),
+		personalization: decodeHexString(c, "cc928f3d2df31a29f4e444f3df08be21"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7eaa1bbec79393a7f4a8227b691ecb68"),
+			decodeHexString(c, "6869c6c7b9e6653b3977f0789e94478a"),
+		},
+		expected: decodeHexString(c, "920132cd284695b868b5bc4b703afea4d996624a8f57e9fbf5e793b509cb15b4beaf702dac28712d249ae75090a91fd35775294bf24ddebfd24e45d13f4a1748"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_1(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "c0701f9250758fcdf2be739880db66eb"),
+		nonce:           decodeHexString(c, "1468b4a5879c2da6"),
+		personalization: decodeHexString(c, "8008aee8e96940c50873c79f8ecfe002"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f901f8167a1dffde8e3c83e24485e7fe"),
+			decodeHexString(c, "171c0938c2389f97876055b48216627f"),
+		},
+		expected: decodeHexString(c, "97c0c0e5a0ccf24f3363488adb130a3589bf806562ee13957c33d37df407777a2b650b5f455c13f190777fc5043fcc1a38f8cd1bbbd557d14a4c2e8a2b491e5c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_2(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "6b98532d678fd279cf737c58150ce589"),
+		nonce:           decodeHexString(c, "ca5545073d549d06"),
+		personalization: decodeHexString(c, "80908ac134e0cd23ef7e318548f92191"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "53790da909bfdeedaafd99619f3f461b"),
+			decodeHexString(c, "c7a58777d1fbd1553e9546c83e409fc2"),
+		},
+		expected: decodeHexString(c, "d984a2405887390227940959e49f944e4904c4f0467ff24d8764db91530a1e5965688472fac131bea055c7151227e2fcb0dad9655ec3ac22cd7dff72f6c74aa0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_3(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "97516e48d910372a3f1fb4aa7ae4930f"),
+		nonce:           decodeHexString(c, "bba30b3deb193389"),
+		personalization: decodeHexString(c, "8c0e3e71c8201a77105519dffa89c1aa"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0a18787e4650fa0249f77962ac158c63"),
+			decodeHexString(c, "2fb192314c3e07f963fba34d8dfc8c9c"),
+		},
+		expected: decodeHexString(c, "d7b73e449aed8f0a06938483e87811049b4acfe51ca555f1ee9786e33fce90697db68d2dc6361c942cf67d892619497e96194332ae32a635cf355bbc3c667955"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_4(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "62cef35a518ef6520b6edb1aa9a21496"),
+		nonce:           decodeHexString(c, "2b98e269f51fb3ba"),
+		personalization: decodeHexString(c, "89a6c9112713d0d196c8e02660a25131"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "35edb87701cb5001434db1857bf98efb"),
+			decodeHexString(c, "a9fa53b5d3032e4be60dcdb1e94b4f50"),
+		},
+		expected: decodeHexString(c, "de8b770b3ed43315ab7e8331e2df12cb9abeb3f6b14c457a304bcd1df730db52d4b402f78b80545965fc5a83ddf99963aab5e1b3792457df4bf927b66a4d6745"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_5(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "c02af705f699c3a7f5e2bb9b14c7cea7"),
+		nonce:           decodeHexString(c, "eb246b26a3a0a10b"),
+		personalization: decodeHexString(c, "07df3d3d486bbe6819044094c9158999"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f49d279f04815d983092b6b5fe4f10f7"),
+			decodeHexString(c, "d766070064dfe203b2a39d1b24758410"),
+		},
+		expected: decodeHexString(c, "ddbb488c6b6f0f9cb705a3c5ab13c3176f867b120c29db37f79c00238a77a0414504d32893a08c7e99c2b1a88d50922e52b0df560b753add48604caabbb9752f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_6(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "566fc338985a8fc867dabe24f7f9097d"),
+		nonce:           decodeHexString(c, "dbf71d7917e0b151"),
+		personalization: decodeHexString(c, "6656941817a615e29f62bd4f1d93cb11"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a274be529746bd0b6a5873dc3c1daebc"),
+			decodeHexString(c, "4e23fa29d26b1fe92bb42b3e9f2b4c08"),
+		},
+		expected: decodeHexString(c, "b5da60b870226a48b2b9b5d9a9464954a8db0d3e5fb3063c80e675197dc58407b4c0409cd06975eda8afe6667aa0d79ecf555e238f83424f130819200c244a77"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_7(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "6743bc122aaa134f82ac8c78cc0b64e7"),
+		nonce:           decodeHexString(c, "2dc32e4f3bba5a20"),
+		personalization: decodeHexString(c, "b8077f23a908c42592c13b63890998d0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d68374f58ce25bd8e95fe06de8a950a1"),
+			decodeHexString(c, "07b7ab9c32a97830a00ed9895e3bbe19"),
+		},
+		expected: decodeHexString(c, "fe827f53076df30847d0fb0f55a2cd6381ca0e79e681621f49f31e4811e9a64c57c0994f180c311a404440f277fa62e0f99c6f5c7b88bee207fca9926bfc9e46"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_8(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "f2addf0167a16da38d2fd792a7189c06"),
+		nonce:           decodeHexString(c, "2b50d8cc7f71401c"),
+		personalization: decodeHexString(c, "b917a54c13d58cb6ad47c8faf6f9a7f5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cf2e785a06bc5eb71e3b524f1172c755"),
+			decodeHexString(c, "c9a753a9ceddd75d1a626da72795a3c6"),
+		},
+		expected: decodeHexString(c, "e2aaf11c20de2baf8923041d838f4acb38e222d306b97c97bfe546617b3d8d92e40caa2edcac7a2fb0643ed57d47a90a11641044b6c6a7df424dbda2b45f0df9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_9(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ca233458f66b26f2c1357aefceb679ef"),
+		nonce:           decodeHexString(c, "fe136404ad7a49e7"),
+		personalization: decodeHexString(c, "2683dc313bc0bb93ebb46bbb553f5875"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f78ab1f4526f0fa5cb7543d14643feb5"),
+			decodeHexString(c, "40b926324cc2943aca837f690d0bcda4"),
+		},
+		expected: decodeHexString(c, "3724d0e580e90d4ef32e5f8a5bb56225a913f210b76d5a78fd8ef25d6eec9ff14711d6db80e1e81142a5607534a725d2785c8e3e4a48a594b0d91bc932827bd7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_10(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "2b521dc403129fd9ed0be9f5fde06617"),
+		nonce:           decodeHexString(c, "f0dfa01e099b95a1"),
+		personalization: decodeHexString(c, "fe858d59d734f60f71a387553cca46ff"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6fba8d06ff433007bd7d15569af3d069"),
+			decodeHexString(c, "80b0c11f18b5923a89f0fe23776d3905"),
+		},
+		expected: decodeHexString(c, "417388dee9084f588d0adb5e5d1b546b1255cdf59d69957ae687c7822b935ce029306c0250d469839c7df9d3d08ec8c50a667af10d8d5b007302a6e87b4e7f2c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_11(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "d0502b78f7aa6fa1d888421d702cadd1"),
+		nonce:           decodeHexString(c, "4b37b8965969ea8d"),
+		personalization: decodeHexString(c, "56bd431f0488fe6d7ba3836e5c8c7aa9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "26925dbcbed733be2a5e7649c876a0f8"),
+			decodeHexString(c, "9c70352d4f9c880e76d4680838dd0dea"),
+		},
+		expected: decodeHexString(c, "6500242c3588b452307b2a0634900e756a3d2619fc2adf10776922b006617ee881828366ac527fada00186bc8bfd6bee66d638035aafffbc8332a54ca17df16f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_12(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a3b95f3201fa010107573074b1199bc0"),
+		nonce:           decodeHexString(c, "6030e5b61347b0e2"),
+		personalization: decodeHexString(c, "9e778546d45f1793a11d80a02e4ca3c3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e507336198253137a555e8c118a12d2f"),
+			decodeHexString(c, "e5ceeacbb522f5de81789c32cbcdef30"),
+		},
+		expected: decodeHexString(c, "4ad18ea0837f063e9fbf6c72d1af6f779641f4e11c400d95cb2ba42299a96648e059e1a63f7c0379254489c7cbfffb2211845718c52600c9e85849d6e0951f7b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_13(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8818be7e8e815bca0cb5a0144d44b672"),
+		nonce:           decodeHexString(c, "122b148ca1aaba60"),
+		personalization: decodeHexString(c, "906dc30b395427385673261366f5e9a8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "56ee67ff1466ceedd7281d73f39c6c85"),
+			decodeHexString(c, "82e4a6edb0780079faee258ed1137ecf"),
+		},
+		expected: decodeHexString(c, "8855ad03e38727d049e8558ecc663b8c89cb5bd138ac349c6e5f784170c50769c8c97b094dfa0752d065531da40085817ccb08f2b94cbbbae7598c963e3ad6d1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate19_AES128_14(c *C) {
+	s.testCTRGenerate19_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "0090dcb91f0270f658207d49a74738e2"),
+		nonce:           decodeHexString(c, "9d18aea2684ee2b7"),
+		personalization: decodeHexString(c, "64a81857ce29f0d2a8510300b0a3fac0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cd7f89f8d5468eae8bca314fd9f25b23"),
+			decodeHexString(c, "949b94417fb42bbc7cdb3f53a0558019"),
+		},
+		expected: decodeHexString(c, "63d3e919881f87d69cbadcb6789e0b8f2e49f4c9d0e3ba1e4a59162af718bc40dd673eae8f48fd2782e06cdec5632a4b2e60655cba75afaf4c12a674eee4d3fc"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate21_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_0(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "adf5711f93d8c8997349429ccaedae0a"),
+		nonce:           decodeHexString(c, "b25716931b6e3cc1"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "abf8cd66dd39758b01d7dbb99ab17dc3"),
+			decodeHexString(c, "4be0f6b2755377c6e881fbb261b56beb"),
+		},
+		expected: decodeHexString(c, "d420604dee6467492db5957c86207a708fd242ed67942aed299425335c83b41437418582f41bc7fc0ef0d6927f34d83acd67c70133644fd711dd5a65731f9f02"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_1(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "e92100020734909d6109d29cf2c898b0"),
+		nonce:           decodeHexString(c, "91fbd9a3a8edc3a4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0980c7dbcfd0e7f77af835acc74a4ba3"),
+			decodeHexString(c, "3cbf47d46655a0ce75a5d56528127bc0"),
+		},
+		expected: decodeHexString(c, "e77ccc5263625429ce7e535622481d0bef476141d1a0abfa7f6967c11f47f7a70fa9bc70598ece3ff283e5ae04f10535d349c231349af8071a22323a6e951039"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_2(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "092ffe7457d6173e6713b0af76521d82"),
+		nonce:           decodeHexString(c, "d0b8cae6ab9e29ac"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e31af5e181c4346e423ebc1ff9f46ddd"),
+			decodeHexString(c, "02b949d134fc8968ba518fda3b42c97f"),
+		},
+		expected: decodeHexString(c, "0b64d9c61d1f23440ce57dbf465f8c629a9ffedd164399ab84fc118466a5679bb2d9c805ea9d29497261ea58bd8fa45cf24e212c077baba4d4e5738bb883c883"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_3(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a7a47841cf1a75ee96935f52a3322d9d"),
+		nonce:           decodeHexString(c, "5b48c3c347394656"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aac2031f6aa40f0875493370927c7ca8"),
+			decodeHexString(c, "1a6744d03fc2151294707c3bcea88402"),
+		},
+		expected: decodeHexString(c, "b4674867cb6cd4fade7846f492bd9eca69c133f1171cc60b6cd75f22e2ba7e70207ca38bdcef17ac15e48849ba130d5fb810844c2539fec519c4fa977ffa0738"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_4(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "5289c333ce1ceef56a19a111e9201a38"),
+		nonce:           decodeHexString(c, "dbd6b76b1fdf5d1b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f1fa6ec8caf94f65f12e9c0d8f5704f6"),
+			decodeHexString(c, "6eb6a557f17018830b5d72b67d322263"),
+		},
+		expected: decodeHexString(c, "39ec96bc716e1d214880d1f4b8a984bb83399453ec1eb9f371282d658e32d739b489f4c5eeae62a8fee8e084eeae6d01cca0ad80da1c53230f8a1faf7c335edf"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_5(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "4f05ef26c685444d6e65d8f26e0f2ef2"),
+		nonce:           decodeHexString(c, "d0ab066c7a4903b7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d275426043a82de20f89f1cb2cff5c9b"),
+			decodeHexString(c, "02a32763ed9aab167282d0a097f3103e"),
+		},
+		expected: decodeHexString(c, "afa2d37cc1c79d20a6104d6729fc7544361b95d23633487e8bb282b277e25f8ad53136109b21c380aa05e41dd9efd8adf46b7d695bbaf5b0307216a194fd9128"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_6(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "0c2ccfd65c23bc0693c9d4667a942b42"),
+		nonce:           decodeHexString(c, "c08d55228fe84bd7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cc017bb7962da6db0f517be9183fa6f4"),
+			decodeHexString(c, "c424aa0ce84a807a78b7b732113c22a1"),
+		},
+		expected: decodeHexString(c, "cb556f6d223a51a200d735f2f4ba217a672ef6bc1451976d1d05b44a2c0d54278af747837922cd0b28d7aaa2a87e23055e18d67d76fa90728294aba4ac36965e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_7(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "3b74813eebf5f5f2a6a5a4f3f907dcb8"),
+		nonce:           decodeHexString(c, "35daa2efdad88fb8"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5e0ae369b6e850ed30f9ae64fe105af3"),
+			decodeHexString(c, "3e697bb2bf25852645f2d16f676f9078"),
+		},
+		expected: decodeHexString(c, "790b1f6ccdf352dec0e57fa0c772c64d7777e4bdb9ff8a91da018902203db582f901c20dd25361df22e71712a497578d22eea85246cefd425b08f15074341f39"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_8(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "462607b2b77b903fdbd42bf1d77bc81a"),
+		nonce:           decodeHexString(c, "b54d43006ade2a7c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6105c5ddedcc744665915ebe48ad3b54"),
+			decodeHexString(c, "fddee235c37ed4bc21eae08e6153331f"),
+		},
+		expected: decodeHexString(c, "16339e910eaf9bad904a7b3f9b2e0241d2b4665d1f9c7655f9217e34253acc330dfc98817d978186f8ad77b10f38dd72f471b4615b28f3a39c406623ea5d6377"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_9(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ba2ea99b792bdee8bdbaf9c05ab7b633"),
+		nonce:           decodeHexString(c, "4453344644d434a5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "81727d30d64ae07ff61569fc7a350ccc"),
+			decodeHexString(c, "6556f62f75d5268493cca5120114934c"),
+		},
+		expected: decodeHexString(c, "2a3b398702bc5fffd914f91672aa05beb68782e0a622f67b21826c23326c5078ccda6aa3db014cec56a065636b8057e812a6f4b7c6c4de6e9f06aa5377b28be6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_10(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "61cf4e09d9a46af318c706425cd350fb"),
+		nonce:           decodeHexString(c, "28ec9c4ae98f0574"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7fc3bf8ad33e5961745bb2ae7c399ba0"),
+			decodeHexString(c, "313571d30dc5909a03388c693f4ef94c"),
+		},
+		expected: decodeHexString(c, "d225f0c65e9ae8c36493b009476f5a5636d452544ce16b991c73d6eae5ef5eff3b74e00328f87f2030f3df53b2fc2647d63a28e5c7b58344ed99c5d0bc6293b4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_11(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "dd6c7dbac4fc4c8d9c69ce4dcf43b667"),
+		nonce:           decodeHexString(c, "8326161c2aac4806"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cf959f9e938909d95c4725dc39d7efd7"),
+			decodeHexString(c, "e437d226c40268cb9f63945cbce54b2d"),
+		},
+		expected: decodeHexString(c, "90ddc53c48041f0c4501ffee617b3a3583cbf51a4c45ad7ba5b3dd3465ff1392bd2eb4651ac22a34a0f53772012712f23931ba8f0a3b74fae0a16bd4a1883513"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_12(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "df4fefc1c3d403fb179b9b95775381e3"),
+		nonce:           decodeHexString(c, "d68483aee42cfc00"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e877eb3751e2bafea033ac8cc5ba66f6"),
+			decodeHexString(c, "7956874022b50aa032bafa29e721f356"),
+		},
+		expected: decodeHexString(c, "6ada0620d429cd38754e559a2eb88c08266cd9cbac2448b2b8a05d927da17259199dbcc5eb0b7adee61c6074ae2e7af6b2c9b1fd5289fbc3d9be308584d0ae4a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_13(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "620ea317344d86858d64f6bb05d44797"),
+		nonce:           decodeHexString(c, "f6ddc5844fbd739e"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3ccfb069ef27f864e3b731d94c3f2c6c"),
+			decodeHexString(c, "80857d3f598b1b16014e6a3549a2d22c"),
+		},
+		expected: decodeHexString(c, "d7a787beeb7efc9c584f93345533a599ed615eb2136b8fb874a7f5a71aea98f80c56923098567aa3b4c31696826f081676a3ceed1d914c949d542390b699d3fe"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate21_AES128_14(c *C) {
+	s.testCTRGenerate21_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "d8ba9d16a0070fbdf5109d3c1ed85916"),
+		nonce:           decodeHexString(c, "29ce07dda61b5014"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "160ad77675c64c7487eedb34343700c0"),
+			decodeHexString(c, "1632546058f19ee1b849e5d27e2d755a"),
+		},
+		expected: decodeHexString(c, "e05c62cbefaf038043d49c976ba85521c20671d9f81cebf5a87581659e3d1819908e84ec0193a530f310cc3544ba90ad92a6c99d3a1af55b5aed72871db89002"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate23_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_0(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "25ad6e73055ecbc949f291f0f797f17a"),
+		nonce:           decodeHexString(c, "1f85a92a460a2eea"),
+		personalization: decodeHexString(c, "83d04b4b1591c7bac9bca907bbe9ddd4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "523c6cb0bc27d19f8d2ebef57926dde4"),
+			decodeHexString(c, "d33cd14b5b7937388e89ecc0806303f0"),
+		},
+		expected: decodeHexString(c, "23d9195e4026edf07088b837627547a0ea9137ed0336d7696015dd6f2984dedb2a207f2eb8a25660a5ee781178579a0f233fb6f7260358dbfd5325c3f8c8fe33"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_1(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ae332f73390e27756bc93d2b951b8b44"),
+		nonce:           decodeHexString(c, "e69fc8a16450fb6d"),
+		personalization: decodeHexString(c, "5f76863d3a2087e9cb90e112c16806e2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bf6a8e056e6c3cc1a6cbdb6b59ebeae2"),
+			decodeHexString(c, "d87ab9224aa9cd9b5b847835cb0daac4"),
+		},
+		expected: decodeHexString(c, "e0a2dd5606a0a26157f9210511bbde50c92f34ad92363cb92a05208b60b33d21c3d6c0c6ef054ec409b4630deac4c6d1ad1b6be75fff27aa749413c8b64cf3e1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_2(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "e1a589afab8391692dba52318aa8dc0d"),
+		nonce:           decodeHexString(c, "22ebcf2e24a95528"),
+		personalization: decodeHexString(c, "82e8c355dbc9cd4c8d52fa452118f9f8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f77457ec32de666f370da9e6c220c580"),
+			decodeHexString(c, "ba25aa3ab3d50a72b6c1b43f30db4455"),
+		},
+		expected: decodeHexString(c, "885955d127faf4c921c4ed3f38bc1542b95a87834d4d73d1562400a6d3aa8e6c697b711d910eecebc9ca4ec2dc17e79893e7f734c45675de477f5545bd94cdee"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_3(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "6fb76fcd3d762fa4c50de1f22e927683"),
+		nonce:           decodeHexString(c, "a5eef12f3b3c25a3"),
+		personalization: decodeHexString(c, "54867d7dc8cef52342bbc009954efbf8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fac552aa8796e8858d55ae371a0f548f"),
+			decodeHexString(c, "fefbe9c83c159fcfa92ee818761d49dc"),
+		},
+		expected: decodeHexString(c, "094f863b88e2b55ef415d2688294c7d8d2d776c169167391df36f80ad8e9833e97616ef6e0a45f940d66383018aee86a480a2651d6e2efad615a051f0dca64ae"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_4(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "5b32a392dc665ab58f2598eab07d8e53"),
+		nonce:           decodeHexString(c, "c6f61310738860f5"),
+		personalization: decodeHexString(c, "9f309a685329821692a97300620c0156"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "875a4a43bddf1a7305526a488a1e0eb4"),
+			decodeHexString(c, "2114a7cb15490c063bb4668f369a3d8e"),
+		},
+		expected: decodeHexString(c, "91c1f199f671ff568e0ece46088765162322a8216066f9a415d7ccd9dfe723c521f57dbd8469e39bacdac31e742a2d2ff2a31d5a15a01bfd32be50286c730ead"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_5(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "79957c33e45bba1c8ae69029077ae36b"),
+		nonce:           decodeHexString(c, "5b49d8e7c180bcb6"),
+		personalization: decodeHexString(c, "2aa8e77b94fe0ddf0e57302c8ebdc22a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "14844d85e50cb1fcb4e6887b3fc67f54"),
+			decodeHexString(c, "4c7cb069297c18653394b82be6a93099"),
+		},
+		expected: decodeHexString(c, "0661e2416e71fe49119f967642fd37ddb582a189a888e7d4a2aa56275194c8ca698fb2d696834b88b572f0fdf5badb6bf58d1612d25f5ee3f62d33db9a86b087"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_6(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "70508980362e962ae778458081cfbbe6"),
+		nonce:           decodeHexString(c, "29ccf6edba462dc2"),
+		personalization: decodeHexString(c, "48a3d8dbdc85188abb35b56c194d6020"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a8147242e24737fcf3b007d284d661c4"),
+			decodeHexString(c, "964a9d0686d96193fb2e4a35145edcc8"),
+		},
+		expected: decodeHexString(c, "d81bd5da60d99d6daaecebc060652633ec14dc3b84693bdff767771f032bfa2e4dfad53ef6d19910bd925df1209f33ea11e3f1e837b03e7a7003257ff420a692"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_7(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "b78371baf586c0dd054bfd293fc7e8dc"),
+		nonce:           decodeHexString(c, "119b232ce4cada97"),
+		personalization: decodeHexString(c, "3a5875b443073c9bf64a0aaaf26ba44f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4d2d4f16b7b7d2d2bb4d83a4929996b2"),
+			decodeHexString(c, "7d3173e08aea4c8b6ef9e3cd698f9b09"),
+		},
+		expected: decodeHexString(c, "bb048641f036dc11b8df8ad3e4d5bdfc309b2c3f22b3d2b8acf196d50cd542de13cd99978a920acba61dc07c646b48094479bb4417d8409abae3d69ed52a2a3e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_8(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "96bfc347b306805af88da007675db47c"),
+		nonce:           decodeHexString(c, "12953706a06eb530"),
+		personalization: decodeHexString(c, "46733dddaf70e3f2075cb870f47e72df"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "64f79ad1dfa393d36bf5be833290b694"),
+			decodeHexString(c, "5d210f1285f0fb038a753476ef249179"),
+		},
+		expected: decodeHexString(c, "67b69ba434903e2bbf46d3f5e300b9e5cf3301beaab7d30b4652ed3bf6626579503a544e58237c5e551ad5ee17b736120c37a3029bd7a1034d4c49f61e040aca"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_9(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "9a4c8b46a974fbc85e256d1f07cc59aa"),
+		nonce:           decodeHexString(c, "eb8d662102090114"),
+		personalization: decodeHexString(c, "b94b8d2a649266645a715afca0995d9d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f336e1d62ac568ed132ea01815dad508"),
+			decodeHexString(c, "667626a23d23b7165a6a885d41fa901c"),
+		},
+		expected: decodeHexString(c, "2df33f7ad2c2d86e61633c25a8ac57b5dead88021c93ad69ba6c522799c4bebfda782772c81e7e02d8b882546b242bb22f310565bac316269ffc8004d5440631"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_10(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "c7d6557565a1fde480841f1f1a10f67d"),
+		nonce:           decodeHexString(c, "02f847986626bb4b"),
+		personalization: decodeHexString(c, "618cac99531791673603a16b99ab0e80"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "810c8be4b1801fec754063c261156660"),
+			decodeHexString(c, "e2594d34ce1ad65351286069eb1a6308"),
+		},
+		expected: decodeHexString(c, "a3c4d02da0166fef32ce69975db94d196044e81f59044d22df8405b468ebd5a92997feeba82d7adf97ccbb1a59355626aefae0d435b403b7deb9005b8f5ea9a5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_11(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "140dbff63e7083c308419f864c093e99"),
+		nonce:           decodeHexString(c, "eb1c6692db949d5a"),
+		personalization: decodeHexString(c, "23d32721f1c03a90f39ef021ac8884c7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c6e3808db9f9da14239ad7d718286a96"),
+			decodeHexString(c, "a84aaadb7d572a9afca3f76cedf0a4b9"),
+		},
+		expected: decodeHexString(c, "743df97c2e99d974077772a6fea403128f41ff32a95fb4f8b0eccaa0571cd2578e482ce7098499c4d3015f9192355238c70f8b76a504272a8709cd0e2dc82c9c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_12(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "6af3962fd6ae84dec3f894bf39c64642"),
+		nonce:           decodeHexString(c, "c020496461a39161"),
+		personalization: decodeHexString(c, "75caefe7752045fcb1e5fc227ffb940d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1664f7cc88d01d7f278615c563092fd6"),
+			decodeHexString(c, "60b7a86bc0c8dd2bd07adaa4d5c24d68"),
+		},
+		expected: decodeHexString(c, "b4edc9650d8147170c81529f2fd7331153a61d0d58b76b50bb52da0a795164beebc609320520328f3d4e83cd80d0b1cbbbfd0a84a96510881101fbc740b2817f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_13(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "36e27aa6b36699e9464595a932cc928e"),
+		nonce:           decodeHexString(c, "6516bb918566bf89"),
+		personalization: decodeHexString(c, "9bc683a1f465ba0f2ce18c8b9c614244"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0d175b34d8b9e270745a71f35d416f10"),
+			decodeHexString(c, "a790c86fdf0ca80eb3d6f702916ea99f"),
+		},
+		expected: decodeHexString(c, "34ea9629627f6684b9ab85f81646864dd8ef3a15edc801dc39a731dc9e80e626fc8ce21e9b62e948886489d5e4436e659f26bfb3435104ad9bfa0aafc5506917"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate23_AES128_14(c *C) {
+	s.testCTRGenerate23_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "aca359f107c324648ad445564bfae56d"),
+		nonce:           decodeHexString(c, "f95d1c8fd266df64"),
+		personalization: decodeHexString(c, "a5cfdc76c4e849e45d8bcc68eeb01284"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "57802cc06ef0344bd14a4857c69f68d4"),
+			decodeHexString(c, "5314fccbe452018fc16e5ffb5d90e888"),
+		},
+		expected: decodeHexString(c, "211d90ecd7d3ddd03f91e8a674400fb18d3fb39886a2262f0e09ff075f998d217419f2e9353d45b9df10723ebaebcff1aa8024d9b096064d6f31835b75f8eaa6"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate25_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_0(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "9bfaefb698b1b5fcc62db2c16498c33a"),
+		nonce:           decodeHexString(c, "111d8612a0f04e2a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aedbe02847b1b08b6a673bdf25b0224c"),
+			decodeHexString(c, "9901ead62ce56573b0f71cd020fe3469"),
+		},
+		expected: decodeHexString(c, "dff8bf2aec531f8532607e738bd79f91d6085cb19568b7b0240ce6a6b371a282bafcdba02137df990535d9ebf0ba77117751626b2678aca7be4decfd6b9d4b38"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_1(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "df993fedd59674a87a15147b80be37ae"),
+		nonce:           decodeHexString(c, "22b3315accf1ad13"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9f9b9409048a711745c7ef7a6dddc17d"),
+			decodeHexString(c, "c560685bd49c059f0438e9dff62d82d7"),
+		},
+		expected: decodeHexString(c, "04d74fa1b69de6893a47bfb0b6ae58a7984bbb088fce620b9d8ebc0b54cddbca0045d75d5b046fcd8895c16b0513aa521b8d4af276783d9d2577acb32ceadb89"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_2(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "db4fae0c4302ebe84f2a28ad984daec1"),
+		nonce:           decodeHexString(c, "079ebf0f0093cdb2"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2ffb6485ace2ad77d5f8adbd09b3f372"),
+			decodeHexString(c, "f4b844743d0065a038988049f6aa53b5"),
+		},
+		expected: decodeHexString(c, "cb8e71448ff7911e5caea7d54a12945ed34bea42dbb6573bf8420dbb6bae6a11e0248292c9d93da3096856e0f29418f1c80d138b3415667bfb456b089f26621a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_3(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a42348f1bec06f5836fca060661434c0"),
+		nonce:           decodeHexString(c, "2f70f6a2e7d0b436"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "547091ef85b013f3f5dc822a5b3f27f9"),
+			decodeHexString(c, "2ca99ee797f4a9b16788d298bba2d183"),
+		},
+		expected: decodeHexString(c, "4b41ed6281a81d442a8cb03a8145fe78863d25d7ee70e72d4d3afd5168164876a66b5aca318c9c91172305e388e1dac386cbab6d150a3912369c9390086bd744"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_4(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1483b98e08c04012b03f1f6102a28306"),
+		nonce:           decodeHexString(c, "89e67ca1da05dd4f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "30859ecc3025047930b3853ae68abda2"),
+			decodeHexString(c, "f50557f04029286cafb2fcbf1464e4e5"),
+		},
+		expected: decodeHexString(c, "45acf52ff569cc481595880162893b579be40543c56a94b7184bc992d1df378518f93fb4d9755d8658e9722b3479536ba4839a8eee7a655fed884aaf5a556eb7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_5(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "be9fcdd711ce1b0a3c97b1ac1979207d"),
+		nonce:           decodeHexString(c, "a80294b5d659ffb4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b20c04546a0c6a5e6b95637c960bca63"),
+			decodeHexString(c, "6707cc217fb198af852e06db14615805"),
+		},
+		expected: decodeHexString(c, "6b620c76f0b1a4a3d7f0f60a7645811bb79bf18477f85b94f0ee09e0c68b0fdb3e11d8e58a34d24fe36e8b7ea72a26b6cb92d987c581ab48e5fb8fb70f765f5f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_6(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a58eb54d109b514db338fccea28ef2ea"),
+		nonce:           decodeHexString(c, "912d24a1d81de7dc"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "59d459b073526021ec45511256cfb358"),
+			decodeHexString(c, "f79f7e5a2a791a39bb32b6b15fe01461"),
+		},
+		expected: decodeHexString(c, "c126d409c20d5d3d4c79461256f5403d1cc59bcf11a4a616abf0653032e0450a11f32f3816c351912fe8e30084ed34dbcd0a9c95e1c01362ef616dd22a137f72"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_7(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "e0a5d94d0ca95a7b380b999c69d9011c"),
+		nonce:           decodeHexString(c, "47cdc55a1956af8d"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a91684d012dc48830be4cfaee2fc8854"),
+			decodeHexString(c, "a061c2b13bf1006d3ba2f2297f954fb5"),
+		},
+		expected: decodeHexString(c, "e136ea573d1d81ecb7842ec43af0b4b9783f3fe4b1ab9024c62eaef0860e813d5a24f1a5fab74b8f1f661b5039290256d0e5aaa9e0fdab3a189b2d6695893999"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_8(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "918bda9e89727bbd970425c7483ef1af"),
+		nonce:           decodeHexString(c, "fc3beeec380b02c2"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6f483673af64bcd74cfeff3f98b6cd5a"),
+			decodeHexString(c, "15bd5eabba232df5a1b603a2fc1639c0"),
+		},
+		expected: decodeHexString(c, "4385551a3a7dd90d77a765f7cb859d80ab6ac4848e3bd91101b4523234ca0f16c06a4579a97ea51db037fd8b8c4083cdb6f4ed9756f5a4488bb5dfcf7a8f8a9a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_9(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "d8add382d4dc7a1d10d4630317391801"),
+		nonce:           decodeHexString(c, "6fc0b1a3aa2b3adb"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "101fcfd6608075dcbbf2ebe832d96b13"),
+			decodeHexString(c, "632f7a11fba979d2979e417e2ded1d30"),
+		},
+		expected: decodeHexString(c, "a6a15595bbd857bb621504c85f03033ce47b5df86296b80d40d009fe6c5e1ffff0840456990a14f3a1c49c36737b70b62f406fa3c532952fb22efc76009a1b1a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_10(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "d19fa338c7bd5240747bacab70328fb3"),
+		nonce:           decodeHexString(c, "5b428235414283b4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f37c9feb90c96a263f41b1c498d5e075"),
+			decodeHexString(c, "a3d88696fc1a447028423171bad46524"),
+		},
+		expected: decodeHexString(c, "11ee72b481d554f0fe49dc2737466d5f5a6476a2b5b2f93cd60ee8ab1bf7563d3ebc605e44c365e7865bff31c077d176d361a4240627deb28ad568504691f947"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_11(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "c3d82c63014177e62bda82dde9115450"),
+		nonce:           decodeHexString(c, "5e6f3b1c75706f5f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "72a717c66fb26906d6995d3eecc579d9"),
+			decodeHexString(c, "b1b7a9ad3c64355d5d70f03c7b8329b0"),
+		},
+		expected: decodeHexString(c, "34c309f2352709a91f1f1a6afb601466f86dc8022bcbfdee095190a85fe1f0332b8bab32f44249430041cb0cf2c40d9cdd0c0df423e34f2da8d7f7b832945619"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_12(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1c34804679408c0dd1c0b0b2cb4c0c8d"),
+		nonce:           decodeHexString(c, "23e6d5a131740ec9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8b99e4485510e7c4ef3186c75d0f421d"),
+			decodeHexString(c, "cc1ecf023c9beafb63486957327c2bde"),
+		},
+		expected: decodeHexString(c, "7fbf33f05108786fe01997146a27e5946876499a8ba52a714716d982cea23f392d40234d3e00338d1ac8809d43c779424030193bc6123b7067b6a8c2ed179a25"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_13(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "aa70aa9d3c0a77f86838805eef3482ba"),
+		nonce:           decodeHexString(c, "cf7a0f57c7dedf50"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f6d476eae42f02c9ec21981229d0f976"),
+			decodeHexString(c, "1aa41efdf106e5a3e5d976778b8f0c32"),
+		},
+		expected: decodeHexString(c, "84c1c0619f6979e2f4d2abc6333542bf42fd3279142f071dadb26445fb2de51c4fad681dce8918af3ae16419fafa3c5526d8c478599e85ee61a273183605450e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate25_AES128_14(c *C) {
+	s.testCTRGenerate25_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "94c69757c975e53ca944cbe8f7686f85"),
+		nonce:           decodeHexString(c, "6e145cc7d72dec57"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ce08946b04fd8313dcda8cde3b0ff9df"),
+			decodeHexString(c, "9ffc939d305ae586d86a1a147032680b"),
+		},
+		expected: decodeHexString(c, "b1d7b387a9f67b915055e68298e03773a0197556f8d4b7e029520335efdce2acb0d4d4cdae8af8c09fb57a215f2087abb84ec85b12dc3a853d73a4dd114300c5"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate27_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_0(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "707a43072eacb8cea95fb8521ae5160b"),
+		nonce:           decodeHexString(c, "fd621213261630ad"),
+		personalization: decodeHexString(c, "6bf9a72eafe35d583c915c9525747ba0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e3dfd6927c4ae103432eb6196367ecee"),
+			decodeHexString(c, "e18cd504e94027533cf33071ca931b60"),
+		},
+		expected: decodeHexString(c, "ee463cdc78dd253c4466ddc2e35cc4a91af20ad3b3396669cef5221b0a9ccc5dfc723b2fe1e57fa26dd030ad0b6ea14ecb89f91c4bc69382a01d8dfa6f1dff8a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_1(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "3567ac54b903fd5ddc57234c319b1415"),
+		nonce:           decodeHexString(c, "8f75c56a85772192"),
+		personalization: decodeHexString(c, "d1e3ffed85211c408e31db12e85b75db"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cc3884335e19427caf09f01c634b308a"),
+			decodeHexString(c, "f7733d0251ff02afc0e961c1122884fc"),
+		},
+		expected: decodeHexString(c, "28c69bb4987642e5a467938f52a73714d39ad089ee09dabe70d69036178f5998186cc645100b56f98ef45ce35b06f09c2620ba680a5a03d3d95943ed17160fe4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_2(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "41767258e06e501124f3db8be458d3bf"),
+		nonce:           decodeHexString(c, "de8fa0a79f1a7f0c"),
+		personalization: decodeHexString(c, "9dab2f46d22d378608e21fc237e99871"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ea41d133b4f86a35227b76167f51bb5f"),
+			decodeHexString(c, "7161e12c6f65c142baf94f1a09e94e22"),
+		},
+		expected: decodeHexString(c, "b390c9520ead2882692a29593d165c58bc661462112af6d25a571473e61f1cbcd075e3ad1caeeb51cb99284051cea45a1706e984e27c3284fc1e87ab68a6f146"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_3(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "19db2dcdc57df21e55b6564eae47410b"),
+		nonce:           decodeHexString(c, "ebec8ece62d329b6"),
+		personalization: decodeHexString(c, "80baeca82b3ba207b9f3750838bde498"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5d74cdd7bcbe7bc948b8f13efa835ad4"),
+			decodeHexString(c, "17bb7cb91b4811a5e7db26784cbbc2e5"),
+		},
+		expected: decodeHexString(c, "2654d98667f75615fb6c74d5b90b623cccb96249e14e08e88d1cb5e0909326b67767a573e0a4d1df057f2de7a495deaecbeb7e25e3aa82de555908bfe3cc6a85"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_4(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "64d7b42c52643376d8a11b0da5cca5e6"),
+		nonce:           decodeHexString(c, "6feb035f39142514"),
+		personalization: decodeHexString(c, "3f12a6f24001b98c1f24abcfab689508"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fee482b1fea05365aba07bc7c3351c6d"),
+			decodeHexString(c, "af135983ab811391453513491878b5b5"),
+		},
+		expected: decodeHexString(c, "0c21f697f1b00d2283aee4e7b7e10133386ab0abfadb5e14bfe5b452a6d917462a7bd0eda06fa141b1bc3eab4f4773a240be7351e32a1dabddc57bae02d26cd2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_5(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a55a5a0729c39efbc86ce64d9151034e"),
+		nonce:           decodeHexString(c, "10f1155773fbcd3b"),
+		personalization: decodeHexString(c, "6c6f3f778015b2d334922e7a13ead6e6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8410155a9f4d40a3298d5b0f42c0ef46"),
+			decodeHexString(c, "fd911c8bb6ff14e7d76a611addda7211"),
+		},
+		expected: decodeHexString(c, "165f07d14bb1b37bd9e0949e7b0c0dfadd067adf15b66cb396e6444bcdf11bc234b0d59b2317214a9cde72e532f300c9d0907ff59e6212826a920fd92b53adf7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_6(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "53ea1bef7112fdcb15513616ae7e0703"),
+		nonce:           decodeHexString(c, "caac5b2fbf5bd1b8"),
+		personalization: decodeHexString(c, "7904268d846f8141cd783ecba6efc901"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0364aeeaf7424c92c2611f3386fbe38a"),
+			decodeHexString(c, "9c77d680c5f270aefa8a45b3e9355330"),
+		},
+		expected: decodeHexString(c, "e56fa9812923890b9481ee0780ea23b205947e80f3e38f55c22defce6caea84fd9850f2c509c5148e01cd977348cc8b3ccabd3d7515cc2ca95d0bc1348bac5c2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_7(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1faef5935cb82d270813252c77ef3d6c"),
+		nonce:           decodeHexString(c, "75f68a1b658c7277"),
+		personalization: decodeHexString(c, "0815fa388db03a892df4474f19de31bc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9f9223ae3786d38c43e0e92aa1bf5e3f"),
+			decodeHexString(c, "4d9c28cd694e016fafbde3cb3085b8d9"),
+		},
+		expected: decodeHexString(c, "cd693aab02ec80a04bebcfef6604384f48c8eb7d44d691ac35fb11e18183884b9e35d58e62fc567b9a3da40e3aeea783115e8019220903ab559be9834c377758"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_8(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "0b8c5208d9113cbe8a31cf3de143381a"),
+		nonce:           decodeHexString(c, "449ebf57b82aa5cb"),
+		personalization: decodeHexString(c, "7f6001d60c31cf8a904cb318cb70047b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4fe045edbb98160a42635b77796e8a97"),
+			decodeHexString(c, "d8964e5fa816ea83d1a5abbd1568adaa"),
+		},
+		expected: decodeHexString(c, "ab1fbaf154a9072b62c3d6bb9d0148ace4b4cde08d9a712aa29410ab514d03e35db3f491806673041833a2ebebe87055f1f5fb64dd8e408e3b9957d21e66caa2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_9(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ae906d89041545c7ef7071f53eceea52"),
+		nonce:           decodeHexString(c, "1f4b284c36aae3ba"),
+		personalization: decodeHexString(c, "b91998c32183006f7df1c5d71fbac57b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "86475ca2b484b8c6f33b11228bc66505"),
+			decodeHexString(c, "0c34e0eae8fa94c26cb511c79a49833e"),
+		},
+		expected: decodeHexString(c, "89ebf1815e2c333259d6aaa007d19ca5e01e598776ac2af55abf78c11b4ed744b6de875a36f452c27ac4a0e677938b161b2c00eb0659bdf2dc425a89a24affd0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_10(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1d0e60e6801740421d29f65a60606c1b"),
+		nonce:           decodeHexString(c, "370336db0835e91a"),
+		personalization: decodeHexString(c, "7a273b4d99753511fcf34f3b1bb29e16"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d644cb46e01c0712ef9da4ede5ca407c"),
+			decodeHexString(c, "5c990545eeaf59de4d349ae6661f7041"),
+		},
+		expected: decodeHexString(c, "dad503e7209602a86f18d01a2b0515b4b3d4a4c037af7186ecba25dcb781d97311810f98c17c34173061ab78eccbd49185cf5d4fb91dfff4b0b653dc15899229"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_11(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "675885383c6b3b008e884937eda77be8"),
+		nonce:           decodeHexString(c, "b91c7c06878532f2"),
+		personalization: decodeHexString(c, "12ce97b40a1bcde50390e315cd911d53"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1058434cf9b38fd72a140cf0942436e3"),
+			decodeHexString(c, "598bf8014339820966d94be1e2e9c855"),
+		},
+		expected: decodeHexString(c, "45488ca0e2f283f1741bcbf49a79365459075249e1c41777f3e008d8020ee1f598aca0ad26edcd920c8559d0eaf7cc5d5a714437c04581a64c7499e5f0be089c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_12(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "712393a9f4a1b0bbabf4f496e8170adc"),
+		nonce:           decodeHexString(c, "0f590c3239c6cf47"),
+		personalization: decodeHexString(c, "b72b4097a9fb3d45bb062415b6f2dfb1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e27ade7c118656553f06ec20199b5370"),
+			decodeHexString(c, "4eb4fda3ffdad4f9ddafd0d0bfecd444"),
+		},
+		expected: decodeHexString(c, "0449a82a317e22e5a7a6684d08b8f63e02d8b9085d619ab56cde522c8667d5f88b2ea8830329491a5ea828e0a366ae7e84f2cdee698a9241188883be00c533e8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_13(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "576640f976a628b09e98af483b645e56"),
+		nonce:           decodeHexString(c, "822e8a10df06d0fe"),
+		personalization: decodeHexString(c, "6d6a6f68bb381c291f3fa621d6ab64b2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b05f14e41f54338c4415a5b5c8c56199"),
+			decodeHexString(c, "c6847c9ed74c869ac4a56ff2d0956d6b"),
+		},
+		expected: decodeHexString(c, "5c6a7e58eacfa58dca9399a3f9b6cb41d2bc24f672587db229bf2220c2851347d47da1ca0a6a13779605db90d91a61488818d33b2a4ad6740900685f8ec6136f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate27_AES128_14(c *C) {
+	s.testCTRGenerate27_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "696503c84860518784dd4c6c31710f43"),
+		nonce:           decodeHexString(c, "ee52c0a4cd90df1e"),
+		personalization: decodeHexString(c, "9a08d6b480ef3ac200a130878d80d079"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5c5131597bd3ab025ca00579c86ffded"),
+			decodeHexString(c, "a8cc33c851ee11e4701a32197b617623"),
+		},
+		expected: decodeHexString(c, "9afdc454f5c2ce2995fc7ccfb4e8671a4b27dfcb1c02fec607aafc6422657096ce1814101b8a743e2d4a2c4e2e8da257578de7105412f352a4cd14af7db0eb03"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate29_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_0(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8b80936e69c67edb771c28f9b9452124"),
+		nonce:           decodeHexString(c, "7ee2614ead3c128e"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fc35cba97a1e211bc420e8af53f8e13c"),
+			decodeHexString(c, "fba438aaa75a3cd4cd0cce399bfec74a"),
+		},
+		expected: decodeHexString(c, "6721cc1ada5ebc1713f74c759000765652eeb5f3f9c24fb9341b36a369cec1d27ea80d6b73b56047af07138c5a43c99a87753115c471b8587ea65fa2065e3ce0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_1(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "89ce6c76bc41aa32a9c8e3e37d6202ef"),
+		nonce:           decodeHexString(c, "a347f6cb64ed19dd"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c503b122957dcec8d9eb9cc994b8d122"),
+			decodeHexString(c, "3bb2f1197a99588df357c0d1986ac6ed"),
+		},
+		expected: decodeHexString(c, "f0f425b19eb75aea6899fab7612c98a0b5c5c5a3c86107a8c201623f759931909afd63419d1cceb86bd4f16e948aef08476170757bcaf79884f9c36bc77e9ff9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_2(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "bc51678d1f3128657b38849ae9c4bb1e"),
+		nonce:           decodeHexString(c, "dd29d9d83fdb5e09"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d4cd00675cfe227de0cbab6511352289"),
+			decodeHexString(c, "55bb936280ae46b26d66b2f3feb268d8"),
+		},
+		expected: decodeHexString(c, "e58138b6b0232e4d6d9ea8b65bd76965cdbc584cca2e83d4ead936bfb9c79d77dec9424f2cf895011ef1033c619e28d1dba5dd3ced04429c1bd3c03e5d13e2b8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_3(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "065a5d4fdb34b08fd8efc81f996269ab"),
+		nonce:           decodeHexString(c, "d5a6747c7f8eef46"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "72ebd351edc000d8363258a69f2b98cc"),
+			decodeHexString(c, "e5c861213296ea2ad5098f9b4c50647d"),
+		},
+		expected: decodeHexString(c, "a8ea470f17bee5021d49c84b721e0b67470d3bc4f98fac68c67442979d4fbccbbcd0477c1e7493126cbe169b84446f5fcf666786775d19f35c6152529a41de6d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_4(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1248ed4bf606cc658b641b7958597f5a"),
+		nonce:           decodeHexString(c, "16c88dea4e753d50"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fc67e763413202e04c55697eb7548c56"),
+			decodeHexString(c, "21e0e38665ecf60fa9730bdf7e22cc7f"),
+		},
+		expected: decodeHexString(c, "63d9b50dd69ea9dac75f48ae012fcec27c2e1dcfc2ac2e59244af4a6ce9a73c4d8bde6570d85ee15b08a48ef473d12db871f6df1d81441613dcc1efb2018f0c3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_5(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "6fa629d03cb4eb534efa03334d3b1d02"),
+		nonce:           decodeHexString(c, "d952153e79df538f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2e5c554578a069f5e4959dcb351a294d"),
+			decodeHexString(c, "2d26aeaad9cbf253add8684d29b1a633"),
+		},
+		expected: decodeHexString(c, "f58246313284990298864a89bfe7be1970c033dc1664ad7f5cd9b812f5b7e90f69a49cdfbee0e279f7df1a8ed79eca6e680d740c0f2ae12f87798acc6d73d42f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_6(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "c58eeb2e57f295d7af1a3767935b85eb"),
+		nonce:           decodeHexString(c, "98612b6ca02f60e4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "10e89c271e2b283d69b04abf6c54b1e1"),
+			decodeHexString(c, "207950c28b26ec16c4f28121607f4a5a"),
+		},
+		expected: decodeHexString(c, "28eff603ff0dc839f88f844733b275bc6fda6d4546ee26034f51f84ce430b073c3da8abfe82b5313ba2e0f60045b8096b9cf31424863e06f72eff1baa4b25270"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_7(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8a345b5a5eb7d7aa700bff266125ede1"),
+		nonce:           decodeHexString(c, "00b29637278da457"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "44534b92af038171b67b70f4e1d5e7f5"),
+			decodeHexString(c, "53147660c0fde5f9893474f03884ab14"),
+		},
+		expected: decodeHexString(c, "a6a7a56fc32c3d3c3306dd65109ff8d68031193bbf5b38380e3825db7bef7294051416263795f334d1f87054e97dbb52dd244d527a6ffce086d1ad177ba8fb81"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_8(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "fe504e06895d340890509f398fe70832"),
+		nonce:           decodeHexString(c, "3b3d94b6948f7401"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "642003181f791cb5bacef723c96ce262"),
+			decodeHexString(c, "345e8d29d5efddc8ab37838b1891bcd0"),
+		},
+		expected: decodeHexString(c, "45304099145b8e3da800a92e0f5915c8981fb7706a1df0a6c0b2ad5435da19ced3acdfd5832795013afa5ff21ff3326ada7d577817f6b94eb35f33623db47176"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_9(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "e0227de14d5bc6ade2a014ee430151b4"),
+		nonce:           decodeHexString(c, "1537f85616758753"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "87eefef0e0cfd90dd26d483379787c7f"),
+			decodeHexString(c, "74d2fff6f29f892e66a9f80b2a5d9d20"),
+		},
+		expected: decodeHexString(c, "dde086cec0add31fb9553d56cc2c6b7c022d8c87ff5499fa78a68eeb051cdbf899673b4ed76fe867b79ecf6fc1d7c6f8f597013139d528d348ca3bee9605dd80"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_10(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "44b7282f951c591a7a3d9ff6960f20b9"),
+		nonce:           decodeHexString(c, "b77ebe26990cbe8c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9000587bb18d201ecfd56f30dba483d2"),
+			decodeHexString(c, "245523060b0af3e575b1480aa6d8a33b"),
+		},
+		expected: decodeHexString(c, "9f25674ac085a7a487e7d72084d5d3c0fbd7d41870f0f766d613015996052ebfc6f62e4cf389af85cf125d9d99c649d4e8755079a6817a9e81445d1b994d2961"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_11(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "745ca16ebc9e1a58da810278885dff33"),
+		nonce:           decodeHexString(c, "7e11f949862cbcc9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4b898ebdd32142627815be1035435696"),
+			decodeHexString(c, "330b0ce287842d3d719a0ce415363b77"),
+		},
+		expected: decodeHexString(c, "9c6dd763888065541b1a380cf4f459839fb4f1ef4f7817286be45033957f79d1429cfefed1abd6228b26747e69ec9b1a027b3a0b9a28487e954dda06b7eeb454"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_12(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "1e546feebaf0feba3a07c635e6235bfb"),
+		nonce:           decodeHexString(c, "1788d9eea444ad7b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5199d4aa5930220c27342e1c0b99464f"),
+			decodeHexString(c, "16dd520f009329ed7be14d25e5c79112"),
+		},
+		expected: decodeHexString(c, "34fa78306c9efb912ee78fb98a03546d16c1cc9bc3b67a04f2a8e6fb262414bcf3cc51d3cf3a1a304809f186bd74f209b24286f7717667cc5660d3ec732fb0d3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_13(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "de1fcaee6329e9ac06a6dc18a18d147d"),
+		nonce:           decodeHexString(c, "e10ea548cc3773ab"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5cddd4fd07b6ac3e96b13339a75f56f9"),
+			decodeHexString(c, "454714bebf9603e1cfef7b8038374899"),
+		},
+		expected: decodeHexString(c, "5e3483125835243048a510184f086487e9b02fc0ca60fb46416fb0ccc13e45081da59691e32678fcb6aabef585fb492b194e06171a8d17af8556a36bf4931ff5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate29_AES128_14(c *C) {
+	s.testCTRGenerate29_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8b529507bc2e8f711934adc88c6530a3"),
+		nonce:           decodeHexString(c, "7215956b7c574e71"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1adb1ef63347b21e33518b962f6db898"),
+			decodeHexString(c, "d5c69f42f36ea2249842b6fc26ac54fe"),
+		},
+		expected: decodeHexString(c, "c374bdd62cb1e42e648403843b8c06c0b305f945685f72d1bc2e428c19df452018ddea81ebe5b15fad3be4eb17fa2d2cf57836dd080970f716c0b22f7263414a"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate31_AES128(c *C, data *testData) {
+	s.testCTRGenerate(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_0(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "71ba029a7a92391b3f294f2fbf5727ab"),
+		nonce:           decodeHexString(c, "f0e912788f9827ff"),
+		personalization: decodeHexString(c, "23f36980da4016642c810da2990aa25e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "59ab41b24ee8e271e253c6cc40487cb5"),
+			decodeHexString(c, "9164f02860773e3b96d85b3738385066"),
+		},
+		expected: decodeHexString(c, "de1b8a2595892354da47b4eaaf9ddcec64a9610117b05e40d07660a80bcf825eefdbd28e07d59681f9e0037bdb725fe6ce846d824b3b34c2c21a48f8895f9f5e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_1(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "677394f03eacb5a137515fcd3ea2bbc7"),
+		nonce:           decodeHexString(c, "9a5c1cea26efbf76"),
+		personalization: decodeHexString(c, "dd73b18eee6294349aa6456daa77d24f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "eb7019826db32717a5735eb40773ea56"),
+			decodeHexString(c, "b62de2b4aa8d97f526ddba4409f5aa26"),
+		},
+		expected: decodeHexString(c, "2222a6bb0ffe14d2f789e64dcdf47851a6c3a6e1d0837d8b511aa2f56a6d08534c97f4b12a77447db20409d327fc088162c0f2c59fe47e8c92ae5dcdd738c768"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_2(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "3f51f6ccf22479ed891b891fc4c6b551"),
+		nonce:           decodeHexString(c, "19e0754f7bfa0cef"),
+		personalization: decodeHexString(c, "402a1dab450ea9049738782a93347aff"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "52c90f571c8c63f0dcdbd4e6c9653478"),
+			decodeHexString(c, "8be63b5ef212694edbc2c8dec9a0587b"),
+		},
+		expected: decodeHexString(c, "1abfe2d72193b6e3d9be85107ece8fea5d229568568c93eb5eaed463bf2b79cfdbd047402ff4e42234c4e3e150c1f0e82400f6a59eebd092ee73adf1ffca6494"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_3(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "5a01b638311a296bfe1f6e180f243d5b"),
+		nonce:           decodeHexString(c, "16bb4e36fd04b05b"),
+		personalization: decodeHexString(c, "d5440a6fa4d345cb84d56decaa3dbd18"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bd3e11dbb9f40a1351c8bf7bd894ad20"),
+			decodeHexString(c, "e04a83a5187515104aa1e7f434ff4336"),
+		},
+		expected: decodeHexString(c, "2728fcc1fea7fe635ddfed8bb3f7ca29e1cbd8516a2b5eabb7d091e6e7f2046a8077ef6d1a90165f189d07a897cdfc06882adb781be589e0e5eb2dc97be6546b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_4(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "97e415b3ca110a809ea600a13e47aa04"),
+		nonce:           decodeHexString(c, "126e16dc5722a449"),
+		personalization: decodeHexString(c, "a9be38e3011986b904717193ec4a7d4c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1968699221eb8b5ed023a5d2d2d81256"),
+			decodeHexString(c, "4b5e1bde38b2a9793b166d86816ed231"),
+		},
+		expected: decodeHexString(c, "4be98989df2fe6687e5088e50698507d91061a8d6eb95d6627d2b857253f053c99ee7984a498de4df3124442856f18e98e6641f152cd129bd04e99710930c3e1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_5(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "b6c4cd96f7fde83eb571229b537acf5a"),
+		nonce:           decodeHexString(c, "4c4e0aacb5c528e7"),
+		personalization: decodeHexString(c, "5ce1094d0d307b41db9bf26da41db100"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "98047ee987637e4584fe7fe2869c845d"),
+			decodeHexString(c, "177e3c29d4faf043077fbefe0b994b91"),
+		},
+		expected: decodeHexString(c, "5eaf013fd3775a2d3e97166d23153a00f18644963e69cb962a7bd2c30af9bd6a29d4bc70930a929b9252d808db410c664123bd69c1d0c1d4ba3c7d8ff7ae00f0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_6(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "2d1b8061d7d583f83be553c4837212a0"),
+		nonce:           decodeHexString(c, "62a1fa745362bace"),
+		personalization: decodeHexString(c, "4d976add18d5e2484f67f7c84cc68b52"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5764de5db97e223c044a833fa42cf629"),
+			decodeHexString(c, "deef8d581f6e4f808992fd20c06e102d"),
+		},
+		expected: decodeHexString(c, "acb78f273350d459c79809d89b402825bb00e38abd5ec12feadcdef6114684b6fcb0e176cbe465910fc2848f0a708844794c5eeafeada7563c38c3ee63c97ef9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_7(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ef30fd995ff0ef44cce6077bb22de699"),
+		nonce:           decodeHexString(c, "85c7d6054a577622"),
+		personalization: decodeHexString(c, "5d59b3f0250060e22002adf706486d85"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "794681f75df9c988303f751fb7e7fba9"),
+			decodeHexString(c, "7b1374c8472537fa3111eb44e52afa23"),
+		},
+		expected: decodeHexString(c, "b04950f1a35752c067bce8357635f470d10b3bae47466fd1166f9ffaefbd324b2653c7f30ee4848673d7041865d9954512589492989a00ea4da1dd289e8717c3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_8(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "ee4bde4f712dc9fc1f2c01f1c6086f35"),
+		nonce:           decodeHexString(c, "f6837cfe53ec4874"),
+		personalization: decodeHexString(c, "fdb8f64d99bd717eee3d89353b73c9c1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "09e5ba3b23895c5dff89382d5e91700d"),
+			decodeHexString(c, "eb1a98de8962bbc4cb75cf0bf0f8dfa4"),
+		},
+		expected: decodeHexString(c, "aacdee0f3d1f955f896d5a5a2530fd809a202c921d90a9cf593e03934e07c392cc5554f59921b40cc003fc2682caef9e6e61ee4abf45148e5ff3ff65871b0d81"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_9(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "a6aa945ebe192998be8e247db99ce7d0"),
+		nonce:           decodeHexString(c, "7dff26e97a0a8dba"),
+		personalization: decodeHexString(c, "4b6ccfac6c47fd6564bcfd94fe9eb28d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "07837053d24cd0f4f4327e97d29d6795"),
+			decodeHexString(c, "3b172ddc8d383b98d408394c0ba152c1"),
+		},
+		expected: decodeHexString(c, "d90aa422a8d2b86e1f09de29dd16d4605098a45aeabe69c6bc8ae0c8f01b7cc73f8850ec0c47d616cb6ccab77f22079938ed11b48fcf3cf46a3f642f05aeb8b7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_10(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "7eb50f532b0076528e2d1f266b381406"),
+		nonce:           decodeHexString(c, "2a5e92e8fbf0e9ee"),
+		personalization: decodeHexString(c, "7ecbfd2298872a7934e4ed61a9f004cd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "179fa5d2eb90d41548192cc74498bd42"),
+			decodeHexString(c, "92dc9d60d2e36d4bfb9790783d1c5819"),
+		},
+		expected: decodeHexString(c, "9a171b5048baf1375c1407a8dc1c8eda532df552967706884e5fe3d46786077448f28f89b38eb764df7e0e3b401aed3a2306fa2bede382aae108e16ab485691e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_11(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "7d3340a8b1e15171ee3403cc19d3fea9"),
+		nonce:           decodeHexString(c, "fde697acc7e72b75"),
+		personalization: decodeHexString(c, "a128797179c5cad6a9b476ff99f9828f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2dfa3085fa023b5361dba79d407738bc"),
+			decodeHexString(c, "aef53af3be8941e7d2713c712841dc68"),
+		},
+		expected: decodeHexString(c, "c1f725b290ed1310dd3f39e99c7a65b801b4742f5066b3c71bb46f3de74dd2caaea40821174f676722db38feda5d1096c79ad1eabeff78def0847a2423bb4602"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_12(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "0571d41f98b71ead415fcb97fd05a1f1"),
+		nonce:           decodeHexString(c, "4216182c094c4b14"),
+		personalization: decodeHexString(c, "6bed5cc72660f7fd4c32abe5cb1aefed"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b198973f689c37eb6376a088a7c73e97"),
+			decodeHexString(c, "dff3a3b0724302f83b854f2fa8ec3496"),
+		},
+		expected: decodeHexString(c, "667ddb87079b3949030f41ff91b2ec0a598ab2d55c99d017e4fc79e94f15b410cc2970ff017482b29eef2c250a09128a18605e0fa14acce37b89c438c8213194"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_13(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "8ee3edc1c64ea7d6f0bab9731e5d1762"),
+		nonce:           decodeHexString(c, "92a14226087afafb"),
+		personalization: decodeHexString(c, "2a2404bef6f7113417df0b1854d8473d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a278e8a50bccd612974d026edef7501c"),
+			decodeHexString(c, "e748f5e2f98b488e74b0bbd559b5babc"),
+		},
+		expected: decodeHexString(c, "81ecf8b7b07c64ced1a49b213354995a7bf168d38a830b1570414f5a2015499e09aff3bf583719886fe99d00e6d9eb9a4fde29d8d9788dd6ffe209839a739cd2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate31_AES128_14(c *C) {
+	s.testCTRGenerate31_AES128(c, &testData{
+		entropyInput:    decodeHexString(c, "0618c2884914712226ad4e9580c09523"),
+		nonce:           decodeHexString(c, "6ebc4d5db4767f5f"),
+		personalization: decodeHexString(c, "7a8250a3bcbd8154c5058b551cf22036"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "30260532b56c0f8ede9b725c32208f31"),
+			decodeHexString(c, "1e90dc4f67c1cb2da12d10a0b0fbb626"),
+		},
+		expected: decodeHexString(c, "4993575880d00145c1f967db25ccc8f34cf0c62acccbcfa0e72c89eacf9fbe56145074e4d47f2b7674f4b0e07ee3b5104bf7ccfed8001d6711c66fda9444fb8a"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate33_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_0(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "89d32f3de167debedfc143e4da789a5f83312a9d420c29d4"),
+		nonce:           decodeHexString(c, "9ae3bab2d965dbe996a6c4c0de280501"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d5165fbf8850e2ecfb4687af79dc62361e7557707051a13680471ee129f284f9"),
+			decodeHexString(c, "852256de3479dc86a3b4d404c2647b74f5f8a1c01b681f1d8efdfedc54c10c07"),
+		},
+		expected: decodeHexString(c, "b0397eda1daf4544104f730401cbd1be29989cd28797de2c13cdbf184f86c6378f8dfa394e08d9a71de1f1633b5b28363df21659ce58b12592e8ee4f55cb81ac"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_1(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "ad3b6fa3d632a42f8c580b59faf882c0338c5bb044b88f37"),
+		nonce:           decodeHexString(c, "f99966db52a2f72711b5af10eff42fef"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bee5974c34302aeefe31c7325987c158df8038a237ef9ecbb8fe74fefbb3e229"),
+			decodeHexString(c, "47b9bd9babc415afaaedbb8ac9ebf02eb581d1eb5fb0b7d43455848d66ceb53b"),
+		},
+		expected: decodeHexString(c, "75922a7b1933f4bec275c150e2f9893714cba119c5df7dc2cfaa9618f1eba54d68d558e976ce292e4b9f8306f1d1755978041224748006bd5712310fd085afa0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_2(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "16d399b526a83766b5f935e4c12341981724cd872425d859"),
+		nonce:           decodeHexString(c, "c0f38354ae696835f9c856716f186e4d"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "56943f5ef7eea66af2ec607fcfa2bd7669899b6ece4cabac8d6e7a0868be422b"),
+			decodeHexString(c, "2f7e746e2d05cd1e523339926e3e96568f5d231b80c268f44b1df962229e5b27"),
+		},
+		expected: decodeHexString(c, "0bd1c41c30284fada09eb2447d5638a7a0b73d99c651edc5b8aa15d4e9814048d79c52382baa203d3f7278f4864d18366566248006587cf3f90271c48c493d5d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_3(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "8d2bcb66bd17e8b2e36a2a5fd1c1a0861fe34e1cb8f2219b"),
+		nonce:           decodeHexString(c, "868c2babe969d7776f92929795a91eb7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4618366b0d51f9095fd867fa7a40e7736294a92fdcc5d0ecf293042566683448"),
+			decodeHexString(c, "c45c218fc648de1bfbaaa63be027afa08cde5c7d84a629db9b54a20cf64c5a75"),
+		},
+		expected: decodeHexString(c, "b85b85cff71851ce211d4eb2dc569ac2d43ccf52ff71cc0090ed59c87e785061b99f352e398f61d23dc0a17e4476da39c31f7b81738caa61475317363c205aba"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_4(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "f3ca9ee324cb0111d5ec081edf77d3fa0b77718a87fbf4f5"),
+		nonce:           decodeHexString(c, "98d12bbe87e476037a5b244735d2102a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "19069b8fb8148ac00cf607cfce76a954f3129c7975196b8b6128a300ce0dc0a7"),
+			decodeHexString(c, "4f078daabd377680eae1823074ab0d40a693d68121bba429debdfe0f883703dd"),
+		},
+		expected: decodeHexString(c, "6728472ebc52a875b1a163211c2b771bdca99e03f0de54a6f4a141a7691d6f9679f963c2fa377f0ae471ecc470768818ab4e627711a0f988ff973e4bce501b69"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_5(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "5447868cd9252423f03ca3bd8b0a454335d32ea54fbd3edb"),
+		nonce:           decodeHexString(c, "64f2de765d2028a8ba06e6d204ac4bc4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "191a39d630d66ca946720aefe80c94bfdd3e24dda3e37c414a93ebb784d3e7c4"),
+			decodeHexString(c, "8b664ba74fd0bb5006edd337a1c4dbbfe773902e084c558ba145e8f8ca345487"),
+		},
+		expected: decodeHexString(c, "ce5f7a6968f3cf5fb01e6208a1651720fe1e90764dea46504e106f13ebfff3d979072b6f5459069a773003e3eca4ee3b730aebfe957c0e68774ddcb971bf4603"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_6(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e8d93d86c3e98de64f4080bb6452055cc7db86d25bb3a923"),
+		nonce:           decodeHexString(c, "a5447f9115891d483037ad4dd4c22a8a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "56c6cea01972737421a07cb20c79b8f76b32a9e9fbbbe46dd71f02c72d1e450a"),
+			decodeHexString(c, "9642c82159c36a48a252ccfee61c5c1ced6d3a04099d98f9dbe534877b80a98f"),
+		},
+		expected: decodeHexString(c, "187f40489f22f35583e75821d69f369d1259352171c569f2d8e9a15097876ce5261b4174530469829ba2c00145cbf4d2a1205e911c2c32d33b5d6706409772d2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_7(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "59b9b4df1bb4f778ea1a1bfc41255cc325d6bf4ffc428ce1"),
+		nonce:           decodeHexString(c, "e0fb72dd71ff3c2e072f27d657260da2"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ccfb64f43f84f03cd98e1aa3566ca0c9b7438204c8e65a9cb8227e2011b9a716"),
+			decodeHexString(c, "3064a31a84c4eaa6980e6d412cd4f419114bf0e8b227456a91da0fc0f7dcb75f"),
+		},
+		expected: decodeHexString(c, "7d48836ed657231f62627ba50897ca8f379f68d86fabe26caa7b4441cd2b6c2ad1daf4eabc2c34b3963400d2361174ee22952d6a28e89937b231c9bc228a78c5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_8(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0d03ee60bca723999d49589eb6e4042ff97b22433c812242"),
+		nonce:           decodeHexString(c, "8a2f6fc8d4c54bf6852b902bcf2c41ec"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cb269441035e071101ac8efb4eb7f9f1de2184771ec0eac62d0692e67bdf1fae"),
+			decodeHexString(c, "905e3d9c1800e1366bc749a60d21ce518fdef2a36f880c26c1528f12dffb9176"),
+		},
+		expected: decodeHexString(c, "a4cb87de76b2eb39599f68402293cee9c61dc9dc1257789964a2acf0c32f61c907294bdeca88b05daae0754d21f0c2b75697d86142374f9676db34753371e618"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_9(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "b95d8b266acccd6cbac0c061ec32a1ea711ffec8006bc7cc"),
+		nonce:           decodeHexString(c, "bfa08402c0c6b87deca2246d81f67f58"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "72ffd4a183990dac6bc7a94647142759bf881cc0b3178f60e0e2cbc33379f7ad"),
+			decodeHexString(c, "2e9fe4d1af62b15f8535e198aad79361e94616418ed2d801e70fad9e0e9ca5b8"),
+		},
+		expected: decodeHexString(c, "1b0d15fb4fcdca1497dcfe60e7d82bd0401b1623366a71cf8fa5754f878e20d8f2545bc3d41e7973ae3290506ba2a976b83b7b98c766d8ec0c264be287ee63f5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_10(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6d30465837a61e49dac0fc8448de3afa2e22e094286a5aed"),
+		nonce:           decodeHexString(c, "9418c02870ef4cd119ddb673ee699dde"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac322ecfff1f7326a4f4cb33c176fe831c0ddf373769fde61a42426fe99ea849"),
+			decodeHexString(c, "5b7052491c3f536ecb91fd04380f9f0380a415dcde601a670a1ee6b8f22e96da"),
+		},
+		expected: decodeHexString(c, "dca3fdaef8bfb2d09bb906abcb21818aa66a064e7118ff3dac5566ca991ebb37338241e0c829768f715e4c2f1157eb0ac473bad86b0513b64854f3ed8da48328"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_11(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "c683213a47375e2975d3004bcd6fb4aab65531c752931d6b"),
+		nonce:           decodeHexString(c, "11f278b8644f52a0a4074164097de458"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "37c0655ea6c20ec43c58855be314afde29324a8186ae9c08c8ad4d8570081a72"),
+			decodeHexString(c, "c39bc560c71aa5cdf2a0eca0ffa4fb562cab1379bc9043259ef8934436142323"),
+		},
+		expected: decodeHexString(c, "7af8cdc705cb06c408f789b5a0d677e66fb32bc7a578c4cd6de34202f17a88d91a238574666449c4059f2bdf593557fb78d07795371646f03cf385f3058b1d78"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_12(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "8bd5a59522837767fbc783caa9a7feec68df135616e98878"),
+		nonce:           decodeHexString(c, "14aaa414ade48e33ac5b443b94a9f1ac"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "233b1e2c230ceabaf88ec1ba30efb72e35cbf99fdc9259514019bc96f6eecbde"),
+			decodeHexString(c, "f8b19922b8896175ada11524b98fffc1159f1456dd7aa657b7547f0bf9e4fde4"),
+		},
+		expected: decodeHexString(c, "494a5d31a58a50f506825279b248835914081ddccd638067df0e2d3c62008a4f108c819159000bc0d0c7515dbe488c3dc6ca3f2878ca5896b13350985ed7602d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_13(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "97fef1c36e3cab72d5043e416cb15706d6d76ec5016451e2"),
+		nonce:           decodeHexString(c, "aa865762b80165e239ed7951b056c770"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "418907a25332b9d242bb18775fdcb0b4f2ec9811750e051f96e3d6d252eb87de"),
+			decodeHexString(c, "574b64279394234fe59a14cbc9404a0bc1469e6d181eeb4e7414a4a6de0bab7d"),
+		},
+		expected: decodeHexString(c, "8c6b475bacf933c0f7a07c88a528feefc952b9553105b20a17e3bad3939e94320fa8e280fc54b485d4cfe794081c054ee8e7c24c65f6bb95d88272874d2a042f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate33_AES192_14(c *C) {
+	s.testCTRGenerate33_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "5432a340205625c20afdd42ecd54e8d6ef80b29c73f62dba"),
+		nonce:           decodeHexString(c, "b8fb4440d8955499cdad97b9b0e33f63"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9a535410626b872da5064319db921d9fa015a67548f12e8af2b155130ab632d0"),
+			decodeHexString(c, "3a12519f497a8c3af0f35fdfe4aa47fef039563c038c52aa4ee4cecd055f1bb6"),
+		},
+		expected: decodeHexString(c, "5701e2ee574684c855d403e5a61b132c211e646ff5ed41cfcb81f79bdd867ef5cda7f0ba5799f93c07f4b5588c34d433df9335010fb6011091177f5e0a7cede7"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate35_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_0(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d5973b5c9105cbf67e978f419924790d83023e86a8b5dd6b"),
+		nonce:           decodeHexString(c, "358af1ae9a842c6e03f88dfa2a311161"),
+		personalization: decodeHexString(c, "294d7d35f53a5d7ddef5ca4100f3547112c93e41251257dc0a19b6dfaa4a60a4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0805f31446c51d5d9d27b7cbb16e840b9e8b0dfe6fb4b69792bc8de9e3bd6d92"),
+			decodeHexString(c, "934d7fd5e716376342607123ea113d6b20170ccda53fc86541407a156cd94904"),
+		},
+		expected: decodeHexString(c, "cb95459d1735cb9bce8a75bf097a099c9f7c70bad43e3e431f2d3829d7ca9d0617b9a99337af5248d4741cb5a60dff6f8c5221e23f3cb524a94ffdd2190bfb3b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_1(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "a04499cc2b3620a47ee66de9ce6510033940958539f754fb"),
+		nonce:           decodeHexString(c, "faa492b5eeb620e78fb6375c620f495c"),
+		personalization: decodeHexString(c, "318a01b475601191438ccf44fed9c0c6af5f4415c2668b2d39f959ef6fa2e2ee"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f1b92d7fb126799f080264bbd2eff39bd755b8d1cbb87963a771e7ac5494c154"),
+			decodeHexString(c, "ab7975e342c260f4013856e59d7677e7071821e42dcb0b147dcc74074832061c"),
+		},
+		expected: decodeHexString(c, "647a3e82be7173e45782d42ee0bc52ffefc3072ecab3060ae60631b8486289230c00b3e9641f88d3427fbfb150fd14dcf8f2c8db14c71545788951efa074b227"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_2(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "5682914c36776945e023f98e14171725a2c0204de799a36f"),
+		nonce:           decodeHexString(c, "6d6f71cfef957ff475583315125ead6b"),
+		personalization: decodeHexString(c, "557fde94d41c13b24829b8fd424124825aacb14094e5e7d4f8deea7db2ac2940"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4c64c5a5c1c6914b61faf264924c10debc2f367ac4cb1e012488322fb19d69a8"),
+			decodeHexString(c, "7193e61bb3e75d48e4a3f90b108e07074c35390693cd0a4cd3bb6cd246beb740"),
+		},
+		expected: decodeHexString(c, "7aed931ee17c7b05533b52f6b3dfc97688f6f3b39744eded73dde27e034afb1801b3d1160dba797559fd721610f6d62f6d0c48a67403075f6c2450e6246a4d66"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_3(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "199cee8a881888166cb52cf68fde780f3255b13d370b689a"),
+		nonce:           decodeHexString(c, "848016aa71571e1c63f3174bf93587c9"),
+		personalization: decodeHexString(c, "66212f4c19b5cdf4a6594fd4c4f7b7837230de71b98d506d46deceacb5f0c69c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5934b3958ebe2154c246cea55df231e41a867e8844129fd6c7de6c9cf8d4d7b8"),
+			decodeHexString(c, "0b4a32bab842c4d24999e9ac6bb1024b7673086895e89a7072a59c8c75fe3e0a"),
+		},
+		expected: decodeHexString(c, "8450410e9a7ff9a104d6d0ecd2315ea540f54cd88d21ac6d7cae8a86181dcb53f1883ee1dce8a2862261620859334fde9ce2deaf1b58d4d4d01dbdfee7732e8e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_4(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "2ff3c6290f5140b6c4968afe0c6ac18e5574c71173292e54"),
+		nonce:           decodeHexString(c, "93dd9dfdb45f96b8059cb3fdc125a3b5"),
+		personalization: decodeHexString(c, "dbf6837058a3741abf3ad06297c19b81f4c46adf7d46c58bbbce5bcf296400d5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "329d4fe2736616b065287f3cad216342b9be26e8f2c594645e7e278807097d5c"),
+			decodeHexString(c, "8a1e258c3a3fb9b0314562a320c0c11e6f8137e291a79ed568489ad0560c7c28"),
+		},
+		expected: decodeHexString(c, "281cd762f10ddd29e0ab11cf79494a7eb592dd84dce65804286eea864d8b8544282d3fe80d76fe55f7fc66d0971b8dcb84a3f25d85972133e074cdf1e60bf069"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_5(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "15b696ecc0149b7805bdbeaa65b9ea9b76e76dd68bb9ba5f"),
+		nonce:           decodeHexString(c, "ee4174e087f3e74a3fd2fc403559209c"),
+		personalization: decodeHexString(c, "a42dd88cdba25d889dbcd9c7b7a7bcfe25ad1a81a1761e24e046cad47591025c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a373c67bf7a8789870768af6015a133936821d97cfe1dc49731b145f6666dfe3"),
+			decodeHexString(c, "7b93dd2855ff93ec1d194c8671a6259939bc4a572994ae3d52a844117490533a"),
+		},
+		expected: decodeHexString(c, "78ca84fe42b16eab52888d540c50e521615c5f4dff0456cb808d10f666d08dd19c68789be1d9d855ff995deb8e0261e8c44b1248b0b2dec2599d8e779d24c839"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_6(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "ddc6e50ff9083fedf4a5d56fd9238a2565f50184df283a78"),
+		nonce:           decodeHexString(c, "a3060e1732f1b1defc8e5f39e012e303"),
+		personalization: decodeHexString(c, "8698835795804ba3465f3ecdd4ace047506cb15dd9c8728f075fcea5033fa0d8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b1011f40cf331e33d24ffe86178f70e6c7d4d2b443b64fbd5c979b94193cac60"),
+			decodeHexString(c, "3a72e1e6636404be69f853beb0633d5def03b16b4b205a02384c26951ca0f220"),
+		},
+		expected: decodeHexString(c, "7dbeace1a90a2843c3de36f3bbac6e9140a938ced630416eb1e1638708ec12e480da65e00c8294151ea4b9a1d5b25975d7940d57c8de72e20382996ff4dc64c2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_7(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "dde27018cdea027b273a83ab28f8182293e5373291641262"),
+		nonce:           decodeHexString(c, "e8810e24fb96ba6768b65747bb2793b8"),
+		personalization: decodeHexString(c, "d8ada062fb8a567f4215eb1ff87a2cd6fe964d7bebcc9cf4ecc531be21ad478f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "eea0c651afae1cca7d6b4aef4c1e0c22194c70a63fe474a8b5fcbd26a5696c3c"),
+			decodeHexString(c, "71eee70d6b57854da68789d992e4132485a9aacc3fb8faabc908edda653bf740"),
+		},
+		expected: decodeHexString(c, "ce2f8c2accc4c45f183bfebecf1add4f32ed360d356efb906315c043d150660a35b5d0350cb053d458167eacf35cc7012bdd1ef70818deddf38b4e8557bcc03e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_8(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "49b2ae2b2914d688538bb29193ae6378e0e8b941dd3e3152"),
+		nonce:           decodeHexString(c, "279f5f1832ccd10d0851404527ed25fc"),
+		personalization: decodeHexString(c, "ee3a40ee4322bab168235923b52b80a3c711cd7ad7618e76400e46f153a10722"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ca3e55a7e1a51d7da3379a2cbc3162fee705ffc8e2bb7294e9f2d9c29fe8b386"),
+			decodeHexString(c, "09acba8e05593994248d4066b3d770f41b47ab8244968bb626bdfb6db141760f"),
+		},
+		expected: decodeHexString(c, "af2eb73e49b13c1c426295fa2643de08b192ac24079b71c8c175509644937f222dfbd6c77dd25ea3eafef71da2aa7bdb68ab4c8e97bdeb7c706d99b5b67c6f9d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_9(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e8c538ae11619896bd347d679007661ace7e5192b8391942"),
+		nonce:           decodeHexString(c, "f82628a05a8dfc0668f7f754b171d5db"),
+		personalization: decodeHexString(c, "2c2a7ec31564a34e9cfb9f0f42d8bab6812b4ade263af4f00229e6eb991e2592"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8d9e1824d27737afc411b24be65eac50480fce4afbf7317a24b04e2467206f54"),
+			decodeHexString(c, "3f026a1a2bb8d059c495b0d4a4f9732d94aaf15de42bf34412d7270aafca099b"),
+		},
+		expected: decodeHexString(c, "b396a8569388932a6fd28cab6cfb5337571c1c91b8def9835a2dcf23536693b6a275abb4d4a3a2a1f492b6fe5bce7630de03994ef234d4255ea338a13afb8e6d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_10(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9544ea65205283f366824c55602178eb82135d0157788f86"),
+		nonce:           decodeHexString(c, "5e0379adec2387fcdbc64d0f9e23ccb5"),
+		personalization: decodeHexString(c, "be016b1ef274c72c74970c7f16ff9f6dd579ad736ab802385bb7c5eef7086a95"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aabfe48576089e44431ae894cc316ee96bf7a49189c7e42abcca27878b30ef24"),
+			decodeHexString(c, "b529e2d37b0808b1c925344019dddd3eea22776838a06e677fff67127bb68a6d"),
+		},
+		expected: decodeHexString(c, "ab1a41841330df7e734a57be208171950fa8e64f4a2e26c72a10b33df9a77bb24284bfa7220bf8ef035e4d15842be55103ec4743e2a95badd9484b360d22e2db"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_11(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "25ec0742275e6fd6d309a02699b7f21aa18362ea683ba732"),
+		nonce:           decodeHexString(c, "5424e55026f028369fd96f57509bfe92"),
+		personalization: decodeHexString(c, "efed651e627963c43fbf164bd7b9b3bcf18cb78ae97dc48a85d5212ac71a11fc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "26b0f1025f318314b55fc1a4dd325513c453b66d0b21293f775ccd7d3b9f4343"),
+			decodeHexString(c, "2f94d7de2ce25d124d9dc68b39f9076ecd2ff14fe4e1d5c17c6e4df2257fc1de"),
+		},
+		expected: decodeHexString(c, "f9fd576104d7f68a2af7d6a63f8244b063e287787d8c93f3167eed9f8f8320c861cd8ccb5124d32ac75c576daac3082b3f5f7550640b779e6fbeb7a3f89fcb11"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_12(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "b72bc2e75e227a5fabc267c77fc7f99c81d2e4e41efc31b0"),
+		nonce:           decodeHexString(c, "3e286039ed899f2bdc7025a7d30712dc"),
+		personalization: decodeHexString(c, "3590153ef3b580516a0aae3e9cc7e38c3ee6f1703bf77a3a6d8fdb58400cf120"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7d62a4687d5c11d37c3a86474a53228ca5307ec5801dc24953a01288de868bdb"),
+			decodeHexString(c, "f4ce4d4b6cc8041cc094f05fb46836fe794c810a00ea545426297496d1b3da84"),
+		},
+		expected: decodeHexString(c, "919188421ac904b18698662df06b1b2c61d938ee324570a4d3fd845347f76ab90ea898e874d529077542941df547dcd1b0a370adb8f3cf2b66509f2aa00ce007"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_13(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "800ea2b7e2a34ba4e04a8b2e3f404a4ebe78d1b11964710b"),
+		nonce:           decodeHexString(c, "2614f444b70a50d8ae85270786741635"),
+		personalization: decodeHexString(c, "61112f4579e8da87f9bd33aad08fbeea17e78de3dbf6a75549dc50d2a9227216"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "671b8cc51f1c53e425d5f97d73053021dd6af23f6abda82efb006375fdfe6818"),
+			decodeHexString(c, "502fc3d1e89e17f0f111dfa32c748a79dd1b1e19024027bc0d92ed3063855b07"),
+		},
+		expected: decodeHexString(c, "adfce16f2f6482d0190dddbb89ead448e33264fbe9f76ef753076225f1c430686f332cba8454ab81ef9186a82a814531c49a1e46a2372fd06ffc576823001b97"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate35_AES192_14(c *C) {
+	s.testCTRGenerate35_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "46bc3011142914e87f3bedea5d09edc188acdb2bd4962d5e"),
+		nonce:           decodeHexString(c, "99b0b4b442e85eaf638ab4654437c6bf"),
+		personalization: decodeHexString(c, "5be51d437e75057dd2ef4ca7443fade07d520d17074b5bd73aca111731b508a5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "81a540c5f3379a46a2ea35cfa358d67f6b35c023f910304b873744aab63255bf"),
+			decodeHexString(c, "55a2e34599b00508ea0389563cf5c663775e4c1913013e65999ea152947884fb"),
+		},
+		expected: decodeHexString(c, "5622ea844140522181d83c5db4318efea2590780705b949a9422f0ee570c3e61356164c2e8c3275f5edc8cf18b71ecd634eae52901caa523047dc178f02f2cc6"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate37_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_0(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e62098a16d60d27598ea4c97f2f013c4ffbd456b54a8fcf7"),
+		nonce:           decodeHexString(c, "10391c9e4d7969fd2b1f8986e04860c8"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6a7db6d2f6f23572feffd3d77446f07b922ee7a9fe580160ed2d8dd7ffb50b00"),
+			decodeHexString(c, "1c4f982ace96e784103ea254cfd685e95adafe7988d9eebdcd82e7ba025f3153"),
+		},
+		expected: decodeHexString(c, "af0e2c2053e5a0ef2defa7dfa6b4164b4d8378f00dfd9762dba63a67ef5b58c8e1a86f560ccd9337116243609bc4b454bf8d1a1aa3f99ad1d258c318c72d144c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_1(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "8302640e79ceab3c2b9f2b3ef87e6ad907d12ea9ad1a07c7"),
+		nonce:           decodeHexString(c, "bcf4b6d5f69ca09ba4b3bf581723cd6b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c27f380b39cbb715256728de4685f3c4287b6e3baf13c0f1be9bb4c84decad11"),
+			decodeHexString(c, "135230d95635fb88c73707078018792d4065848ad813ab981495571cf9888e7c"),
+		},
+		expected: decodeHexString(c, "9c61dcac29e1d8508aef2538ade8a838ecf5c5061adcdafbce3774bd240cc6230b68485592a2ec2c0b9d6f4f8202b163b83ebc752cc08cc927e2a79db1bab81e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_2(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "eead0390cd193410c520eb5414ae6f2e2eb00bf5ae0af3de"),
+		nonce:           decodeHexString(c, "d40ca3e521f2a57e35bf3aed3002abc0"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e4309ec8519eed08e154213014518f02a83875c77e6bcb6eb1dc21b148bc17c1"),
+			decodeHexString(c, "a76aaeb9bdda282638ae774f35df92a10e2fdcb2fc91703ec8d569372d868944"),
+		},
+		expected: decodeHexString(c, "b4b80f0d94a4f93107e4b54c118fd8a8ca62d60c54258654fb83dc3f4d24cfeb58a3714ee6fa478e86ea649a64e94ea49e108854bf048e4bc6a0f0f9740aaf92"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_3(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "ee1e3af732bff04e9e45ba62dbe627049708b6ef4aa793e7"),
+		nonce:           decodeHexString(c, "531edbba82b120026835b856bb5b63e0"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c38b7a6cc5d5d23ce416f924c604d64e378dee31f3dd70b7b11d265acb45f98f"),
+			decodeHexString(c, "493e626278f6af2ab99c5335c29dac3825f852aacd3b237a3f014b9adfbe4d4a"),
+		},
+		expected: decodeHexString(c, "076aa42c35035575f1f0a492288dbb9c4628c091fcb34eb6b8039a887ba1ed8e0029b2d18c3c1c321d7f0e20b7dbccea886ad518aeff089d44709eaa583e45ef"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_4(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "79b2039df2893b45d7c4be89d0e0acf41fb11cf70b12dbe4"),
+		nonce:           decodeHexString(c, "35d19a10420d5397d1a6fa35a7676ee6"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e3384b09c4deadf09467fb4c68f2898ed641280c2c61d8ad7f86bed0566927b3"),
+			decodeHexString(c, "39da7d653008b8b599cdda25ccba4d2d15a96adc1d12ac131cbc436488e1f7b0"),
+		},
+		expected: decodeHexString(c, "bec55b2067ac470dba7b2ae7c7043ca04159957bc54728165741d057f809bf567b9d7b5889a579958d6bf2ea11d38eba7543420f80948f7120d964076067bee7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_5(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6a910a86591cf05521c89fa06b0fd7ebe3c8f1e0de1809e9"),
+		nonce:           decodeHexString(c, "441ea26fe94639085b0d8e28224bf111"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2928ccab0ddeb1e9681fd9403a48e734c347ae80450ba84b2c3a686c1af6f203"),
+			decodeHexString(c, "22cf810fff9350b5d3b3452476670ab96488b86d6443dd87c4c249a79ef1face"),
+		},
+		expected: decodeHexString(c, "a7b0a139cd26274c0fd5b7090ae5e6075cd78d934977751132c0b8a7f27b5ff1e868e20176523104e2346027c4ef3a6972ac756328dc5f1ce152b01f4861b507"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_6(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "70874faa74d1a1af882a3696ff2f409f9c2e0596cce1fb9c"),
+		nonce:           decodeHexString(c, "77c498e0d51af0c6873645fd8889fc58"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e6ed210e045916cf1a691e36697122890485f2852a27851125eb17dbf5791f91"),
+			decodeHexString(c, "1f0d2959f9725604e6a13b7e2e0d72adc8bbdfb4a31b9b38bd8cae264d4dcb01"),
+		},
+		expected: decodeHexString(c, "b6ef9603ce5cb3b3de7687cc738832a11c398e7330aa552f678e132c71b7c020980c3cab473d17c84399ca192e6b2935de211e179f39aab30552c97e111ff3c2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_7(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "aa69949c605a8c997aa65076e8ceb63fc9d0af840ea873bb"),
+		nonce:           decodeHexString(c, "6be6f89f549f0eb6dfd761f09bfbccb5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fa180a06f07fcdcc95ff3711c348c15bae750b8cbd98e43abe61fe154f3f5cd5"),
+			decodeHexString(c, "a559c3f7cc6044edc029a35bf02a3a96ad018386e1bd998af108c8fdba6f78a1"),
+		},
+		expected: decodeHexString(c, "a18f0ffec392706fc837c0a5321558086232f7f69470b6d299d32bba24a3b1d5441e27f08357b0e70f000c321b7081dcffad824de13047322df5f7f4af25843b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_8(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d4176b63a9199739ff7d7f46203a4a01bfcc34fa7bd7019f"),
+		nonce:           decodeHexString(c, "050601d50cd5044f978dfe9ee2695a44"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a76a67409e5164ea0abad62a418abd8cd2e729b63482f2aeafc0a3650ea8b952"),
+			decodeHexString(c, "83c9371055ee7fbb935483762e16e2d85dcd70e13497e69aab9ad35001627a4b"),
+		},
+		expected: decodeHexString(c, "e7b67e052c3b439742dc52289f3884534a0e85b83419308be0b4e632779b4c722a4d8bd38c8feb3a5c21330db1a2f5bd6ade1e0a7788139f9f0e52f2e01ef759"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_9(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e1aea3229c6c181e32af6500ae4db093d1d5700d647e2724"),
+		nonce:           decodeHexString(c, "656c6242bb520a886409ca4f3af40a1c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "57483f32653802b2bfc806d028f2b168271e55d49a436a5c4e89c20caa0ca107"),
+			decodeHexString(c, "5cc0202e9f5f19f4010b68de2b2c28c19941cec8cf31f59c299c8958e07cedd7"),
+		},
+		expected: decodeHexString(c, "5bb5650ecb99682afef4ba87c22727ee7ab080bcab60f1576e4627f7e905a248d70029caf371ab5898823a35ee5b81182c24031dc3966d7c244b28803b363700"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_10(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9cf92267969b13624a016afcbedc9964c071b6d57b9bc1aa"),
+		nonce:           decodeHexString(c, "5fe0ed8becd3bbb44a0dfa8de9cb47ff"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3a10c087cf4d09d13c933b73ce0cb23d35212a0980ca88a95f71c08261289924"),
+			decodeHexString(c, "23a3915160a4c8c22adb26a86e296f2363601244fbc8cfed0757f931e495a6b9"),
+		},
+		expected: decodeHexString(c, "65ba2a31911a0098330ad914e79c714bb1b9a0061551f981f3de6a8808747372bed7b5ccb45381ab98b1c55659b023422b753983b2d3545598f311fd2acddb32"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_11(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "f13da454a1a1685188ce402afc5f1ab8c23240b22c570fe8"),
+		nonce:           decodeHexString(c, "654d75d103fbf3589a6664247f6f32d7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0f725842cc606197d3c3a37260fd24237198b7e486801d32a8e155ca22f81eac"),
+			decodeHexString(c, "788ee6cd543e8b1f69c698b4f9ccc33f76f66399e8bdf89ee2b629540ff75850"),
+		},
+		expected: decodeHexString(c, "ccf12479177bbecaf45850f230768c970191b71b98f4685f4798496c5c877bc7a5dae408862726aca4bbaff35c200896586a4ead493a4b4eb8afb01dedf6eacb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_12(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "ff6997355e8380c6f10ff052b18534be0d7e344d11ce6a37"),
+		nonce:           decodeHexString(c, "ae30f99ee7db3fb0a6be605f14a4a0f5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d3aa9a02e50931cdb657e5ac565722eac769b17eca63ffe916928b526c586587"),
+			decodeHexString(c, "067940bcb6553af8db6e21fa49c9f9ba2227216422ae20ddf73b65a665cd81c4"),
+		},
+		expected: decodeHexString(c, "0076b4664e83fbe693d51e312d92f41a29a79216c14dfa28f6c2ded9d0e69c6f512980c25d7238cfbe6a3923d30e2af3cbab7134c6537fe19991105e3dac894b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_13(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "f700bb6a92ecc9ee07d5c596bd667862455651b5e09cc716"),
+		nonce:           decodeHexString(c, "41192c65d66ba5f09c032491a2c53ede"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9e74825ca0c3f9ceb272150aa51f9f92e199f3133d919d4fa216119a1330e88d"),
+			decodeHexString(c, "c59403870aa5b148ec6f99ff8b806569e99fa836750171787bcc8c8931aa82ac"),
+		},
+		expected: decodeHexString(c, "32217ff9371a6cbf796c138f9ce3be658fba03df9c10cd3de09e82d1d9cec43a966ab864aaca56024e8b36463a312456b421b257663fa5d42adbfa4a54107965"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate37_AES192_14(c *C) {
+	s.testCTRGenerate37_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "1531b56bff3f34449674c5f9b310138a51721a40a463e5be"),
+		nonce:           decodeHexString(c, "eb7809f3f3ba6eb57775f1284fc29f54"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "85e6aa859f431daaafc9299ea61fcdcfde712fc2d01d94fe70cd0bc6dab7f3e9"),
+			decodeHexString(c, "cb7fb3633f42659201026c634894ecc719c0003259a692837609ab90782ae23a"),
+		},
+		expected: decodeHexString(c, "7445b812a7f5d3b8ba79f77a801afcdab823140e5eb4a66e50f8583d90dbaddee8697d37c0fd6247ec6a3bf7664018a58c042bc3b3be912e88c2be96b9c69e85"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate39_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_0(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "f3583f3c8b147a7ee992d5ca611e4785b772cb575a53a573"),
+		nonce:           decodeHexString(c, "eb1bcef5541aba8129cdaa8b233b60f0"),
+		personalization: decodeHexString(c, "08c18b3c8f79eda3ba18fcd2711c86fd1d6a2842ea95f1d8961724012c0a6121"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "657d1df780a9b674b90cce0d49e2d5c0c01ed2d2d799f504348d86374576c404"),
+			decodeHexString(c, "94234f2b6c9f327cd823e753ec9c4de4119737af914dea5e57e0a50e3376135f"),
+		},
+		expected: decodeHexString(c, "3c2e80e7211e6a19a27a53b4957165ed87d1edb662426fee9273ae0d85402ce2507cda18126c07fb201171f176b069d2d2a126af5fb31ce1d199978e3d11d771"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_1(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "4e008dc872a74a6a9d4c71c14a2d9b1aa7c05a03402ca181"),
+		nonce:           decodeHexString(c, "33c50fa95f0d9d03bcc1de530e04440d"),
+		personalization: decodeHexString(c, "578757749b8ebe442d93b62cb942278de5aa8909f914120a9058b2c341e886c8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ea627cb9fe1a499e3bc1ae731aa3732b539397178898ba2dc40c04ae68504886"),
+			decodeHexString(c, "770acb690fd0ba83097193303d684405ddb3dd4f6770f0141d58046260e3f273"),
+		},
+		expected: decodeHexString(c, "b0e13af542c0777961cbec4c61c9b225a1210116cbc74eed6ea8b73e968c118fe60e360798a1779f07e00b3fd124f278b27f70046612021db8b8ad3292894064"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_2(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0965a0ca7c1e684626a409d8cbed26730e8618bf7c2c7031"),
+		nonce:           decodeHexString(c, "19c42055f5cd94df0fe3037af981550b"),
+		personalization: decodeHexString(c, "c9088b4b23a1bd96963e43e1e7742870b6b0ad58ace3326f1c7e675aff6e5397"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cf58273945a0c5262bb17e32d2dc7afa5ff919eeafeef7322ca02ca50553f491"),
+			decodeHexString(c, "9d64c2ef27dedae099a1016c1093715bd13687faa17242fea8bf2548a6dd7dfd"),
+		},
+		expected: decodeHexString(c, "03a758952ac17a400ae97428baa641d7b9e3cddb163c1f381969b2095b5e0076c353c8f55460f162ae8523a52b46a01d5d2643ac81529e7fc773acdaf674ed37"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_3(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0b74a0d14e2794d88b66170c90c4f921afa6e678d48a386a"),
+		nonce:           decodeHexString(c, "2c380cbabd98443d6456eacf25ffdcfc"),
+		personalization: decodeHexString(c, "110bf5b176d87a0a4e6c48282972854c3edebdd208c9a6a3ef520f93a21e1bbf"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0eeeec359c4c7b155cd49171136514dea71ab8e435a122606ccc5040d4ce825b"),
+			decodeHexString(c, "9de0ef320288823b06ce81895e5723f13239d5269d507ccab6bcd96b3b9b3fbf"),
+		},
+		expected: decodeHexString(c, "3fe112ccd44d50d5d54e33bdd6f112f1ef4caac069586dd4d89c64e69314e2efc3cb77aa5fe2086159abfe219efdf52b86704114755857d74c459af52285a44a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_4(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "fe01d064d298a16aa138bf10fe692ad6aaae53f519e6ad13"),
+		nonce:           decodeHexString(c, "1432c24e78a24540dcb5914ee8510cfa"),
+		personalization: decodeHexString(c, "769912bdd59bcd145c527e9c132c5eca56b2878f122c0e53fa3453140a2b4b01"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "300b9187402619f775ca2c5352a33a034ad80068cfef0fb1eaa7b576a0c910bd"),
+			decodeHexString(c, "b6b176d06ce4fe189d8773f413f2592610637969ab9a1dde51960fcd4275fc80"),
+		},
+		expected: decodeHexString(c, "98905c12c0e5c2e07b32617fac64343421fe697b18886a3344a4e62867732e90e2857504f753c11183fdb4dbe46e78fb74e5be32a672b8e5c699c345a84a6dcc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_5(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "253836b5b8e1da4a96f201ecdccebc2f9aedb9f220ed2661"),
+		nonce:           decodeHexString(c, "1e91b87468f3284a4e5508402a327425"),
+		personalization: decodeHexString(c, "25e84e5921cd548c3895acb01dcdffc9a4792256f31d1adf30e089b6a40cd029"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0b8b88d3c378736b6069490cc8f81b70b1c42dc7b630b5e8b5d257fa73da77cf"),
+			decodeHexString(c, "e7925dbd1b6ec362f2b3941c34ad6cc9f09b7ee1e6c9ffd512054bdd403de0e1"),
+		},
+		expected: decodeHexString(c, "a43361dfe361979abff557f65006c52e7764a28f7d13697c94098552af400597893b9f02713f96d394bb17838f3c7bc8dcb7aa0332b7ef6b51deec7a2f381607"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_6(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0ba8c30d69752395d3a6dd5c3d2eb17c984b40b40382ac84"),
+		nonce:           decodeHexString(c, "607940f25e5db89a7b2da5d4ee79b846"),
+		personalization: decodeHexString(c, "8774ab97c6fa938e49373e9483c1a18c8bf43d3e38f9b95e23ab0412245b8fb5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "946ce7d8daf645bb0a218785c02461dbf4973af9f9b1b7709489e1b4e2f91bad"),
+			decodeHexString(c, "73def1104386d83ef8bc717e522b148ccaacd43a279b73c373a6d5a662f026a3"),
+		},
+		expected: decodeHexString(c, "54be8daff4b65b032bfa523492061c46b5ce36b2646084474303d2622b006112dd186dce10c306856c2e88c1cedc404269b8924f92d8439730d647da55d60e9b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_7(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "61910737799fa468a3f66dadaf56f4e3b8f798ca65ce0391"),
+		nonce:           decodeHexString(c, "723399ac935869ce205d85509cc27842"),
+		personalization: decodeHexString(c, "29e3ea51805c78fe849115c4b77361d75b1b9246e56c464166ac7e8d1ca8e3ab"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ab8aa035c71501c1f49dea7c678e02d69e2f843af74479367a386f684cc360db"),
+			decodeHexString(c, "22dcd9f03138f372b15f15ac6dc31d1357102ed4e803b6d384298e4cdeb2e901"),
+		},
+		expected: decodeHexString(c, "01862e1d6fa11173609a182d6a5a73310c76dfa88d1ebff25ef45d5796bdf47a2bb6b9cf8817e6d76b70bf0b9e83d8b4a128bee06b6b0ee37b6021ad4722c4e7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_8(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6df209570ed20e3d9f13e96c29d2b014bca9b9fbeb5a32cf"),
+		nonce:           decodeHexString(c, "531a31c87ec92ba06ef8a6db623cf3c0"),
+		personalization: decodeHexString(c, "f255703dc8cd5cebba0229e4315aeee86bee45aeb75279c0e120e44e46935b15"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7e16032a6155c37c2469b73a2a50baa89653e9c1e7b25bdbf0675ca684ec8a05"),
+			decodeHexString(c, "956081c808ea4b9fd3c9880140cdbe41cb0aa039f0ffad1efcb94b41317ab321"),
+		},
+		expected: decodeHexString(c, "5e8d8b4b79eb53422f926836ef78051f533b9318f61a625529b0adcc070d71d2efd33f6114db13cf26b6621fe856b708af48a67f3cb2ed8b9a92e0b73bfbce57"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_9(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "732ada297f8e2f254e5c3cd32758a700a4aa63ea353178f1"),
+		nonce:           decodeHexString(c, "191f07c49993f6b4b249f6ad0d702d7f"),
+		personalization: decodeHexString(c, "9a310d970daaff8ab0b26a0edd2aa2e5c40f833cd154218dd712b11c52934ab2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a38c3e35c73f78b3816ee90b7d1316c424719047e104e30973f69610cb41408a"),
+			decodeHexString(c, "14aef44a84b7c021d4fcf38258cbfb95b107bff751b5405bf21e9d088fd72dab"),
+		},
+		expected: decodeHexString(c, "8a840c6878671d31ac4384aa7e113b09744f6d89a09b0e5cb7cd1480fd894ea69e568d6ee831a9ef4b90db5277f6ee48ac66bbc37865687ced77f956a2cacf90"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_10(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "61d38395166174276138d643683b3e63d5909e5d15d7314a"),
+		nonce:           decodeHexString(c, "21141ce419c9541d49bcffccf016d593"),
+		personalization: decodeHexString(c, "63b3ac798991376923c1117108dd09627457b04f20eb063cacb4e0c56aeede43"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1507f2570ac347e2593a77873ec2ab5086d9b3659fba3ca2bae60414219bd734"),
+			decodeHexString(c, "c62c6791ec08e64be2fa59d2fa9e1749c186408554a055144e3ee92d7bf130bf"),
+		},
+		expected: decodeHexString(c, "ff3df533eeab7697ef668d301e9d6920b155d6781e4abdadb0efce4575a649d13297e0b2986940608c6557fe196d65b9aa4f642196ca836fd757e0c3c3cc5d1b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_11(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "a132a53244a784078800474cfee3d772cc00da9efb5aabce"),
+		nonce:           decodeHexString(c, "6a299b43e7d671dfb2db27b79202f336"),
+		personalization: decodeHexString(c, "f3f6e2ffc0240688faa12bfc60cb28719b8c4ffc420fe91329cf0fa792e32eda"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "137e39e2d8b65cac5a654b00a9fce38252162edb4eecc7920755bffc96a5d641"),
+			decodeHexString(c, "98b6e417616f3cfe409000872865f4d08fb0322bdda45ef1cb7000fa45266b20"),
+		},
+		expected: decodeHexString(c, "9a1bad8d87777f45f9cb8bde14c7eaaacd9374b974264e14d1ba31ec59983a3590741ddf6c85e993ffb7b85035202d24f10683a53e87ac9202f55d8b991891c9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_12(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "44402cfdbab2134dfe825606d2a8e1a492c76084f1245431"),
+		nonce:           decodeHexString(c, "312985427cf3c3e4e1498f596630d0e6"),
+		personalization: decodeHexString(c, "f333e29a3a03e7011c0585bd95bfd819b84032a8e0549cdbd0e11af16bcb693e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9b3c033e3743732c9ece7df941d1ae4bce7e66310c3175824e6ec6e82c02c6a1"),
+			decodeHexString(c, "9cd39cdd2d43740f3034736359e89b7a78d25bd18ace9a14df1c36ce7dde505c"),
+		},
+		expected: decodeHexString(c, "e584a046494b5076757643ba84c7a7e08c0045fca4325c3f9c58f66624526cd43a128d1054f81b3c4b6f5735f3fb6f33d2825062ec27053f4d0de241ccf74ac8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_13(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "33bab5bb7c0137ed68bbb98b2e165dc92477e24ccad60c3c"),
+		nonce:           decodeHexString(c, "72006a08653c6b837fe202438baa4389"),
+		personalization: decodeHexString(c, "098f896620ff0e4143797c1c6be81c625ed37f79bc05a2d3018459097fd140b4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c2a289d218dcd280e6a882e30e182da6a13fd0963685b3a9afcaae8ae3acad69"),
+			decodeHexString(c, "361acb27f5014080a9e521e0420dfd58e9209111df3b1bc77bef235515818872"),
+		},
+		expected: decodeHexString(c, "b007aeb87b4785815cf0b546ff25dcf5bf96b3faa88df8e45a12b788c47400ceab79d961c9d65bc475b56abff9ba1d0e3a5ff5fe56fbda06cdbd7102a2725aaa"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate39_AES192_14(c *C) {
+	s.testCTRGenerate39_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "c6e80e41a52487d626a44eebc435a1a415da625368fffaab"),
+		nonce:           decodeHexString(c, "8eb60935a59e8d55fe8266b43419d105"),
+		personalization: decodeHexString(c, "cc8042c0be1c212773c7d6e5d86182dee81cde58703e9b1d6ed08b664e04779c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2112e9f216eefdaee0c37f6b5ccdd00cdc8091a28d094e567b697109a7110b7e"),
+			decodeHexString(c, "4c32954a5ca0450378f5907b6ea0be770e40797080a057b1a14b4536e389de98"),
+		},
+		expected: decodeHexString(c, "a51d5f661bb1d50f2aaeb0b8b7af406142a1135778462b802016c5e32ba5563add2744d62c82c1df91e6a91dbaa95328763d2320ac6c20b424aa729d2b1c1a44"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate41_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_0(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "52694c7cf70fd3d207d2e7ef192a049df320e7f9191b93c4"),
+		nonce:           decodeHexString(c, "ffc0c8e16841ec384c08b3ccd8160331"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "287bba8bc6dfbd836a21cb3dda678d3d7ba41c5dfe08bdb356d93072528285e4"),
+			decodeHexString(c, "1eea341ff81f90583affaa27659e2b06e3e062068ca4f1b40859a92299a6b490"),
+		},
+		expected: decodeHexString(c, "b3175692eca9d7fe5ebab6dc5d12c3d1105e46737ce6fec89b2663effdb41a8f85f983151ae4dbf70020853f484fd1e96d743d5f6cc415685890a0e3f25e3b69"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_1(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0ff3d4275ede36d4e29c42b17ed1df14de2e77949af55eb7"),
+		nonce:           decodeHexString(c, "ac33ac970a2475b91f0a3bdef178bfd4"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d39fde814ea3a67e3b33e325ab5e0553aa9a0f3014a74fed1b030219542fb045"),
+			decodeHexString(c, "1a1fc9242e3ec8712567e780df058306001e6e10d5b6e4c21c6c1793149034d3"),
+		},
+		expected: decodeHexString(c, "d212926f2763527466ff7511dc56cf1178eb4150c5f647bf2c9c1505c018f271af3a1bae45619f1307c181bedfc362af3461c60367af08a322f367b32b0e0c1d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_2(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "713263cb43597766c7a925381c3ece46c126a4733b0bb5d9"),
+		nonce:           decodeHexString(c, "58fa565573a9e9c72e22e5ebb2beb818"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6673260a5878b3da0bc697b672d98c363e80e255588efe7960030cdfb5874c81"),
+			decodeHexString(c, "b42d33c103eacbe8a2dc67cb5f48576e9bc896daf091a8339b0f044c20c72c8a"),
+		},
+		expected: decodeHexString(c, "6dfb113e16aaeb3919135827317fbdc283e06680dd4c838109d3734b35fd442d7fb73e1983d74b1e3b4da8e59ea021e92961c704b6627f15e8beb5a3224b3618"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_3(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "260808c88f5f6be111b683f6f2974fb5bbb49e3d90383b7f"),
+		nonce:           decodeHexString(c, "c5a8b87066116d0bd8ae393025db35cc"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "06b626abc966d963067f0fd93a84ed71016239e79f636fe909672ae84ff36fa0"),
+			decodeHexString(c, "3e32726ba55df915e0fb032df029dc96d429cb5f458b08e5be0b1c283392bbe1"),
+		},
+		expected: decodeHexString(c, "b8febbd2887ba69e3fcb078aaeffbd9b7908618024e603527cbe74c0f99d6f40a0e86518acd9f9f7c34b3f11783a7278fec3c3b6d407e15a8984584323113de1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_4(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d581d9cafb39adbd2bca4afa483acc399d4eb47bc760d843"),
+		nonce:           decodeHexString(c, "36432c597e6cd8fb70da84b25d8dccc9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9c27f4750a9b55320d4515f2e3528148fc02d48f848224123ad6e967ff6a4350"),
+			decodeHexString(c, "c7bfef3c24552cd466f2a5923c134e56e9d17255b49c8b0f2c815f01fd72c4e0"),
+		},
+		expected: decodeHexString(c, "fc9980b65006c649349f77b469e40fb0b803b2a7e0c14adcd40a4ae651bbd1e18df6b8a1c1a028ceb43c26278b43b90de61758374f2c60ba663ef04eddc31748"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_5(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "41ed09a74fe775bb0824a7820883337ae493b9aaa71b41aa"),
+		nonce:           decodeHexString(c, "9b3fa2de238c611bfc348f0794b9f865"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "276cd3d2787745c9f893e7d097c4552f3a0f29977c33e6587ad132594089b6c0"),
+			decodeHexString(c, "f913367e39cd59b7f43d8a7940578f8a6519dbe6e07ac2ccb118453ed0284332"),
+		},
+		expected: decodeHexString(c, "eb9027bb00a4796112282d147b6ddeafb4673b83810068df53b0bc8dda0a0bb7651d2a38d6d19293a0e0170efe4ef8825db8c7da6b48554cdf68104dfe31c846"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_6(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d8e927d938bfca29761cd63a09c2e609a9e5035591c21baa"),
+		nonce:           decodeHexString(c, "1957db127181d051fcee6fb87f7c8689"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fa05832a2d881470c9a66602c9ef0a9f3c9aebff5c9233d07ea4ee4659a5dff4"),
+			decodeHexString(c, "f6b235fc524a46d6fa71ebcca27c3f0c0f3666216fdf89d25c45b27b99a7ac63"),
+		},
+		expected: decodeHexString(c, "bb51e9bb1985394b447653d14461296f804b01fd79429b83564e97908a3db0f54c5af1a543c7138e478ca4d795b08cd12c772600ab0f78c50cf27c05f51e0afb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_7(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6a5881e09d36d466a1667f6259eae927e18157d3310ba1b6"),
+		nonce:           decodeHexString(c, "fd9a1c82d4ed4cd7cc4a52ebd1616f90"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8297d7026e8761466ef88e2823b29ff8ad1bf74cbe6a553432d359fce920ccb9"),
+			decodeHexString(c, "3d4b7b9938d7717feaa30c7d4907f38ac282702cb5292d96e72332800a408679"),
+		},
+		expected: decodeHexString(c, "97e5b0dab9742caaf5170e1723d5c39fc7118c72e1cb48e5974659f49954efb76f6b9662b8b4ccfbf6e94a792ad145a605b0c6c343026cba79f5cd10bdc86648"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_8(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "2cc479700f909e7ba2677f3e9012819dbda2bfa96bbf0e71"),
+		nonce:           decodeHexString(c, "362bb10b3e7f8c3fb3e4296b2371d450"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9dd46ba214565be1d6ec71d5faa92b458b70e8998a2e60abf428fb1796c59651"),
+			decodeHexString(c, "f40e36ed1005e8c4468d9f934fbcf46b342e5745309fa4004c150bd4fb2b1e71"),
+		},
+		expected: decodeHexString(c, "cb69c36935620c7a2340d672b559be58ccaa82ed451a3f8ea4fc06a99c589b9617671dbf265ab9bfb9c557dc6f6a701ba0cbc5030e085af16bc9738678cc31b4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_9(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "cd60f9aa04b832b6a76ac43c52760925fa8e9d99592bddef"),
+		nonce:           decodeHexString(c, "1294997f49248adc70540c18e8ede470"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "af6ce37c50c92759373d5206628f747c169153eabf804d2540c1c17764ae538e"),
+			decodeHexString(c, "fa2e5a762dd56096230ba83443fd16c8bf6da0f5aa07be0e522d85b7fec88e96"),
+		},
+		expected: decodeHexString(c, "cb38aa9a8b893eefb8819b4173471b983e64dd7ff62092d40c2202a12e07013672840804d8f49a174ab073b293c663d0182fe0035f80e1d882198b4e49fe7010"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_10(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6931cd18a6c772ce1ad6b1ff80461110b314c9c1b27d6e5d"),
+		nonce:           decodeHexString(c, "4f3c93d404b1a20b835e5012e12a654f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3c48211e1f5962d1ad49bb7636ab182e8b8495e2ffd317fd085269509508c461"),
+			decodeHexString(c, "aa0a70031af5fedc2c00605e5b6e4b9259fd1421446352034a4a4c8016e3e016"),
+		},
+		expected: decodeHexString(c, "a449f3781a4884349210c9d3f694f1a63871605fb07ad302a2c2cd16d7c644ea7eb5fcbc27b12ad6a4b75c84e2badd4f0a06622164bce3edc4be8a35ba6c197b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_11(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "5929c6c6c563dc6b854cd71c3a2e9c8f36886bdf2446b11f"),
+		nonce:           decodeHexString(c, "366e9cc6900744a7fd31ed92f5785d2b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "dcc1532d3d9348807c1917a45139d7345d15a8d9c7a6a18c826945e82b0b8a5e"),
+			decodeHexString(c, "4022bc66f18160eb8a872376ba998bbc400031b7b905031a3847d4ec0df957cf"),
+		},
+		expected: decodeHexString(c, "362ff3df4d563fcab2730bb1932f2791991e50e246821a7468a2eb1acf55d330cd13ba999c5852e81d58c3c8e63848bfa6b2433de453a0da6c7997a6000c9fc3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_12(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "61ae1d520054096842c17ab70c60a278480aaed299575e59"),
+		nonce:           decodeHexString(c, "9abcbdbe260a6419c78770615da54c03"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0e5b2a49f3445199cbbeca363b023f4a2954c3e567cbfc33f1b29fbc7420b189"),
+			decodeHexString(c, "a2ffe563dd1750bb3e07f2c498ef18a6c4f22453d9abc99355509c42ed011960"),
+		},
+		expected: decodeHexString(c, "7bec6daa15ef65817249044d375fbd98573acdacb2114678d411589e44b71cccdfa7bd50695add947b0ebb58b738386537b63440ee84b77f37e0c45877430c70"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_13(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "b6735d760d4dcaa57daefc5bdbf0b5a94f2e6bc4a360804b"),
+		nonce:           decodeHexString(c, "d0a8bcefaa6d9f4b6afd4c8ad4276ef0"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "75619ee0b4f2601d5f1cb0833f325e3a7b5921481752e122c8786ddc33a38a27"),
+			decodeHexString(c, "1360b2000780376f0aed1aeffa3c26e6c29d30b0740de14bbfe931e5f1aaa968"),
+		},
+		expected: decodeHexString(c, "ae3bb82bfbd1f48c33e1eb0b96ca850c3505a75bf3fb07bbade7a2c17bd1b04d8af5ed1a5c71566ca2c05135c4128a0e6e8e9a27b37a76c9f708db027f94801c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate41_AES192_14(c *C) {
+	s.testCTRGenerate41_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "bb90e53c1240d658406d7c85c0ff23d7474a676a5920b0e1"),
+		nonce:           decodeHexString(c, "4802e02adcc5a1504d6dde82b6f20a67"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fb2b976d694df3fc2b32a33f7c989683f50c4cfce6168ad1ab9d1a79d5f59d3c"),
+			decodeHexString(c, "6c78610daf6ea426641be56280cd623e8b11dd967ac6154f04a6d4a6c749c957"),
+		},
+		expected: decodeHexString(c, "97e3560157ab4342e762480727d5505a72293e13531c62ea7072b2acf8f72ea8ced09cbf9ecb9e9d6da616fb8ca0613809388ee915aacb59cb3627e3f0c389df"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate43_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_0(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "05e734b2b1287f827394228f8140dac050adb821bd37c4e2"),
+		nonce:           decodeHexString(c, "c541ecbe12d300c14a7c9fe90e38b1ab"),
+		personalization: decodeHexString(c, "018b8e3d285b9f7b928cc819c576fa21692c52ff7166dae7b8af7854cd3f8ef4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1fd8d37b2ea6b20d7474d95cac5881a69a1266badc49c0da8be295f3df6afb5e"),
+			decodeHexString(c, "9726732432e1567e5d9e53554bcb886f129c8007da9e68b325bf16ab740f540e"),
+		},
+		expected: decodeHexString(c, "3cc1ec092923a2ba7fca0dbf543cceb9b761c61cadd02335df361bc42534c9b01373c8e513b069ef77dd0ff8e4623ecfd12f290a2845b8e7a1f2eb97547a16cc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_1(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0a07b4893adc1d05f2e6f461a717c3b4ed12f9dc6ab1eec0"),
+		nonce:           decodeHexString(c, "900adaadf90ef5856784ea86057b5714"),
+		personalization: decodeHexString(c, "121e2ead8da5b5cbc840856c136e9458e65b536a5131015e8ef4eb167aa1f964"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4b797858377329b19a694a320deca09269bcee49611f7ed6f40eb94599f420b6"),
+			decodeHexString(c, "fb4eb21d67cbbe06b996cf80cab0cbbd61e9cf358048778ebc50520e5fb01bb2"),
+		},
+		expected: decodeHexString(c, "fcf3aa35d14d2bf7fcc6b46460b50d6bc9eeb7b117aeeff455022da6eb32aa3b3e9bf7db05d244a8a6bdbbee4a73a96e9b3ac8f19aa60ab119f00bcacf61dd13"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_2(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "819828bbcbc1d95b729ea4bde27c4a787f49e1670ff7a5a2"),
+		nonce:           decodeHexString(c, "f88a9ce08c1086a65e4995801862acb5"),
+		personalization: decodeHexString(c, "7c6319e488820fb9e0497b0b2df4dd7d8e1bfb4c21ead3af74471c4dba63f597"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "664d25832d57302fe875e6adebacfa825ffef394f60856bc21f762074d34917d"),
+			decodeHexString(c, "2a6cfa710ec9202b30e276e18db6999e245b7689d3ff9afe1a796272ce86fe4c"),
+		},
+		expected: decodeHexString(c, "58534c9caaaef547cc5b6e602c09a52b048c96d1eb03c1a17d3d8de2ca86edf40facd99a06cf8d2254d3a05cb8071bf85d541408280194650e5c77643bbcf8ea"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_3(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0a481ed8c99e58d33461e03600a7d65e36eafaa345ca07a8"),
+		nonce:           decodeHexString(c, "108b1904648fae516f4a1b60feae9e8f"),
+		personalization: decodeHexString(c, "bff99fddca34d08d7708440030f9f4e7555e5aeb616015cfc8e6b8599dac9164"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9f8c9195e52ab051eb948f02e5972c5bbdb1a9384a2782e0c83a45d20c6a8cf7"),
+			decodeHexString(c, "886160ff534f3a4ed97f43386793dec5aab86ae77b30d1373b556e8bf92772ff"),
+		},
+		expected: decodeHexString(c, "41aa8a43480ee97c72e3e01435d4d341f231cdc519e8825e0f98fb63d7e9f71bc42c90fc203fcc875ab9e11dbb40a3aa9eaa6e1b01cff5ed7265708a21082942"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_4(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e41f2de0aac40dd3ae6517fef3c19c2048b431b7704c6076"),
+		nonce:           decodeHexString(c, "14dc27f46cc0aa6c35f0a660850b1fef"),
+		personalization: decodeHexString(c, "de24a9d56b0c0bc4b3a91c624324fc98b6f660c30ad9c204a7b02feef6bff03e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a244cb28a130ca5331fb2411634b809d32408ed745b2e38c4b901a955e1e24c3"),
+			decodeHexString(c, "ebf7f187ad03a39133175ff9096a04b72efb0ffb099dbf16c53dfb6f6182e3bb"),
+		},
+		expected: decodeHexString(c, "a0e7adcc6a7e3665612117cfc15620e569add31c029c1dc1a79f072123fcc542b397a2e7044a983dafe362805985ffc164ff83c56821a92ecda331551aa7f7b9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_5(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "4b55f7fbed3bab6e29ebbbc576853eac83c93e02acd6442d"),
+		nonce:           decodeHexString(c, "5e4ca3e9f80a16f578ab7d63301a528a"),
+		personalization: decodeHexString(c, "f4d411070a57e60a17a663bd78ec2725b780cca28147612951988c152f2e279f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9499e3504d863804280e32720893b8e5e73e3962591ec6d834b497423890bec6"),
+			decodeHexString(c, "2488bf773c153d854c2b72a02191579264f784c29a509e0c4ec19746ca9848a0"),
+		},
+		expected: decodeHexString(c, "7d1aa330dfcfac157af91e6752129c3ec8029bf8ad5437c4c014406248102c0ce095b6b27f252ae312f49f11985e673d9cc7b2ac181a3044dc0fb5e6ad7a1d6a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_6(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d5ac195a47314d9f105b29187d283c6d24c44c705400641d"),
+		nonce:           decodeHexString(c, "ea92b73efc5431add6ca2ae87d9baa31"),
+		personalization: decodeHexString(c, "6e2b8589c490e048413f0d88c551047e3de7ffc7cf43dc9d35db9327b35ab970"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "51ed74bdd75585c2145cc2384862f34ed0b40c3044ac60487ee10befafd5b16b"),
+			decodeHexString(c, "894aa50d05a40e5bff4814e75686e342004a660e2e4dc7363ed72888b792c0c5"),
+		},
+		expected: decodeHexString(c, "cc3ce394cb025bcff436e6a6c2f803767ea8edff8905a23be4239e64c2826e54bee2eab1b14fe44a682d1513c4053b2e4699b18ad1c3c25ef1a5e422730acafd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_7(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "8b5dd1e89fa97c9d084f277e2ec583bb305c6b4d0737d7cf"),
+		nonce:           decodeHexString(c, "15ab99d15ea11281d0fdcfd744f964d0"),
+		personalization: decodeHexString(c, "c2bf9e13b3b71094ea1a84a436a0ce25e532c2a5d9e62312f967f4fd06204d13"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fe60ba406bf63784a0f8019c8f62e525f2b84447b97d8587dacd67b690b3d8a8"),
+			decodeHexString(c, "498dec11e7cd556a1207dc379c03138ef680ba5699e46866a397f1f4b910b2e2"),
+		},
+		expected: decodeHexString(c, "cad4224e7177afe9f68496b7de52376d8e71807b2b3af4e97e8185f5be912f85d33dda07ee48993f223e4bd94d1a45eaa274448ea73959860163169439a25aa6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_8(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "78d2e921656db1698dcfd2bb94e948acb759ffd2c4fba728"),
+		nonce:           decodeHexString(c, "31e20dc0f861427e78e0c4a3065964cf"),
+		personalization: decodeHexString(c, "70a5be6eb4d2debd0bce7f027c08a61e665a0cfde3e1b9a86db85a923047cfb5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0a204322f44c4e832337f740a7ccbabcefda2ffa21c511112ad5230c41109f67"),
+			decodeHexString(c, "3302b3315f176427e9122a08c982d6a9335ce96f0d2426bce382017df2fb9e9f"),
+		},
+		expected: decodeHexString(c, "ef96c75699d68ec05ede3ac62054d8aec3fab44c064ad63383737a83e9c6d8af3d61f2b8d081f2f82f23bf3a8297609061816598c5bf55013ab4d226360a7c2b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_9(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "a560037e96bb5b76bcc81ee6fd127e25bac89ddca71dd941"),
+		nonce:           decodeHexString(c, "6a1ae20702a1f29db658e5f2b2476efc"),
+		personalization: decodeHexString(c, "dbc93a3b72aa9890c056760867a9d256cd13ee44dd768447d06839d7c2fdf594"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "51d1f7aa0d551079db5c942fb9199b11ddc159737fdcf82629e0e82bc1ed28e6"),
+			decodeHexString(c, "733886bfed59cfac5623e41a8189780a3b248efd7bd4e14494ec7d793db06285"),
+		},
+		expected: decodeHexString(c, "0db295418535a4be1a057efb85dc48d29c73b79f113e9e4c624f4216a92d8df7b22cf38da8156346fb5c0153711656ba08208a33399c9a2d45e76c09500d59e9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_10(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9d573ec9205c1765d00483ffa36dea87389288e554f8435b"),
+		nonce:           decodeHexString(c, "73a175b5aba2b365d454e0e891b54c48"),
+		personalization: decodeHexString(c, "35dca149a79b6e45e3f1dd16b5c555e89f1b1ce35d50cf3f9fc006265d464ac2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f6cd2e997050158711267dbf2fd3dd4de337c4ce1a130141c94c02a8a61a29c5"),
+			decodeHexString(c, "4541d19c8e93034e61cf4265ab80f41f954523ef589cd015455d4e69919ba0fd"),
+		},
+		expected: decodeHexString(c, "cc14029cac4f4179d20561a89deff994b132f763212f28da1c4bbcac3868bde0a766acd100b0eadd7f4c47e42a4d682bf1ceecf621b4bd5aaab68e046ca5d74b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_11(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "b81ac161f04197733bd1bbaf9eda79ee51a861f80bd8c12d"),
+		nonce:           decodeHexString(c, "5c9e5fcf062de114523f554b64c935eb"),
+		personalization: decodeHexString(c, "6fb5f75a563193084e96ed394e696181885bb2bc7b63562266dc4b97999d25d8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fd53b923444f97586bec1550a74f366ca928bfb7abf6d1cfe244c25b3ad95fb7"),
+			decodeHexString(c, "af46c26db846bf6e9e82b0e8682d0b4ee8728c76b52648e3fcca0da88222e5e7"),
+		},
+		expected: decodeHexString(c, "c6620e780d723db454eac825d121814baa55f21a9ae8ae597cd027c5cb13dc4072aaecbcb478ddca6122186dd47f9043d2828b5af85d011bcfb99d588b0c7bcd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_12(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "39df4218bff31dd01085969ab9f48188b0112eef759ebc4e"),
+		nonce:           decodeHexString(c, "3e3441c29666a5bd3137a30c6d05053e"),
+		personalization: decodeHexString(c, "d382b3d65773a9d638fa8377d9c095a67ab336c55dfdb85d457031058571c572"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bdcda7ac590a56c150ca858055299c638612fe0457c18fbd5a92045f32587195"),
+			decodeHexString(c, "f47051f2c29abcf57af923f1e08c22858806da9cfe142757215020ba67638095"),
+		},
+		expected: decodeHexString(c, "1aa41b4b3142d611ec62276242e72a840f82f55e22a7c9d3a340a93b43648da75dd73cae3dc6a60c9d596c723ff8d2f8ac6e6e231832fd297b54f3d8d589fee8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_13(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "7d8c648ef96fbec0f8179acecc55569d3bf456ce3bb2cf73"),
+		nonce:           decodeHexString(c, "781893f4f3f36b0d92d3b1ace6d505a3"),
+		personalization: decodeHexString(c, "800fef9cacf3f91c04396a52c7d3ee6c647891160e35010a4fd502e51d6dd62c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0f609774dbb0bb5057122738d8f76656b1b705c4e447b00b7df84ca29ff815e2"),
+			decodeHexString(c, "9e7d9ced550e427990c3e236b748b9d8b190aae41070015eb236974b534f0e25"),
+		},
+		expected: decodeHexString(c, "3bd03c79f03687999b147f39c879fc7c0d34d004445d75c71598ffd55e3fc55c0e17331826ac7dee4a8e6ba7986f1d5c848c3636628f4dbf9e67bea57237d886"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate43_AES192_14(c *C) {
+	s.testCTRGenerate43_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "5745b230148454da9c4dd12ce1dedb5b148f5bbe445680c7"),
+		nonce:           decodeHexString(c, "738ab96e37ad971b7f5a3870383fc172"),
+		personalization: decodeHexString(c, "4dd3593e0fa494bfda365b5fc4e5482801e5c399a65fc6986249bfd94be7b5a6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "80c1e2bb60d22c8ce44a2abb7a19dd60ed6a38098f2b098459716aeef2474ead"),
+			decodeHexString(c, "c96cf996b2e9ceb9a57823800f890c8ccfeafac79c9695ca21f0bb6f6fcf97a7"),
+		},
+		expected: decodeHexString(c, "8a7a6d383f344ad717da7c044d9477e81433e04d3b9ae4334ece15e10d7dfaa1cac79ded517ab3e24cf1d31d340590745fea2eef9153204c12094375bb3c4efa"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate45_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_0(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "174db4eea556569bc045efc35f8015717566502288a1e7d0"),
+		nonce:           decodeHexString(c, "3887890edb105c1541db3ad5955e1262"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5495183ba088d73cff04c620a0dc1155d3f2825bb1fcb94915f1c1a5087aeb2c"),
+			decodeHexString(c, "d30bdbfb41a1b476c0056b180f2434d3d8352278af477f50079475c1bdbe6210"),
+		},
+		expected: decodeHexString(c, "24d32b58e59d0000ff574fd47e6702ffd1a9b8dbcdb4f164abf173145cb6d2d923656b55c4e885ca34d18c1562f17bb54d10d46b1a53ae146eae077ddf93ed53"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_1(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0217327c7e3a61b0459bb492b10a73dd9986d2605addb664"),
+		nonce:           decodeHexString(c, "37eb5d6692883cc6a6a43c80df83f6e2"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a9d22284c50325d796c794bad28dfef92d1317c93e200ba220e00bf4f3acecc6"),
+			decodeHexString(c, "bc0fb70af92dfff5d5034f90bdbb05295625d1da45707f7fe17150bfb988ada2"),
+		},
+		expected: decodeHexString(c, "5859c8539a37961f7461e8b3552485ce37f0c19646f784e6823a8dd60641931331213a2211b32cf57a1a26b5a3b6e6eebdc5abbce0d43ddb967a6de57c97a8f6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_2(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9e2f8ed0861fcc64779f01ae37b76154402e09c2ac84ec24"),
+		nonce:           decodeHexString(c, "6c1e779a17ff4ddc33252841da58c481"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "960d531c3a8e7c8c269ced9f7464fedec8d4f49e7396c60fbd89b2ea4af6fe40"),
+			decodeHexString(c, "e329503392a8e7eb562ef130d0f9fd5e66d5f23f24879955e66052d2009facda"),
+		},
+		expected: decodeHexString(c, "4a020e7ad33ba380a562ad132d5b73eead1e89d9207a6e4adb12e08d62f4886a27c218b03641f7b6cf3a90e4460b3639e0aa9e70abc9ae6bdcca60827a3a0753"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_3(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "12f06bc8ea0c9e95b3f5b8d9be8d4b94fb80883393d44414"),
+		nonce:           decodeHexString(c, "49dfee7311725f1f46c1d500100541d1"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f7ecc352dac28062f1dab51785b6b0e31b81db6ec76ee053c32bbca87c7e3b9c"),
+			decodeHexString(c, "ef29f689ef40b3a4f186a3fd57bd483ff28b5ea6293e1733a39ca3dd3312fff4"),
+		},
+		expected: decodeHexString(c, "173a295bdd79ad148b15c26d8d13133a0c3d52c5eeb6474a73abb76cbbbd2f740ab8b657cbcf7b5fcc86271408b19fd935e4b74a0df9dd7ff5099ae0849f4ea0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_4(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "3f4dab4bd45679101e4e9e1d0538ef4d763230a0af43fae8"),
+		nonce:           decodeHexString(c, "8bb68ed2940f71b60b7c7d8f60c15ca6"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cedfb565d554249acdf9e61ce996eefef0cf7eb7ca0eccda77b7e6715f38b77c"),
+			decodeHexString(c, "baa640a13506f753668eca790a8d3fc4c53f16eaa93d088d69f1e58815d42b3e"),
+		},
+		expected: decodeHexString(c, "ce36ad853b12d5d5093ba35fdecfeb25f1b1330ceb37e58e2e58a940f05f9002e0fe6b8d36b5146c188ab1e33ba84e954d17a52033cc081aa8b2507be8d51613"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_5(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "1aa5d23613dd1f71714a01e75ecc29a6d1481c76157a8177"),
+		nonce:           decodeHexString(c, "2ce6ba4c82e7cc2e598cda4b3e6ac8a7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "026c224912b49ea7b2a1a7ccd50418090c1383c64f2852341c28c1f6562f9bf7"),
+			decodeHexString(c, "d9810d1a33921f062061d7f667506b0279de3e143e55f572284693609cb73785"),
+		},
+		expected: decodeHexString(c, "4775cbe9f4a74b72facf4a2cf8e9581aa02532626037fa3b63efefc3c7c1c2db0eb5903ea1a9cc9e40b2b9e628acfd9d74e66572a8656c75db6a5fbf5ac0ad1e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_6(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "326f6e9122703e58316e7e0e2e5878610423f0f5597309a1"),
+		nonce:           decodeHexString(c, "426e56f13e11269ea6bbafa0098611f5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8ae88cdd320e96e921d06de23c92a71b5c370ecb4dba9887f60344e20856a904"),
+			decodeHexString(c, "c5bed34cd60850640440d0c70db4de17859a25c2bdceeefe5ae0cf8fc780362d"),
+		},
+		expected: decodeHexString(c, "f462280c4eb39c83a2085f8d62a4bcec7c276212020bed35e898a554d6afb98e7733d5712eaff884058ca88ab3e43f3e7f58d98ea2bb97ef8a5dac6363566670"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_7(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "00712f30c7f32e21debf402678a7e2f7201e96e7c2551796"),
+		nonce:           decodeHexString(c, "9723772e04710d54a3765107aad914f5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1777d99dbf76e0265ff6853b83518f341b32788171db4f17ca6504d788c2f137"),
+			decodeHexString(c, "79f3a3695e2cfaa7f0878729e9310bb479d300cdc15ca37e368e3a45e7f1ea26"),
+		},
+		expected: decodeHexString(c, "e7bd545d185305a0e443516501e7fa9abfa842274d342ae3aeb29583c150ea550bc6fba952a49e30f84c2934299c1fd2d558191eb7ad80d828e63aa9ff223107"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_8(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "0e1e1a4304bfe237e9bde54ccb876bdb0e833bfaa3609ee1"),
+		nonce:           decodeHexString(c, "4ab3d52740b7b9de6ed39a013215d14a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "02998f33f6be3bf8955b9445017569716726866be7d6da4799e4f0720af53593"),
+			decodeHexString(c, "1d96d9e0ff54792f4fcce920bf790cf72d58fc865fe8f446fb03cbc2eb21ea2f"),
+		},
+		expected: decodeHexString(c, "adb0e93e74791997ddccf96f56bb297893ee40f5289bc992b67870af19c985aa9d911b1417560172ca70a9f6076556f96b4957cc574c0989fadf1ceda9df9bc2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_9(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "16654b44fd38c0b2448967829be7bfc462786f088b1eb457"),
+		nonce:           decodeHexString(c, "fefa7fcc14fde25b6f4ee9a2231414f0"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1460fe868784ae02b239427a0a44872094267138a26cc402e72aab1476df216a"),
+			decodeHexString(c, "2a2f4d85d1fc7918e8154053d84302b5496cba91c36e477ff02c75489ee770bf"),
+		},
+		expected: decodeHexString(c, "9ea5e40768aa35ec4a709b8a7d6c2761e7a77dce06cb253763ebd70a9f69ed625ccc752c3e7e809769fe99dd3ab805645e96c602ff9b4f78122ef2e809c39e60"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_10(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "eefa26217ecfe8e052d0d4c0893920837bbd4b3f966a348b"),
+		nonce:           decodeHexString(c, "e92a5cdea072a2cbb98a5d1ab41d7ccd"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "48f1ccfbb59d7ae728fb22729812366cf66a7df635d33ed1857f9b88013b1f21"),
+			decodeHexString(c, "b24706d1de83e2470c37ee214cbd7271c32bb1650596ed122af4239350bcef9e"),
+		},
+		expected: decodeHexString(c, "650a98b365576e2fe85bf736cf216b45192beb9125bb1ae48912ec06f39d94e2da02eab970b9d9cbc77e30278e46a7982d7a2f7b75ca6c7d538390f95407382f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_11(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e76532774d4ef45deb39bfb52a40461d3125e362d24a56b8"),
+		nonce:           decodeHexString(c, "aa470555ee449f9f06ba2812970ce68e"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b2ece717a61119e9fd32458081d00fbdd7c1b53422a53aa32ff09237e5028687"),
+			decodeHexString(c, "6b9e894499b1e478ce1f439150b480ef8b8014993ea931d8aebefc8b76a96272"),
+		},
+		expected: decodeHexString(c, "f98fdc5d33eab1a456fc68080d593b83bf6cf0c7cdb9834082de3686919d0752365a5ca64f322437671f0543ff74ee6490a0e870634fed4b5ec98482ef09a2f2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_12(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "4bcccce35feafde5da22d95640d28b232ca7c6ec67f46e05"),
+		nonce:           decodeHexString(c, "0df8f3cca0128ac39c11c038f8dfe0ae"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b3e19b4afc446629f45cea68e76b8643c72c926ea0f0bd473aff44c8437ca2a8"),
+			decodeHexString(c, "af06e0f1bdb11c07d696d59c0561896b762583253970a95ccdbb1690b5d3a211"),
+		},
+		expected: decodeHexString(c, "11266869e6a09fb1c363ca25f8f32845ea6850807872de594cefa55fb5d84bc689cc518b4eb83bb483c15c62accf474cc6afeca56ffa84c3c01beef6aea5e23a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_13(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "48a4799fbb49bfc9dd0977ae3b1c890d2fa69f577554c3d3"),
+		nonce:           decodeHexString(c, "6bfb2d6bb92bb2ed8817992ad93cc6a9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2cbee2fb8ba49965c85a9f660368cf1d0181b6afe63b348221482280c905812d"),
+			decodeHexString(c, "bbd3e24c95d8fb5c60d71544b6696b562a2d05ce2eef658e213f67aa2c1fe5d2"),
+		},
+		expected: decodeHexString(c, "8d78f3b722d4fda0d81837a61f33103b36f772a20b03f9fa80d2e7fe0c845edf326165d71685527931a89d7b1deb01240aeb1f8f5fef8dab57e14384580b693f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate45_AES192_14(c *C) {
+	s.testCTRGenerate45_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "fce85e48ded7337ff3d3eae391e2b2a39542be0505f2930c"),
+		nonce:           decodeHexString(c, "e5905ce653b9275f14b0e6a10623bd87"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "beea3564ab77adf63a2fb514297fe93fc833231c22db9857a39d6e2970858465"),
+			decodeHexString(c, "624f46ac56c687fc336dd4c7d7db44a56291eb7f66d1884276066b38550ffc17"),
+		},
+		expected: decodeHexString(c, "698b1ebd2391c2f14cc8b20d964f39d5eafb56d613daa8d38a45cc6fd9cc98ca4eacc4794bc9c317aaab1410b8d565484367e3d930671d001713c329e65d28d9"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate47_AES192(c *C, data *testData) {
+	s.testCTRGenerate(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_0(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "43f247a2ee1cb5943f0a4a6942355b1633ab82d0cf60d433"),
+		nonce:           decodeHexString(c, "8181ab27f93f662325f8cdf77bd46399"),
+		personalization: decodeHexString(c, "d393508a6da049a646aac8c9cf8ff53a70f6645a67ec466d6ea6241e0facfad9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "dc3e8d4c2bd4aee278de3f998ca603ec502332b6a1cb6c8285b84c84ba54d732"),
+			decodeHexString(c, "1d0d64b5a50de03ee2654fa59000fbff87b4b8b32e90a4dee90c9a7612eaa575"),
+		},
+		expected: decodeHexString(c, "d6d7c64dd922f9c7f3f538c4cbc791da2dd13f278135225cd7ce36738ce272f35155d4c2696e7e10a8f48c7360a1b31a30037f6604ffb7bc7b29ef0ef5aca84a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_1(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "b4e8fbf6335138a24efb120ee9ff7f99e194a17e644962e0"),
+		nonce:           decodeHexString(c, "8e4dad78741952b34a27bb85ce2bebd7"),
+		personalization: decodeHexString(c, "4408dc6f19ad7cab0760560c217532ab7dd5658120a94a603fe3b62f8fc55838"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2f18e42c7a50801bf5135a0d8fce0a9b802bea0bef4c7f35e4d8948211547221"),
+			decodeHexString(c, "de9e72fe4130fb75c8caed415e14bd0b922b9bef8be144f436defada1096f981"),
+		},
+		expected: decodeHexString(c, "857a931d68e2f1f41d9e92a74f578bcc86082604032f3bca152e70cbb4c0fadadc26bd2667194a6c727e32ecc1b2fc634b5bdd2d9006e6faaffc233453da4725"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_2(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "d3d90c953e60cce29d4913b6ba6766f9d85f1fa054f2359c"),
+		nonce:           decodeHexString(c, "9023ad28e8c5f2e4be8fb2d86f622505"),
+		personalization: decodeHexString(c, "d49db664dca3c40e69127b04f8ec7fb00773b8ddddb91ae2e1e3c84c68ff9855"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ee10a8067841b5b4a3a6f3496704e97478a44cdcc857e4f29680f669ec5a83d1"),
+			decodeHexString(c, "efbb9a696efc90a774ee87b7ed434503792c1a29beece9342e0b5724c3f5bcc6"),
+		},
+		expected: decodeHexString(c, "284fecb833a6e418e9e516c171fce852e702a4488674771c913e85169f195bb799f019ac1b55a7e3937fa770330722a801511384d856fb199b76e264caa06b6d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_3(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "907bc8c3a8c6946469c488bf18a8e67f7cc045ff4ed69d5f"),
+		nonce:           decodeHexString(c, "c2e0cbb26a48232dd32310b1ceb32e9b"),
+		personalization: decodeHexString(c, "ab67f1fd53e12c364722d6b5475d5555a17951eb10d20055ca3e4086bbded2db"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac7729462a01241436c3be8e854018733a84254f1e0a2343ca69058c54716f1b"),
+			decodeHexString(c, "85d43647b36e294abddb0136b6550df3cb314c8892fe279b965f4e8931edf2bf"),
+		},
+		expected: decodeHexString(c, "ad8a6fd4c3c85c4df187f035433250b650ec96ad962c365a8b14425c4d37b0c4fd58d00f1094ea7627acaf67b237344683b513e8f524eec496ea907b0cb81c27"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_4(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9ec04e7c20f77663d330a43ef193f3a3baeec89ec0860b7c"),
+		nonce:           decodeHexString(c, "3267aacc67602d44b40663f3e79d99a1"),
+		personalization: decodeHexString(c, "adc105b41039e058635b676bf7c07d0045f75ebf642391f5684999a5c2f3a4fd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a5b374ce0a749ed120b7b3adcc5ee93dccb2b05455c626df03d186c965bb6bbc"),
+			decodeHexString(c, "1eb592133f72ec56c3dab6a53789720bd2ebc1bd1f746f7a05499ddb7d9c35a9"),
+		},
+		expected: decodeHexString(c, "699f32e3066ac7e1f93c8e0b41ddea898df42289f8632b976f5e64eaa823ff28dfd9d4e124449a7ffe1a603e0407b13f7b44b4a501025e1224d84bd2e780a644"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_5(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "9da256b4e15b21d48a9f5925c11d275c8b458aef750ea2b5"),
+		nonce:           decodeHexString(c, "95a9bf02b8b9a98f7120a86676410354"),
+		personalization: decodeHexString(c, "f6e8c36b41d3d0d747133198a0303c8a9a9de2aa784639af122bac75d6eb8535"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "62da4aa2144426d1ee3581a8c0f91b84e17ace43f566b257d85cf9f9b1db021d"),
+			decodeHexString(c, "d71ffa97fd0a7a80b919c21dd7affc577700aca7dca6311d3b9064f50208435b"),
+		},
+		expected: decodeHexString(c, "120992a82ad8fed5ad49db7b756b94185e15b1fb53aaa64e6c7b9ac14487307d0fbb5f519527e468fd978291381f9592ccf53df587586ca0fdce0c81310dbbb3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_6(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "a813ae3d138bb9768759e2590addea6390266405b8f59b68"),
+		nonce:           decodeHexString(c, "5249ee76a7e792e6a1ce5cade789b846"),
+		personalization: decodeHexString(c, "7b4b71747d17902f3fbbeb3a60005c2a30e902f696a8d2d8ff6828d7551d8749"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6ddb9255508d29af7a998e146d8206beaf82c1bb7d423d92605e69a6a03180e4"),
+			decodeHexString(c, "8485f257d44a82bf920013cc8b8321a357d1933b64395c125540908da9ea9e99"),
+		},
+		expected: decodeHexString(c, "52fb0400f8dfcf694f0daada7ba781e09af5e48fcfcbe718052b46a389df713ab3af71699c41d41e6542b87cd9bec4ce0fd292ae52ead78cf52e0cac5ccd4f01"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_7(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "67e44471bc656eecee7805380e9849f9e3f4f2f4acba5205"),
+		nonce:           decodeHexString(c, "6018f7e1f943fdcf7fc9595ed0a08107"),
+		personalization: decodeHexString(c, "ff0f82bd94fa8c6554e05c6957973bb8c4f3bd3e8857abfcbcde87c584f75611"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f09dfadcbda71908da9dd7bb7a9e16a3c25e302050235eafd9432a8a7878c10d"),
+			decodeHexString(c, "1fc8b60fc030f7c4177a5147071513fc2f174659b012889a0c583bed7c3818b7"),
+		},
+		expected: decodeHexString(c, "35b2bc5f592428d61bb7e062bf96303102118ac5b166508ad5cd2281f59b3806be118e97887c5732fd96c7b1714317597aaf20a1a6ddf7578efb7436980f9938"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_8(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "94323227088d2d5ddf36a1c42435e205b9e7ef19b6aff092"),
+		nonce:           decodeHexString(c, "9f9664c87d7a43142ce3799d1791c0c6"),
+		personalization: decodeHexString(c, "a5f83a66277cb6c94b20860da08874f33c2a3534cfc7aa53f40beb4fdeff870b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4136bacf19b6eda75f699271e5b382f0f58dd8b59e0eaac6e43799525f7e3b76"),
+			decodeHexString(c, "2cec57e8ecb9346380b380bf9ee77d1b077d8b79204d73e0e446ef38e1a9f26e"),
+		},
+		expected: decodeHexString(c, "53112d084e0160a762fd908e0540d53b07cbe6484be9cdbda8f3a1c14f79f2d2e0693962f17e10edd07c66d42b40afb4f02d695e49846f376dcd2b5cd21c9cb6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_9(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "e1ce5b2c05f45a8946f5b79492517e332baeda4d56c2abf2"),
+		nonce:           decodeHexString(c, "cd2d68475bbf8ad875dd309ad428d644"),
+		personalization: decodeHexString(c, "74c6b170791c53aa1cd52e382eee21848227567af40c5581f98748f4efc605bd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "49d5a1770f851394b6e1491980bfff7621bc5610b5777e71e9cda30dac1eeaeb"),
+			decodeHexString(c, "4c5b1582c5f7df4fdf91125330f8dadc366877ad8fead651c7fbeed8ee4e4178"),
+		},
+		expected: decodeHexString(c, "3c37e1ec6c180b32a963bc0440221ac5c1c33d89272b9f697c75737dd9cd2c749c25f3c84553dfaef86af46113e06fe1f6c891c6a390590e1668ceb75c95d3c9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_10(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "7b9b3aafb3da4fb6935de0a71ac9fb4095c61735072c28db"),
+		nonce:           decodeHexString(c, "28be54c196be072fff92bc6caa8ccc02"),
+		personalization: decodeHexString(c, "88ea40aca2a8aae480858074bb140369516675bdffb7fab4318cc508357b7bec"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c0e3e9d7008d64fa3069aab3805c0c817c9a0971446a8b53d00fcab02a4ccb59"),
+			decodeHexString(c, "dbac681fbc3eb3c5739452a5e150f595657c04f07a52062052ed1b19ae53aed8"),
+		},
+		expected: decodeHexString(c, "4c4d6b058fb13344c4175f023959a7701152ae356e40093f7019d47ae51ee51967e4fabb209b67b20a95a337ee8d4fe5f666cd08fdde3a74dc9fce0a5ae0f931"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_11(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "4c59c6c67c4844175e5f1a34ad9e08434c205151b7447a01"),
+		nonce:           decodeHexString(c, "828dea3bc07abd45df797ce7dc8edd77"),
+		personalization: decodeHexString(c, "fb12992f394b213b087b328fb274a28f0a2d5ded770fb8d6fd7bf3821d86ee39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5ae8e93056821c7fb07b48c5c6aad9fcf33434ec1c93942930ec06f0311cd09e"),
+			decodeHexString(c, "09222875e69e811b92ba62c485a3d810a8ca89f0be468c7c1361412e193b3c32"),
+		},
+		expected: decodeHexString(c, "f71b7f6ccf4dc0bc0b898bd38ab8102476d0bb7e9a1add22568216b0d5c52c4b1719a6f2223bc24a5248c915f65d5e183fb9fcfaead65f1ae04beeff1bf42596"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_12(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "81f4ab514e4ef1c89f186172553990af49a3e074729bbaec"),
+		nonce:           decodeHexString(c, "35d5bb6eff10d27035e7888fd6c0c570"),
+		personalization: decodeHexString(c, "ff5aa8cb9489f7fad882522c96a3c8cae83a9b7113d0c1e49da681598ae2fa56"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2941785509148b16813f88f1eb430b2862e303fd716b7172b141b999423fa30e"),
+			decodeHexString(c, "3beb13e41b29c3f9e7c04bd8b93ac2c8fbfed06ed33b8ea9317fa4ca3c253101"),
+		},
+		expected: decodeHexString(c, "3c33d778b1d61c12ce1f71180e8ddaf4f3098b0927ad9e863d8f74fe871efca1d672b2d07ca57a89118062bb354994c1c5aea5ab1be2f92571c0720197435e73"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_13(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "6ccecfbe10eab1caa8fda938402ddc3a3293ed7aed4d87a9"),
+		nonce:           decodeHexString(c, "0e4e20a35f77bddc04b8d172f78bbdee"),
+		personalization: decodeHexString(c, "2a1e1d1f1310ae69aa806b2b14ed2b1ba3088cd39a4c4d8f27b48b9e627de68e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d409752d8887b347e7784472c028abd9f045f9641db4638d6704a82d776716e9"),
+			decodeHexString(c, "eda7996915482c0609a432e725fef58fefd915f78afb80d0664e9968bef65a91"),
+		},
+		expected: decodeHexString(c, "579953124f7796da17a383c359c5cbae151e18b15f61b1e405ed2ccdabae43e4490d269272326d1388e4590140f4e58dfc6eca21f63603df0a626bb76a2851d4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate47_AES192_14(c *C) {
+	s.testCTRGenerate47_AES192(c, &testData{
+		entropyInput:    decodeHexString(c, "3d174d98eca80ae39c75d27f97b99e9b0f742b32e37b94e8"),
+		nonce:           decodeHexString(c, "bcfc4613175b6e353408e23b8581e705"),
+		personalization: decodeHexString(c, "3d0e9fa5616fa25a0d58ddbdc4a6a8e55bef051db6fedc8be8d4c752f1d2c94a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8718b15a550f978939f58279ecdaafe7980a1bbfe6b9de85b9fe107c72a8fe20"),
+			decodeHexString(c, "078899f5a1edd1ba8e10eb8efa2c98ba174c1bd35a74414cff8623633ac1c25b"),
+		},
+		expected: decodeHexString(c, "74e155a5707eb19b79cf7efce1c4237bac69e3f9311411c92dacfd8ac92ea11a8787a47bc44f1c2944445b2b0527e16aec6c01165482d7e3b64437093b87bfbc"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate49_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_0(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "8148d65d86513ce7d38923ec2f26b9e7c677dcc8997e325b7372619e753ed944"),
+		nonce:           decodeHexString(c, "41c71a24d17d974190982bb7515ce7f5"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "55b446046c2d14bdd0cdba4b71873fd4762650695a11507949462da8d964ab6a"),
+			decodeHexString(c, "91468f1a097d99ee339462ca916cb4a10f63d53850a4f17f598eac490299b02e"),
+		},
+		expected: decodeHexString(c, "54603d1a506132bbfa05b153a04f22a1d516cc46323cef15111af221f030f38d6841d4670518b4914a4631af682e7421dffaac986a38e94d92bfa758e2eb101f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_1(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "eb4a0add697097f1ce3a719d0d4ae69b1721dce3ec0e6c0e905d78ee212863b1"),
+		nonce:           decodeHexString(c, "5f368e85c1f17b6463a278377f691f37"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f97801bce981b35081c25801400ec207433da4f17f3265a16e9e4e683722708b"),
+			decodeHexString(c, "ae54b49a4112b3d978e966e2dda062e3652b58a14bef4ffe038520c9a675d353"),
+		},
+		expected: decodeHexString(c, "6aee0b3a815c82f9bb0119f86af90793fc1f9996dd5b72bbc326ac4e6a5e874850b2fec1d7202c35580bd6727029609f2471e6c9b61629d174b894cd178adfd4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_2(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "7fd6e262d821d5e5b660485755ea7961579631a4b964cfb4c2c35afde69ffea1"),
+		nonce:           decodeHexString(c, "ae8c54affdb76c5fd196fbd5a2c477ec"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ab81035cb3c017cbe51a2bc64751ce61f8ae02e80afef8378f42ac67060ffaf9"),
+			decodeHexString(c, "4f7db02d346bd41668fcf61bac93936003d22febd3b9f8c0234d151b492b16e7"),
+		},
+		expected: decodeHexString(c, "930c26431a0fabb45abe418db9af10fe275580f499cdd717f7fcc94b59f952a04eef8f1d5aa0a4820ddbe413b5c3d7a08927346a90635ea2c51b0ab0e9cedb1d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_3(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "7050790a8b22ffea19a505e4fbb3bc2a3b41fd947ce3dd50b4f738d8c22fbeb0"),
+		nonce:           decodeHexString(c, "365628a7b6e7a71660fd3638351e6c12"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1db1c19848580ee1f69a63814b41ad65ea1a54261e907d3edb80b5e9c558199d"),
+			decodeHexString(c, "061812906ed3314a9df0ef61b3b52b685ccc45601d69d9844cdbdb45627d4294"),
+		},
+		expected: decodeHexString(c, "0e6fc5de18297e15b432a124a9d8877f9adbd23372406f263e2dd77c69bde75596eb9f8a7a25d0b45a403a4c5758771f224909d88408f174487fdb30554c1f3b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_4(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "2968f857d583ab287410f455bf4462e8a717fb93bc200db43d12b1d133be003b"),
+		nonce:           decodeHexString(c, "dcdd146a6f2f9f0f86804f309216a7be"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "655eac56cbb124e17582a1fa7fa6199ebe3281101ec78bac749a4d1d287e1b82"),
+			decodeHexString(c, "26ba4b5401b9d124625a60d53f2d7b3f45db5bc43611d4cc59c83a1818169cac"),
+		},
+		expected: decodeHexString(c, "a7bf0e655020a2c9a50643ccde05fd95a64466da7a756bf1b9d195fbac0ee2059ba9d5f5e343fd8d6755a2e54c38803ccfc4e919124c1ecd4853715486be4f1a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_5(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "8fd3b330fc138f421a66925f72648985e5a255e5997ff247e53362dff7a9a0f9"),
+		nonce:           decodeHexString(c, "3c670e2467e3fb087c7ea6cc0af556ff"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a84efb4a464cc8aa75497f86c3515c6476cedc7b940f9d46ce401bd1d52349fd"),
+			decodeHexString(c, "78dc05307d0650a1a4c86491d5b31254f54850d57ee4ecfb69c9a4d268570ac4"),
+		},
+		expected: decodeHexString(c, "3cb7702d62e76beec92f66c72c6313143c562b52ee9484c8200d331509cbe2d0f4cb4dba7dfcd41839f2e76749ab8015614a14affddcff0fdd4eb182f2bc484d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_6(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "1828ce5341ed771c2c8e68ef5d5728a525a3f7655363c5ec01c3fcb30c0d1025"),
+		nonce:           decodeHexString(c, "fd4c5d43545e8856b61ca423e9580c7d"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "38c281995446e6c27363008008f9b28fcb5c00383a209587855c1d819d48bda0"),
+			decodeHexString(c, "9b1f6b84c4632a5b215fa3f84110c45b6bd53bccca792b4c4d2073ccc99ee363"),
+		},
+		expected: decodeHexString(c, "a3d79654cd4f5670a637ad40f47f7fd5ce21d4d18c6eab6dd02c791428b6a965d3f7eb0e6203ccb8ddc06f3e298ab313161294522f146d30844ca7742e02207e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_7(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "7c15caae3d1d58acde9ff74d3516c8c2e960eca6daa1596f7b01d08e9176b1a3"),
+		nonce:           decodeHexString(c, "f0863c9d0f60aff6bd1abe2ea24ca95c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6e55d13bfc1662b7fefb1ec222e3866b4df1b0baedc355f4a523db434560233f"),
+			decodeHexString(c, "31a71c65dbabfd7c062cb2e1911777387bb997090b43e53dc9543465a0eea6b0"),
+		},
+		expected: decodeHexString(c, "c365b1daaa9cfd4ca168101d996f7b8982ecd0638581111c9bfda5289a30c419ea77c31326478b072faa0f00312385dc0a3bf26b6cd4fff0ce2efe4b0b557a5e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_8(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "73c16ba19cfc3f8d3d4171a2a5ff0ebd8e1b1e5e152c1b459a588876d2db5fb6"),
+		nonce:           decodeHexString(c, "f29862b57a0896b5644493ed970e142c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7e481bda6e72207b6df74f30f59cfea699baafdfb8c504f874c98dd3f215787c"),
+			decodeHexString(c, "003e694185f02d9738a767b44a55f79554c1460a10c0676a7d227ee484c58d88"),
+		},
+		expected: decodeHexString(c, "bcf850fcd2ff56df24e491ea3369b65d6917c4aa34592829a777f95dd3d86a3b8e884d9da6e5320290d1fd8995f1b56ef47aec492dc720a211898dbc5f50754a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_9(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "ba821484740fcef6016528fc68b88096d103b24d1f08b9f9d9fd12ddcefc1a87"),
+		nonce:           decodeHexString(c, "ef53be20eb5aaa865449d74c48281815"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ee7a7d738c39091ceb31911b6149db26c057132aa7e40625ab4c2e24a1ae1ec1"),
+			decodeHexString(c, "71d4e37d8e0bbcae40813c33095581bffdb15d42c6bafd7581bbca26bea7badf"),
+		},
+		expected: decodeHexString(c, "fdb832ecb309ab8fd46d1a5bc64cb37a199a90684785d32d1339d75ceda5338ae6961ee41cd163633246d67fa603c4ffdad56abc3eecfd9e9397b629ecb965bd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_10(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "afd391b50a0f2e81fef3e044db9268d7859c2b61d53c7d1902a9af69f0414281"),
+		nonce:           decodeHexString(c, "f1bb5a1169445a2dd8c5a84527c10f7f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b594b046a57960941e834a00a2cdc7d6f2430b93f5e26940b2d6941f424d4bac"),
+			decodeHexString(c, "e7d767d3a81e39b6b0e98ff3ed0ce6ffbb43dd5b986b9cb8c2742bdfa02faed1"),
+		},
+		expected: decodeHexString(c, "2836800d4e0a0180b279f0ee1ff6148b0b367709f9a9a3d10303d48ec8036a531792d3210d9d671746e203fc07cddb29f787777775ede3c98c50885df7ddfe6b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_11(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "05925195f9735e38457acef4b726cbc58f83ca3740c5583176b1135c1584daed"),
+		nonce:           decodeHexString(c, "d5cbe95034eaad6e10e55a05155ae6b9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ae5e511f357e362e3920ca3e7cdad2ae44912d64bc09629d2eeb9cc540b304f6"),
+			decodeHexString(c, "3fe1aaf5c791b83865e56bd19ed19a019d2590c0cd596eb72f4644c8c41490f4"),
+		},
+		expected: decodeHexString(c, "3123c4e81a8d0671fee1d528328ead1ca4de8d07b3e570cd0c5aa1c666158b86c3b548fae600d00250f3a85655cae3f40999e43932ea75647a4df1c75a19fa80"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_12(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "ae13a2d23734b2d657f67d6bab36e1121d5d2c1edb4e36f4ef2ffbc10b628cfb"),
+		nonce:           decodeHexString(c, "6a1db353e3c5a6e6657c86caa72633d8"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cbfcce209fde4208efabb2417952b1c9fc22843ce2174608be04a45f1d9827c2"),
+			decodeHexString(c, "a8d0ca788800852c5df5eabbeaf1f5fbd94beb746103b0436876bc8092da8bad"),
+		},
+		expected: decodeHexString(c, "d3868890e738bbf5602ca46e009dabafb16f5686fddb787c8cca32892360f61099f0d77cce39dc8f6e530540fc5fab3eb657114847d3a395faf40f8af64f4d2d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_13(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "fa9f4fd346555db35d3ee8f157957c8191e3e861844b4f5000dab48261f85f74"),
+		nonce:           decodeHexString(c, "5e188b4ee078d57f91d7de219fc425ed"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5eb248cd138b8fefa2b7e8fc752c0fbcb082be51d0f4e2a988bf5f87fc737447"),
+			decodeHexString(c, "7cf9606d302f53567e45b98c38d4daae232c925cb92e54c74bcf14104e32a113"),
+		},
+		expected: decodeHexString(c, "8958d245d70235555a1eccf4faf2009d32762e332494efe5f48fa5d7ff30c7cbf07c9bcc3e70d62b94a4ed21db5e39cdd01a1e96688b3bb9b2c4ac0a7afeec24"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate49_AES256_14(c *C) {
+	s.testCTRGenerate49_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "c764bccc19053d7f12df71011b35878dd0bb587deb887f8a05f040ec45e324bc"),
+		nonce:           decodeHexString(c, "a4b1a9ff049172476ab99f7ae0645e6c"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b6f2aa8a993aa04252d6c014eac8ad0b90cf0ed438888173e15eab280f73abe0"),
+			decodeHexString(c, "c6384c9a2c9d8fc4c7422fe40e430e4f36e6ae9bd6b039d55abfdd8f05d6a20e"),
+		},
+		expected: decodeHexString(c, "6300f28941dc173a9f6f5e4c11f1d1d7d4fd7fbbaf6fc3a97acdfc008a00109a670e487e5dce423a3eee4882347ef26449888c8dd73b9aaa73d194c171469af6"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate51_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_0(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "87b56e964eba227154724bb9484b812d3e2c0c43b3d17f6098d9526e16e6d0ef"),
+		nonce:           decodeHexString(c, "9bea6a7ff2358df142e6c23e2157fb83"),
+		personalization: decodeHexString(c, "9860b432edd58d1ccbfeecbce99ffaee7d935a614860d4e965bd67041403096b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "99a5cc87924e8ea65a596f81fd17d63f5b4542fe6e8e1511b5d35c835dfadb0b"),
+			decodeHexString(c, "9a8dec54734a34582a2332f3452e82313524c3e0dfb485faeac6ca5fc0ff504d"),
+		},
+		expected: decodeHexString(c, "dbc6a2330b19b5cddd8cd6392ec1fb508678c805e87d1aca07ac265007632503044a00610c79d98375afa7ab4cca1a90989cbfe7c674af5d823ced11c47e9af6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_1(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b36032f5d777250826d831566ec585452d70b920654355acf8f691941643ee95"),
+		nonce:           decodeHexString(c, "dacf747e85faa6a3eb016df929c90e8b"),
+		personalization: decodeHexString(c, "f03265b2f2174cea938ff23c7e60a75dcba1e4e412bbad4b5d3b3e23685e80d8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d4772380de774bbbb6100d9339590eff033ff548b826685553a2e857800a07e2"),
+			decodeHexString(c, "05011d3dd4ddcf19076fae656973aac9a11641b210963cec81d1ea58db7bb7e0"),
+		},
+		expected: decodeHexString(c, "3d3531057977401072ce44e2e66317a808d47c44aad4f98c08d88eac7b598c40714ad12417b61699d1126ea4c642b09fe9f5ded36f2e37ed2cce972e0dfcc7ce"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_2(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "3242a1b97c11e5ea8a1b96ccdcc25628e79ec5d14b041558d312ea72a3dd0dd0"),
+		nonce:           decodeHexString(c, "d9f1a8dd83b0f11317a92d2051e07e97"),
+		personalization: decodeHexString(c, "930b0c3b96263c3ec7edf25890cc5d7ea41d6564a81f17899fc7b49c5c40b091"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a905dab4ade75ee5e68a0709d1d0699a87f5d4f8e49c8c95d9590d7c1238d0f9"),
+			decodeHexString(c, "4d8e2d92299765b9cef039d947d4427d4b9c14f42c81e12bc91b4e297233fce1"),
+		},
+		expected: decodeHexString(c, "fa3adb6a35e0508534803eda5f39d9fd62227474d9e1435ed0e5e6da01e2e4d83a3da9395a3c96efecdfe92b89e15e8caf25e81724b3973551972a8ff5b5cd0f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_3(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "bb2c5c0de9dd276942ca0a54faf9a4f725e27b196a6f16e9dd34595379e5b869"),
+		nonce:           decodeHexString(c, "7630fbb71d49ba0ba36dd88d2d491d61"),
+		personalization: decodeHexString(c, "a0264b5005dbfc57194bac89089c16a785222af008310b20a6085ee741892ced"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "634fd7cad000b786fe362c914857b5d9ed2669cd5c777c52075cff3840bb58ab"),
+			decodeHexString(c, "fdfe161f0ca0e6ecd6356adb646ef62935d8cfc7522244a6041cb3d7cc6e6839"),
+		},
+		expected: decodeHexString(c, "e3c78a24d5a34b2a70264d13707ca635c95426f422db78c18c91e3c40fb7392c02b0a9ed2e1d5a9c73ef456c37afe6ae0cc1867263b4630abd7384ab68290342"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_4(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "7374b723d41ac87cd1ee53880c0d76bd958b50a8714ffd070f453bd8498622c8"),
+		nonce:           decodeHexString(c, "86e123cd4f074c7f073163fb189af9fd"),
+		personalization: decodeHexString(c, "16b62675e9f924c6fcaa133c0c75c41b5ede75bdfd4a70110ea74afb73d25697"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fc060440872ba7ee4b26b0cab6707cd388c69d85acb57d6579c8d8bc4af1adfe"),
+			decodeHexString(c, "cdd150f8d70d5aad8784ea74c5098605f83cb07f69dbade193893bc0184dab39"),
+		},
+		expected: decodeHexString(c, "cb7e38fcfad91f1eb82dacd2ce9911b79bfdb07edbab2edf24190a2d9da171c18c62bd10e3b7d7ff019b666ebff42677d79b401ae64a4137287636d49caddcdc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_5(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0db75d22f0d16902c7a1813b0adab2ebc675f4305738469b142b7f9a39d5eaf7"),
+		nonce:           decodeHexString(c, "1ace393a30cb36dabfcd85483491b948"),
+		personalization: decodeHexString(c, "1f9f7abfca5d5365c644f7d9d33d1288cb62b27e873a4d52aad0e7cc1c895388"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b0210179bb14598ad30c4fe1f2bf43c781ea9d8b51a26b8855a812b55a1cf894"),
+			decodeHexString(c, "73a28b72cda9f831e21b776bc92e3404132abe5d7c2fe1c26ad4ca6ca6e4ea47"),
+		},
+		expected: decodeHexString(c, "f7b6398260d30e5b240dfd5ba0136ba2da98b8bf253f7a7c1bad9132625404e89988d271baf0a26e19786106bac920b9433cc8b4f5b9853e247c0506d1b11488"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_6(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "6bd081c58637e555105e141dcaca4b95b5becf399673db6cc0e96c66e16092cd"),
+		nonce:           decodeHexString(c, "cea71de8819b599937dba48477ae9fba"),
+		personalization: decodeHexString(c, "eb045c2985ab91690758c2b56c7dbad256db16efc414344a4bbae254be4170fa"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f132bb2e731cd1ccfa373b4d1e8a527ed08b429447f32b23b96d312e5babdd23"),
+			decodeHexString(c, "0a554ded57c1efecc4d4a01a82ff1799c6e936f9f93402bce462102c2d25910a"),
+		},
+		expected: decodeHexString(c, "7de60b0a40fb8359da9292c68f261631d184b03e904733b5c963966a74d4875a8f365087dee9c2cb8d05778b0e0b46e526bca13c4c50be490625ef050a794528"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_7(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b71bd14e1587f6334b7f94642616a36a55ffe4a75eeade864ea7051e646bad52"),
+		nonce:           decodeHexString(c, "a43dc97f411be97cd18dbecfce562f23"),
+		personalization: decodeHexString(c, "ebbdb81ec03a13a15a03db5698f34aa8c02938bf8785f13fde75cbcd823e61f7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5817e39393e88f0939d5a8d70383083fc66d9c533baee628282df78046fcd8fa"),
+			decodeHexString(c, "f967a6d79c657d0bffd3346fb28046911b1f8c3031cc6e2204c2c9e888432f77"),
+		},
+		expected: decodeHexString(c, "e1ba47d45d73ba54da503015987d8e1214c34687a6ff786a880c98e5e2e5590eae69095a93216d1273504d94dea67c51f4a8a5d97d0242890c394bf73ef52d63"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_8(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0d970ea0a1e89d36fb66a73ae7a7bb4760ca9b0e2296e2d241629b99249ac9f3"),
+		nonce:           decodeHexString(c, "c03031dc1cd9cf62c4d03e2e3720391b"),
+		personalization: decodeHexString(c, "91682be81934afd81dcb638ba8883a88913e3265da1b92c8d9b34a2b906624cd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c3b33dc2f98dc8dedc2254b382654c75381a4df071334ce22860e92c6164f8cc"),
+			decodeHexString(c, "53b2ae27f964fc862b39f4a16d73a9980e81946cce5c2ae4a5ef6a25b92a08aa"),
+		},
+		expected: decodeHexString(c, "e3471abee1167a57667132dd31590e95125f61957ecd621ddba49ebfa53a8f5afeaa30aca1adf11ca20de2cb08f0dd4329d950d053920926931f672827931f8c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_9(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "bed960ee26eb33fdf4a62cdffde84e6d1832c69148a2ae5cbc9ba5036313c2d2"),
+		nonce:           decodeHexString(c, "53e092e708e8b8a4a036ed6d0cd12870"),
+		personalization: decodeHexString(c, "0803f28c79d53f057953db4a1ab5a3cab581f2c16d1e083f2948acd0fbf9beec"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "429a3310c1ae6731d468ef6f2b1c9949bbfc8d36eb66fbee0c862e42586aac3f"),
+			decodeHexString(c, "d7a5d580048dba0ce676b5047a989eccf3e4052a6028efff29e7cb0a13ab64ce"),
+		},
+		expected: decodeHexString(c, "2703845ca040ff0349b66c1bf8226ff89f278757baadb74d2774fdb54df01774f04bbe9acd6bc8e8a1f2d97aeb891303a5337bcd69ce4afd4c6b62426449dd63"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_10(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "8e7b6275c48fa60aae68bcd6aeded17fcecce712ba47a5da79dc8883a2b2b443"),
+		nonce:           decodeHexString(c, "c1aa1c237e69853dcf44c7558dca07d8"),
+		personalization: decodeHexString(c, "d5737e7b1f4e53dd924151fd71c51a77e655f5173ccdf0e97351241b570ea4f0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bb70b8db19d3c1abfd6d2513653f2483be4330067ff66b8fb62fc8e672df9628"),
+			decodeHexString(c, "0005e31b9334242beb2f3ca988603f5dcba685576eb760781d9f47252ba5e29f"),
+		},
+		expected: decodeHexString(c, "e030085f667937f866e13ad0854f245b8f392e07015e0371d5ec72b9271ff9f0946a6d4469c7701c485fa49ad79ef5dbd0b1010d58d6b17dd4054c1308150065"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_11(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "80db28c5457f9b557239db5951ce1a29a5b8e4856c7f89d02858946a278cb705"),
+		nonce:           decodeHexString(c, "9414cfc5452afbe4d93afaf162604b0e"),
+		personalization: decodeHexString(c, "78816ba6d7b63dc201b59c74b11d2918b058e7105828cfff5dcc1781cf1dfbe5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6356db39f59e61f88da615a79e6217113f79a17c17a912343412efd0568ec233"),
+			decodeHexString(c, "448c62e972abf9c40bf9185d42b345aa6fba9b98eee2353a5fd01597387b6096"),
+		},
+		expected: decodeHexString(c, "e660e4e2b2425871318c453a6b311d0bbb01852bde280b0e38d6c3d07f4b8a9b3a4fd1a26d263bb757447aca1530a041c127a77ee2e5ed83259f6462e1dbef6d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_12(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "acedba215c390babcf0f1d46193c189e15c580c1bf490965bdee963d38fe9713"),
+		nonce:           decodeHexString(c, "bba7799f7241e126786d533416863a33"),
+		personalization: decodeHexString(c, "7b1e057ee52ca0d4153c1ce64828c8705230d19f900d7a771aa77182fcc78807"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6cd1684988d70d569b0af5585fb9b8ba698b599dc4a0bd7b219c2e92014a1ef4"),
+			decodeHexString(c, "857a8b64a820a21bc49a163f72175fda94a2878287866cde8636d46fbad9de33"),
+		},
+		expected: decodeHexString(c, "a321e42eab684150fe55db9e1f4efc9ab6bc94adfd78b87a8d58ebd11d20ab3cae9b0e1bdb31f1ec1c1d85c1f071ace639c053a0682a077147314506c07bdaad"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_13(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "5dced2afdf72d22d2b4280e181186eb3fcd55cbec0d4a026936262bd0f7df636"),
+		nonce:           decodeHexString(c, "076cde762ac39b18e448826edcea429c"),
+		personalization: decodeHexString(c, "ef7db5dd64028a6745bfe0e57c8305c45ec24438d9a65371b7d98c93ab7320cc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "643be9512fb8235a12db981111079b5c453699d48f0b1bc00d643ce0e017dd04"),
+			decodeHexString(c, "b853e79ddb46b2591589fee43d3dd7ad9ea169332f83d44644c30b0cf5c9792d"),
+		},
+		expected: decodeHexString(c, "487878dc78a9e86f5faa7f779976f3f0c207f8e9cfd31bea54bf121c41227c86d72564c0a1b585e6f284aa732b5dbeac78ab5ce172b286f6dd2d7b9763e76725"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate51_AES256_14(c *C) {
+	s.testCTRGenerate51_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "4d6d0d6c03552880c0d0c567f143e297f77d9a5ecb547c28abcff1715b061084"),
+		nonce:           decodeHexString(c, "1b477661132834abcd713be227978820"),
+		personalization: decodeHexString(c, "1c584491acb3f1a62ecf84120e4c6adb676c233a1684f2d1b8cd542a629f6c84"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f24b8467ae57669e4ad67588a41f9512fd48976642db1737122064a1c1234448"),
+			decodeHexString(c, "7a6f1a191117c2dcd5c9c175c827d8da04e3802ae835b25182fa83bf91dc6871"),
+		},
+		expected: decodeHexString(c, "1dcee0afbffb8a0cf4002cfc262c4fe058d13e35c74c70b010476c7153313d7145df889c2f991f8f978f0d73c95e867c4d2da4f3f4d932d0b9a23c78e0f112a5"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate53_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_0(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "d67439abf1e162e5b25941605a8aeba7d686dec133257f6c220e1c595e954a07"),
+		nonce:           decodeHexString(c, "69ff3310141dbf3ece409ade58745113"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "03e795be8379c481cb32534011ca6bf524dc754978ee5ebee475129ad39eca98"),
+			decodeHexString(c, "5685c7330f33004515f8c0ab27f2a1cbe0c8a4a6806d6c8486e0217b43e859f2"),
+		},
+		expected: decodeHexString(c, "a6d22a4370251c51978fedc7e7753c78179ed1943d2ff1b5a374860106041a304b124d47cfa304c909f7d417843846d52dcc7ebcf5c93afef885c893b40c81ed"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_1(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "8f7c8cd0bcdfcce6614cc6511d5195ade6dad5f61fef59886f2402122e430a8d"),
+		nonce:           decodeHexString(c, "17d1412b8344599a39b960761c6ac39f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e539593cfcc79ebd0a5e7be3243e51a77bf3817690b2ffc80ce5dc35f2b2d4b8"),
+			decodeHexString(c, "e6a24e9f7624afb3a55d9974f8cb1addc4432fdfeac7c35a616111581cd19b2f"),
+		},
+		expected: decodeHexString(c, "5fc20736da9cf5a810364b6aca24edf758bd20ebd33173db874b641b8470ab9a8a633d1238ba990103956c0f5e2b284f3b473c28d0055d7e9bec0b839088917a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_2(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "d3005b86846d8b459ed9105218a1787c1d80012053caa38ade196bff8273c893"),
+		nonce:           decodeHexString(c, "3a689f930cd4c53862c68191b5adbf14"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "70c4bbeb4f7f527df7e0ad69851b66408b2154e7a26fa542d92f0e5b1a969575"),
+			decodeHexString(c, "860572f881d5a97cd7c9c8ee39e4fefb67b9147d37fea5a64f58cd2e7ab68384"),
+		},
+		expected: decodeHexString(c, "4d8b578e27ad27de264c63c3d2f8713d58022c541499335110a280990bb0b3d38a13943cfabb7a6bfdc2db2c0509098989e131c89a7622235b769ecc2c509dd4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_3(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0b9925bff68f29843c8a05c695de378b370e8dc9a6dde33fe86152fa587af1f1"),
+		nonce:           decodeHexString(c, "b4385b66096b2d2d0dac689d043c6091"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b80bd934cc3e73ea85ac4a7fb5190d1fa2988d29afb3a308c92205c0b745b070"),
+			decodeHexString(c, "4dafcb7528232034d261706361cc87671875ee67ace96cad099b1266a75cb728"),
+		},
+		expected: decodeHexString(c, "5b561f9fa2602b553bc3d4c9001f8b4d98591c8d813366a79206eb3d7e92b41c34aef32380d79d4f7df6735696f147ce5690c3c5676dfdd20aee3b4fc9559e17"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_4(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b7c322f812cdd3c186dc9dd589f87d469f64e5ed80a04e414418e264008648c1"),
+		nonce:           decodeHexString(c, "8b669fc0e3acb7949041005a27fc1445"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "de101fcaf1c3bf368e7040d39d57665c835c40927ca863d70f74341c1a113b68"),
+			decodeHexString(c, "7feddb0e87864d35879466dac232eb86fac0c4fd745851261a6355d36e018005"),
+		},
+		expected: decodeHexString(c, "f79166bc53f73bdf873d76ba81e1eb62970327c8e6fac10dc23667b9da74ec5830f55025d952eaac65dd3b52c1517c79b0559a39c54d30c97cce832c1bdde4f2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_5(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "daba89b62a4475e8c2214052d204c1ffd248e0c3008a0bd123830db5023e53c2"),
+		nonce:           decodeHexString(c, "77fc741014e514243058d3a2cf036374"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa932a71bbbd86b3f3a702fa384d49061f31c25e809dd9a03034ac3cdf6b2ef2"),
+			decodeHexString(c, "9262caafb3383faf78d9b0440f0c5be28e260f3db77728d7fca679984cc38ddf"),
+		},
+		expected: decodeHexString(c, "784c8d5881349a13bc1a38edac6e8fe7dc3a3b662b40b740ebe8c89d144ccab319b4cd90820dd3f5ecc3100c9f72878d5eeb21f46234f4094b71b8b34285c550"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_6(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "8f7c640ca15c75840446d442f413bbfeafb4c2b8875f7f1bfd16122b81e1ac1f"),
+		nonce:           decodeHexString(c, "696013a4c7e7c724a40723b5557b0056"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b7d25770e0b2bd1b6a8220f86b3d759d20d8508980cf591f443dde3acd3ef648"),
+			decodeHexString(c, "bc08f84621afb6a7d331a01bfc5716a31bcccf05a78e696dc7689b985389e12b"),
+		},
+		expected: decodeHexString(c, "d486cbac794ec9c6b2acc6aadb93e32b30b27ea3721fb614e82347eff461649cb8d0f6b43a39b2e5f6f403ff4afefd90adba5e96164ac73b27d8ae2098e632cb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_7(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b8bed19521f6d2471b761437f10c9db9af2ac3032127dc5eb38e157182e2e25e"),
+		nonce:           decodeHexString(c, "e00b1b8712b219b78444a3fcabdd0f68"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ed744e7861759e337e0d8db5eda6f66cb14240d1ff7a86f90c96dfa2f4ce85f9"),
+			decodeHexString(c, "90f3b8920dbdbd8ff6c6601b57a5fc90aa13bba98843dc5143c0182ddc231dfb"),
+		},
+		expected: decodeHexString(c, "3310be30088029e13524ea9e8d6bd9efaa72d1c58d4f9d7e9853508ba163b906c458020be3cb7c5f3a2fa88953f127e7e117c1f38947a6680b53d28d565a3ddf"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_8(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "014276ad54579788dfdaf12f2df188ffefabd35164f31cc873c6d391496e09ee"),
+		nonce:           decodeHexString(c, "4662ec7d07bf4ff10bcd0c834106e179"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e66f960f9a893d39d11c0426bc9e7e1f6f0750557a6969e445cebb47d2f5d427"),
+			decodeHexString(c, "6b39f45bbb785ca9ec23303fbce7093a26fb879b13fadd927dc95019b8a25cb5"),
+		},
+		expected: decodeHexString(c, "dda5118ae234e6aeb5cf634e57a3a3ce7681bd803690f8d68886ba5226fb40182644a643a554cc586d9ccd148a75240142cd8f62ebe8747b4be6e75323582006"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_9(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "cffcfbedb35ff5bf3c796d1ab94a8ae1b935addf6fdd8be000ae3099daea7bd4"),
+		nonce:           decodeHexString(c, "1f7ec8658f17e64d1ed1b49815ef9bef"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8d44eae3908e4ad53fc0fab41799bb0356b3ddd473fde429af21d7e04b426b80"),
+			decodeHexString(c, "9e3f828e8ddf07ceb58fe8f1697daec666b9e250fa5a836ffd18ee173650e72c"),
+		},
+		expected: decodeHexString(c, "100162aa4180c5e5a18c51bf7d2b78ca944c70e62bdea554837a868135ccbe1b79bebdfae409221f438df72833b8dd9d17dcbe06ef8d1901012731c7be12fc53"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_10(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "db31ef9dd1266c60eaafbeca542f52b4fd989b4b436935ea65ebc62554be962c"),
+		nonce:           decodeHexString(c, "d03a8ba034852b4f96250bdd89f36802"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "62ebe7715a7ddc820e44ab313767776f8785b181426fbf493e7cbcce1360fd23"),
+			decodeHexString(c, "0528b69041c4e5eadab618a929f176f77c345b6d89aee9aa955c5a8ca8fc8b92"),
+		},
+		expected: decodeHexString(c, "017cf4ff686df4c06fbbc0be9789b828f15be54aafba7287b4391e9ec7b7d0025db012df4bb35c74061677207a7d7a061ef123893ea4d7c8220ecacad56848b1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_11(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "06b26d4ffab4a8611414c8fde87e51692ffe5078834b5198193df7f98f1c5261"),
+		nonce:           decodeHexString(c, "de49f9fabaea3f8dd1ec581c71d5c1da"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6bba85a3f393865a6a7b733916c28ae39ba403a0348a2d3b7a33fdf819571bf9"),
+			decodeHexString(c, "c32fd284c43aa072eb72a7e47f408a877ae40e1209d112c99d457e7f9653cb86"),
+		},
+		expected: decodeHexString(c, "1f0f5404f51d48c3f3623b938432f7dd4249649f61b6f103c2fd8b30dbf5b4ea957b5de096ac47cb107e522df0138076342d6c2ea08ecc2b481c3e73ef48a046"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_12(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "21be1442e68953af2656ec3adba3a65a7b459b7ab4e79c775ad2544ce9a4f8b5"),
+		nonce:           decodeHexString(c, "b6221e282e81f310a6a2efba73b0490b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f276b8ae6ea4d99b27ee891935300f309a7e6f154f5ac6ee273883ca5357ba6f"),
+			decodeHexString(c, "93268a42426cc310ee18767d9663269f5e1c46b96c6b17b2f8bd6ecec3435e42"),
+		},
+		expected: decodeHexString(c, "45e85ee0300a9462016c4b7d4b1619c76d4aa9422b5c45cfacadae24b934ba190f76a8a4551a23e8e14473ded8f79bdf91b4fe0ce163928af2c1eadfc96d301c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_13(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "dff8c14a6119281276e71c91d66d97e29a141e06537eaf6c2febd823493b7e3f"),
+		nonce:           decodeHexString(c, "1e98174edb228d55cd4f580427acb37a"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f17f9ddc60c63fa80436041e5a21197e5e378ecf70c7ee392bd6f8929df1eeef"),
+			decodeHexString(c, "1390bb276929272a9942f294d5cb64d6322c1cdc9a6f87f1bd4e9ad7ba6d829c"),
+		},
+		expected: decodeHexString(c, "c1adc5145db9b5eb35920a94b7632e5030e7fa3810300117a936b887b8bbfb0c51169e70f26c0bf8798385bccdd7be4f7c53b3bbf97a65b16ccffcb1d52ebd14"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate53_AES256_14(c *C) {
+	s.testCTRGenerate53_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "e8d1ca5dbaec674722369d3221a3dcf2681fb370061e488827a00790abbb4080"),
+		nonce:           decodeHexString(c, "e5e6144bda93752989c54a702081af08"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9eba53d0abbcdfb98439cec32a14dc79244ac3616a71dafeb7175b71f982e214"),
+			decodeHexString(c, "76e4aefbb68896411bd793667e0e3bb3ded837d3a2bb370d944c20e5bf03e6d1"),
+		},
+		expected: decodeHexString(c, "6f6bed605bc0419e367a42048585cb10540d3a035fc9905fa004729fefea4671ef17aac2cc2c964f35e740988e636d8d25117c953d0af6a199067ad39aa61663"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate55_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_0(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "ed12df77815585fc9ae7396620eee4ae68cc82a82ec30a792901e2858a59705d"),
+		nonce:           decodeHexString(c, "232a3db970b5cf1f31a5e09f02c0a97e"),
+		personalization: decodeHexString(c, "2f9294db485305d48863b6f537c3faed903b9feb94bb848d00dc58e77d8f47c0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c9969a563374480bc08f61d4b46e587afc55126d3809e603e20e44a07636c678"),
+			decodeHexString(c, "03cfbaa739b33c1bc60abb1c730e155fae07837054b08ee848c458c88569ffc1"),
+		},
+		expected: decodeHexString(c, "78bd67eb4e660a4fe3474ec1e95b1fbdc1e4dc6867184ee4ea9e156814c5849c3c12d7ba06cced8c872712c2b96e7468536e11a20e93e53b8c778e9c0634c6cb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_1(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "2c8c9162a1dd63c1f2894714d89158030a5f677aa014d78bcd558d8ffba2ab25"),
+		nonce:           decodeHexString(c, "4206b6c3c1f543b1608fb9cdb62fc2c7"),
+		personalization: decodeHexString(c, "aadd7d9f9cee1f93f43aff3132837758e88955350f6deeb77bb4f85cc0410454"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e749fb5d67ae617704fffebbdeb998b2692db72af8ac217f7bc5416f93a77a8f"),
+			decodeHexString(c, "46a51349db45456db94ed12546ea6a621489acfb40b0fa316a3c8f5f480a0088"),
+		},
+		expected: decodeHexString(c, "ee1f95da9b2d79f0cbf8335efcc6912f163946e4456d3284b918579b50d6881db4cc086d3d212af2f342b4bf4657370b025cd4ad2c1eeff3cf6070dbdd507861"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_2(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "91973ea617f95b5cd94cbbc2bf02038151857363d850256bdf9f78bd22340b49"),
+		nonce:           decodeHexString(c, "9ab41560f85452070052681a25d9f0f8"),
+		personalization: decodeHexString(c, "69163fff9bab5297e09fc9351f96a5bee99730861fdef10adfd4ac38a0800b3e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c42c503d417d87679f530f4ba05cbce3404874d461163f5c570a3cfad75abeed"),
+			decodeHexString(c, "bac9d9a16d9f1ce7a4ebb7c3781243394e2280a52de6411db52ed8c309013ecf"),
+		},
+		expected: decodeHexString(c, "23640cf3570c88f35c440f5a1d6195de06d086b9118dd6daf8974865d52e11766eaa8b1462c77b542d6a5391df6368ca682f6398af5156ee7cd8ce2450258fcb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_3(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "effad82104041786159be5a1ebc0be77688e6f1c075dc20a832e3ffafb11c54c"),
+		nonce:           decodeHexString(c, "e13badfde36a8c107e4f3cea693da36d"),
+		personalization: decodeHexString(c, "01ea78e5be0bf948962d7c334ae237c560bb49e6635958035936c48d9082de39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "726349a1e52be8b84b1575827eae96efc1c11551b35c68a04e89bd125589827a"),
+			decodeHexString(c, "e943569bac0d0e6b4100ba89c6f32dd7ed64573357c57783f3d0e0f69eafdd1f"),
+		},
+		expected: decodeHexString(c, "ba58119f2747dde7fc000e22090ae3256aecd264cdcf77d3c51f32fa96b244feed3205fad90d98a42727b551cddcb3fa28870c08f02d865b4c39cd1e36818a23"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_4(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "852410083634047a3f9aa8c772517c6c912fa95bab1da09a3a7053c4bbaf7501"),
+		nonce:           decodeHexString(c, "49cce5d87bc905e98bc5bd3f2f6baa0e"),
+		personalization: decodeHexString(c, "79e71535ed28e080a2a024bef60204377419c13b0f573739b2e38ad2d94e9801"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7c8dd0aac536114f88e6dba68c73da37b77006c5a44e786e5f62aea36558f945"),
+			decodeHexString(c, "05acd9921c8decd60bc9cd124925c8b51bac8a6329e4632dbf076532ebff9296"),
+		},
+		expected: decodeHexString(c, "90b41b644ad053d36cff4ceb3d67c0f064ec438742d714cddd624fed5defce1ceacab325c140017316f29aeff232244c5d0a0204eed8cdd7da346db29de7aa8e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_5(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "bb568266318d9365092657ecfaf05ac70c8dfd797a47c7e85b51cb6126a0e693"),
+		nonce:           decodeHexString(c, "dcd35d6280f40bebc82125ea28be7a80"),
+		personalization: decodeHexString(c, "7b254bba6774fc1f601c0f2f9f9002a290269cb6562d150d4b3a32115ce4313d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9714e5460fed9b43b303833a6001fe0b071a4394d10349b56ad1aa5c5114f926"),
+			decodeHexString(c, "b13a4e4421ac553f5c166fd948b758794e57cc0cc0e73e760dff26bec8cf81e8"),
+		},
+		expected: decodeHexString(c, "5db4685019620248ac08d023d2d60506e21d94d156b9a1c390903bf251d1b1ff3b46e013a2c6d92a9f70a2b18bbd7584a2f0a19d770ca016ee5a5f83faf178d7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_6(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "340027773742a6e91553a7ba6544388e74e3ddfc1151fdb9b763a9d16cbe597a"),
+		nonce:           decodeHexString(c, "e604470169512808cd4a131bb182780b"),
+		personalization: decodeHexString(c, "210f36c96b6b19f4b559161c60c48df296bffcccce0908599abaa400177a96e9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d55d9816d5c4e2e2e181126bc08040a9f653ed95ea124c64e4059e2f48ffef10"),
+			decodeHexString(c, "6c30a64b1c73fbd08da5cebda18642f78a02bd3247ab1d78c1c03f8a6cffdd89"),
+		},
+		expected: decodeHexString(c, "4fff81dbf1f42ef57bdbf6da194311dbc4b464d3a11a33c664c0d59834ec60a583b3908ade9cc6fbb89debb198d1143aba2bc5753983086b422098a23877cb2a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_7(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b36a98e6c5b23698135eb35f28dc830ac6bc1717e5c3ee3ea13801f8a8c9365d"),
+		nonce:           decodeHexString(c, "7f131997a92922413d837ca50e17d977"),
+		personalization: decodeHexString(c, "1ed6b07cb525134ecee32200713601c18abd9c7920e7ad1dc0764cd92e3d56ff"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a4ef9575b96682d7552f9eb7ba269c43a50835f23fb2cf1f81838e9c01b1ea40"),
+			decodeHexString(c, "189bcd45fa13939838663ade2eaf1979b33c172f5ed741123f06a2e3ca25427f"),
+		},
+		expected: decodeHexString(c, "c8b6cc901c4236bd3914bc77987d9d639973d69c96e040197737b9a72bbf3b5e8998c54967bdae26146772716ed2ae0c6b208471bdf21a85b2774bf7e516b34f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_8(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "c00cdf7e0e786a0793783b6cedc37d6d0504d8c5ebff063014cf81092cf61d11"),
+		nonce:           decodeHexString(c, "942143519f87b3835a0edca2d4cd2285"),
+		personalization: decodeHexString(c, "3a953e041c7e5d30632d34a7e814f4facc858de6b8fb3c432973a4db4a5a78c2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1fab1806260c24259536e14574bbef9be50eda48936332d60bc3dbcf6b10f5f7"),
+			decodeHexString(c, "18cce308956e63505d43ddc28709eacc783a14931593d079d6bd74a695c3075a"),
+		},
+		expected: decodeHexString(c, "9f4d77d394815148162d6ccaa8b73cbd61b54c5db104e7c047bf0a225ae05594332bb56c60d51d2986e57513f4c266df39d9beee9b69649891b6ccaef4b986bd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_9(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "fb5f6958203fa7bd066655ef7b5fde99a571947e1f74b8b8f53a854dbbbc352e"),
+		nonce:           decodeHexString(c, "0290fb96ddaed0d8179a0795ee1cd529"),
+		personalization: decodeHexString(c, "c59d3d2fe30b85ed64db2c9ae863b9daad7bf96c331d66df945f5f3a1f8d2515"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c99d7fe2deb6af99a1782e8fc12a519636471fc3bfad0ac2a789a2f20f4df63f"),
+			decodeHexString(c, "e479ac18b2fed6d9f2ee441a20bd50aadd2a90ba9625ace01a4449a6ce6efa92"),
+		},
+		expected: decodeHexString(c, "0ab870c2516eac1ef1e6dd3f2de9dd0564a56363f0b8c42b4bae4b22e14c9912b4c1cba8f3158eb5881b86524c94cbb2c8169fc8cc2c13103a6478337f2bb00a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_10(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "a4c9750048b33554e24759a37627c40fa7d2bcc045b06bd22a8d90ae1a8ca279"),
+		nonce:           decodeHexString(c, "baa137ffcad72d2582c4c348b12b8158"),
+		personalization: decodeHexString(c, "a4f115885e0f45c4580d04cafcfba8ec09c5e081b65d648567c55a9d651e521c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "eb8e2aa182fbf785f25da7f57054b70171e5a26afc5a61aaa1f92fb4cb3ac50c"),
+			decodeHexString(c, "a44aa0b5255ba339bc3cd1715ec6a8d55699e1b4996b9d737da83b8a357045b2"),
+		},
+		expected: decodeHexString(c, "53f74fe7ab0ad31d5df0327e6dbcf5deeb3f0bd9d1ff50b7a9d522fd9c9c3f633e53ce1d3166aa7f2a25e32d0488ff0789a1b981886d4abdd2014de3259d4064"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_11(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "30b02827cacdcbd1d9971af688a45a6b311e49561429faec6aef87671bacc6f9"),
+		nonce:           decodeHexString(c, "1b1746f76939eb07183286965ee648ab"),
+		personalization: decodeHexString(c, "6b4f4b565693482693f696512104ec1ae12ac65a7ce0babbf193f1fdc4c231ed"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1e3adf2b30f288b2a18d287c1b053afb7e513f6de90386abb9da60419415cd72"),
+			decodeHexString(c, "e19254cf8bb5023fdf51269b83a961f5a347f54298a3196698d4c9fae3ca2ccb"),
+		},
+		expected: decodeHexString(c, "473be398de0e2e5cdc50529e6ceb0222b4038e8e0776e96c277421edc10f2a841dec9f07c82f00e2f53062ab68e3f7d4ebdc18999e362ee904a0baf44229b59c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_12(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "554c467dfd02c9639725183785aecd6c0f5a3280c61c822bab02f1d7413f4361"),
+		nonce:           decodeHexString(c, "6ff6a4acc5a58c681de9a5441a9f756f"),
+		personalization: decodeHexString(c, "6acec4a4c0be17218e7c3f4246640920aac48fb3800914db2f86dc53903b09af"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cd24875cdf70eb4fb71c0123e0eb738a71dd76f36ff54b9b7ec706cef0e035f5"),
+			decodeHexString(c, "99d671e8f8e72cf8e9a02e7630648ced53ac393f6fc0425e5f525eb413d375dd"),
+		},
+		expected: decodeHexString(c, "35beae8558e9b5ecb30b1bf5abc52310219196b58123257043d2793c05c965e6258af783ecee80b33929a3fdd77a8b1adffb723bcfe7e65f7cac682862220f4e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_13(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "93ee61dd850c0c972736aa98dc18bb3add529eb92583211a298fb08df17a7af7"),
+		nonce:           decodeHexString(c, "0a4df317784751082b982c85717cdc2c"),
+		personalization: decodeHexString(c, "f4f10e095e9f5faacca24f5395a73cb1538565df679c8754b7ad94e836f69168"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "876e002f90f5063ddd5c578d9d9f4a2a9bde7ef28a41d9c277a489e85afb635b"),
+			decodeHexString(c, "c2562ec2353e63e13e6c6f6f06e1ba220b0848be353e5bd4468921b9bf2649fa"),
+		},
+		expected: decodeHexString(c, "d4cf478c91ba1973a7cfae159b8e4c0525b296b544fd8544f4ff10e7a2c5aebbe8b5a10fef16f4a91c1993090be7628ce21f53e2b4e7d6c2f14be344188fa4e6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate55_AES256_14(c *C) {
+	s.testCTRGenerate55_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "ac38c38c498bf9b7cc724f792706a07b87e4bba1929a418b03b742e4b0cae39a"),
+		nonce:           decodeHexString(c, "8085cb0ef7d546ee8d4f9bb183de56e4"),
+		personalization: decodeHexString(c, "73f2d180a4d2c7364a64be7aa757be6df27d937ae8da406c61d0353dda319fd5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d3ef42edc318fe3624e72f2718d274d7dbe2d89fd8e3c4cfc8a7a7a1b502216f"),
+			decodeHexString(c, "1fbbd73b62d4310a636fd56d283744f48591f96a0b65f24d8711ecf92b3ce3dc"),
+		},
+		expected: decodeHexString(c, "75b429d2657e16c7325d0570005c42b221664e8e1b0c1e6954aac3062bbc84fdc69eb2a54affcc49b401a2221f68a91746312445b03df1b8f9e9f2e34a7a1f70"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate57_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_0(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "001ec3b192ddc765553e15742dffeb21cc7d97a4bcf866e3664d8a5ecb4c2463"),
+		nonce:           decodeHexString(c, "6ca848651d420fb02f9b66f06b377e59"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "99f139ab5ee4f7eed6148e82d79ad5f2b9fa638d574e5db79b650c0e682ca466"),
+			decodeHexString(c, "6e7bf0ae28a797ccbb47101f26bfe5a0b1e450c57aedf731272411fa7b6c4ed4"),
+		},
+		expected: decodeHexString(c, "865b6dd4363c5940d6228cc90ba8f1a21efbaa99b0c7b37361f7fed7e969a97b68d550dd6ad4bbfaf6626779bfb43c66845c2923df9f55307c8bc9f0a3872fa7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_1(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "53aa6668d06d2bdb4aca989d294d68b00036e1b466d1553186b9eda9de693a68"),
+		nonce:           decodeHexString(c, "b77d9b74574731dcd96aed383505276d"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0e00589f5926ad32a0acb337efb61d0f8b6c4f2526ea6d1aaa2023d393b0f922"),
+			decodeHexString(c, "70404e729a596e11c5d14ab9e435d50e47afb735d558293a8d1197cbf85436fe"),
+		},
+		expected: decodeHexString(c, "b83778fb3fe16bfa43230ac101c9b3816827f5500c65060298d58bd4facb17a062ee03981e6d19eb2c9851fb00ae2b4bc517ee338ef59806e3c8b0b99fb67a31"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_2(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "3d38736b9f03dd306b10d5bb91c16b161eb4b6f054d2bc4d561a939850c040ea"),
+		nonce:           decodeHexString(c, "a0d0c188cb2f32a3127489b74b83ae78"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "37cfe2abe1906a589cdc671e01b50eca78b42702e84e088dbfd21c22e0432e46"),
+			decodeHexString(c, "2f1f523b305bbe799a920a657ab36ff4207188998f6c7cd39be4fc5d0693a070"),
+		},
+		expected: decodeHexString(c, "dc1a5b28e19ef89c869ea695f7d9a579f617d0923bd0641135a06a86e011751cbc2d9f2fa2612c3e6a2aff538c645380a618f1f18fbd987ae9f4ff1d704749f7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_3(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "89f209a7d8ce9f9368f9471a33bf7b469ef80f994ca5bffaaa18f163a4503d97"),
+		nonce:           decodeHexString(c, "37655604c045ca1f526941a050a2a78e"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1d24e7e3bcb7709ab180734bd12f4554a2303a38a83551d9454fe045abea5425"),
+			decodeHexString(c, "15646b331b808dc971dd2bc9caf8030b57085f8dd62c4bfb28110c75977dd1d0"),
+		},
+		expected: decodeHexString(c, "59ac0b9bbd2799b0808527a850b998ee3d6b7aecdba340f17b682209222b6783cf9a48ec45caf40446ae37e9539899410cb63f79b314d3b2b833b54c26a2cabc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_4(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0bee4937a071fd939f0007c3ce3abef43ffa3bd0e05efc0190ed5f2a2d644778"),
+		nonce:           decodeHexString(c, "c54f6cf10f6454c69b667b6416adcd6f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4d842e426b64e9422e7f77f6009c1157570832235be65d3369530f299fbfc82e"),
+			decodeHexString(c, "727e31e839a7875b654bcf1a5428d8af900e5aa40636aa80fd851c33787cabf3"),
+		},
+		expected: decodeHexString(c, "5a63f662530bb2ec4162f752361530cc8d5c890587d226b20f142bae2a2dbd694780d2a55553b035cd3552bab0faf94e638953300ea95087a732c9489ea41eac"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_5(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "269de0a0019b685102953c21d4d4825ee00fdb774c7ca721f1f3cc1a2220cc98"),
+		nonce:           decodeHexString(c, "e10806c0d8b9175f22fc96c7d77dfdfc"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "185ea897e252360586b39b5a2e3e12bb30885b99ba068d10ac7dfdfc263ebcd5"),
+			decodeHexString(c, "259bac2e62da6389bf6a5ab344177ca16ba5afe7755b5a5bb4b94b3ecc6a8f7b"),
+		},
+		expected: decodeHexString(c, "181c995f8592384dfb565aeb1149442b871be29aaa324047b12564622bc1ae7d382c06aab3b2aa6d3ce151aa1711f16d587a036623630fefbb69cc1538b4451a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_6(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "92df433def81e1d72988d295a56a679d0e615b5508c96c75ad5d22d8caa525bb"),
+		nonce:           decodeHexString(c, "71bdbd0b0bc5b1f03ebed30066768586"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "060830ecbb10c3fc18e78d0e8f12a65102d1ff8b37f899e5445b5a0363a1184f"),
+			decodeHexString(c, "628c96a7f562034d056a4fec0bfa2e9f0ccb6be9cd33c62241a507fdda007f81"),
+		},
+		expected: decodeHexString(c, "09c450318957e29f09e15bd3b01c1d502bbe9096f40aa951733ab8f7c0363053ca45bf819a02f3e19e8fd80cc04709ce07a6b5809ba8f7486e14ab95ced2e087"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_7(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "393415a328e21093bb34ebb08197d21394e26e43d82c1d2abfbdd46a165c27a8"),
+		nonce:           decodeHexString(c, "aee49e3028d40758b3f42fd6b8e68bef"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d53dc5a612cd154ade83afc000933ad88aedb824a02e2fd97a8697be56da48b1"),
+			decodeHexString(c, "bda392c579ac3d33d6c7b9455d6b8e7127849b5a186bf0060a3af1e8301eaf67"),
+		},
+		expected: decodeHexString(c, "5c331cccbc93522fc83f4ce8c22fff781ee6e7d382141cce7f0efee56835f780265a4be53c5412f980832aed12ce887cf15d281aaa64933c5127e14420979036"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_8(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b7c3acfbfdff3442ef1c79f4ac90c9923c3f90d9bf1b02a3ca73b9b560a69e8c"),
+		nonce:           decodeHexString(c, "9eafc973760147db5505745a704ba056"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b3afa763bdb6cf2ff790a5271ee69dd0d7b3554b6377526c468c50c15505ce7c"),
+			decodeHexString(c, "538109feb958e52d31e8fbb2c26a1037fb11ffb9c2b2559d18f841a837f8a69d"),
+		},
+		expected: decodeHexString(c, "e3d30219e1c4c9690497cedecff7abb42514e9fa0591b3669cf67004c0e20169129c09c7e604f9ac67cc2204e32931ca1914ae18b652bfde98f53eb4c1d406a3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_9(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "d3eabe6be4d17469dd74871817e17486e898c8e65f369ad6e38b41aa22a5bd27"),
+		nonce:           decodeHexString(c, "067d6610717a8ffbf8dbf9405e7f15cf"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "911ab9c5753c5d7093af4316d7d5c03a2b971db8cf7b0c58cb7fd8d5b9d8e01b"),
+			decodeHexString(c, "49535fc0ba863daf3b29dd8e8d56f206508ae7b0c3437a41847aea77184b3e13"),
+		},
+		expected: decodeHexString(c, "ec4be9f3ab1967e5bf963fe3cac873c6cd87d91a8a9d20e6fd5f6418a3972bfc1b9fcda3ab359eb77b85852d78a2a48fca436e3adf1b450f27045eba6b2f1d6d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_10(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "f46b8c14804b703b9387476510d8a650c032dfe9837bc4acc3ac40fcabcd79c8"),
+		nonce:           decodeHexString(c, "6a06152e4383b2128d4292cd24d6f2d6"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7ece8c73b70b80cc28f4d7b5c17eddf8150c6233e6a3274729665786f35f4bab"),
+			decodeHexString(c, "9ecf341b59c1e02395daba3faae6f43660b98791d555aba1d8109615432a7b81"),
+		},
+		expected: decodeHexString(c, "d2f8976ddbe8c61fb72059ac6efa8f2bc9688b68e4be4640a202b5dfa11d7552d4f89ce7bc8134c98df53cd056f6334fcbace2dcc3d64bf3553ed905ffc428bc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_11(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "027d701b531e618ce1b36491b25d967d6d3dcda0145e9e5649b3698a374a7b2e"),
+		nonce:           decodeHexString(c, "44a509ef420866098c3e0f4abfe73f21"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5052aeed2c37d76abbe93383167d256cd1b493a1b6b424da50407197e91219f5"),
+			decodeHexString(c, "a7cb70c529fdf61aa304cbba1f397af4107a6e4139a36014e54c7a411d872d8f"),
+		},
+		expected: decodeHexString(c, "bd11620ade95569f4e1cef6da8d8645dd827481ea42ef982e211761be4fa9aaee92f30ded268aa7ac92707d0d648a2e2aec530a48494d2699b3a3fd739da209a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_12(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "7342d694e08bd0bb7ba917118798339e36b9b30e1f1d0344e6f8532cd42d58a8"),
+		nonce:           decodeHexString(c, "eceabd4c874356b3b30afbaddce232ba"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "15831e1fc30ef52c79050267240b7464a77ffb90aa568138379a4e777081e2bb"),
+			decodeHexString(c, "477cd2cb4c80f3d16816ce2af1c3920f2017f2d4eb482ad2a5868ac40a0e31c2"),
+		},
+		expected: decodeHexString(c, "566630a22c26f926f13f30bac8c2f953deeb2ad90facd3cdc88b3f44fcee53fb1ecf13f37804ad889a7052b5fd7ee928a2591f6fdbb986fa38f37cc8e02d4e9a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_13(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "e908e2a4a6444b8526fc41835f52f9446b72f5331b3286a406c8d5408326a860"),
+		nonce:           decodeHexString(c, "71cf470f85a80e7b33c4133db77ee48b"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "929a61e3544c94218b1398c8d6904bde662d124a013a54e482c277d85e0dc2ae"),
+			decodeHexString(c, "5714c672c391a36a5b2f099aae8aaa1639281dc0f55b04c10186282341bb44fc"),
+		},
+		expected: decodeHexString(c, "d46af22dfd1bc555e42ac0ecc7ec28c852c8e335acc79c65e142faf4434153896483bdd1c64d5de2c83445797648371f59a316c4e0d837d6aa17546f8cda8287"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate57_AES256_14(c *C) {
+	s.testCTRGenerate57_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "6cf551903c86eb4ae6ffdef35f57d6d8a74617bd3d9790e64a2e76b9b0140555"),
+		nonce:           decodeHexString(c, "342e5501862060e4974bc88e7c632c69"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "91ad3267626ae5c360fdd7baa5ff88178ae84ff78b694e2fbf90779bf4eb898b"),
+			decodeHexString(c, "ccd97ec31b030e732edbfcdfb9848c2b3673bd3b1071502658daa460b262fb1c"),
+		},
+		expected: decodeHexString(c, "3731cfe5ebbc5b05c112e88f1b4cb3deeee4bcc9ecd1635e9c85469257150661a5dbac2e634b8fb0de08b5cd5eee1265f82e9278dccd77b1fed2323c554445c3"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate59_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_0(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "506bfe785bd17b7a2dec8abbe202a2414062b4c2ff22aac3890133801c54961f"),
+		nonce:           decodeHexString(c, "64885c54fd4616e60dab9c4a424cb200"),
+		personalization: decodeHexString(c, "db1aabae138e6bb9ca30e7b107110046ad188bef4a71c90d2329ee420efb4b9d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0e224a4d7b8ca1fff04656f9f4b5b9577fcefca0c283287677bb84b1c3083496"),
+			decodeHexString(c, "58acadc54f2195ef4d1353759947e6e52dba2638040776ab0be3b63a4b2d663b"),
+		},
+		expected: decodeHexString(c, "9f5475a395988b36cc3c41587231f18f232fb303cf82f24cbfe79569681f7f8dab8c7a5886106d530fe788886f8e5d1315715484d1882b1d0c2412e8796f270f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_1(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "52e7d8abd30c4b14786756e82dd7f899076e1cea07dc722f8e12161141f6d9a5"),
+		nonce:           decodeHexString(c, "cab68ce9deb7e545e33e5a27c4878597"),
+		personalization: decodeHexString(c, "9ac3bf47f6306a36ee84ed4ee6aea8e1d7e8b16b5c407bd1583e7cb52da91275"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d7bdd5cbbefd1b4d0cdb32937feb8d019d503cae80a5242495665565f32fc487"),
+			decodeHexString(c, "6361ac7a3c2090be66a46ff829df38ff063b2f9c531c7e4280307ec45c4fa0a6"),
+		},
+		expected: decodeHexString(c, "9834b9e1618d5f01ee9083ee89ccb33c18596e675e5f37c3f4f59a946ca093e1d8fb068cd8d6bb0facebb7ed8d97429d22223d2e2dd87d048393d3549931339b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_2(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "dbe7a4622d8cbfcc191dc740566fa0588d779a0d227b037f7318a4282a080b0f"),
+		nonce:           decodeHexString(c, "c4e3469ac3a8d23189c9c9e4412abcd8"),
+		personalization: decodeHexString(c, "08db81c12971681e780bd9ff537684de80c4bb214d6eb13a9209044ae462a740"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f9530b74a8cb024556ce54aed80c32ef2201fb19f4aa5601258596c5975e184f"),
+			decodeHexString(c, "d19a2ea853dee83dbfad416fec5ffebcb1c6936b359ace38c5f0570e3aaee7d1"),
+		},
+		expected: decodeHexString(c, "fecfbc6eb3d0422367583044be8afb65717723f5fcc53bde9294862556970fe9de964a27d31acd1d41ca77a1e3b0e73ffc0b1aa9c6d3cbe8426ce911193a167b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_3(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "b1978ea5dc18a993ab37b881e33d85ab548e98aa2a797ecf8a198621c0a1e117"),
+		nonce:           decodeHexString(c, "db53b0de8f5178717e0a69d8bdee9f37"),
+		personalization: decodeHexString(c, "4f6dda5e9cc1d2538eeace39d253e1621457d694a8e24e5c7602fcc819fb838b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e2ada71c24f2dece4315c7da2a94af4e47a7ca529d9c368a32ae450d1a645ee0"),
+			decodeHexString(c, "a91a32bd1d9d83d112f7accf956115bd048ab5f4244531e5932e382dd1435973"),
+		},
+		expected: decodeHexString(c, "397dd1769de4dda7aff645e32cfa1ed22f3a4397b62857896baa0fba9262ca8e46cf46f20b127724d4c6863c2111f1deea9efaddb91855bcd018481acf17f25f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_4(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "9ce49c6e9c5f2d43a1a2a1c2a90e8d63f1f4bd83fcdeb734f1894262d91b5e91"),
+		nonce:           decodeHexString(c, "f5a0885f0c21a3f16cfc3bb828246333"),
+		personalization: decodeHexString(c, "0fa14c2ab3bb6fc3f222f18538ee6cb98b2e1a4ca7b53e4c919bef8881380262"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "909589e0795e571c530879503b5660f420003bcd19ad051a5020a5d4461b9327"),
+			decodeHexString(c, "96d4628764c4a2e52ced37574ea8618b3ebfe7035d41edcc9b820a22aa16708b"),
+		},
+		expected: decodeHexString(c, "1aaa09fc05a322d36100a6805cc79bc3b53438950397697775c8f8f5b6879d4f7386d884a09bbd57a68efd79b7c0af33b3d45d9eb5c1909d4ab3e831e2d26a67"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_5(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "46b2d86716a429358c6c3951797e6417104a48d8f75072a180bf7fdf6dd888e2"),
+		nonce:           decodeHexString(c, "944b76180c1a360555098f3de962db43"),
+		personalization: decodeHexString(c, "7bb9cb6423d4685d866e47f98473a7dc720be0e4a42eb38b0e383b3af6a01256"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa56fec9906c89faadb78df0fd6707e75eae96c796d301357c9554e299768e76"),
+			decodeHexString(c, "c37047122973a6bee2a3a9481a24d5482c6113aff3865d6fc10898966b7c8e6f"),
+		},
+		expected: decodeHexString(c, "afc813fb3647040d07963b87bb78804a0729a311b6ee4ed26656679e56e371435f3fa450454482703cbf918cfe0945c70f3757e2c6ab3a674ac73b21de42c974"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_6(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "4ecf9aa3d6e33808c52a5d7008a767b832eb925ac1d67ddc76115e3c1638ab8e"),
+		nonce:           decodeHexString(c, "d582d46465f0179d1d3a9590f88618c0"),
+		personalization: decodeHexString(c, "fb3396b7fcdfa449210b4ce44d391fd87ec5663e97ca953d2fdced453308f8a6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "423b59a0387fd1dce93c4bc4b2c4abcbe056e10f98c11cc10c3be139729e04c2"),
+			decodeHexString(c, "5f6fe2a4be5701d0f8735f1e63aa1f4eb8c7213a787b8b144b83ceca54547a94"),
+		},
+		expected: decodeHexString(c, "eb5cbdab07b71cd35604e865d4f8b26eb840a65f83a1dfe7e3f6b2fcd2412cbc21f9ad093993cfab3b41489728338b58bef0b73d08638cc1258c390989eb7c28"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_7(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "94aa463c7546a159ea14af2355aa785a03c9121797719dc8e8d5eeeb2cc51c59"),
+		nonce:           decodeHexString(c, "269e5d4ad3cf2d14a17bae19c7d9c085"),
+		personalization: decodeHexString(c, "3511a4249d855072f65b31b21581992c754cc39dc5725924e57e5a39e3ce9e30"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ad0c18971e6cf6c7746671ac376c30861fc7ca661346067c44f60f48398cc603"),
+			decodeHexString(c, "1f4a35abe855d3fb5d69607bb8a5888a1054d99571f7f6020ec65248d4727d4f"),
+		},
+		expected: decodeHexString(c, "7dd66ca401709b52c77f67c22026fd921cb603fec7289db44400a7cd8322f2b2f8e2da652be56ae37b2a5984ebbd889c63fc399c24296a6cb65fdb2c2e869d0b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_8(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "921e44a4a0d18de32716d415c0ebb7447f88c94fe128013bb6ccb91ba370a942"),
+		nonce:           decodeHexString(c, "02b1ac59d895eb9719a7ff3bbe26cf41"),
+		personalization: decodeHexString(c, "21a1a34ab5aab76df922806839bd4ace2f17def59bc735bd9f9eb018004b0202"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8f8d89505db0f59e62eac83a0794d57e7aa0b689825b1f32e4be82a2805ef794"),
+			decodeHexString(c, "0bd6d9de89606b1b6fb2d8556042f3be2e18a22465bef44c4b32292d91039208"),
+		},
+		expected: decodeHexString(c, "86dfd58fc6b93d895710bb6b06767497ad1ca0e8c0f5cadd8a012fced92c4fa6423b77b96a1dc28971f7715b7823dd5d910ebe2eafee3779a61e1f707f5325d7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_9(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0c7c987a32bb369f5c133c0294360ab3f06fff4af30acf4a36554abc81ea17d7"),
+		nonce:           decodeHexString(c, "49630b516b1e44cad4621bb1b29434ff"),
+		personalization: decodeHexString(c, "fc700612ef74779c25ef846432106ee4321d357c9c74ed0bcfe6d7312ec0c6ba"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "55d3deaf9f2670e72bdc3d13d62eafcc8f2c2ed0cbf17982f571d086738f40a2"),
+			decodeHexString(c, "03e480ed33c81f60ee1d558df49e6e0c2e4f8cd4007c0ca9d01a65e32d1fd13c"),
+		},
+		expected: decodeHexString(c, "1c02a13db6f4befd3aa74b04e9eab010184a322efaeb860f607e98d5b15d4337983deef87799c0865517a12c4b49bed1016cb73eba6ea02fca60f7efe550df3a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_10(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "afdbc8acbeebbb3a58b1bbbeb10483534773a2e1631f98c3503f6a4b331b14b3"),
+		nonce:           decodeHexString(c, "dc8dff64e44d50d45dfd66fd7c547ad0"),
+		personalization: decodeHexString(c, "2ec2bd1ab61479cf780b977cc480a69b53065f381270ea95a041eb416c8192f8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "696fa5748df75cf646d34fb478ce2c9bfed2e79781f5ed1edc2ee7d9b58beeaa"),
+			decodeHexString(c, "e7fef0f7553d2919b803ca8b83a6d463ce74ffa6040b022685eaee8165cb4938"),
+		},
+		expected: decodeHexString(c, "d557ec728787d1f2c553c2ba913451316e7c5aa499d9e74740bab159dc80bbc8870841ed8373c10afcc38f91b0667d6a4477dee88e07d90a10649d5721011b97"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_11(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "80cafa90e13c24fd0d5361f50f3858cb46be746c0bf9f9c86bfa574f6f63a6a3"),
+		nonce:           decodeHexString(c, "a9ddc18c929e5505da59eddcf51c6c48"),
+		personalization: decodeHexString(c, "2bb75ce29bab75b2e9192b13729877731013c5de006c3f5825af8ee8d7be7073"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8e97f840574b9fe2ed8a86d2bdf372b0f31f8929a8d0d2b1555f03d6cc960323"),
+			decodeHexString(c, "65d99e664a5f3ac7b0d079ba3cbd2d1b733b9a46b45bf805bbb1442692d1a4d3"),
+		},
+		expected: decodeHexString(c, "9b9bdeea2c912fc16d1b98cb6802013416760809073c531248e26c64272d442c89db2342da1b44ca4a1e5d983499999cd8851e20fc0559f837f66796dd56b3d9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_12(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "2816c4a6e859c7da6571f5921b8e621e9bdb9d97eb3f9a441a3e8537536bfe21"),
+		nonce:           decodeHexString(c, "9b906136c685d9ae68f49863dccfc31b"),
+		personalization: decodeHexString(c, "722282e8c3d4ae4cd32ccb06ad250b33cf6eb0cf964ebd8a1fb8b58bed00eab1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5ca9d7bd6e9534ddfa5a6c4dc00b404f259f042ded1f199ce66aa54daa3e5019"),
+			decodeHexString(c, "1dd41f3217024bd5f0cbdd44a5915eda49f3c303c9a70fd74e675028e567bb37"),
+		},
+		expected: decodeHexString(c, "4e3b60aef2e3b75ed070d4363e6844c600a5587c5a8c8c4e11a6258761cc072fa416507d73a4bea19c8a3138a8db329716d6a830b2870b5b69958a4daed4b714"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_13(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "5f440db97d11475856e1204db700f20ef52cc9505de7fc2353d6429c8cdeccca"),
+		nonce:           decodeHexString(c, "b5f1e827263aac0dfdf641e899253a83"),
+		personalization: decodeHexString(c, "2a5b6b8292e5e87c53cd2b27312f7700cc40ac0f4ad4bc7b9fbce4dd52a094f9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3ad35c3b318534ede1ba6f10fc759f24914a6c6e5934ba83a776ebdb57717aa2"),
+			decodeHexString(c, "81202a628bc31e86821dc0d8a3edb9d864e51b274c2304c63344ae5018cd0387"),
+		},
+		expected: decodeHexString(c, "f91d2fd3a20e545eafbe124b20332e4ac24abe5f2c5bc0c45d218488d2fc94ded565aaf5575d8c9351985fafb22e7fc5a2c8e9532e5baf4b03b9d1ac8a960505"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate59_AES256_14(c *C) {
+	s.testCTRGenerate59_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "ec7e9d669b31770316b420510e41553f683e012403e657f639920a6035eed34b"),
+		nonce:           decodeHexString(c, "3079e0a62150e60e58ade5ad62225fd9"),
+		personalization: decodeHexString(c, "af32fc72f234313dbb9fd66b4d91bba743206d6cdf289dcd4fab1ef7ab46b1fa"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "031860c8c01832adfbfcb9322f28e8bff40fac8b3dc28b366088c25f2c4bd7dd"),
+			decodeHexString(c, "31edd2a5cb0a51088951768033c9672240309342dc90ee009353f0c665ddc7de"),
+		},
+		expected: decodeHexString(c, "7490d6b108e016838c6cf33dba4b78ee3b6b36829de51093c9e629094a2f462fdb5552f6a059333fcc2cc3fb7ff137c0d8ec1fcda17b5894e1a0fe24f1e67a8e"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate61_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_0(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "481e505bf7a36f9d96690d49154d98d6a247c14a703dbfed7cf1b7a71bee737f"),
+		nonce:           decodeHexString(c, "70bdedbc6825c4fe0a9f7e45290ddd51"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5b07610c2c946eda2975a26ddadf7d73e3d287e923d9b1a2d2070776a446d8e6"),
+			decodeHexString(c, "2792a988ebb2e768eee0d5c263bcd76a675d6f339e5f1ab2ca595e6b3b4d024a"),
+		},
+		expected: decodeHexString(c, "303448a355fc0a69a130b6ab194997b220970bf680914913da904e92109dee3d9f23871130c407045cf463ce783a5dfafd603a8384790573af385d479acd7206"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_1(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "e4b61f0362ccf3c1501c609370fd560588b9c1a52595e066f790f4355ba1416d"),
+		nonce:           decodeHexString(c, "ae47321ab5ffec927e5461696123be8f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a59f6d3ee5c871147ebc2d5f6e6c70fd9b985da7f7dd049ce194462d9c83dfc6"),
+			decodeHexString(c, "9fe2c7db11367981474186d922d93edf6ac7aa72a3e159f5c40ccf901d523e28"),
+		},
+		expected: decodeHexString(c, "70a78b7303f902a76221a401ebe134a6317cbe6177d0b82799360c4913afa2a8c2b36c0e8a135871c3c4000960faed3728c1fbd01ee0efc5c629a09677c7a850"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_2(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "d753457f99c1c6f1da211aa2a5efd0e880ae0689e8ae296cec3b1b6c8f816189"),
+		nonce:           decodeHexString(c, "f65f7b222b518e0072108fbe99b620e7"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6d587cafec4139766edff5ace6b63d9692862c99bfcde604feded6d9f6b3b470"),
+			decodeHexString(c, "db184ae8b3f73aa22b63dcc2d21f14b9fd17aef3a96ba5f982caaa0c16690371"),
+		},
+		expected: decodeHexString(c, "eb5e5ca3c827576e897e2684e203753bb1a3bacb7a1d5517c6185adb9ddbeda8684f6cad3dde6417106704fa29f8a102725b7d80ee2caca14c0c4c873c7d646e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_3(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "0e99c1466afb22f0e01f7e6919a875959c3d37c71bca6d5d59e0eceee49186cd"),
+		nonce:           decodeHexString(c, "95a8dd75b076450ea6f8a70207fb1504"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9992b088e9c76f49ddc545409d8491a90457570b3d29ae69e3cc1897e98d66fc"),
+			decodeHexString(c, "c5eefdfb4656d3f988ca19efffeebec781a1e1b1a2997c3fb76e1d0dacdaac8e"),
+		},
+		expected: decodeHexString(c, "4b0d7647beb959f712c101c407a25ff0457fa8287f25c5f2db97115d4cb8cc3539c50e6d51c5f3a725b43efb0fea3395295cbbac1e919d41ffc9f4aff82e8f7e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_4(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "2bc449cbc223756c120354649adc79d0b53aef5343a61900b254235cb61524ba"),
+		nonce:           decodeHexString(c, "6aa9dd157dbb1bbf4185e1cc2ca3b553"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c07d22db1adb41d8aec846ffaf44cc833ea1e26d5d0718a5169fa069d63edc5c"),
+			decodeHexString(c, "d41f91b20289dfa49c2a3352200427d4572e9813381127324f49807b47541748"),
+		},
+		expected: decodeHexString(c, "820db9b7ef678cbfa8449ce3dff4b76836209ab88ed8dca339084e46d1bfbd0aa553d41009d94659e610aca9b8e1ebe235b6437f360271edc5c05bae2a63fdc3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_5(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "3fbec8e68caa291d44b65ef622818f80ad295beb067d785fae6930ec8717517a"),
+		nonce:           decodeHexString(c, "8a3bb4d15ff0b8437be6abc003af0fa6"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6c8c9c35853e238212a83359b5e01852b6ecc34dfe7a258f515c5d7058bb0286"),
+			decodeHexString(c, "207ec21f3051e03959fd2d447476b893dba1fef8fe422632feef23e3ef8a022a"),
+		},
+		expected: decodeHexString(c, "b9435c549a050515fddca454f602fdcd17fcb812be0e1c640ff859e1172c2ab04491db152819fa9a33fcb1e66dc8211c8f3676a28103b203bd2d0a6298bcc167"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_6(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "55fafc70deebba97306da5b744ff4e480e3cc2bcc8fa20ffd17ca851368bf564"),
+		nonce:           decodeHexString(c, "408f2df27e5be68d254816687a63a419"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "64304f3df4486cf6f012252f9ca9c17104abe4863d1e3db5ab817476d43005a6"),
+			decodeHexString(c, "fde8749c2befe8b06c79cbc160ccfe9579a7e762550cb8221775a54e982fb74c"),
+		},
+		expected: decodeHexString(c, "709aa647efe0e68dfadf2437ea7556381ea4309094c104cdb8e4bcc31c74716fe9eea232158170fa978a7c05813f2592b3522e5c44f2526e764e66e312ecd49b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_7(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "573a243d3b38fb8d6fccda5823c15d641768057036646fa9a4975a738908a164"),
+		nonce:           decodeHexString(c, "3bfead783522f256a2f7bf076b21f741"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "65bd02594d57c4aaf8d119adeadb8ace866999146a67bb85878d572695ce354a"),
+			decodeHexString(c, "60524fb23731c30c3d1596c9f3a45cfc0da8198aa0967613b3bac6be7f485d95"),
+		},
+		expected: decodeHexString(c, "7ae38a83c11261cb22a521cdcc3197d8d811b8cad9071ead382e5bc253030c9cd4165215715a8ab0af1c5f91320399cd1d9b3916220c78c586e96651bc1d80ba"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_8(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "cf81df4eba87ea2e026ebc6cb97d3dd6d3fcab6f4d0c520a8fc53dca99ce8490"),
+		nonce:           decodeHexString(c, "fdef88d87db58bc8397e988c834a8958"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7bf9c07bccd7d50773324dcd876b58f656c6fdfea5aef1a9eb7702d6ed175a49"),
+			decodeHexString(c, "0755e148493539438c36fb2abcebc345da73eaf00f75da1cda13ca6876794cb5"),
+		},
+		expected: decodeHexString(c, "4e8360e6fcdccb12ac6ee7f022f7e06f118a75f61c8aa197656c93463b86662eeb32214f371c8dce06ab1210f1f54f9db3b63eeed7ef6ba7320192264a7920ce"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_9(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "98feab860bfed19341ed1364d4abceac3004326299895330405f115fab031816"),
+		nonce:           decodeHexString(c, "1afafc209a776bd01410848e5fd019d1"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "475009946120a2a2dfc106cf4b9f6f40a9b0c41b616bed3e536c9eee56e17043"),
+			decodeHexString(c, "eff6d5392d5419f6a8b425ea8517190cad4197093ac63571f0d3c33f709163c2"),
+		},
+		expected: decodeHexString(c, "0610e28e8af57a29916d8aee19dadaf0ba6aa8f50fbf850f702e59b466025aca9b62fe186d536e1a55c671dfe2b158bca65a1cf681a877cd5f0a4b7798ed373f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_10(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "12cca9bad0661f02db438baabdaa2941cf3deddedb09f530ce6bfff278b79b23"),
+		nonce:           decodeHexString(c, "d716a190ac3f0f5465447993a9e20497"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "881fb68d66b69f4bde4a3ad1f150bbacb087da232e1f4d7be396f1da7463cb16"),
+			decodeHexString(c, "5b1d230db87d2aa1f3e110f9c0f913ecf78d0aacec0f47c3265fe0e609ec7a0b"),
+		},
+		expected: decodeHexString(c, "e9dd208e8f0f6f3ba21a9b6792848e95d7ee5a73fbc719ef9b5cdcff36530d3ec6f7cadfc55521c162cffeeb917c72fae341e5a3f7c8d5cb5b4508011557e639"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_11(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "99e396afcf807e6dfa0b302872eb5de0aa74b05900d1a06ee2c1c4d3af535fca"),
+		nonce:           decodeHexString(c, "75a2f6edf85571d19c032965d2603fc9"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "581e78adbf5d9a668d013b7ff9046191e434477f3c3fbab447876fe87f2c157e"),
+			decodeHexString(c, "19f04c1dde5c2ec3eca906e7bac8d8d349b7ca49ca5d7de1f226ddd04c73df1e"),
+		},
+		expected: decodeHexString(c, "b8fcf90dd47144019705e673cdca261458866fa515760bc2488ca403309ba63d17836990b61a2017786196d70f65f3c80f5f9fbd4d6bede882dea592d1598600"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_12(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "e261435c338429425d5491f7d8f54ca9d5082443858f46375fb2ce80235096b7"),
+		nonce:           decodeHexString(c, "8d92020245c41590e36051a57fb12c04"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6cfe2dc45a88f09cf76e6cea11ee5bc56b219147039a13b1a7fc99ae36f58880"),
+			decodeHexString(c, "bb8112e5004757c0ab45ba2325735919f2141f9c6d60e20784a72ef7ab98d456"),
+		},
+		expected: decodeHexString(c, "431df765c49da3b41e72b64af260e285f1897a594d907e9a41b6bee0ca69c91331475f95b20407fe777fcdef2174aaf47c4e7b8bfb3f3e9b5f52468466ba9aab"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_13(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "80e7cb47500012de07f655797b248305e21720c6dffa44c096dee7ac84060f43"),
+		nonce:           decodeHexString(c, "7c21b12032c2bb4a9c1364be634b665f"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b303e2d56a5dff48da4ef1c7e8442af2a149a3890f3526bdd6618fceaeab32be"),
+			decodeHexString(c, "e1ef53ff0606114f7b882eb7f5207ab964c8ce7adfb9f631b7aa74a23127f353"),
+		},
+		expected: decodeHexString(c, "420242b4994775c82393808cc170131625fdf8ba10c9c8a8bc335916441a8063843a4a8e53d00f1a38be1f7beb9465282ccb9f47a46d99ed67a98686a1c11c3b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate61_AES256_14(c *C) {
+	s.testCTRGenerate61_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "00af19872107565789d407af381f02ef008bee1f20dd695bc00c58afc7bb7edf"),
+		nonce:           decodeHexString(c, "13160203230ffdd3417164aee1cd8764"),
+		personalization: decodeHexString(c, ""),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fd8aa4822723291d4c46716ac560684f8fa670a3d0eccc07a5a3335f13168357"),
+			decodeHexString(c, "12f3a8790b35379f344aa0627fd4b0ebb13419ce977f7a38e1b0187a8968d290"),
+		},
+		expected: decodeHexString(c, "dbd9ce5962736e224ca4b3b855e13970eaeb0a5c607a66f1d0303de959d817185b1f7544874f51eaa53ad0c3debe851e6b23ae2ee36d466288026d96bd2799d9"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerate63_AES256(c *C, data *testData) {
+	s.testCTRGenerate(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_0(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "6b536f8f4c5616a0c4e681825585724d522d37fc02a05564030872e0d6c3922f"),
+		nonce:           decodeHexString(c, "0184417527ffdd3edddbb070957826c0"),
+		personalization: decodeHexString(c, "91e62a609b4db50c5e7ad7d09dc387dae9da6d2585bd3530389411cea7d2a40e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "42f398bf2229976f9d97b0a5fc47d5c64b70fa5631abf28f2c6f91f78b7278d9"),
+			decodeHexString(c, "c624291eb039ad1724c9b0ba20b98421a7f0032f6c8c00f64794018ce5a5ed96"),
+		},
+		expected: decodeHexString(c, "507e0b4f12c408d87052b79eb4879c925a918b0fcd812bbedc720a3d8be656e40de900257f7a270dd6d8e7da50cdc20d744e94978d707b53f382aeb16488b122"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_1(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "46f626c7ee44dad83ced8e6ce556d1c440da55c7c97b4b0e51b9817e977001b9"),
+		nonce:           decodeHexString(c, "fd563b05c0c95f2ba940fe9e88ed6fb9"),
+		personalization: decodeHexString(c, "ec1a7224d1c135597b8e414d2eab6242651bd66278973f4d5ea26a06f37c0b3b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "668432e5182494b232e8a66a7135f031e1154528d405da057bb4c8cfadbf25bb"),
+			decodeHexString(c, "10e0d13c77c504bf78d293ed12de192c108d7dbed81afbfeddf727e9f2816415"),
+		},
+		expected: decodeHexString(c, "2ba89e1071b07b914779a5fcde874a74a4e9b9081bc0cfbd8a6234d75567ab7dcf2c9be003cdf7ebbbd166594f2a80899ec13a484d4cd26d0338e1f9fbb4d3f6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_2(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "bb55393be659c484705d79bc8787a54cd1c17956787e3f3253532101e18927b5"),
+		nonce:           decodeHexString(c, "ebfe1765d9d659467311e34479657bc1"),
+		personalization: decodeHexString(c, "73544a814c51232d4804c59d171d500e292fc9110e2b26856b9db7d7446a7a9a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "855fe1cb8d5072f03db8e9c4aac8eb829c47bf9acbdc888e773e36580fa24f34"),
+			decodeHexString(c, "6494d5ec3f17d73bb6521427640814f7b4ee4070145661637d2f79b2ef18b4f5"),
+		},
+		expected: decodeHexString(c, "25ac0aec119803fe7d26cd7635f41f82d0ed634a3035886e254ce40f097475642904eaf3be5becb74043be3f33dc2940632a9e6aef8c83675575b7c830744949"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_3(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "af2959b0b442eea3a470fd2e6531748db680f5431f979e40ef402f7ee06be275"),
+		nonce:           decodeHexString(c, "147ff9ecd91a622eb75499d986e507af"),
+		personalization: decodeHexString(c, "02dede568c8eec1b34a042ae651d6e0687d1261f54f3f39ed7e0ef4d1c1cad05"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "43757f986a40915ea7cb7d51ecd4dc8e2e2f39e1ad7f22d167ad486c90a76bc1"),
+			decodeHexString(c, "2b1d19f3c7ffe763f2af14bdc6c6ecac15656976a18117e704490bddd15da37b"),
+		},
+		expected: decodeHexString(c, "57f2c00be62f8a881abf8f0adccbfcf5427751081abc87ea0a87f260f9bae57fe5ab04bfd82564012cd39975b924b417a1fb3ff88816d264277021513afa0f4c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_4(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "556487457a0558a13f90a7e9b05c73c5c854c61ca20f89f5005705368afd1ab2"),
+		nonce:           decodeHexString(c, "85bc559bfcd54dd3395f6e65b7cb3ca3"),
+		personalization: decodeHexString(c, "c60f026da94ee1a849569247c49135552e7977fd2afccbc70b2bf065aff405d3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5b0952ebdf3b340ee056be2aab09b4af54185d5d535cb252b0f5c6659f311540"),
+			decodeHexString(c, "160af1ffe37eb9cd0fe72604420ca199891ccd44466fc5a21937dde06a5ee8a8"),
+		},
+		expected: decodeHexString(c, "5c832d5cb153f212a15bc69109b2bd937f16f40d0007f9574dfb998f3491c140948bd8a3dee1c441823f4cfd8405c429a5fc477aafa21c0023a9be350646c554"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_5(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "3a820ef605b4bac4c2766fc393b765699c153aa37be5753036d4bd3b72c41507"),
+		nonce:           decodeHexString(c, "018d9fed42f2d2faa18f73b34518addc"),
+		personalization: decodeHexString(c, "ff3da2773e7a6b0f09eac7a99adaf12c0bd9ba07afd1384b00248ede8d633d41"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b5d4230302cca88787f657c31228ecfea666669467d95ed516828ea0c6ccb6b5"),
+			decodeHexString(c, "b6257da8396d915972062fbb30b6603a4d571b856b057138021dee142cf1f5d9"),
+		},
+		expected: decodeHexString(c, "cc8ba6d24bfb07d83b9376ff07ee9e199254a96d4c45be1d4fe8da7fa730208b261dfc8db31f408f27fd6fe044f480bf43c1aedc01c1dfff0340d74a41600d1b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_6(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "576d5b5a86d19f702a070ea2c2bd26c23220f22a2bd2433ad9dfde964b4c9269"),
+		nonce:           decodeHexString(c, "c5150449bc5b9ea1a6d54834c6fe55e4"),
+		personalization: decodeHexString(c, "325db7771ff251d5b33a83b4197162714870be8109558be4344fbf215a0f14b4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "039a990b3def7006da9e129e86339949b19195e7d520f7f7e3ec1d0e2f5f7cea"),
+			decodeHexString(c, "d453960440719a68b2e12f957f66414ca7b21b7ffeaa95d5822f74d220a784f6"),
+		},
+		expected: decodeHexString(c, "e8dd7958d2c06322255778e6036f172919e52ab5197d620babc6af85aa6affdc75450da343865dd234d3e7bcb904a72b4ea06450d574d28b5d3374b1acf1ee21"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_7(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "06d1ae8dfa79ca5baa17c451b2f1a45f29d693bc565d1ad7475f48d855578127"),
+		nonce:           decodeHexString(c, "91a2df1c8f01ba16a83a224e39f4aa30"),
+		personalization: decodeHexString(c, "94298fd4ad50960c6bcff3f40cd6ca99a2821c56436f2969e847b97c12d3764c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6c1d46914e2bc5b56b5889adc0ae03bc60749a9a092a14c51fccf2a27cb1e4c3"),
+			decodeHexString(c, "26d2da54b6e166da72a23b64023c5515b0010a8337aae019f89c227bbb4b18de"),
+		},
+		expected: decodeHexString(c, "75b546c2fe1b4013c7bc31e0c80bb1089cd946f1b035611f9126a0e330b8fdb089520aa7368e124370889b3155d39b62472fbae71eb269177104bb61af3dde39"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_8(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "12bd366767ea352d61f059deb38c8aa48eff1ea82ea4d624ac4d0b9a85402bc7"),
+		nonce:           decodeHexString(c, "1fc606b0cb2bcd605190218c3afecf2c"),
+		personalization: decodeHexString(c, "79554381968750ff21a6249ab6561c132ced1117c812fdfe179f96d09609f26c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1156ea54e2d49af0d9c3975f3ed8fe12a57bf1d7215d7f7ea7d5b802df533ecb"),
+			decodeHexString(c, "9e171c51fa0d85bf637f44e500a23277d754836ebc7276ca7fbe9950c8f800a1"),
+		},
+		expected: decodeHexString(c, "b3bb700f1e81055b25b1b2d787df3c5e8e688dcbbbca7c5c975ab8a6e782d4ac1969af4f9a79f75ad88bcb8286f31b1a4a3afbc3f575ac616b59ce6263690874"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_9(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "9e7a21016acece9413f12246e96a332a039e94073f7021eccfdb2bb056610489"),
+		nonce:           decodeHexString(c, "5d47a59e428bba416613110dbc36f0d4"),
+		personalization: decodeHexString(c, "f6fd579946d0b6ca241313103d68cb915287aa571138c2702b3a17e43520348b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a45fc73e01510fee6240787e166c743635fb55d1276c03672e3b4aa8434d8af0"),
+			decodeHexString(c, "06a7b57b497ee66ffecca0a62bb47b6d563e69d86a39be2cee6733dbc9cfc595"),
+		},
+		expected: decodeHexString(c, "7faede537262cffdad9fce2be2b3b6ee031852561c7088150f776580f56fbf0b83e192dbf5455ffd8df951599c1758687e76b1beb74a747a7fb651d052c49169"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_10(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "5f3d888487370e4b7cdec88337165523898290faf6bf73e38012d355625879a5"),
+		nonce:           decodeHexString(c, "c8c14e4818d86af2c887472475c75f3b"),
+		personalization: decodeHexString(c, "dd92517b8719fbe70feaa82eb85c7f11add346e35243f047e172fdc2c37f25c4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0a4bdd431bbcb650a5e6aecab59649e41b8c1ac50111d12bdd3e0b9cf667d2ff"),
+			decodeHexString(c, "cfabd62c4bd230695739de221517cf9ee064987ce63ed1d4b4a88b3b14ffaebe"),
+		},
+		expected: decodeHexString(c, "890c6b5c1e7b478226a20fefaa4c03e878534d86a6075f9911de98a4e9acd648e74298b3e749f6dad9925976e7b69206129e7663e29caa3e3e92f750c74665fb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_11(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "49c7fc5fa45f4165dcdadb6c45e09d1d965c529332981504a5d3da21124b8565"),
+		nonce:           decodeHexString(c, "346745f18e41666a2e2409ac7b36a244"),
+		personalization: decodeHexString(c, "d89f116d8c3be30878eafe8faba4bff3519b144c08c038c6ed3ccfbc8900de3c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa450ca29ea690e4258af93f462e0849a1fe520aead96c5488a2f69ccad733ca"),
+			decodeHexString(c, "de18864a44c5fa8eeb1116696aa9c75d57cc8ce07b7693babb22f3f88314f22f"),
+		},
+		expected: decodeHexString(c, "cd1878ca2e9b29348994648b9578923332a62fdcc80c7d8e202815f9f48d2a75aec78e70942017d8a0b534de1f8ffe5db502acb3abd4738377d98d26b163e607"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_12(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "c94d907a28640eff377456efbaee67fe5216cf97d1adf7df4db6e18b596e7be0"),
+		nonce:           decodeHexString(c, "573ce3b9d4fd830afb99da3bae14cc18"),
+		personalization: decodeHexString(c, "68cb89df073d0e79367743af1c1470aa657dd67924d964ee80be72d99198e4d9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e4c5a339dbfad8036a3b0575bdfa3c7d2f55ab642fc8cedda12d900d8f0f7449"),
+			decodeHexString(c, "8605c713cd3b0eb83dccdc42278c0e402cfb83ba5a5ad8864da6622b2a725834"),
+		},
+		expected: decodeHexString(c, "1457a5d363d57fa36c01006f1e950f14409aba72a143b18470c46ad1c2e319b64ea588d683fc8af7442374227b8f424c4f030b5615915465eae7faa06ab9d296"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_13(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "d8c28c04a74edddbfecb4b1a2320793d9e228204686c973cd01c95be37297a57"),
+		nonce:           decodeHexString(c, "121d673ec1d9624133e42e2fa7c7a751"),
+		personalization: decodeHexString(c, "339780b025370e439b7c92703b66ebd5904ead35e2640a85965aa0c4608c5a09"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9ae17455af94a8d9eb2d0c526d2e70bb97dee505ed5a9aa93333c07968dfa1ac"),
+			decodeHexString(c, "d5fa7355fd2f144f3feb642beec1fb4940e5d2d1da0dbfa1e5f59a0860faca6a"),
+		},
+		expected: decodeHexString(c, "96cb4adacb8bb1caf1cb1e09b421cb52b114cf6bc4b94e3de21f140bf5dac2bf103994b859e20e38431d7a912fa986b2889841241c8ec942298a89fd6830695a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerate63_AES256_14(c *C) {
+	s.testCTRGenerate63_AES256(c, &testData{
+		entropyInput:    decodeHexString(c, "5fc1a46b9b53e83addd616517932ad8a84e550a58327ee245aef208264c5b91c"),
+		nonce:           decodeHexString(c, "9ce74e2b3c43ba1d98f7d4e8eb5c9b3e"),
+		personalization: decodeHexString(c, "5fe01c84f824c17e4dfbfdb75c3212cb2bfdf2da7c497febc0967475ebe291f7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "84922c0335a0ead609e5a92cfc4a225bd3c7c01ab4580b786338e1caa3622f44"),
+			decodeHexString(c, "34b034ca643bbfd2fcc57c9b53e0f9b3fd6a73454f1823dfe7b7076ec73fd956"),
+		},
+		expected: decodeHexString(c, "6caa4475189ee00ddc54910f8723b0e5b8d3d0c321ce7f2ac7194d134a0a31d96b102dd58e092e08f8a008f05c4f2afb2901c6e29549d3a720aa2b1d1f461bb9"),
+	})
+}
+
 func (s *drbgSuite) testCTRAfterReseed16_AES128(c *C, data *testData) {
 	s.testCTRAfterReseed(c, 16, data)
 }
@@ -7039,5 +11815,5501 @@ func (s *drbgSuite) TestCTRAfterReseed62_AES256_14(c *C) {
 		personalization:    decodeHexString(c, "d086057493500d75d93d9327b09c108ed9e62701794951c9b9fc77ef3872a555"),
 		entropyInputReseed: decodeHexString(c, "2149693ad3bb60d8750e9f21ffc16b7178310afac1e2fa63334302cffa1c0a47"),
 		expected:           decodeHexString(c, "e0598a33114cc183edb843415d697acadc91c39ba54100c7b14f79e67e47eb7f8d21cc1c5e4d744b329f717c88239035b91fd4b70e415f2697e9f9d436f3b001"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed17_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "285da6cf762552634636bfee3400b156"),
+		nonce:                 decodeHexString(c, "8f8bada74820cb43"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b4699b33354a83bfed115f770f32db0b"),
+		additionalInputReseed: decodeHexString(c, "38bfec9a10e6e40c106841dae48dc3b8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "629ead5bacfac8235711ffeb22f57558"),
+			decodeHexString(c, "dd8a02ee668ca3e03949b38cb6e6b4df"),
+		},
+		expected: decodeHexString(c, "e555aa4432bde04dcf0f0b03ead187b31df06653d444234b5c1bfc11b224285f2fb2b6cdd5a9ae6f13d99bd02c3c9fe9c3c1be46a600f5f757ab4574af893501"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "80094b91c34507fc55fdd09ade25f275"),
+		nonce:                 decodeHexString(c, "72593493d447ee20"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7ab86c3ad6710fd49e923daefd4a8ef7"),
+		additionalInputReseed: decodeHexString(c, "df5b789306bcf320b76fa374e5710829"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "362a4c6e92885f444a49533fc51d1711"),
+			decodeHexString(c, "42145327187e1b570869ba8fa4fa942e"),
+		},
+		expected: decodeHexString(c, "9849573cd8bc103e7d6224e79973db79c20b0a31f73d8af357cb1c797a843509667a53a6e221c336979f5255192774c65f3eba7a301639c02b8a523625195df4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "25c90d87e77d6c2797e5dc27d04cf732"),
+		nonce:                 decodeHexString(c, "64e9f6733d251c65"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "13cb8ba8b346c4efafaaf84e6abfaa4a"),
+		additionalInputReseed: decodeHexString(c, "30627e21e45890b7a9b3f319210c28b4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d6090486baa3b36f419030d5494fe24f"),
+			decodeHexString(c, "231f2aa8f0e254f92daa38c04e8dc9aa"),
+		},
+		expected: decodeHexString(c, "da1f07fb23295ec17e3143fdc03aa3994cd5a88dcda3b50e17a9c13d859cf2d7c90d0d39e04e13d31803d7f1c9ec47be15a556021e83de464b183d436171ff72"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "685d89e547bd797fc0b78662825ec530"),
+		nonce:                 decodeHexString(c, "29476758b4cd0727"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "82d8f62b1d1593224c269f49f3f2ed95"),
+		additionalInputReseed: decodeHexString(c, "1abca0dfea4b28659764a85a30b590c1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b8478914d919ec5cc4d3b4f83bf24ee1"),
+			decodeHexString(c, "ac57c388d1a9599024c301f7e16dd76c"),
+		},
+		expected: decodeHexString(c, "0db221819eccb09cc079b887f5b77381d489f9fe9e25e57fb1c8823fc8eb12eaef5dce0e1a91c2a6983c8b20115e5447d9fc6719ea229d98a68c79c5ca26940e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "5a3706860a277e909006792be989d6ae"),
+		nonce:                 decodeHexString(c, "739c6813dabf350c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "5ea803011a5ee4d426c1285889a1adc6"),
+		additionalInputReseed: decodeHexString(c, "d3738ea4966679a2b4fd28594c0bfe31"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9ff24cd5b8e9716ffc96512d84e19eca"),
+			decodeHexString(c, "4ee9d468ca016d92ef40a88bb41687b7"),
+		},
+		expected: decodeHexString(c, "2895a33b3a46d730d33c0dc709da6668236cf702a4c8bbb70c7dfe182ab9f51630b6193f3a0586d5569759ffb07cf3fa57235e84188bc17ff3b1402a262e5f5d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "fa232a56f24071f5bb274d08f30dbbcd"),
+		nonce:                 decodeHexString(c, "3949714e120bc1a2"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7aeed4b20a2ff21b04064bd4f7c6c7bf"),
+		additionalInputReseed: decodeHexString(c, "0d512a998c5173c71aae64f9cd37ada8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "784c9523fcc8ec238a40e7f2f164de49"),
+			decodeHexString(c, "97fcea8196b1e42c6bc9145ef9f84e63"),
+		},
+		expected: decodeHexString(c, "7c21d06af2e5de04c5845a63e18ac7c26cbe8aa4839183f52c0a65c296584d223dad6f46b5ebaa24ccb3ef9ef552a686ebbacd49007e5018516d4778ac5659c4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "85f2fa44bbb7dca1bb390758577db423"),
+		nonce:                 decodeHexString(c, "9410d460fee69433"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "22bb0570e462a63564359cbc805f2187"),
+		additionalInputReseed: decodeHexString(c, "9a49e3cd4133843c387b4da9c6b048e1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f55bfac5b93b60cbe65e818ecdd5b885"),
+			decodeHexString(c, "4a25f1fdba66a52ea226a98410139966"),
+		},
+		expected: decodeHexString(c, "90b20acd6203f7e945993592bc1685099876c6e3b7016bdd35ff40d093627650138cb55d0d9d907339b1ca280c38374f85de1d590565f9571582a9b92c663904"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "d379395375d61ddb6ec6a156dbed82f4"),
+		nonce:                 decodeHexString(c, "023d15f0c2e6520f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "bd646f98fd89f2daf0bc2dbf98c163b8"),
+		additionalInputReseed: decodeHexString(c, "b3cb862d241a390acccf1e5215b68568"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac3f739d30526a58b23a7cb7de915c55"),
+			decodeHexString(c, "3593a0164a6bcb02fa32a452d268d199"),
+		},
+		expected: decodeHexString(c, "1224ce5b56853064b76262417ccfd52d18c2551c2c1f1dd59d6d7074293afe351290cca18e148e12fd2d0c03506f693abfcc28d0f21567634fe2166dd310b60e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "1917adc40a5e1244ba80b141322e5cc0"),
+		nonce:                 decodeHexString(c, "0e6bf2e297d654b2"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "be43bac369fa80de6a20b784ca1e46a1"),
+		additionalInputReseed: decodeHexString(c, "c90e30310f33ee1a92c62a4c345e0d97"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cb46d6d4013dbe3046a6c81f4fb1405f"),
+			decodeHexString(c, "2aea603cfbb42c55f641903344e28a78"),
+		},
+		expected: decodeHexString(c, "e08aaa8a1bdd541bb3a1216bb99bfba38c9a917183c73f623735e5d9f5cdd305c33975ccc699e18a699d55dfc8a72c2df0d666032215cf79d2e87930ef8650a0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "c9963a1551764fe045828a6487beaac0"),
+		nonce:                 decodeHexString(c, "08cd6939f8589a85"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "16cc3515b117f533809a80c51f4b7b51"),
+		additionalInputReseed: decodeHexString(c, "f53df12edb281c007bcbb612619f265f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e267066209a7cfd6848c20f6105a739c"),
+			decodeHexString(c, "26fa50e1b3cb65edbc6dda1847991feb"),
+		},
+		expected: decodeHexString(c, "f947c6b058a8668af52b2a6d4e246f65bf5122bfe88d6cebf9687fed3bdd6bd528475652da50f09073950658af08986e2418fd2f487257d659abe94158db27ba"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "39ecf1b6a0b4cc2ff09f570056d1a8cf"),
+		nonce:                 decodeHexString(c, "b315f7640bccc2a0"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d745e614cc56315ac75c7aae553026b9"),
+		additionalInputReseed: decodeHexString(c, "c3c6619e829b702c845b8914b157ae7d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac85823fc36459170583fc3713cf90b7"),
+			decodeHexString(c, "5e0f4229cfd01241685ae18b93d70bed"),
+		},
+		expected: decodeHexString(c, "460cfebc9d301c5e5aa68328b3b51143de26ebb479ff92db1d6b497e68509008abc4fd690e61107e2afa15367f5d741b3a0fb0045131c05041b2d805caf7efcb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "88fe0658047cfb81a7ae0d84cdba0141"),
+		nonce:                 decodeHexString(c, "f88791d32b88d3af"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "ad774cf5a517284ad98bd9c4e6bcac4b"),
+		additionalInputReseed: decodeHexString(c, "e63c91633bfa70ce95ae7674183e137a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e03e1fa7b64e475f126bec1db02ca99d"),
+			decodeHexString(c, "c2e752ef80db56c57f60c29612b8f9ff"),
+		},
+		expected: decodeHexString(c, "8fbe91060a480feacd4c63f92b318f9703f8889ae9f4d5a1d0253f90f5a3e78aa60bbfac0ec15e97244eff2946ec14e699d06ff9cc8706c0582dfd08b5138485"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "a326b3557ec1c1f9e872211d0ee48e81"),
+		nonce:                 decodeHexString(c, "fcc9336b246f548c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "00062dacc27f5f67234588d68b8547e6"),
+		additionalInputReseed: decodeHexString(c, "c5e4b9290693f356eab655da19d5a6f9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f9c791d87411a7e7c67d9ab8987e055d"),
+			decodeHexString(c, "94f8bab2daa9e0bd5078cded05df2694"),
+		},
+		expected: decodeHexString(c, "3d0aea7e347d3315c5561c4a7dbdfe1b1352c1a476ea58cb35a4953d53da74853addf4d23cfca3b26e76c0efaa830d1c8dc232d42ee8b961428a8a52b7dea889"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "69bc64175703d4096278d716002a4c6d"),
+		nonce:                 decodeHexString(c, "0630cbea0bf12371"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e097ef5eb7399983d3ea0a130879ee0b"),
+		additionalInputReseed: decodeHexString(c, "a23961ca1517b2e7681cd503de2a9475"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7c34ebe67ec479ff68ba2f1c9f301aac"),
+			decodeHexString(c, "e3896b79a8bf253325bba632e21b9020"),
+		},
+		expected: decodeHexString(c, "bc9a7c157b4dcce9df141f49db839e4b40cc725bb2f4187bfe07b6c3bec46ea6343f4a73f4c19f17f67bb04096e0aeba6457cb5175fe6687d8e566ee1d91ca16"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed17_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed17_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "7d659cf5e18375f80bb29e58d8ebe508"),
+		nonce:                 decodeHexString(c, "f711423c8a3b0d2d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "61570470a9fb756113d32377d49965f8"),
+		additionalInputReseed: decodeHexString(c, "0d3d3cb2d4d3c4300c58081ebd3785eb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7358ccaff37094c3c1a6880011a72069"),
+			decodeHexString(c, "48ca1a7f96dc5918f9d9abd6423fdb8d"),
+		},
+		expected: decodeHexString(c, "69377968138d3d4ea43426a025342a58586bef7ab2602fe07d70509e43d4c2f4960c8eab40b00bbf0eb120223473765f4833bf228b907b7927b0f53642452a81"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed19_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e14ed7064a97814dd326b9a05bc44543"),
+		nonce:                 decodeHexString(c, "876240c1f7de3dba"),
+		personalization:       decodeHexString(c, "26ccf56848a048721d0aad87d6fc65f0"),
+		entropyInputReseed:    decodeHexString(c, "7ec4ac660fa0bbfa66ac3802e511901f"),
+		additionalInputReseed: decodeHexString(c, "8835d28e7f85a4e95087bdd1bb7ad57e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2a9bd50bbb20fefe24649f5f80eede66"),
+			decodeHexString(c, "f7ce3d5c6c381e56b25410c6909c1074"),
+		},
+		expected: decodeHexString(c, "d2f3130d309bed1da65545b9d793e035fd2564303d1fdcfb6c7fee019500d9f5d434fab2d3c8d15e39a25f965aaa804c7141407e90c4a86a6c8d303ce83bfb34"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "4d61d917e5b71565d27cb8bce5266e84"),
+		nonce:                 decodeHexString(c, "f10150ae95cc14dd"),
+		personalization:       decodeHexString(c, "855b14545dab54e7359392d2bd0508fc"),
+		entropyInputReseed:    decodeHexString(c, "dfe01de786b4bdffcbfa47f13ab75bd9"),
+		additionalInputReseed: decodeHexString(c, "8b0f5f42aa8a84c24d11a023aa288a89"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bf32bde3c5bbe4eddd4e5c3309b87e7d"),
+			decodeHexString(c, "7ee1eebb460fa1821ab59407f0b7291c"),
+		},
+		expected: decodeHexString(c, "fb92c1e910589acfda9adabe59214e027bc44fcbc0fea5f231f2e9b9236d3b872e4b9d87907c41ef71f041a52eb826a38bd44fa15f6095e41b3ff30261a6e7c6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "89fa82addfc939965aba18494cd5299a"),
+		nonce:                 decodeHexString(c, "305c4c0ad786586c"),
+		personalization:       decodeHexString(c, "625cf5f44f832b3bdbb69a4e9af2b177"),
+		entropyInputReseed:    decodeHexString(c, "2738f5da3c5ac99d91833a02a9dd9d4c"),
+		additionalInputReseed: decodeHexString(c, "49ebb2fba3fe7c3e1e7bff9574037562"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c5ff2cc8b8af7bbc9ada35a39803d4d2"),
+			decodeHexString(c, "fe0d798601ca1f49ecc5d21fb38932fd"),
+		},
+		expected: decodeHexString(c, "3a9558f2f4c54813c4e462250babcc80f75a4c5486a81c76bf187d9240a6e4364ee5ae0b9de53acfb14528a0539f500c67f0372da8d61e70b77a4ad4478b3fda"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "01d495860e546e696684f2795c182777"),
+		nonce:                 decodeHexString(c, "203f7898746ceb65"),
+		personalization:       decodeHexString(c, "1dd5a0d8869164323dd78b4686d50125"),
+		entropyInputReseed:    decodeHexString(c, "52f8057f5d913bccffbac81ba8d84cb2"),
+		additionalInputReseed: decodeHexString(c, "b200d3e4d930e951e0c4794465540434"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e81cc7ec3af3ea3a3216451605d9a821"),
+			decodeHexString(c, "04aa311f7c209cb19c2984bfe2fa48bb"),
+		},
+		expected: decodeHexString(c, "df2e1258c4e19dbf1a01a02a4524a623f69433345b34cfa7dc9f8280aa8d888e0d7c477e4ef9d26626bf6bb921f04b42e3f1fdfd07a933922e5e401d46e6bcf1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "d96bf74b085d53251e2bab125e4660b1"),
+		nonce:                 decodeHexString(c, "9a240caa055e8cff"),
+		personalization:       decodeHexString(c, "164b91372e9dd0d4c6a0b840b5b98745"),
+		entropyInputReseed:    decodeHexString(c, "a07645093ec9583b3bc7b45d56daee6f"),
+		additionalInputReseed: decodeHexString(c, "ded261a7c109e1fe0db09181962a9b6f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e1e673d0f552f015a90067d12316214a"),
+			decodeHexString(c, "59b6d6681b9af43ca64e710cd81b5d36"),
+		},
+		expected: decodeHexString(c, "b27f08c12bb8bee50bf4da1bbb8704ec9b383df84516764dff13bed0f2e7ba216bcb57ec31551c469146572e4c43047916eb7faf0c76e01703310da66181f754"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "411c63bf9755d96df414da1ede04f25d"),
+		nonce:                 decodeHexString(c, "7562630891cb0ca7"),
+		personalization:       decodeHexString(c, "f69b3c6888d287b7d5beea03ab7d01e5"),
+		entropyInputReseed:    decodeHexString(c, "78ace23bdb31e43deeedf8a507c121a3"),
+		additionalInputReseed: decodeHexString(c, "f7dcad9d6d31f212fc3beeef0df94385"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "02ad67c88655fb1e6e8aad0db6f97ed5"),
+			decodeHexString(c, "172ec6d5b4c01d1e4015f6677fde0ffd"),
+		},
+		expected: decodeHexString(c, "de065f8fed81af948b340accb2971089a9e23d621ba2b6d584cd9da425c5c9a4ba802b7b3615884fa967c118ec2ed14256a0479c24ccc5917ecd63cc4dde740c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "a17c9664bd0ec6a68953f5d816a4ae00"),
+		nonce:                 decodeHexString(c, "ef8d4ba4152d0d61"),
+		personalization:       decodeHexString(c, "01ac065c62182f51cc8627dd1c1538e0"),
+		entropyInputReseed:    decodeHexString(c, "345fb98729177280a70018d67f4974e3"),
+		additionalInputReseed: decodeHexString(c, "5873bc53075d4b8a11bfac368b9136ed"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "497b8870517613e94b8c4b5ddbd74662"),
+			decodeHexString(c, "5e8b41fb2e078032fdefc377e5044b68"),
+		},
+		expected: decodeHexString(c, "c68c926c32b694d4aba7b7d58b2a8f0f1d2097feb7b92569b338c1ae76430048671cd45b23cc6ec822c8f407a84a55611feb4f9bb080a0e9a435599af8b792ca"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "a330117c45e06624494e7cf3181a5b1b"),
+		nonce:                 decodeHexString(c, "db393444f627a217"),
+		personalization:       decodeHexString(c, "56c37d50accaeff994ba287ee76ac538"),
+		entropyInputReseed:    decodeHexString(c, "7706aedbcf72b4a8035fc9a134ad27d3"),
+		additionalInputReseed: decodeHexString(c, "ecf84cb0b46ba4bfd52b36d4b8964313"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bf9bb515d615a2b3b67267c69e71f018"),
+			decodeHexString(c, "3e69a8946945702695a5a3751bbae855"),
+		},
+		expected: decodeHexString(c, "60ec02f11520579e42a26c1f25952eb2a368b805cd74b6ed6b28029d760d297cb2e3dc8b915627d25acb94dc0c9dc1b2732cdbb0101555f7fb416ed4f2ea07e1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "3556fb8729bf4cc98214134271452e56"),
+		nonce:                 decodeHexString(c, "671c10fed8b4cf40"),
+		personalization:       decodeHexString(c, "9e855999aacba32f9165d96523a23aec"),
+		entropyInputReseed:    decodeHexString(c, "6d857a10611f53b3a977151c8fa28607"),
+		additionalInputReseed: decodeHexString(c, "dabd1141be9deab1636b32bc3abcfdbd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e65cc2e5db616f7288e960fbcf66f3c6"),
+			decodeHexString(c, "4e6ba41574cad76b3c305b4f2621bda5"),
+		},
+		expected: decodeHexString(c, "5517c533a061283b9b6d73d33cd85405856d8a4eb20e84bff235b41fcceeddb0b44bbb7e6936c3e3c02cd00b19a2af6f34dcb21341faf76619d6226fb6057462"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "abe8b1ceae3d3db529f95d644e9f55cc"),
+		nonce:                 decodeHexString(c, "5be2691fad7f230f"),
+		personalization:       decodeHexString(c, "29e07171a17e7dc2e9ad9ef7cc23d9cb"),
+		entropyInputReseed:    decodeHexString(c, "d38fcb2f07b266888ffe56fcc9aa5a1f"),
+		additionalInputReseed: decodeHexString(c, "6b878579908e78e8310235756a77f993"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1d3ff6cd957b54210be644e6d030a6a1"),
+			decodeHexString(c, "773dc5b396704223e7cca2cd608bceb8"),
+		},
+		expected: decodeHexString(c, "5374a2bc46b52d3edc6ed1a17565e748c5e8988d5fab8460a88c2d8db6e850b33c0c8746b322278732f9cf0b73605bb373c25c68be04589102e584e6ac1b196e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "79ffe8b7d3d49db911fd30ef9346d57d"),
+		nonce:                 decodeHexString(c, "1b788042cd2043dc"),
+		personalization:       decodeHexString(c, "d0ec0d2f766a1414347717c34caf05e7"),
+		entropyInputReseed:    decodeHexString(c, "5637ac604b75c1b873163bca73deed55"),
+		additionalInputReseed: decodeHexString(c, "469e7caeb962541f1a91edae0c2317d9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "61c4af6e274db9afd86804127c61fad1"),
+			decodeHexString(c, "bc2b9cbaf0c3f0d5703f1f773aa2c997"),
+		},
+		expected: decodeHexString(c, "7aa06859e429ae4ca7e91f0ef853823348ce396401cd543351fd01d9e2d71d60e8335f1c1e5eb14cca17fdb88a7cf98b76c66d0e9ee19bd3c8d9497c76e49173"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ccb9d8b86815e210ff4ab2cc2e6731a4"),
+		nonce:                 decodeHexString(c, "db6011e5f097a612"),
+		personalization:       decodeHexString(c, "49ac613a4f2c9e98649d30423f495dd0"),
+		entropyInputReseed:    decodeHexString(c, "2682d8adaafa995bbac43dc1cbc04518"),
+		additionalInputReseed: decodeHexString(c, "ed137c1b5502c4f1e201edb05ea77a17"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3c0007a5e230f771d7f748642c5f5a99"),
+			decodeHexString(c, "fa22dd67eabf64cf83a37bc45ecc2c88"),
+		},
+		expected: decodeHexString(c, "1358dec3a9f4575e6ecf0d7d597820004a18cf9c7e3dc9f7140e554a7f82f7f9b66056078acbbc01841f15544ac5822f2ff0a849caf6ea8987175b10231d23d1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "f94ffca816782085e9d016a42f84de8d"),
+		nonce:                 decodeHexString(c, "3258624be8b32e05"),
+		personalization:       decodeHexString(c, "94101d2a9c6ef3a6f0c649563a0297a4"),
+		entropyInputReseed:    decodeHexString(c, "3632f0cb9fd46d92b6f9290a49e1de52"),
+		additionalInputReseed: decodeHexString(c, "dbd2222336ea625ffb44d612e2d1eb6d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "478afb776c668135a2bc5246843b68ea"),
+			decodeHexString(c, "16a4778db16816898f96078216d83199"),
+		},
+		expected: decodeHexString(c, "a89a30c5bb0f1e907e99f36001f5087091b2d4af6e60a7f87b56f694dc1945531cd134776bb35369b419edde4f75b66264025bad4774e8677d6457918e575ce4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "7fa4ed36286ded64bf4979a71f91bced"),
+		nonce:                 decodeHexString(c, "586d02a8692fd60a"),
+		personalization:       decodeHexString(c, "dd1ef2e4dfcc03703390136dd740cde7"),
+		entropyInputReseed:    decodeHexString(c, "1aafe145128fd1ee74393a6f82cb6503"),
+		additionalInputReseed: decodeHexString(c, "cfbe4f09b2cb97417ec7ce818b150f0b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9169f9d15800e74b53dc415afa498839"),
+			decodeHexString(c, "8dbea4f46525ef21bfce86aa522ffb4a"),
+		},
+		expected: decodeHexString(c, "3ec9a502b021faf36c2331cbf031605039ab248b3ebdf7c1553707c7c2fa632ac6602f3d61cce25dc21a3b48f3865eb89cf24eb32740718a2d50ff2249414f3d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed19_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed19_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "02f56ea027875adaf72fac22d61cd17d"),
+		nonce:                 decodeHexString(c, "50dd7248a6559af6"),
+		personalization:       decodeHexString(c, "1e2f364b23ba3cc5815c1384ae22dac7"),
+		entropyInputReseed:    decodeHexString(c, "c20826284e8fc928548f60c63b386dda"),
+		additionalInputReseed: decodeHexString(c, "98669220d56571f2f2eb17af75b6ac1a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0d859d1d9c911f7e6d4ea84a9f77687e"),
+			decodeHexString(c, "e1cd4d474c985ba562dc4100ec01155a"),
+		},
+		expected: decodeHexString(c, "e83f1f0fe0ad9a8b6c0bee71484f03b22cde5ef990af0fa49e45f9e8d0b1cd9c058ff5c62f409bad005ea4f00caecac1de6f6f896f0dabe020fda58375e6ca19"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed21_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "0ebf2b35e3bb324759439b95a288061f"),
+		nonce:                 decodeHexString(c, "85a82c13cc42d712"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "dffb5d118bea701d8851b32c87eff01c"),
+		additionalInputReseed: decodeHexString(c, "a5381920805718f3f6b30661011a575d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "62901ff5dba574f53e13c6a62f89a292"),
+			decodeHexString(c, "f1d5092bbb3fdf50ca79f3d8b76ca793"),
+		},
+		expected: decodeHexString(c, "0f248aa875fa2c12d5411ddcd3fb5b466e14d92bab2e024eed612e988cf50db1a7545df09f886d516da5e021124dfc80f606fe08a6653764abbcfa04575fb0c0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "10ee7533845dc0f023061b20aa735eb7"),
+		nonce:                 decodeHexString(c, "35fdf531f188a792"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "31a226c2bc5774fdb5e68bf3b0dc9514"),
+		additionalInputReseed: decodeHexString(c, "ae85202016bffa9a3f7f5a9ad403c880"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ecda1ee2f9dfa30a436d7d14e3e0a5aa"),
+			decodeHexString(c, "95a632ef2f1fb0356743dab7d68b8410"),
+		},
+		expected: decodeHexString(c, "475f262212a8fa707d983ebc3221d40fe5afd0d57f3f6cca173298a01295d3d4d8fe9c08774849987ca76b0268dc381c66b2dff14d6cdf47283c4b0b27bdad7d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "fafcaef2edba52d43f545ce1145331c0"),
+		nonce:                 decodeHexString(c, "ed9e9313c5a7e022"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f6e697d6325888e6df3e4e472fee640f"),
+		additionalInputReseed: decodeHexString(c, "04a70833c5e916a7fbd4a7956713a305"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7ab9b4536fc0df7ba3c30b5c2c87cd77"),
+			decodeHexString(c, "b71b91c5a55ea8368e438c943ff39c3f"),
+		},
+		expected: decodeHexString(c, "6a113a62a6700fb98c2cbbc973378503d910ada05aa8a38e1804f0d1cbbffae13ba2f3abc36deb2b39784c31c8c1318c4a4b194d5518c39b06d705574ce70280"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "da1e2047bc9af02b914756e96fdc2f25"),
+		nonce:                 decodeHexString(c, "b167d6001e06540d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "85187c6383493bd8905a9223a3090e22"),
+		additionalInputReseed: decodeHexString(c, "36bed89a0ebe1c9d797924f9ff442d23"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f9bea56f2f3f48b380c04a3930ac7a8e"),
+			decodeHexString(c, "5c29b5b55a55a9b6845af9a17c67ee45"),
+		},
+		expected: decodeHexString(c, "cd69844eeb184a70d0534b514c5af3d22e3eb6794d133e8984b9a9b5ea35f589c0677083c39f3c60db7cbe58cbf7df6fcb15b6d721a7b6a94e1dc4086bb13e05"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "75fa45e312fe404b2c2d046c957be475"),
+		nonce:                 decodeHexString(c, "43f4abdec9958a7b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "37f9af344a6d0507b52a9ba7c5591a8f"),
+		additionalInputReseed: decodeHexString(c, "60fe6bc8fe440c77b860e80cffffd0f9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f49a524228c4296fcf84dc8935c82132"),
+			decodeHexString(c, "272a13a8cefd6d539c0bf76b22f7dc74"),
+		},
+		expected: decodeHexString(c, "799ee64e0b592cf2946366071f8abece86ac2210b68f0386fba35f9556a9a3b61ee62f7364f0875e6806d40e6a653541b31ca33fe707b66c74b2e15735a10c53"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "28f3bac69baca7309514783466305a86"),
+		nonce:                 decodeHexString(c, "3705b21e2c31dee6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "00135b11108541c68c868153702f9ea1"),
+		additionalInputReseed: decodeHexString(c, "988b4e9777226db3ad2fffb56864c120"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0ee8a998fcd486a30a35e7fecc7fffa6"),
+			decodeHexString(c, "9e45cf0d8163759e79123bddea7205d9"),
+		},
+		expected: decodeHexString(c, "4f4e762f1b6d4b8eaa155329ab299f520e5ee19e7a6575c04652da31943266225aa6eb36388a03f17aebd6c745fc637aacdfc5096e3103196d3f0386d42c50b4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "9002abe2297b61abb3e4de54edbd18cf"),
+		nonce:                 decodeHexString(c, "46b106132b92b9d3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "78d70dd7d7213e599e4e7bbd52a0f952"),
+		additionalInputReseed: decodeHexString(c, "9319586b5f897a4a040e3fa031dbb891"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4473cca8481ddd85235fba35bee53959"),
+			decodeHexString(c, "05c2a1c71f0f42481afec1bfeaca990b"),
+		},
+		expected: decodeHexString(c, "9bc12b3948f983649d873df9e6fe871aa14c4680b76085c4254ec568c3324ff76ad01dcb29135ea54548884425710fccc28002f2f5508318abce779e5baa1935"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "12e7fcb432d1fe19047d5eb98e45e09e"),
+		nonce:                 decodeHexString(c, "c6041cdabaa6a394"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "eabdb274498d51f33fcdb01be808bd7a"),
+		additionalInputReseed: decodeHexString(c, "6fd0a7bf2a25cce7e5ae19298b9d12a9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d821533342b372f238550aa4b61f7a4f"),
+			decodeHexString(c, "804c7fdaae8430f3fbd8a2ac56158025"),
+		},
+		expected: decodeHexString(c, "c55914730d087625531397e7543f073520ed063c7b9a66a7ca6552bcf32d37ad9639f9c3de760c87ab77f24df6416966c97743993c27cebc1888a4c6b07bb198"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "bf101943665c5b275ab6e0dd1d560304"),
+		nonce:                 decodeHexString(c, "c579f7dcc6414ca5"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "260d293ff79ada3dbf7d418f7e851063"),
+		additionalInputReseed: decodeHexString(c, "8bde827aaf129c6ab5f6039d72b49485"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e5b593cbc807f62973bb1cee068ceba6"),
+			decodeHexString(c, "3166b001f9246cd307a3e80822f798a1"),
+		},
+		expected: decodeHexString(c, "1e8dc87aedafeff8795aa2921ad906a5b83335e8073d3d88296f3171627e2f50e44ca4bace9d0cc9b0f5105a70fba948f12b2057303296f956f67d573cb42361"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "6b18da3c0a9669705fb201df9a5173db"),
+		nonce:                 decodeHexString(c, "97cd955225e9bc43"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7496cd7c689e6d15dcd0baf0079c3cc5"),
+		additionalInputReseed: decodeHexString(c, "0f228424b9d27a9f0c5c8b0725874f8d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "62de3801712c166fda683faf159e55a7"),
+			decodeHexString(c, "9bc9afdf65fe03f0868cf5b1136dedf3"),
+		},
+		expected: decodeHexString(c, "317c2aa96f4d3cf79ba8736e7abcd934a8749192e4b21ee0d1feb930093f9812ab7cc6ca7550a02dbeca6528a91b88dfdf04af3831f7e55ccd927172e43401e8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "f81d075938bc826893c5751584066707"),
+		nonce:                 decodeHexString(c, "78ae6037c77f6caf"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "61c2b1949b1002b0cc08b383c45e0cde"),
+		additionalInputReseed: decodeHexString(c, "f5c0000cfef6f9788e89d68addc0989a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bad0e28feb48a9523408d6b8bd6aecbc"),
+			decodeHexString(c, "9b8b1b6b2146432faaf3a4ff0985a15a"),
+		},
+		expected: decodeHexString(c, "bdf688b9715cc4cbe72e15dcd8a6596ba2bd003953ebd2bfe69212909adef0c367b473edb45c41acdd22836f5fc9fd47cb354b457f25cc8127ed1625b8fa4aaf"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "57ceb9ee595c6e3715d90194021aea79"),
+		nonce:                 decodeHexString(c, "fb51856926f1b068"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "045b01a347c6730fceb1f2f5ba760337"),
+		additionalInputReseed: decodeHexString(c, "63eca07eb8f49b54a534e0b409258617"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "34ee56a083c0b5f7d0eb65bd42da727e"),
+			decodeHexString(c, "a4873d13093c725419caa4124dbfad6b"),
+		},
+		expected: decodeHexString(c, "f15578396890d4a0c0ac22e55669a184fdb55cab332af7a62102c2d181f114fc34b3e589b8a8c02ee35e9e1aa8af286dd1addcc24bad8211dc90d73809a42670"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "2c43f14cd4a262dfa1f3a73d48f678ae"),
+		nonce:                 decodeHexString(c, "e1dd9b8d9855d647"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "67cebc59c187af2598ea158f0d0cdceb"),
+		additionalInputReseed: decodeHexString(c, "b09ce2cff6d8b352228c008b6afb6820"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b6edfe4cbdab74e5f1ea1f44084ef2af"),
+			decodeHexString(c, "2744ba1a4d41cb78b1a02302bd724e1e"),
+		},
+		expected: decodeHexString(c, "0cea1f4bbb78060144b22101898364a09c86741b2aa25125dd825cd28c7447be68801de5e8e20a2bc8aaf3459b8cc7c5a0493027b2ae7888b3368f1900831d9a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "5be3bb2a3faa2e107be55012e92dc62f"),
+		nonce:                 decodeHexString(c, "045e5090158d31cf"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2b462ff9729c1b9290a817b2a1ae3f94"),
+		additionalInputReseed: decodeHexString(c, "d984aee6b0ee0325ba17b3c10a25f18d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "868320b83f1b39e394377b5fb528dbbb"),
+			decodeHexString(c, "d690eaa80d28a5341d750894014ddd8d"),
+		},
+		expected: decodeHexString(c, "f9eb2a7a58c2467739972e1e24569c97624ee0ad5f79f12665ce0c5a650180463def3dc33515030449706a3d4edc4c4928f8558149fede30c5f31223d865354a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed21_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed21_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "1d0436a5dad66a812e0352ed0c0291f6"),
+		nonce:                 decodeHexString(c, "d1f2e937243dff92"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a91dc181e98d78e1c2c639f9653c4c3b"),
+		additionalInputReseed: decodeHexString(c, "4bf6fce28e2adf33a0863dd3dbda7172"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7974e5aced47ec8b669972d7c5bde5ba"),
+			decodeHexString(c, "89033efa2cc7090e7a0d1f78de1d8794"),
+		},
+		expected: decodeHexString(c, "f8573976e2d113cb164f05003c116f0788346c8540d76615f667ed968fde0f7d3fc010fcbe0dff8cb2b0cc33faae9eb251f3845af1df65450cf58c6ee6e1b382"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed23_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e9095c1899e1ea7dbd867d915d8e3def"),
+		nonce:                 decodeHexString(c, "cea157889daa5c09"),
+		personalization:       decodeHexString(c, "b9ae881d60b2445330d1aa2d49edb168"),
+		entropyInputReseed:    decodeHexString(c, "3c66906419047d58f47ae788c49c7a69"),
+		additionalInputReseed: decodeHexString(c, "b0190579cc71c2142e2b4b147b4f0149"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b2b478915253c784e3aed97b26cbc9e5"),
+			decodeHexString(c, "d2419fcce3643bb49cb7ad93ec09c769"),
+		},
+		expected: decodeHexString(c, "06410639613584b3b1455919b2e9df5cb3c190c668a0ab473da4e715f81e4472b57afde082727090e3a0d07829ac71850debea34cf0f2899fc3b15dab84180e4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "fc17a0da69ce9e7a5b1f575349ca48b2"),
+		nonce:                 decodeHexString(c, "6168caf0737a14f2"),
+		personalization:       decodeHexString(c, "0f04681443adbebc5c62fc83307559b8"),
+		entropyInputReseed:    decodeHexString(c, "5e8635ae3b3032368ea8dd875a656c58"),
+		additionalInputReseed: decodeHexString(c, "16143e762ed7c92b074bbab4d1f7eacf"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3465c0eb0107e391ddec0dbfe9aa9ed1"),
+			decodeHexString(c, "da9405ea7562e0aeb4fad05ddbc2673f"),
+		},
+		expected: decodeHexString(c, "93369be668d37e36132084daed4c637dffd84c0ba4723c7afb1c7b039e56d302294d6bc9d22cb2ef05879a0ed9841409bfdffcb2ec817dfcad47728297871faf"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "796e5c41a5f52ce0463fb3eef07a3e58"),
+		nonce:                 decodeHexString(c, "dddc938014b90916"),
+		personalization:       decodeHexString(c, "126ed44b14eb6310d6a4ae6b298a4757"),
+		entropyInputReseed:    decodeHexString(c, "cc8a0e9bc79ca4a5807cdccd8bce3e5c"),
+		additionalInputReseed: decodeHexString(c, "ae436f840bfa4b376e18c8565647040a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "925d97c345eebee3b98402e462db0e05"),
+			decodeHexString(c, "d7fea1ee0fba8831d3abb03c0fd7a002"),
+		},
+		expected: decodeHexString(c, "5007b3185210dfe1c7f5577d38593f6b8a2e8a6190b7e14b47d86b0d906f59eddd3835a7b167a3374428ad9576588cd9a7712ad0bf7165dec43dc3da5f11d0b9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "1025ac69e978e413939acfd5859e95ed"),
+		nonce:                 decodeHexString(c, "638b9c36e2c74d96"),
+		personalization:       decodeHexString(c, "9eb46676274b965e9bdb06a6e88474aa"),
+		entropyInputReseed:    decodeHexString(c, "0b1ffa142098080aa6f7f39591cd298b"),
+		additionalInputReseed: decodeHexString(c, "e09018fa1ecc7699d23a95d2eaa2b763"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "78895023523f16af9b0853e8e688deca"),
+			decodeHexString(c, "7a3d33d8c4a6dbf6264407a543510a95"),
+		},
+		expected: decodeHexString(c, "4edd23f437664693689451c7fdd5b5e9469a4ab0a791dd69a9c55e6bc518ac727f844291e45ee4161319690705553f1a320f7847c418116ee0e11ca65277e5a3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "31c2d2baa08a1e840fbd3945b17972fc"),
+		nonce:                 decodeHexString(c, "a62bb4531b51208b"),
+		personalization:       decodeHexString(c, "178397b1ee1e7c12c4c16a5389329838"),
+		entropyInputReseed:    decodeHexString(c, "4556ec8ae5c69c19a39711d161932c38"),
+		additionalInputReseed: decodeHexString(c, "589ad784d2343d58890ee677772e424a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d592685e98554738a3afdb2a90a4da5e"),
+			decodeHexString(c, "ba25fe15d5289e3a44be7c51cc4958cb"),
+		},
+		expected: decodeHexString(c, "e212014a69b2fedcf8a6432ae8fbd6876d573de2cfa350967e38eef590dd0975bbd780d09f4b8648d1bce961e7db6f7a911b6b8de23f790f8b5d5ff6cb23ae66"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ff5931dc8f62d0bd4a5fbf311af93ddb"),
+		nonce:                 decodeHexString(c, "692ffef26e04fa27"),
+		personalization:       decodeHexString(c, "57f99c26234512df835f3e391acabab2"),
+		entropyInputReseed:    decodeHexString(c, "5f4244762865f5493be91d5690a31391"),
+		additionalInputReseed: decodeHexString(c, "0f39876d906778ccc8a2b11d7143442f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d61b399313b4d13d50f8b20762df5f83"),
+			decodeHexString(c, "e3cad6240ace0feb6261a45b4a960e8e"),
+		},
+		expected: decodeHexString(c, "e32fd48a050235a2604b4f2ee8dafa36139b0afa59cc64474c5c2c988639fbda5ba2507a4b7056865ad3d97d52965e57eb5bac8fee26f12d79d7a062ae6b5f67"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "03220b31bfa4aea7e017264ff70fcb21"),
+		nonce:                 decodeHexString(c, "d1873d935fe60df4"),
+		personalization:       decodeHexString(c, "0769e860ef2c56ffca9d591b62893fd0"),
+		entropyInputReseed:    decodeHexString(c, "81546cbb721ce8824cda3a56d061acca"),
+		additionalInputReseed: decodeHexString(c, "f8f3ed27709efaa56e354a83fcfe319c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c8e325cd78120b51b33ad7a6bf9a592c"),
+			decodeHexString(c, "f7d43206a8313f7e129250215cb4911b"),
+		},
+		expected: decodeHexString(c, "48f8302b5eafc451424a49d917dd48923c5cb835ffb1533d0fd0b248ab0722dbf0c9d53610771aaac9c03993fa43293cc7083ff1168c23b2e618761058af797b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "c5df145cbc99c3fe243e46a8ad5be5d8"),
+		nonce:                 decodeHexString(c, "81e54562579d4032"),
+		personalization:       decodeHexString(c, "b28e1da0af72176ec1f767c972fd9558"),
+		entropyInputReseed:    decodeHexString(c, "546e4694c6130c483c36d69718ac2b73"),
+		additionalInputReseed: decodeHexString(c, "78e05240cff43b62862585005968adf3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "564c3fb62e542291fc3c6edfaa4d4dfb"),
+			decodeHexString(c, "86965563373f3a499c78396423e8d5dc"),
+		},
+		expected: decodeHexString(c, "3ff8226d9a38afaa8909bfbdb3d849abb36896e3241c96510d32ea82ccd9a77cf26f30a04920fb2eddb8e06a32a6b107a2d2835330b8f03bf4030dc2c445e0b7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ddb06d7b033fcf770b1183c2f10d9686"),
+		nonce:                 decodeHexString(c, "da0fc8b8908ca951"),
+		personalization:       decodeHexString(c, "7b6c6c25829694d50193c69edcfc8bc8"),
+		entropyInputReseed:    decodeHexString(c, "f193e216601ece770c56e83fb59b80e1"),
+		additionalInputReseed: decodeHexString(c, "adbf18cdae2f017b4741e65ba1c4d067"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3d109698432abb856eabc1945591a485"),
+			decodeHexString(c, "98da851263c02add5cce6d0a076ab658"),
+		},
+		expected: decodeHexString(c, "44ffaa6277f29dd771024280dbed728a298c2b0254ffa8774020f849af3d979cbfa26abe7f4a0802703891d9f791ab5a618088befa3cc4307b2f6ad4a4391bb4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "558e28137db0f651dc668e0f7ea59026"),
+		nonce:                 decodeHexString(c, "82d64daed7730963"),
+		personalization:       decodeHexString(c, "94af4325ec7522739eb7b1445936d6ea"),
+		entropyInputReseed:    decodeHexString(c, "16eaf7d92ab4dc77638cd755f383ef22"),
+		additionalInputReseed: decodeHexString(c, "a2962feff8928b31fb53a07fd1ceeccd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0ad8333171b7d8ede900f7fca03fd449"),
+			decodeHexString(c, "31adc14dcae150331e7e02ee4c17706b"),
+		},
+		expected: decodeHexString(c, "78b0ff4ce159ddd503062f553c68594fec394bf4b25e64ba8af4bb2b7ca5ee8767634cba2fef9b32ae283d1951f4b98d46a998e7f358c714a95affaf41dfeb17"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b7ad5679f68142a8476c98abc2bb1d83"),
+		nonce:                 decodeHexString(c, "7579dc55c505d795"),
+		personalization:       decodeHexString(c, "a5a73e8c501b5fe546c3c19b9d3cd093"),
+		entropyInputReseed:    decodeHexString(c, "e266af41006010d3dd516423ba800d92"),
+		additionalInputReseed: decodeHexString(c, "157a5e19f7e558a49f1f71b6aaee14a3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "37d3492cbefcb89b056fe1290a095f4a"),
+			decodeHexString(c, "d21d692633483a676b0b30b35651df96"),
+		},
+		expected: decodeHexString(c, "bc7e1f7874d04fb00059869e11d7f47eb3c17516a058c195151b3310923e631553ca6b8fe070742a07c2a23c3c3abac0473478c04a066e5e13771ff7d517686b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "7010a55c31bb9a36578dcc9ce3ffe5d9"),
+		nonce:                 decodeHexString(c, "ce8b37c1f7b0d979"),
+		personalization:       decodeHexString(c, "9ad0de6c7101732fdc600e51fad1390c"),
+		entropyInputReseed:    decodeHexString(c, "dc157bf68f160b84821319e69aeec33b"),
+		additionalInputReseed: decodeHexString(c, "6e7a5c5f08299fa4d4556ceaa2527b3f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6e1f9ca8dc3d22a26eca835953b5a8da"),
+			decodeHexString(c, "b8b38c7a3c5cd587e9f1f94eb1f2df41"),
+		},
+		expected: decodeHexString(c, "c84e93d168f87955f17513112fd1f4f2af7fe69153da7e505e83740b292985336724ddf46c26ec4d2c45fd88369b5f65db8a8758934c8a829cc786218d26e971"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "72f67587aa67c348ee5c01c988a076fa"),
+		nonce:                 decodeHexString(c, "ab35825387295d4d"),
+		personalization:       decodeHexString(c, "a91db32b93dd5cc3ac4a6161b25bee77"),
+		entropyInputReseed:    decodeHexString(c, "8fb80d677048d2564d3949b9b9579cc4"),
+		additionalInputReseed: decodeHexString(c, "4306a4adbcd0dc8cc2f81991e12911dc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "620fdf287f777c67b62dd04184c488a8"),
+			decodeHexString(c, "8428f2067dfcdaccf54399d0b7934aab"),
+		},
+		expected: decodeHexString(c, "5bfef85839879d9e9553a2fd24f35aa8199a091775d2cd91173270e141a58669b192e8e5b357c57c02bd2280e229829725596cb96086bb0838227b00209c9a72"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "1d2922ab374be1e743695dc9999dbf59"),
+		nonce:                 decodeHexString(c, "309460d3e0aee322"),
+		personalization:       decodeHexString(c, "72be1c15d3eb98566b367e7270c4f9c8"),
+		entropyInputReseed:    decodeHexString(c, "0d57201d230c4c88c77f54e3db0da7e7"),
+		additionalInputReseed: decodeHexString(c, "4f019eaf1a93a2d5ac3b68acbf7fa57a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0cf82b0c4dc6f6070c89727c71a870fa"),
+			decodeHexString(c, "367d49816145ff6079528142ec9876c6"),
+		},
+		expected: decodeHexString(c, "f038a79f9f82e26135f2e7aa678be9262a7be0e3ab1c2e6a9c37fd6fc8f58cb490b555a6acb24b3558ca941187356f92d0e7a5bad301a962f06181bd70078565"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed23_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed23_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "10cbf44608fda48fd6ed572fa4ffe7eb"),
+		nonce:                 decodeHexString(c, "6aa347c48dc809c3"),
+		personalization:       decodeHexString(c, "1b5898e0d149e5036a6396b854d2c4a6"),
+		entropyInputReseed:    decodeHexString(c, "802f1b3bea9162b69b3b60faca95bacf"),
+		additionalInputReseed: decodeHexString(c, "722729664be0ae8077437f59229eb51d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "38c39183ead35859c7c75ed1042b9cba"),
+			decodeHexString(c, "0c75ef357c721604ef2e1186f656f56a"),
+		},
+		expected: decodeHexString(c, "a70efa589e73b5b52dfa077dd02b256bc8b9718f08d354454456e1f1a56c00521c0d63fed302cc670fd5646cec5691f8b6ae2ea88927cecbd348e2e774830131"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed25_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "34d0f9f714d1539a298b21d3ea188d0e"),
+		nonce:                 decodeHexString(c, "f2ff4bd5f6cf7812"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "cd44f41dc3fd07d88500b4084a65a9a0"),
+		additionalInputReseed: decodeHexString(c, "19c3b70ba950ac8535a4b54e1176e7e1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2335699d1e4dc4f7781375750fd6dd86"),
+			decodeHexString(c, "25a84ee746665d8c50b0d672445a9f04"),
+		},
+		expected: decodeHexString(c, "064054ac13c9daab5906b648314979376063508bba8721fff6fedc452219081f6fe03f7cff48f6a582dfe33ca7e57644af2088fd6774dfa59cb93c1160edf8b3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "9747590ce43b118f68512c8dd6945f2f"),
+		nonce:                 decodeHexString(c, "572136c84f2b76f8"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "79183d9f83bbf2e4dfa11cc8a4e520d5"),
+		additionalInputReseed: decodeHexString(c, "077748f5935170c24ee64d5305701407"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "55c39da16497ae1baf6816e13f9ee28a"),
+			decodeHexString(c, "94956bbe661933d7c8f7025d751b27b3"),
+		},
+		expected: decodeHexString(c, "7aaa55d565fa409ae98312a65b8e6c462f0be0db739fe86290dac1b5e1b1924144988033e89e81bcc12cda586bf5c9547ee32bd5cfce50dd213295a47b2d54eb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "a18e3038d4bfb3fb194834b65c3af280"),
+		nonce:                 decodeHexString(c, "6042ece5c216e0f3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "39cd5ebc183b7c85908cbaf45e1b1792"),
+		additionalInputReseed: decodeHexString(c, "1d780d8e23065770a6ebfc0c11bdf8d1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7ba257ad0b02b156ebce644ec3b590b5"),
+			decodeHexString(c, "fa8cb5ef31450daef8560d484f9bd638"),
+		},
+		expected: decodeHexString(c, "5856545b1c444e020351ed06420a4186898be070905d182a3229188afca55c2480b1f12e0aca0b680c9c72c2009cb3dc0b9be7d724fcc9f26937fc09a5d733d1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e134cc134a22b4d622ee6fb1e89a1c53"),
+		nonce:                 decodeHexString(c, "149f4eb0080070d3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "533684becf30ac8def95b5e544990c99"),
+		additionalInputReseed: decodeHexString(c, "1c61bc27f6d45c7e06613777a6ce1498"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "65f60ce8dfa6bcf82f73f0a93fcf9911"),
+			decodeHexString(c, "f2c1e2a1dbe9f1828ec7733c18a16ba5"),
+		},
+		expected: decodeHexString(c, "322e860379e66384df97f521eb6b8e8520b0372e908927e50e06077e3bd3805199fdd05d0b8ac61982b1432107866e37d4596b42a3421513638a6196e6a92d61"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "3263fbac893e72f1560438da0b4a9a34"),
+		nonce:                 decodeHexString(c, "7770a46c62719759"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "5d3683226f904c8dba1759994bb87760"),
+		additionalInputReseed: decodeHexString(c, "ec8dd92eece7bc810e4c7a6c15f1e804"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "051bd83d0de0520bf91255811e454a43"),
+			decodeHexString(c, "22841deb0d11781da56fab8d122b395c"),
+		},
+		expected: decodeHexString(c, "9e42abfa0c062d8ad694550a395a7c362f1491a2f4129ee5ae5a17e31deca412c8444605e9559058dfdea5c437653d190c57195b42d44f1fd8fdafa0e8ee4008"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e63ef8ca1615f73f0e0d35ecbe681bdd"),
+		nonce:                 decodeHexString(c, "e7f6c3f5ac90ffcf"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7f891c36f7e3f013ed05379aa993b381"),
+		additionalInputReseed: decodeHexString(c, "c94045d4514c747a84e41b06a555f849"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aee69806ec57f61933f606c8f1539245"),
+			decodeHexString(c, "a67dc6b4ee427e0f6d2da0663f0ce382"),
+		},
+		expected: decodeHexString(c, "2a8c7ccc8c5242b1214d192ec5028db9ff42e73a3211571a05e9b3d8790a787f2bcf809b8f02ec8d3ed21a579e955c42fbdcf8583ef693bb7e0096b7b9251b2f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "6d2c97d0c888f49c45539753e38f4f93"),
+		nonce:                 decodeHexString(c, "8d6a04af07d26f1e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f6d80a65e2a4569a9f644f6262ae8bc3"),
+		additionalInputReseed: decodeHexString(c, "fd491d4feeb230da88f1c3b557ef1da0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "52266b8c279dbe61718496c23f9262de"),
+			decodeHexString(c, "0a2e549d8d1b4f0f1a663afdc576283a"),
+		},
+		expected: decodeHexString(c, "1f72b7df97b35d8daf1e3596e58c728dab6e7258567741943185ab7edb0d41fc877769834b3d01edf4693018e526ab55ee124fdc5ddf805852d144960d1666d9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "17921f57c0bf22a513fdb08de4fd6780"),
+		nonce:                 decodeHexString(c, "a1891a4e0af5694d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a493c2ae196f9a2b66109d958e8f9be8"),
+		additionalInputReseed: decodeHexString(c, "311c0e0ff4433d402a69955b54e8c1e0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fb16e6ed995381cb9f93fb379123eecf"),
+			decodeHexString(c, "80817dce78d30eefcbf1fbed07c08f2d"),
+		},
+		expected: decodeHexString(c, "9ee11c5c7d77b9d3b05cc828572d3edc79791f3092b4cb6ec06907fabd202b678cb495e560c750eab28ec91dec23bc4621c353db91f0dfb1b95614f2f41bffd5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "d50b76457bdfc071f71fcd1666d447fb"),
+		nonce:                 decodeHexString(c, "1c9ab7237419b3ae"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b1e94bc1df60d54f0eb26293bf175afd"),
+		additionalInputReseed: decodeHexString(c, "df293ae285b9af7a8e69ff2fcdfac85d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0facdb57418e7a228a7c56663dee72dc"),
+			decodeHexString(c, "3831f9659637fe2ece94f524a38ae576"),
+		},
+		expected: decodeHexString(c, "12960a4d3f80dd2251022153529d07f5e72e155f912d9c42c7c134295701e0252e903062718e0836b4bd4af2c65f45e6c736710e5bafb842936a23182e3888c4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "afdd79f792e4bd30694c4a04dd9a28ab"),
+		nonce:                 decodeHexString(c, "eb336d7a66a6f29d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b8fd1fca747e540929d8800a335d5c8f"),
+		additionalInputReseed: decodeHexString(c, "418edd80f344bd88556a4d901e6291b9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cd1637517ce62ffbc59698c881806942"),
+			decodeHexString(c, "12a4e47e6727b04aa90ab43e39dcc322"),
+		},
+		expected: decodeHexString(c, "25f7972e9ef340b16f32985ef50922ab4b596034b8aeed3dd69aaeeb98bbdd57a602bcfb42e03a42b00c9be2877964a06fe31d368f911bcc9753bc3cea059dbe"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "2c1111f855115ba35d49e666fc528e56"),
+		nonce:                 decodeHexString(c, "4296bdfe67de2601"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "85596234f2b8d9873ac29744af1fa21e"),
+		additionalInputReseed: decodeHexString(c, "5ec12e102ee59298f6466cd6b931ad5f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "681d63d56893c0c85b4c5b081b6b46ad"),
+			decodeHexString(c, "817d54b8d6daa6e0f8f1c7018d7e1810"),
+		},
+		expected: decodeHexString(c, "0957d1a10e59758cd6a0c507505617fca5520396d43491e4f0b981f023af5e09805304e887d70a9f29bda15bff725bff3e54efcaa4596342def17dd91ccb5068"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e84c466a541dea2d42533686011d8fea"),
+		nonce:                 decodeHexString(c, "b6871568d8839ec5"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7312edfa7ad556f9440038244a984bf3"),
+		additionalInputReseed: decodeHexString(c, "b5131ec346e970f2fe248cc9bb41c664"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f1803095a6e9e62969d4402942056473"),
+			decodeHexString(c, "10a7ea90ea7b6975f08a8deececaa4f8"),
+		},
+		expected: decodeHexString(c, "158aedc71da0304e1dfa238d306fcc8bd7a77802749dc9282658fd9eedd53f40d8263f34d089784267434912c7e634ffbc97908700ce2b599f9b200c36ad49a5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "d332c06515e3660a25e69fad54e5837c"),
+		nonce:                 decodeHexString(c, "ca60e6718936fbd7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "50dc6dd9644d79d28f05baa9e2ae772d"),
+		additionalInputReseed: decodeHexString(c, "7a48dd5eba3a69899d3253797802432f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a50ccb58123b0c37fa543d8ae523e8ed"),
+			decodeHexString(c, "ce9e860890eb6bcd91d9733cdcf96e10"),
+		},
+		expected: decodeHexString(c, "060626499e14438576d7621d71f01e4be874a955330b0d5d6fef3794eeb761b4d11a88d1ce09942e244fde576d7e964585423d6584726eb798f35772caea1df6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "475e4905d8c968d86437453f58886693"),
+		nonce:                 decodeHexString(c, "4a9366ba7fe4108e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f00f3c00e322b4a4388d4b5c81a746b6"),
+		additionalInputReseed: decodeHexString(c, "8bae1a96ca839d48da80d2fd656d7080"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "24ef112511b6fb0b0ce569b642da3e41"),
+			decodeHexString(c, "bf743994d49f01435d3f6505e4108c06"),
+		},
+		expected: decodeHexString(c, "579805d64a46714443423292142e390494d8ec9f42a65a481129f6548a0bbd3db24b902e48c0d4977027538ab75447e7115380fc453d25250a8c97da5d0c86fb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed25_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed25_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "c0e18b8110f492c52ea13a86799b5b23"),
+		nonce:                 decodeHexString(c, "8c8d0521b43e17f4"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "1c6d2c899074c76e08edc7bfd8b8ed06"),
+		additionalInputReseed: decodeHexString(c, "0cc1fccd3b6c0d9aeb4ada6f40009603"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ee079955886e85e7cb9d76b5ddc40c14"),
+			decodeHexString(c, "b0c10548fe954e2d788933ccb35f561b"),
+		},
+		expected: decodeHexString(c, "9267ed605e90e15a3703f1517daa7cdaa03cfd8f0d96c569ddea429cf826b39fa97cdb8103ce590c5e91b6a8d6bd93637758b53bcf0fc6a0b476245f94b5954e"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed27_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b7025264dca8576bd52a26c2d64b5011"),
+		nonce:                 decodeHexString(c, "e59d54d2c03032cd"),
+		personalization:       decodeHexString(c, "801f88c61c577fa16134053d07bf6f0f"),
+		entropyInputReseed:    decodeHexString(c, "91ae03a1b4b4316611094373f9349a57"),
+		additionalInputReseed: decodeHexString(c, "652f24f936551b0bbeb3e829dd1ec9ad"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c07d36375b0ba8e7d9bd7e9f53e2d98c"),
+			decodeHexString(c, "209953abe850459d83e5ddd15d21505b"),
+		},
+		expected: decodeHexString(c, "4b153e0ad2e8d26ea0517290de365e3e5bbebf6e76002b3e8bbd4ee9eddef8cbc9c4dc85ace21d8217ef25e6883429c16321a458b50e6c15acc6d5324b55e5f3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "174436f235267b3893294017d4e69128"),
+		nonce:                 decodeHexString(c, "4420e557ded3f7ad"),
+		personalization:       decodeHexString(c, "449f603806ef0120b8d58a9aa51f6004"),
+		entropyInputReseed:    decodeHexString(c, "c6a1a1328b7a40736bf9c7eefee9f2df"),
+		additionalInputReseed: decodeHexString(c, "f09019e8e60b2c42bec611817b2b3bfc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1ee6efa242e65112a3f0d2f1706ad38f"),
+			decodeHexString(c, "b1459d42049998d4da0b01ffee4e20df"),
+		},
+		expected: decodeHexString(c, "11b0abbb7619b37c190f2398e262dfb7586b632b3e96c7ae099a2fe0e1fbee70e49b21642d37c365ef878f63e84e672105ce2b81911f18b60aa6a440eccef52b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "2fcc99d40af5cba141b792d186e61343"),
+		nonce:                 decodeHexString(c, "dcae599dab135c65"),
+		personalization:       decodeHexString(c, "bee3fc601316057b12cf791a6fa362bb"),
+		entropyInputReseed:    decodeHexString(c, "712fcb5b2836e6bdb9293508e0283e8e"),
+		additionalInputReseed: decodeHexString(c, "b2e46fb39a3ad89bdcc78ade6238c4d0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e2567f6ec27bcb1497c2fe151739e8d0"),
+			decodeHexString(c, "9586b4ada0a300e83697517f6f43463c"),
+		},
+		expected: decodeHexString(c, "2b5ce72c717ee10ccc34d86e3967afdce83d485997f6dc3d3d40b597e0742065221056ead6a16f395e4d8c0947167ff6629098f33b9209128ca7d713bed24177"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ab7123944a2f462a368da1712716b114"),
+		nonce:                 decodeHexString(c, "851d50049e1d4f1f"),
+		personalization:       decodeHexString(c, "8ad5ac694f28281eaa427844fcffdf6e"),
+		entropyInputReseed:    decodeHexString(c, "ed59f0720625382bcf4e4857f5360f54"),
+		additionalInputReseed: decodeHexString(c, "e7ac9966020be3eb21ef1831f3de2304"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1da1bde09d7b44f6fa074e55a2698f4e"),
+			decodeHexString(c, "795326f83c8542215b1315bf3d7c9846"),
+		},
+		expected: decodeHexString(c, "cb656e62417188a74d7afa6402564b7d15729b5b70b14d8b5c5130c6816d051286e5e22ff36a45058bc50b7f0f53d80c95913a325af98502b2e0591524f9fcdd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "8734aef1172bacc3dc4a3181773b7fe8"),
+		nonce:                 decodeHexString(c, "1d31ddf0c880f01a"),
+		personalization:       decodeHexString(c, "f23a18475cffd571b96d9bae1284ecf4"),
+		entropyInputReseed:    decodeHexString(c, "1044776a680cddc38c7a9d0a9d373fc8"),
+		additionalInputReseed: decodeHexString(c, "4a6dabcf181d435df7e35b53022b6045"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0cb7c361821586d6406cf0d0741bb3e6"),
+			decodeHexString(c, "984e88836d0cfcb1b9adaa26ed047a56"),
+		},
+		expected: decodeHexString(c, "97f5aa05fb1691e434f827b1ed0f67c6b06a129bbb6464d9ad03de5fe8b63610c69600d972d83a75b71e23cbd05b306e5772126703931a802932dd272ddc24ec"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "08e2e74d47dfb3c0ed43644d98413911"),
+		nonce:                 decodeHexString(c, "dfe6f2b56147116e"),
+		personalization:       decodeHexString(c, "1ef4b3074c247b7c962d49ea2e519568"),
+		entropyInputReseed:    decodeHexString(c, "d91c7eaae89ce07de8578d9f46411190"),
+		additionalInputReseed: decodeHexString(c, "a6f73c36fd4b510ede52bd81eff11203"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "20dad865c4e421bb4967bc88b30053d5"),
+			decodeHexString(c, "9afa0a2c87ef1a1920a2490ab98805b5"),
+		},
+		expected: decodeHexString(c, "b8adce5fb7c284a18f4c9f15fd6643505451da4a05e2dee0fd5723d15ae5baec8e98d08838d4489b379cf3490c7f61b5b78d5903773d68d914253b339f267c0e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "d424d81123b145471d64ac2de5e411fa"),
+		nonce:                 decodeHexString(c, "46bf213dd4004867"),
+		personalization:       decodeHexString(c, "8ae3f0a188d1b5d31baab8f92e604079"),
+		entropyInputReseed:    decodeHexString(c, "b3ff4e4f5dbf5866a86a5a600b6912f9"),
+		additionalInputReseed: decodeHexString(c, "d9b430a4ee9b1cf7bfc7cc4a77ebcfe4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cc670556f4b5871ff0bc15c7f5d9c1ce"),
+			decodeHexString(c, "f48b9c5ffcfa9dba232def34cdfce9f7"),
+		},
+		expected: decodeHexString(c, "a52a74ad01c9fbefce42462b187fdaba5be775ac961d6dabc69698826567362dcdb0cd11beb4d38ee1bd7903aecf1afcb42ee02718ebe51eec8afb4ff78c07bd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "09e6c23a826effc9e9631089c6bea137"),
+		nonce:                 decodeHexString(c, "2b702fd95ada5219"),
+		personalization:       decodeHexString(c, "44700bd3d049b6b6bb426a3eacd41d64"),
+		entropyInputReseed:    decodeHexString(c, "631c3c7dbcf90395d22be358dd6746e4"),
+		additionalInputReseed: decodeHexString(c, "9f9f8e2a8bf34b4f2c52bea9a1a74c28"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c7a5e54b97e0b583d0c35aa6444d258d"),
+			decodeHexString(c, "a99a5e8a6ef062b8fdb67c7f9687ffdd"),
+		},
+		expected: decodeHexString(c, "011d23e54ebe6aba2d19d08a48920482e2810c3363ec54718f1801866e769c180231113daa31b2c1e7b1080c7cbd730522cfe20c16de1f48bfb0f27ea1bb96f3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "826fcf8ce73258d03416c119dd6ffb92"),
+		nonce:                 decodeHexString(c, "33a766d82e3bdaeb"),
+		personalization:       decodeHexString(c, "bfd2d1fefb06f15ae1c515d31f6d2970"),
+		entropyInputReseed:    decodeHexString(c, "54a61772d57a0f49cf71cc07a88852a2"),
+		additionalInputReseed: decodeHexString(c, "4b038237682748fe3de05c62d34627c7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "056198e2fc30185317abd3cb27337baa"),
+			decodeHexString(c, "fbb485a9c3a84724e9695e395c595e50"),
+		},
+		expected: decodeHexString(c, "0140d3d92f1b416a2629355d7a0bd641d765b80d94cab4939a7df253d56ff43f15879d1d4816472de93c62ec963d43f95ef46cdda3dd10dc635de7efcd95de26"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "3b82cc6ac3ccbb1575a62f131319ccd2"),
+		nonce:                 decodeHexString(c, "27bba0a7ae72de41"),
+		personalization:       decodeHexString(c, "825a89b63cb21878a51d75063b5cdb60"),
+		entropyInputReseed:    decodeHexString(c, "37f5d81a3483fa8b56102a0951ec1670"),
+		additionalInputReseed: decodeHexString(c, "d78693f68ae4cba38f3e18882964a755"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "74e4f02b34c2bb5c11d2bada9679a960"),
+			decodeHexString(c, "90cd8fdc9e34445540a4d4e8dd43d50e"),
+		},
+		expected: decodeHexString(c, "29bf5ce99ff28a3cffc99ca5e4fe8e70b7381ffab6a6c6ad5abf97e73f1e4a9d3c74d555e6808584b94ddb1efe048f27ff70606ca8ab67c1d262ac38087c2d3c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "9d8d931620b5ee399063a78eea532690"),
+		nonce:                 decodeHexString(c, "9c7ae655d5e74446"),
+		personalization:       decodeHexString(c, "e820632027e10fb5bcd48acb4228897b"),
+		entropyInputReseed:    decodeHexString(c, "e3618db79c9239c8839caffd15eaad79"),
+		additionalInputReseed: decodeHexString(c, "9fbd70eb16bc4439a576591449a820ee"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9aeccbdc45524972c2b8cbfc42ad006b"),
+			decodeHexString(c, "44199dd3e397ff4bb5574d5e1a86fcc0"),
+		},
+		expected: decodeHexString(c, "e1b78fa3a42443c789631f2500635616bd05c62db98a76fce84f63aecd842ee33dd963c5a475f0dc6e0a01e8e44132045044cb33efc0bbbfba116c0756cc3dca"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "62a87e0ffc6f62ea868f82fc4b4976d8"),
+		nonce:                 decodeHexString(c, "98268ba7a9f80a81"),
+		personalization:       decodeHexString(c, "21251ed832f078c0574e2862e5d6e458"),
+		entropyInputReseed:    decodeHexString(c, "e63a86056475ab9b10f46b0732b581d6"),
+		additionalInputReseed: decodeHexString(c, "c02aa56235ea4a752eb7d4ffb34ddeef"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1344f97a17afb3fbf84f0bbfee49ba10"),
+			decodeHexString(c, "304fbde8e0734e6371b5b80bd22dd42e"),
+		},
+		expected: decodeHexString(c, "eab0c76614250bf3d0b1937e8b56cde6bd01d62644dc8855f0d444b190c21eb74303eb5c3b651259ed5c4150633a92f0eb52b9422a5bc4a094fdb6d074758ec0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "dc54c3caf370e38fc0707bbc19851be1"),
+		nonce:                 decodeHexString(c, "9f397106f6e7096b"),
+		personalization:       decodeHexString(c, "05a460e368b5bef68d3832250a75a11c"),
+		entropyInputReseed:    decodeHexString(c, "d8ae134782a7da3e01d8b46d20307b57"),
+		additionalInputReseed: decodeHexString(c, "11bf57a2cab866510f7ab724c743c7d7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "00d75e2b56b9cd45f1fb04e2d39dca0b"),
+			decodeHexString(c, "5717b701b969ad3252d97f5f2f892099"),
+		},
+		expected: decodeHexString(c, "2211b8f7dd5ccad5204ca983131aa215364daeed6083f242141a54df64f6ba9597769dbfc5439c2ac22a1061ee12631b23dc265e64decfae4d7e531f04ea0166"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "f513722a1fab9c61aaa3fc995130a30c"),
+		nonce:                 decodeHexString(c, "b39d9c895e740643"),
+		personalization:       decodeHexString(c, "2eb558ba9ef09360badbc50adfe989e7"),
+		entropyInputReseed:    decodeHexString(c, "0d398bc97316153c2aee280ab90fa6f2"),
+		additionalInputReseed: decodeHexString(c, "c5f038a4363ec1595e56c52d12ed4a7f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b983c30862b0761c601b19b010a7c36b"),
+			decodeHexString(c, "a513920a6c6cd40ec46ed077abd0bb4c"),
+		},
+		expected: decodeHexString(c, "84689ee847b4ae301c3694b0746331e907eaf60f8cddf089959be7c90572c3bf63ec70d18124adad1fffbd0f00b646998ac1e8649a769dc45062b9741bd68615"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed27_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed27_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "835ee6c444f5d714a52fc82ab27a3719"),
+		nonce:                 decodeHexString(c, "ca1268da49f4f5f9"),
+		personalization:       decodeHexString(c, "0904aa87a1ca57a22741f86b5e7db40f"),
+		entropyInputReseed:    decodeHexString(c, "33e8cf064791591ce4f317b2ffbe34dd"),
+		additionalInputReseed: decodeHexString(c, "06a062b00ec4f95fa4284dd7bb3441aa"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d4434a19a8bfad8dd1c7a4d30d0c511d"),
+			decodeHexString(c, "e6c5e3c6120b14535f149c6d4d523a0c"),
+		},
+		expected: decodeHexString(c, "949522aca9d35e73b28448d4227efca8b21cf03ea05e6483dd777af1e451d2b98b6f61eef586223a212cf0e4adb51c92bcb61368dc711f3ef09fe756660ff2d9"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed29_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "096af1704bcab313f8a4e9a2b1ed506e"),
+		nonce:                 decodeHexString(c, "58f0eb1375a0bd20"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "4b5579cd548bf9eaf3f175459613f3c8"),
+		additionalInputReseed: decodeHexString(c, "2f233b8d0124b7a0ac81cee2ea1e7ef4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "19f8dbdcc77851f36b4005908620e403"),
+			decodeHexString(c, "eb89422293b9c9aa20a50c429ebdad6e"),
+		},
+		expected: decodeHexString(c, "824451fd9819ef4e300ea6eaa1d20512fad1a6cea43c47a92dc50756b5917b848887e705b17d717815a5f6c3bbc0f4b3e1b392519e5e7147da126fd0c58a25bd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "479655c20672db0eaabfd89b822f030f"),
+		nonce:                 decodeHexString(c, "ac0435955c0976de"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "be000629c31eb6d66b099dad3aebed35"),
+		additionalInputReseed: decodeHexString(c, "de2f66250a053f6f3ff1f1f3e31c0edc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6ff2ba8fe34c1d08e55e700a7730c23b"),
+			decodeHexString(c, "a2c96607a2e31a5dd10c821ec053e2fe"),
+		},
+		expected: decodeHexString(c, "ffcdde31bcce016d9fbacbbe8be4621ba84f8c97fbd0a0378ee134e8d4124a5f1298a2cb0e8c1be8c6587c600ab272fbbe30bbb15a8f8fab68c3e822fee7100d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "f6cc9859a8811d247e9342587864d453"),
+		nonce:                 decodeHexString(c, "702f64b7912a61d9"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "bf7b100a2354f600622123d21e61b22d"),
+		additionalInputReseed: decodeHexString(c, "9250fe419ebfbab0ec7c5b8cb9e15e6f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a2b1f0ac230eb05f99c00f028ea8fbf5"),
+			decodeHexString(c, "02b1471ace2330cb9990e2b33f7d2fe2"),
+		},
+		expected: decodeHexString(c, "d865d23847d0ae113ba069b645649b1e8d9764c4b8256b9064601415df6200ed92ab186524377d0f970361b66d074862e763894fc1f93a9cdb645ca6d8e4449c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ccc6ad2dd9318d61bef5390e0e5fe91f"),
+		nonce:                 decodeHexString(c, "6ddb3cd378fa317a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "9eab54e743ac5ec4977cad57532f81d1"),
+		additionalInputReseed: decodeHexString(c, "b02c69da7358e82525a503d7b724d15d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1cd722a3932db212f927a4e01f7e7132"),
+			decodeHexString(c, "72c7fbbfb66c1c744fe14f39eb4f68aa"),
+		},
+		expected: decodeHexString(c, "e1aecad7b58d697adb10fdf64b550ebbdd72146dcb973464f23ade8456bc90372272b0e041a71d4e0b635a13b575163a8109e9c9abe693296d7485e72d586c66"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "fb39e5b3d0d13d19a9aca761e6d6dac1"),
+		nonce:                 decodeHexString(c, "a84c3dec8fd8d3d7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "cb3917e854117b54f872fe54f396426e"),
+		additionalInputReseed: decodeHexString(c, "1201c04886bef5f876ae732970803337"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "04ccad68eae57299ee863c7361978367"),
+			decodeHexString(c, "c11ba7994dbfbe09ec91116ec37a26e0"),
+		},
+		expected: decodeHexString(c, "7b28ab4b2d8ffe3c8a78df522f2f66e5373cdb13a2e7b95f80e15fb15e9ec85381848394b91058d9b1230c1b52c75d32226cc8206f78440e09f2939fa4d09538"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "02a896b44a0bee21ab76f2b3b81b822b"),
+		nonce:                 decodeHexString(c, "f87332df5d234cc7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "81a55970bd1ffbcdc44c0526a31173a7"),
+		additionalInputReseed: decodeHexString(c, "34b9bdfd1b35b3c3cf183ffc1db7ea64"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e370dab5c51f4ebedec1ce2353ba2d3e"),
+			decodeHexString(c, "2a9cb19b537a18f82df6c33a0a4c2716"),
+		},
+		expected: decodeHexString(c, "9f546c83afe7fb8fa8194077f99171e9787ab3dd2c3be0debb9920f9084d0dd177d1143d76fdeabe6c6d794165ea9960267d616f6f0ffd57ae16d08ef56505c5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "6b90994398ad0daa3ca982ea945c56da"),
+		nonce:                 decodeHexString(c, "6b31e0101563d6cb"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "189044b33df7c32a63d0b513c9a080e0"),
+		additionalInputReseed: decodeHexString(c, "5ddd332be7ddaaa86d476e5f49e169bb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7cca79e6dcc0f12cead189fe61d5d4fe"),
+			decodeHexString(c, "957f2bc67a2448aa6961a3357650304a"),
+		},
+		expected: decodeHexString(c, "44ef3bbd3275800bbeffaca6c94793dca2b025f50f13bc572d75e909b6bfd4b7bda23e19a343467493d23c16d88120fe73e3a246e545af09ce2df0ff4e0945da"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "dcb2072ba7466c37461b7581c4cd7ab2"),
+		nonce:                 decodeHexString(c, "d5f8317090124cfe"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f8d4f7776f53a7041535e6a216191378"),
+		additionalInputReseed: decodeHexString(c, "b3cce211f1061dbd0a59384f6ba14a85"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fcfcd55e353b1294476ba98280e52e6c"),
+			decodeHexString(c, "cc41571b9a7e58adf9633956887cab4d"),
+		},
+		expected: decodeHexString(c, "47269a355155dbd99a6d9e5f3f3779eabe60f373a72790d17346e86726e6b3b46a0174ae5c5159c06ce9be0777d3d36e5d1b37b8472ebb09213d3ed623fa3ef2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ee897721c7658edb43cb66d9179d0375"),
+		nonce:                 decodeHexString(c, "6f0cf5071c79b4a6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2ad2c85a34e4447d2db63e178dc706c6"),
+		additionalInputReseed: decodeHexString(c, "6f9a1523cb3dde588d80e52099df13dc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e60088d6feb5d7b83a010656cf996c65"),
+			decodeHexString(c, "3a4443f3e9ae8c59298cb53a8bd605d6"),
+		},
+		expected: decodeHexString(c, "fc738629b7d59913810bab5d53f7e9f8369ff927c4c3d7dcb8c5d61636d06227977a997b757707e1e1457b1b8fff3f7e4830b84c5ad6fc3d15ac1a57c58767b0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "0e45d8b4cc1223c0fa44cc4e9ba07a95"),
+		nonce:                 decodeHexString(c, "1c73a3e36da248b5"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d88353f782fd4f77ba5e4b7415aaa70d"),
+		additionalInputReseed: decodeHexString(c, "91d22d8666e3a88e2173c764615c8848"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c1e7d9a010be5ecbbeb9bf6c2342d361"),
+			decodeHexString(c, "f81d44b95a5c5a8a50b5858b981e676e"),
+		},
+		expected: decodeHexString(c, "32be02e9681c6dbfcb9bf688c2c515d63692faae3f5f7608351ef28c3aa1aedfe10fabbb2d69319290f63f0e5e5beba91f2a5c269fa73309f23260d76dae3ce5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "c7adf6032ca80c8ac0e62f8148ca3573"),
+		nonce:                 decodeHexString(c, "7e546831f948d5b1"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f48ce498ef65f5bb2329857dbae66dff"),
+		additionalInputReseed: decodeHexString(c, "84020b1ec2c2b2c98e49cf7e71600049"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6036f96389db7cd16349bfedcb80f473"),
+			decodeHexString(c, "5f2cc73c731294ee13fd234b29ea10bd"),
+		},
+		expected: decodeHexString(c, "d2f2ef17955cb9337b6ff68b8d38f64c83ca1e12d78ad78b39ffb2c7c6d55fdeadfc00bd96d1239ffd1a5f3460207a2fc1924762774156173ab0f514a93da10b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "5b15453c396dde5a8263a29c3ec1d971"),
+		nonce:                 decodeHexString(c, "f6e90260370db0d0"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2e0e8fa62541bd37ccb5b445c4c5fddd"),
+		additionalInputReseed: decodeHexString(c, "b615a841ea7ce4c0f85fb0cdaa602394"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ec2ba353035a9010cd99ec92fd8f2644"),
+			decodeHexString(c, "ace225a788da7efb41ba1556222f6286"),
+		},
+		expected: decodeHexString(c, "3a92b2570c78c5d542b95ebb0cbc43a522426caa846f5a52af61c107707473367055c4455333531607985cd812db42ee26fb2d69ca0210c0443fd8ca0fef1f89"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "967644a12c0cac92aa3c24615a902a28"),
+		nonce:                 decodeHexString(c, "d38e6176c37cee4c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "fe42e06c38a81c452508ee3d5dbf4b58"),
+		additionalInputReseed: decodeHexString(c, "723ba4720dae76095612142152ca8f79"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2b81c98b29249385b2ce41a080e72a76"),
+			decodeHexString(c, "13610d87459ccc72a9e10b452abad9c8"),
+		},
+		expected: decodeHexString(c, "dde71d2dd103524f8a8ba7af12afbdf51ab569c9973e16139458630b0da13d6240042c3b0892457e90446390f22a6d856d3a21284fea546811d01c33896a4a1e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b7f399dd5a9b2c4869aa4add46dbbe64"),
+		nonce:                 decodeHexString(c, "c07f6df3505fe2c9"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a7c49b25c4f4276257372d7b29a7ed64"),
+		additionalInputReseed: decodeHexString(c, "29c886f99c32f1eafff568175d63c58f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa3f8c159154af33539bbcb8fca2836b"),
+			decodeHexString(c, "20e840f70e6d1d8883de53eb0dfe2eb0"),
+		},
+		expected: decodeHexString(c, "43e44d6bb57b70fbc2e74af37bdf79116f3eb0c0945be73a34ee90c0a7446009b49f52aa9c6a1dd90d2b57e7e30a65d46268cf269cfd8623f7e2cab0e0fbc665"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed29_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed29_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "71282c33992443506e388554ad6fe8ea"),
+		nonce:                 decodeHexString(c, "db214073bcebe133"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a3aaaf037446f7c2aa1c204a332dda01"),
+		additionalInputReseed: decodeHexString(c, "c96fd8ebe8985419de8589033204419c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "213b12dc915356a1281fa06248641f93"),
+			decodeHexString(c, "ef7e08ce74770e30e5ccd86ab9fb0613"),
+		},
+		expected: decodeHexString(c, "8b77d5332ee6119528680049aff574d0210f4e43f75871cfea4eee70afac0e0df945785556754c210467dd581e97fe6881d9f72115b66bfdd728e8f1425a4075"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed31_AES128(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 16, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_0(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "e796b728ec69cf79f97eaa2c06e7187f"),
+		nonce:                 decodeHexString(c, "3568f011c282c01d"),
+		personalization:       decodeHexString(c, "b5ae693192ff057e682a629b84b8feec"),
+		entropyInputReseed:    decodeHexString(c, "31c4db5713e08e4e8cfbf777b9621a04"),
+		additionalInputReseed: decodeHexString(c, "b6997617e4e2c94d8a3bf3c61439a55e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c3998f9edd938286d7fad2cc75963fdd"),
+			decodeHexString(c, "648fc7360ae27002e1aa77d85895b89e"),
+		},
+		expected: decodeHexString(c, "6ce1eb64fdca9fd3b3ef61913cc1c214f93bca0e515d0514fa488d8af529f49892bb7cd7fbf584eb020fd8cb2af9e6dbfce8a8a3439be85d5cc4de7640b4ef7d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_1(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "94a799a2c352bbc824921a75db0b1590"),
+		nonce:                 decodeHexString(c, "f5fcd4cf35327dbe"),
+		personalization:       decodeHexString(c, "defffafd85c84735beaee87b3d226684"),
+		entropyInputReseed:    decodeHexString(c, "e6950d5bd31c482b6d83c646d7bfab07"),
+		additionalInputReseed: decodeHexString(c, "903b9c0791794cf5c88248825422ab79"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1d087bde28b66353e0261db4f99ac5f8"),
+			decodeHexString(c, "909a9f61a87a681d08441c261e33edae"),
+		},
+		expected: decodeHexString(c, "551f8b6071e4a1bde59b606f8e3df033501c1e45a0f718b6bdf06a64fcef9cdaec65ba6089125ad0a25e617a03acc26a262fe4ef4b6460524cf6bf921108d5ff"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_2(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "ed3f6346ca316cea24558d0f1aaa4bac"),
+		nonce:                 decodeHexString(c, "cffbd0ed0336fd69"),
+		personalization:       decodeHexString(c, "07d6fa6941fe2a4af35b4f939c2ca89d"),
+		entropyInputReseed:    decodeHexString(c, "1dadbff4d917ba5236752de8e01e42a8"),
+		additionalInputReseed: decodeHexString(c, "031f2b1f3130d0db79805d9c787c1899"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b2b2eea5fa8a1881e2615b4679ec4d9c"),
+			decodeHexString(c, "00f61c3a374536f89bfccf7e43a3b04b"),
+		},
+		expected: decodeHexString(c, "8cc6b6dbb095c87e0ede01f5e87b8aaf0eaddf43fd2dffc08439d106ebbe5173d5b3eb61f38963c19b5db1833be1442e8a5099251cc66d75773bc6fa4936732a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_3(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "6b476b201b0caa270eef30b0940682a3"),
+		nonce:                 decodeHexString(c, "a1d0954c17167b17"),
+		personalization:       decodeHexString(c, "654279a6972d0f18ca990fb9e87f4089"),
+		entropyInputReseed:    decodeHexString(c, "f4367480086b4822a3b54dd5b1f4d310"),
+		additionalInputReseed: decodeHexString(c, "de6e784068b051f60427a3f49dde446a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a6a5d61d9697d93364e7e550a93cf7d7"),
+			decodeHexString(c, "a4e948811c4555002062f5e76e892ffc"),
+		},
+		expected: decodeHexString(c, "332a3868362afee036e8073f1c8391ffca33c724325aa3f66c797152b9978eabe8319229f8ae3e523f03b147a87bee278fa33551d5f30428b56bb01e3b3c1cf3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_4(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "70cad557defaa0c8b37c167c9723dbc7"),
+		nonce:                 decodeHexString(c, "dbe89a106f15d112"),
+		personalization:       decodeHexString(c, "846cdb83872be7900104c14c1f88dd6b"),
+		entropyInputReseed:    decodeHexString(c, "f04c519d94a0ab7eaf3544ecd5f85b95"),
+		additionalInputReseed: decodeHexString(c, "9fbd72ce332abff5f74666d7e64f5acd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b07687adbaef6b1141aebd9e78358474"),
+			decodeHexString(c, "5398f31a34af720d2b2e30f65b8b0567"),
+		},
+		expected: decodeHexString(c, "0f29f6b207c382d3524403de0edde3bdca56ab081013742b40c923a3e3c95b9c3b361c1cff27bf2d2e60d81f3b4506f88ee558f77f7248ae3a68ac291f0021e8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_5(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "33ba494b5491845103b57aaacef0a65d"),
+		nonce:                 decodeHexString(c, "55385b3ea7f3b4ac"),
+		personalization:       decodeHexString(c, "9247dda03f2c310793f3e5ec5d07d397"),
+		entropyInputReseed:    decodeHexString(c, "87895ed43af734518991197748198c0d"),
+		additionalInputReseed: decodeHexString(c, "de0eccbfdabbaeb7f9c52580490ceb87"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6dea3b1bee14666ed053f0b512565316"),
+			decodeHexString(c, "1e3d49df6e079f9c8e79260c63127445"),
+		},
+		expected: decodeHexString(c, "139d256f1ce3e4f2b6bf086d809faf19820e799f744f7c36580cf82419caef4de76e5110e11ca475604fc04a55fe3b0713cf191a6dfb9d33ded0d5c61a6ba160"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_6(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "26e3a50f73a60698b94ad39315a66ada"),
+		nonce:                 decodeHexString(c, "6e53c2baa71745ca"),
+		personalization:       decodeHexString(c, "c47beb1a590e06707722e3f194fa5cee"),
+		entropyInputReseed:    decodeHexString(c, "618151421345f7400ace77eb7fa4b0c8"),
+		additionalInputReseed: decodeHexString(c, "fd7ebb1ea4e76d8e5228cdff7786a52a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "39e8c578b7c924c56afcdffea37fed4d"),
+			decodeHexString(c, "2483b96f2190ed57b4a68c7cd04a42cf"),
+		},
+		expected: decodeHexString(c, "948c0ae18f989d2de0700b5ff1cfb539b914676ecb4e516f4fa037699b181404a300513bbb9af3f55553a6be6e894196485736e753432bfa679d07bb6c5bcda8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_7(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b7516865da6b6b494e6b33b278fba588"),
+		nonce:                 decodeHexString(c, "c66f5d699f36981d"),
+		personalization:       decodeHexString(c, "bc6431500495b2cf8f910537b29e86c1"),
+		entropyInputReseed:    decodeHexString(c, "4ef07edec95e662ad8ec1ae30c7739f2"),
+		additionalInputReseed: decodeHexString(c, "5db27541e3b6dc4830e7afb16b267e42"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5a4ba4f6a1a76d21a4161204d582cd25"),
+			decodeHexString(c, "d35def58fb9c13f26f13db4f44f843c8"),
+		},
+		expected: decodeHexString(c, "bc5a174b9af4c1b9b377b320a93bce848da3106a147ca6b8842e020ce3ad5b79d26f7adf721005183a1b53ce0764a7d4738ddb97cdcd0d6a76a32dbfa496d2cb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_8(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "bc0807f6cdae0e32b1bb0ac0b4028119"),
+		nonce:                 decodeHexString(c, "76f5694b0c852d4b"),
+		personalization:       decodeHexString(c, "32494822002c74dc406b88a213e26d46"),
+		entropyInputReseed:    decodeHexString(c, "16d460237a5f38a649e68fc111c1ef56"),
+		additionalInputReseed: decodeHexString(c, "ee95f184344bfb0455fa7f4db2326d45"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "be4b332e3cf20a868ba990eef3f8212f"),
+			decodeHexString(c, "4345acd433eec510afde2faf2c51dc9a"),
+		},
+		expected: decodeHexString(c, "c7b57b7e6deeb13288b48fc1775c0eb122811ce27e336dabdce3fa23db316882ede6938a441ffe848d82c0a1a37a1e8bbf12ca3bb8b2265cb5b3b335d4c79f14"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_9(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b54314023cb882d759e74fd822d61495"),
+		nonce:                 decodeHexString(c, "b33ad7169c3264c0"),
+		personalization:       decodeHexString(c, "89bf26190eafec317dae9949ff79aa20"),
+		entropyInputReseed:    decodeHexString(c, "490088225d2a81641bc0147d108a7925"),
+		additionalInputReseed: decodeHexString(c, "470b3f0aa0f280599fe938cd5aa1b9bd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "32f3b0f8610b2fe6549409a742ae1638"),
+			decodeHexString(c, "c837682d0a19db10efc34a44478512e2"),
+		},
+		expected: decodeHexString(c, "99ab5fa618bc7bd1521bf3d05db3cd082724836d2913619d18d07ac47d57f05f4df2ebe2bd22de0487ac6cb9bab758f9f49ebf1afdf7cf83e8ae3b5fb69d629f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_10(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "b3cb56ce6d01eac4583866fdf2a0cce6"),
+		nonce:                 decodeHexString(c, "130d06c35a72a870"),
+		personalization:       decodeHexString(c, "5de4b0c6c71f9ad91df2ee4ca4cade6e"),
+		entropyInputReseed:    decodeHexString(c, "7a916fbc9f003948551b1c7e61c5d126"),
+		additionalInputReseed: decodeHexString(c, "637d0c6ef199c8e3e309387a55ea3986"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "84b3aa93f84447e2d3792d2f5fe0ea61"),
+			decodeHexString(c, "a045f50aa17c94d1f55c55d3dd705932"),
+		},
+		expected: decodeHexString(c, "227e06771d658094c824cc4bbc1a985058c5afa37106f3f0fed370df64bb22651151e3332c602d0a36486c70ed7fd1f5af6b52c3fbd28b8a31032bb10f79df5d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_11(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "7f249f2b0af7f6d2accc534486ff25d4"),
+		nonce:                 decodeHexString(c, "b4a5eb9f06227580"),
+		personalization:       decodeHexString(c, "260f24cbf2c66c31c878ba867a4704c0"),
+		entropyInputReseed:    decodeHexString(c, "9ba292c29226af77342ca46ca80d0320"),
+		additionalInputReseed: decodeHexString(c, "91a77c7f132f210351bb51c6c7327f6f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3361b46fc051204302264b97b8547707"),
+			decodeHexString(c, "06478fa687465e759420eaac2c7d0add"),
+		},
+		expected: decodeHexString(c, "2605bbd7d0ef8e2b3d8c579eb9f0602cb035cfd5e466e4d5a1e40f9288bb06dc52896ce341ab39e216ce7b8b70d62e1ce07bbc0a31172fd191f400fd2bfafd47"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_12(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "7c5d54816513a318b33ac67ed7144d4c"),
+		nonce:                 decodeHexString(c, "52bec78faea5e1f6"),
+		personalization:       decodeHexString(c, "8a2f62b83307bc52e7cfa4cf81736efa"),
+		entropyInputReseed:    decodeHexString(c, "192f6531617ec4baef6a302e18fe8a16"),
+		additionalInputReseed: decodeHexString(c, "f2aca1e5c0017708fc7814cb748b0979"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ff68c19402e0cbae1a67f98ffd62f25e"),
+			decodeHexString(c, "2e89134c16b5da0f572a72e8f72bad03"),
+		},
+		expected: decodeHexString(c, "959d505f742d5cfd4e5767ab75f41a6a97865b6a48918a68c9155d9ee56143963c5fe0200eb3f73e234ddb0df4bfe9a96b59c8d3dbc324d49a01e0113bfc0eae"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_13(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "59870c273d6d94a6a8a38a2c63ba2882"),
+		nonce:                 decodeHexString(c, "16767b2036076301"),
+		personalization:       decodeHexString(c, "1e4c01af969528849ffafb17044bbcd9"),
+		entropyInputReseed:    decodeHexString(c, "4d8353750de15bbc510ee89c56d9b2cf"),
+		additionalInputReseed: decodeHexString(c, "58d49d610473cd1a0c022e338e45c9c7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2bc01029d8195d54f8ace2352c4bf156"),
+			decodeHexString(c, "dfdcb78bcda77cf0a636de21849babc9"),
+		},
+		expected: decodeHexString(c, "dd24c835595ff642fc2f2379e35f5cdd7495783848613564d9b2bef962504f2c7607505e09122d63a2aa0678b95f4d3c3dd3c5f85f1a1a0f559eef23db002fd7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed31_AES128_14(c *C) {
+	s.testCTRGenerateAfterReseed31_AES128(c, &testData{
+		entropyInput:          decodeHexString(c, "03af6c44c7101544ca7888831f3f9f95"),
+		nonce:                 decodeHexString(c, "58d80fc378569346"),
+		personalization:       decodeHexString(c, "7ec2b597c845ae8bbb63609a80c2ab4f"),
+		entropyInputReseed:    decodeHexString(c, "410737c3c6112b5113f0ef66b0fa6a07"),
+		additionalInputReseed: decodeHexString(c, "ae2ce6d1dba56775db17b8c6d9379f14"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "57866375238ea56e97dd6af8c5010618"),
+			decodeHexString(c, "34a449f860c0c18fdf854b32de572917"),
+		},
+		expected: decodeHexString(c, "564bd3b77e4c3bdcb6c85db111f294293a4738d20043da15649b8c94f14ecdc73fb75d761971f3a8dc4f33f45df97c0d2bba4e4be74f52887325b300ff1e6d81"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed33_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "3a09c9cc5e01f152ea2ed3021d49b4d6386aa6f04521ebde"),
+		nonce:                 decodeHexString(c, "490bd4ee628cf9615035543e70fce4e2"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "df06e5668d41a6fa7660aef477eff7a0ffc0542c1cd406d5"),
+		additionalInputReseed: decodeHexString(c, "59b8c26626aab69e462752722f19450d12e2c0e959882d4d06ef4177e396855d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "28e57a9128e479985cce391e98127fd126f37ad0f317fd5f97b8c18e762f360b"),
+			decodeHexString(c, "d488672b52e867816178369f542190685bbe8672720c1943d8a4378cc9b9dd0c"),
+		},
+		expected: decodeHexString(c, "5c233e2850e4981bab0f6513a76ca2c9f9f97b89b7fedd3d9aaffecf305d89fd5306cf24715895ad9ba7dac8c389fd87f95b4973003150871fa281e962f270cb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "602a92357a4337c3d42c298384c29c1e048d30c1146dced6"),
+		nonce:                 decodeHexString(c, "869e7d82dec9e92c07d2c658bc867dcd"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "088c0abf63346bd6a7fc7542dff60f12cf55fd320ffb6075"),
+		additionalInputReseed: decodeHexString(c, "e28ecbbe6461c6c13b856eb6fd971b000df6f4ca6fada059b6201c658266225b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1a1bfb7032f9aa197842ef9a5bb333d64b23e50b878fe96c36343e45642f94d1"),
+			decodeHexString(c, "6c596c8194ae838904188d3e8caf895fa2b2f523544529a3df54ad5ed7349760"),
+		},
+		expected: decodeHexString(c, "1a40cded46f0ff7809149e1ed8fda83b18dcd1dbcb5df7b2b4e2ebd876ea6ef3dd53528f90967bcd8faeb63fbe5be1838af37857c1d010704a597d245db57e57"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "accefe82af414c2492b02dde59705f015c78027a8eec113d"),
+		nonce:                 decodeHexString(c, "5134075d9514b466ce11f47329818123"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "77950e14e32d9665ec60308c1b4732fc51f7c6fdc27a0437"),
+		additionalInputReseed: decodeHexString(c, "a468a685d27eb4bf61fcff6ce591c5579f9a22104815bc341b411ea1610ab51f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "13ceddac150476a1364b9f700ec7a3ae02629b9aa441a559057b6549a133e496"),
+			decodeHexString(c, "90842d71b9c597ffd307b5a9e1b7355f730fa30bdc42425cb01c9b941521cc54"),
+		},
+		expected: decodeHexString(c, "774fff121f3b7c9bbcdf844497212da47a83cec476f09bca3e1989e54de0116f3f25ab247684fbd0b5b59ad1bda0773fa006d6049dfb0eafdbabf4be05bec455"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f8af594af0d5734e802dc1f347c02f5fad753b9e4e2d8eaa"),
+		nonce:                 decodeHexString(c, "f867144b4fd82889d0746409bf8ead4b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "3993803fb8d4233428aab460835acc9ad4b2c0d5d215710b"),
+		additionalInputReseed: decodeHexString(c, "fc53856478fdc91cb28a32f1fb75e17326e38825783171a2077f8621268d7f63"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1ff04a1918607fdac61660ee440d1c1fdd05038d03c6011c932666a4b54b0391"),
+			decodeHexString(c, "d67e82b265e5eed32062714f5ad24e5663cb9618421cc1b69cea3771ed7ae4a5"),
+		},
+		expected: decodeHexString(c, "b4e22034e142c5d1ada26b090278b7360b5e1d9b0b56fb257515f5c3ce3462169af1ac86fa2cfc5866e973a9830d6554186fb2d1f5f11146a15e78afebd8c120"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8592cec1a3fb2615d8deb8fa4251ee2af17b52d32cb87eae"),
+		nonce:                 decodeHexString(c, "3588820f95a516ef5d24975622e03df7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "5880bb7de2ceac8af53d243a74ed5def43b763c5e290e39b"),
+		additionalInputReseed: decodeHexString(c, "9245b32be181a93c03776757dbbed2566770b01ffbd2fa8bea194cf97e1ebb39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d4f68a99e322f7560b5f601abff899711df066666959f231aa3a6353ad5974b1"),
+			decodeHexString(c, "a24d59dc5aff9bee69f792c290d2f498d8850bb1ec75edf5e6fe0fd714a8e229"),
+		},
+		expected: decodeHexString(c, "9413698a33fffd6c898f2059cfc7a601b22c343a4f7b484573736714bc3b851a3164e2b30565348e4d0d0bc0ee6c50d25269b1a289247be0906514455131cf29"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "42a2acb03c89d96646852dc27967948281faffe054e1e724"),
+		nonce:                 decodeHexString(c, "ec2608864bacd3d67b135caf43bea121"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "fd612cde9fa653c38a43838daba232d0d83569b4c500eb20"),
+		additionalInputReseed: decodeHexString(c, "a087388b6db755045809ae598225b5f3b283c2f33ea6a2216c34cf46e5077d95"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b7b13e5f55980272901eb186ca61f5cecbaad8e400945e4746aa859fe723b9d3"),
+			decodeHexString(c, "b87fc6c11450a6e62e2b8c97623b9aa3ec05fd240ac9faa54d61c701d7d96661"),
+		},
+		expected: decodeHexString(c, "b60ac5c2dd9da055754432552133b8d1731c7bc30d8f9958596a543e954fc201a16374b2d6d403334af68d20ec0d5aad47b2c2c8ebb1f8023b8c19eb041f3e3e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "743a00f382800287b234d74d27469b32228f5fe3bdcff46f"),
+		nonce:                 decodeHexString(c, "fc3197602929665fe0212dbab1f0f725"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2f857a20338c3d9addfba4a79d84f9efec5ae85dfabb62d4"),
+		additionalInputReseed: decodeHexString(c, "4ca1f2b86c8e6148666877038c00961616e4671b7676a9647eb6515d39224d99"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa194d366dfef62ecb949aac68cd32fb09d13ae29ff8460f669bd7da6caafb9e"),
+			decodeHexString(c, "2d255f273b8b7fa39431b0568adb4aefcbecf57dce3f45f77e611e97c6d586b6"),
+		},
+		expected: decodeHexString(c, "280da4a8bd8158318ce32e926ad4f03165bcd4ff19c274103838cdabed76df4ba064267703c24bd1839d18d0311837c4d7cabb7c22751b63561436993a14d419"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "fd36f61e82b17aed18e70f403ae5ec89d1bec1e6cc2c739c"),
+		nonce:                 decodeHexString(c, "b3a79e1a78ef630f8274bb1766fa2f4d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "5df92bd63a0d9210edefc45508f476ee97de02bf06753a29"),
+		additionalInputReseed: decodeHexString(c, "0ee3d2ccf2343e684710b94e721b23bd7a1466279206b0b5aa854b03be2a7360"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "95fc8757df7b89cef1db5dbbdda2ce459284705c9ac568efdb6fcfc685fd136d"),
+			decodeHexString(c, "d12ae9ad4412de00efc585f029bb3616558e60806785e32be7086d2c6409e2c8"),
+		},
+		expected: decodeHexString(c, "0d359a5e94ac6ff1fa3bc15adc46d54830118310bc650d613530e629d34a459be5b2a629065b4e7f4c85f3b6acb8962fcbbc8a0fed24818409f9425fffa3e16a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "decea18abd55455007751bbdff8501c46305a7fadf15e7a0"),
+		nonce:                 decodeHexString(c, "9ff532b82685f9ea4f918947080786fc"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2c06c5d48a5fd386999d428ccc227b55d7549f57c4f3c162"),
+		additionalInputReseed: decodeHexString(c, "823b0eec0451a289e82721ea47949b5b258b850a4fa14983921e9eca70d64d8c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "01e90b33f3067ebb738df38f6ccb08164a0d8d9219013fcfbd0599dcfdd4fc40"),
+			decodeHexString(c, "15dd70afee053c64c6e180f43bf15642007f2f2df6db9ebe75f4064314aa61f6"),
+		},
+		expected: decodeHexString(c, "9a6083aa7a1fc1ae11da9da45060beb1142a57e0aa84f75e3de18288b178fb2023fd30dc427fc92016429063568accd492639de3d8d807dc324095a6ed01fe56"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "239850b9490a64034e4b1de3d8dbf9378c6ee8702cc6a134"),
+		nonce:                 decodeHexString(c, "0cb78bf0bd2ae27effdcd5564b138c9a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e5cbacb92964e9abd8ff6deb1dae102111f529267bcbb43b"),
+		additionalInputReseed: decodeHexString(c, "d73f9823590be43e2389427bc796bf7ee5ef658232338b4575fb57748988df3e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1e483f9abef83466d261ce535af9394d117c0dc06b5bf56897e81a98d80a3254"),
+			decodeHexString(c, "c32129bfa56d52ed84834915c90860843a78a6d9bb5c470ebce2e138a3955b24"),
+		},
+		expected: decodeHexString(c, "ac613d48588a2800ca6b77d56af21fa13684764678099e51764897cf508a12f9bbbbcf9a72209183411c846ae9b01228fc1dabc341d63450fcc015932e8bd645"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1f7f04d9d57335aff41ef211299ed9e88c95083a93da7666"),
+		nonce:                 decodeHexString(c, "2c08555e92982191522850b777d61cad"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e1f418c99d814e9e9596c262f826619fbc0a314350e0bf64"),
+		additionalInputReseed: decodeHexString(c, "5d1cd963cd8fef60529a157f55cdb0ea96a60e845e2fc63266b9138eb2e2b4d7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c9d536692e699119ae81b8896e78ace4f13468b6260ad8cfa48d16781d3444ef"),
+			decodeHexString(c, "09935f2c5f631320637fbf8cbbd10d9e082d21e3f26ccf9b7fd54ca9a3473871"),
+		},
+		expected: decodeHexString(c, "59464ca68b54f4fa32e764738c1073f9b8cc014e2f579e67e1b118f7f2f78dad7f3992c53a45d6507f8895a7be7f764dc72a88d406640b3709965a9cf6ff1e8f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8c4ee1f9e10a3ad8587c156e282f11af86841e11c5ed1c2b"),
+		nonce:                 decodeHexString(c, "a2760ac4500a6db46b2a0a239408be43"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "05261c4b4746937f425cc49278df533829c54f36b43f5924"),
+		additionalInputReseed: decodeHexString(c, "a26881f64dfbe6b50cd879fdcc35b690d5ec7ef90e657a61342e0f6beda046bb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "39e1014129939c1a55f5fb584b1414965e1e7b5e5dfab23d1084cb324dbb328f"),
+			decodeHexString(c, "d0bb63a8e1cb4cdca8cf2a2634b4916039759cc1d574b8d2e27818522fcaf745"),
+		},
+		expected: decodeHexString(c, "d3eff765c83e140bad7b00c571d27910b217ba53e00f3f11c5f21aee87fbfe33e2a195681752062d79a6b211d582018799465b83d6a8c732a87ee8e90bcb47b4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8f6aa16544117151eba02fb266dc347bdd2e1ec5e6021814"),
+		nonce:                 decodeHexString(c, "6009a164968e19c707570c4adbbc2253"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "0b51e68156e2a570e1a08ff8eda46591b2f54cb217883d04"),
+		additionalInputReseed: decodeHexString(c, "3cd2783e00d48f5b4c133931bcb4d3590d09c709ed6f195c3dfed6bf150c76dd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "db891af97a110a3643155094e0eeb9c6116c381b8616e36f471aedf2725e1c54"),
+			decodeHexString(c, "fc6084a2858f34bcd2b87949452b382b189f3513436aea38d68fd9c761d68e83"),
+		},
+		expected: decodeHexString(c, "15b7c5b6706167234959727da27185e65b7b8fa9cb775970a5fe806285a037b322bf8114a398a019effbcf65c3d4dce154e03a0c7f4b72d3a57f4ac8f40b4074"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "52f06fdc40d32a19e69d32a21bf8f4cf55d6978421e636a2"),
+		nonce:                 decodeHexString(c, "1fb33c9ee07b2a2ffd410b7c6a02365b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b10434d0aeead874a30df249dd692dfbafd0d5d8aab67438"),
+		additionalInputReseed: decodeHexString(c, "fc8a6614d937f50f74ea949f5097b9003eb04b953510de4646c94d18c978ec62"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "baa0d5c1146eafa4631cae7d4c8c80930096c9bf0564c09d5ac8895eea025727"),
+			decodeHexString(c, "fe230d750ea1c881b2c73c6b97cbcc30e439b1830a9e8eba123421574390a1a2"),
+		},
+		expected: decodeHexString(c, "e8bbe223d9ef989b122745e5f5a442e0bd54ba8d8fbe919a19995425251d0020d5503b493a3722537d81bf425ec9159e53725b707c2df8bf2e2c258fd8fb8e7b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed33_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed33_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8f8e6e35a689bb88f8968991a4adbf89373c58c5ed363f5f"),
+		nonce:                 decodeHexString(c, "8570bfebd6379d105186f87e9964cc6b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "295c35e72faf6aadeddb49320f86a43b18da0e60b8d941a2"),
+		additionalInputReseed: decodeHexString(c, "23be848cadd90af9b334da7344ecaafa99cb4810fb00ce674f56e5ed36ab98ba"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "92bd8eeb636fbf83fe7d6bf5d299843d8fac8437691ae5f5ea43560627a7c022"),
+			decodeHexString(c, "ed82e0fbb0ed607bf1d241ccf3470dc0658773b0c8f5b832b3244ae88e45c6ed"),
+		},
+		expected: decodeHexString(c, "10c4cd9c6fb5616295224d4b2caa98ac962cbaf50f9c521749d554cf2a417ae76c07fffb8875381a2bd6305b5031fb62f93c0064aca7a455db7545e6b52938b0"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed35_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "c4b1e6a99587eacd7ec8517f40f9433ca432cea8686433f0"),
+		nonce:                 decodeHexString(c, "d03a29e548e58ca7cbf0ac707b1464e3"),
+		personalization:       decodeHexString(c, "0daaead21779b2a428d2b7fb12d9ab8316899edbe26b5460de1549c99e4781c9"),
+		entropyInputReseed:    decodeHexString(c, "2229144c1b4efb79ab5fe079cda26bc33acbb2a0a87f642c"),
+		additionalInputReseed: decodeHexString(c, "f116a683ca485fda846a598b8d9b079e78c2828286ad530bf01f693cc8af9f84"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7c89de353298935bd26aa18517355313df0630da5f45ea0240e809179363080b"),
+			decodeHexString(c, "e978b8fe56afc908bed129a46d57a8698d66034d4dbcc7aba3a33d5796fb7559"),
+		},
+		expected: decodeHexString(c, "8ce7e9589c2975fd6989a450aa65da9114e515777c97351da037ccb72d4987eb69c680411724ed602e6ac76cd2d085725616c92777a4664d43a59c3ae9946134"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "c58ad50f488bd6925c0e923e8364e82d655fd4d9bc05c9f0"),
+		nonce:                 decodeHexString(c, "219cb712581187726527a2633c5505a6"),
+		personalization:       decodeHexString(c, "df4d6ebababfb209a601b938a6556ff037ac2d51efaa237b347d5dffff1e1271"),
+		entropyInputReseed:    decodeHexString(c, "e471db32c9c50c2688075251cc4551604d02e2c139823752"),
+		additionalInputReseed: decodeHexString(c, "e5b1ec5e6e8b4324b9e502fb88f9ec6671ec494140c46e58ec1d0c87d4ff2364"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a770f73e3bfbe61e8f05ee034cdbc1458f5342fba9f04dc2eb52573908d3d16c"),
+			decodeHexString(c, "af9618160e6e6f6565479c744b75cc8ade1666d94da790086a2e8213ddc9cc19"),
+		},
+		expected: decodeHexString(c, "3f8eff824790e0ec6d07fa28e0a00e8e06dad033fa2de5b97b4d467c70a913ffa25cbb3005970e65cb3f3424855d4bfa10f72568cb5e91e3fc1d6d8178331f8c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8abafdccff4708845a5f0a21d99bd7c74cffc95a60ab9e8a"),
+		nonce:                 decodeHexString(c, "a7d98da954c33fafca07017390591d53"),
+		personalization:       decodeHexString(c, "dc7a32711d6933b6fc10184ae08089a2b96d4448676bccb4e8f0f69a466d4449"),
+		entropyInputReseed:    decodeHexString(c, "c38ce572840b1638eff0c1801f40bea24b71afb141eeeba0"),
+		additionalInputReseed: decodeHexString(c, "3ca05c23d825917e4a98d9bf1bebc725ca0454a0628cba77686ee58d456a5b39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9207101a61710edcc602d431b4b9f13a1bb0f43a0dbe3e97a4cedc32cc17f4c6"),
+			decodeHexString(c, "8dfecd01bae7c6f4719b2f120b6bf11b848ff5648df30304e340de90c3342bb0"),
+		},
+		expected: decodeHexString(c, "6b876eb3d291fbc49730b5515a326587297e971360dbe294eece35d0dc0058c0695fa061b236457915c47012b789ecdce6c08b5a47a0e5d1d23db3073bf292cc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "6bbfcc3adcb57d1a542a246facd899244162dd9afbe4cbe9"),
+		nonce:                 decodeHexString(c, "98f60643cb5dd66b415b4285f606212d"),
+		personalization:       decodeHexString(c, "384b97793b9d518dbf71890cbf13836e51b9e9b1d6f769cac20b71cf51d313fb"),
+		entropyInputReseed:    decodeHexString(c, "0d884093d00e9a951ad2df6680e365af11d14e7000f440af"),
+		additionalInputReseed: decodeHexString(c, "960706a79fb0b2ef0837d1630fed53af50df033cdeff2dda61e5a3f3252aefce"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ef74de0f4210d180c099fe5fdd58c2cd6d8c79b3fe4a782e584ac96f8e274303"),
+			decodeHexString(c, "0adc4626c9d66085e1cd4cc4a10f85d04dea8545399058512da0a6ac3877377f"),
+		},
+		expected: decodeHexString(c, "927b0319bdc76e795d378453f241916e25fb8a722494146ebdfea99aa48aa6d878d8cffa9324a8984814dcda30e5aed8c87399c9e5fd457d63c0d61b46a46a7f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "0c9104c08ebaf5a491f2d85f10ded3e2fe7612dfa6e1d6fb"),
+		nonce:                 decodeHexString(c, "22678d0ed3646356b52fe328b23f2ed1"),
+		personalization:       decodeHexString(c, "58c1d9b76a19d217223b44319497aa99e390e320b8c91e1170eb8f8f484a34be"),
+		entropyInputReseed:    decodeHexString(c, "b196632d9b651caac5add901dde3f22eaaf9fda984ed3680"),
+		additionalInputReseed: decodeHexString(c, "2bffb5876d200a35872e30a9976e938e1f4ac543fd2dacfee161c07467c34578"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "dc7ff3aa1dd3d2ec7741c2eb648cc364398ae012d2d4758f0f5b32a9b3b73c4c"),
+			decodeHexString(c, "f6c937cdaa891462a54d5caaa0c6bb2009d19c7692e267d57940d6f2886fe687"),
+		},
+		expected: decodeHexString(c, "6082ab6e55f5373b2d70dafa2dd0c53acd979eb1b09ff42d34e3641593c1fc66937b6eb08a8490b3ea208ba5e0e994792b1ee99926159eb080748dda314b4860"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "02ffe9c16287739489bbc5b1620f749ad54b2c4c8a081122"),
+		nonce:                 decodeHexString(c, "5600af3695a9ac4672e3b2a52ae0b19f"),
+		personalization:       decodeHexString(c, "c7c9f9cc55a1f82a6122a53654095a38bcc1ceb7f2a97c52a7e7f46cd0d074ca"),
+		entropyInputReseed:    decodeHexString(c, "2d6e4b107429bf28cbd9efd62c91857565c99f70cbd12f00"),
+		additionalInputReseed: decodeHexString(c, "b6747c8a9392c6e5209c0d4ca388a449e727b1feba24a274c79a20b07c598945"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1c4fc55f2b564cffba27fc542812e246eff4d6bc65eaf8973cb03c3c9fde3959"),
+			decodeHexString(c, "a814a51ad26ed3400e62a3427d1b881c7b3d3e46dfd86e54b41401c7e28ba2b7"),
+		},
+		expected: decodeHexString(c, "1b727345c0927c805004419855fc698da87750e448859d7533ece87bc5acb2efe697d6f5a56bf2b5747b0bd4bd21273062994e89d3028db63e5b0f8cfde02b3e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "ffa16b187b4e0f40d73d4103a80219e5d7961064fa6f406c"),
+		nonce:                 decodeHexString(c, "8122f3b2cd575fbcbd3e740be1af4411"),
+		personalization:       decodeHexString(c, "0f23a08ad7ab7d0ec9df9939e085d0bf49f3eff9263f4d0ef9f88b54723b5c66"),
+		entropyInputReseed:    decodeHexString(c, "72792b72e8363796c464da3b5428fe40254911210e328222"),
+		additionalInputReseed: decodeHexString(c, "1a3b6d8606510b13287dae1839c93c9f536edb5cf5cc52f4431ad7f2ed53df7f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9eef33785e862a99075e19fec4207c2eef9c6e3965b3f22c53ccfd655b848062"),
+			decodeHexString(c, "881e83d175fad04c5ac548aa5443b930b5dcc04b9d0afeb5e7d057f0c7757eea"),
+		},
+		expected: decodeHexString(c, "87b27639b29e7306d303e67e88598ffbeff230e0ac231e9772be257e6caa96ac35018a45f83ecb72dc7b9ea8c006b2ae36627b181adf30f565921841c87821b1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "bd04d91c3e3010938917081069d0ad9111885deff89882ed"),
+		nonce:                 decodeHexString(c, "3a78168888749e95e44b17188e6cb3c5"),
+		personalization:       decodeHexString(c, "312ad6943601470d601840df6d9d3f920485e4bbfb0b1c6883bb186882f3057b"),
+		entropyInputReseed:    decodeHexString(c, "d063dbddca1bfb0b5aa19a9d88f58cb9007f98f098c8b801"),
+		additionalInputReseed: decodeHexString(c, "170059a3313c13aeb46f61e27f6b48f8aae94f1004083ec27cb71adfe1d36f35"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a1e3e45715c68d5711d576f45065b7629ad29c6f425542e1204d5787229451ff"),
+			decodeHexString(c, "8cce6a52bfa2b02e566e8600231b0f5ec8fffecd13338722fd476be4974350d8"),
+		},
+		expected: decodeHexString(c, "86c2cb9d00aac25556e837d828aeee349310f859547bd51096283a3d2212df63671a07050e1d641a39f88fa9ff13117548e158e1745e859447167c80ae98e71a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "4388feb0af371c517ff32678ab06ee5bb08d3ee2e96bc9eb"),
+		nonce:                 decodeHexString(c, "30f6d86d5d70e8b0cd8ea29f05b9b96f"),
+		personalization:       decodeHexString(c, "81e82b9d1a087c0b5157a0d31c60736b19b22f6ac2c0d64e49e647e5ccaa5b98"),
+		entropyInputReseed:    decodeHexString(c, "7507423c12e4a91c291c3b7b3c128defa4a343215cb88632"),
+		additionalInputReseed: decodeHexString(c, "b9c490c70283f95ea2a555e5c7c11f25461d607512c83fbd867f03254194d30a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1d54aa2a4a2ef175376882d40f1b9297f7d05ef21d5a6d95fc84d589d1b030f5"),
+			decodeHexString(c, "2b031f9b0bca10cbd1c4799de3900df2815a5ff88a66f9fdf163e89532dd1c91"),
+		},
+		expected: decodeHexString(c, "d3c64c70d8489fec82150bd88b1c7e5feee71004bb6daa375e4042092f5a9d62a6c07a4cd1cc059e329587c5b6e1f25d4dd2ec89e69c73dd10f4a61966965de2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "b3442439393aa5b9fbc477d38ffcf914efda009b4b546504"),
+		nonce:                 decodeHexString(c, "9e4614c237fea7c1b50b1d09247b32b9"),
+		personalization:       decodeHexString(c, "73644e9c092003df119516d1864dbd7f8d30cec0f7011882f4f7e835ea7d0ae1"),
+		entropyInputReseed:    decodeHexString(c, "a10b44607d8f4690a8965186a44f54425a1428c7a36fa5b7"),
+		additionalInputReseed: decodeHexString(c, "dab621ccbd15f12e3a7a6ea0c41d54820189ebf955be6125d732165d1dda198a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3cbb615fc6bb70339065cedf41aecbcebe82f32dc947a7985626e1f42dd3ea80"),
+			decodeHexString(c, "19420e42cc2135e4d70dcd3cf3ac8ba630e42eb1ac7112906578a1e316edd0bd"),
+		},
+		expected: decodeHexString(c, "7cc32d5f081595245c1670d4989ab7bffe053c03b0f2d636886baa93e123c10c1b495235c9a7cbb6bc08bc06719b6d4b7c65f0ddc54d2ba97f7326cda544df65"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "3e5a64dc441c5699d224dbf49d71d32a4365d7e1d3e47571"),
+		nonce:                 decodeHexString(c, "a21951917c69cf41885a93988661a36d"),
+		personalization:       decodeHexString(c, "9d759fa873e37535cd39cce9dd092414b8387256c6380ab2df96fed014af4171"),
+		entropyInputReseed:    decodeHexString(c, "96a1287a1b36f5f14ce8abedae64b791affc5a5cdb505375"),
+		additionalInputReseed: decodeHexString(c, "76a125cdaea27122e4f8f74cc9284af261c7e36f2b72b6137f6ee538fc1a8420"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "eb4641288369495866dc9c2e7242db84c374b799d3fe0fd91e8201629ba1dbd8"),
+			decodeHexString(c, "e457acf8c517fcb838865f5879e2dea31b6fa506a6d4f41e3d05abb93d9493f4"),
+		},
+		expected: decodeHexString(c, "e321e4349bdcb1f34020b23111d88b558695c70c1473852f46039a1afe2676ca91c9b49065af4b81fefd6b3e0dc3ea88fe69aca1f21a3e09145baba0261efb54"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "54533d5c0027371780224184bf727205dd72b40fb09f4937"),
+		nonce:                 decodeHexString(c, "73e3f2afe2c6f2112ab936f121ff25bb"),
+		personalization:       decodeHexString(c, "f458a955414ad47cb2f43dd8ea2f4b1bcdf09da53d075e2b47d4b9ad93cd4e04"),
+		entropyInputReseed:    decodeHexString(c, "67d5a079c4e68ad4c957ddd485ee587104c924b171924d44"),
+		additionalInputReseed: decodeHexString(c, "1acc20b2ebeb2dcbdf6d3a0a32708f59e43f66027b525da610a3dded85524475"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "88667f25d19e4c994587c1924ec6ac51973b5a434e6236c895e3d1d200520a44"),
+			decodeHexString(c, "91520819c6440ba41e25a327ce168df9a989c9fdc95c3db9a0f496d6f4f374b0"),
+		},
+		expected: decodeHexString(c, "1b10c9517b63710e0e48dab3146fedfecb95c4b5e5cd39379aab9b3602d8156a5ddcfaaabf6ccbff1dd5911ec8ed113ec934cf34921d5f6b73387127554d2988"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "af26036d72b9ad0584e79b51dbabe25e60914f3f48d978e4"),
+		nonce:                 decodeHexString(c, "39eb3c0fd20a00b77ebdb003018020c1"),
+		personalization:       decodeHexString(c, "081f45a7ab84510577aa113dd711c0c289c4fe4e662b746eeabed2680a670b25"),
+		entropyInputReseed:    decodeHexString(c, "af8e6899dd097a549b56b9d249dfef8cdd396ea670df8c38"),
+		additionalInputReseed: decodeHexString(c, "88bf969c1ae4baaa60b74cbd804b798b9580d45c1000851086301d41b6a98395"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "dbf4cfae0384dae71ae5fb2baa27b86c052916c92a662c32839e67b9fb13b226"),
+			decodeHexString(c, "30b3f073c979982ec19aba537319c3b7b8d8d684d993a5c38e7218a13692271c"),
+		},
+		expected: decodeHexString(c, "f009bcb2b52e308b769da06c02aab3f4f6e77604e4ecfc9b50cd02d5c1fc4b71d1fa5aa952027a856af6149578f1d909e3bcceb8e6edcffb6140fc678ed54559"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8d92ddadac4461b0a40dec1bea91fb3f9a8a76ec7757b272"),
+		nonce:                 decodeHexString(c, "1408c1e6bafcd0972f1f381ba31e157d"),
+		personalization:       decodeHexString(c, "69de45dc21e7849e37ded876bf5d892d0ff567638dca8f480b049573dfc0734d"),
+		entropyInputReseed:    decodeHexString(c, "2adf516111eb9bd18448284070f279956806f4d2d2ebbdcf"),
+		additionalInputReseed: decodeHexString(c, "cf774b405f4502ef2074dbe5bcf8681528fe011f71b1cd418a01fcabd1c27c04"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aec59ea5339696e8a4173aa239acfaaf17426ad1d834460f8483c36e4776d6a6"),
+			decodeHexString(c, "332b678357f6b247acc1e34467ec4df744bba42b1e1cd05a35d3accd0ecce91f"),
+		},
+		expected: decodeHexString(c, "382ce5ed5cf02dd3854fb97b1625f23ea997276d2d8b85c105da6d958ccbf8d0c122ce47979189cf7f96436f0989a2be725898ae91dd964d1bcd6a2ec6db6b94"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed35_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed35_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "22d0ca9265d89c5b3716524590bf2deca531fe9ad6c4cadd"),
+		nonce:                 decodeHexString(c, "ed25ae6279f1ff4452b88971304079ec"),
+		personalization:       decodeHexString(c, "dfe04ee19a64af7c0698a057b7680fd37a9f7b5a9ee3c9fb985a207346dba568"),
+		entropyInputReseed:    decodeHexString(c, "77ed9f0ae13d237cf3931343af6fdc34eb3aa84774b404ef"),
+		additionalInputReseed: decodeHexString(c, "7e87db1a9cd81914e43949a7a9dba167ab012d35557f7d9001d4ece353c79075"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "23962b887c196b7d0d62b2e79b9addcaa74ee04cf2a28c45386f69a56bb47699"),
+			decodeHexString(c, "c0282b471662732c8475c1d6306effa2e8b4c1afc160544d3c9b019e0071b10e"),
+		},
+		expected: decodeHexString(c, "e79201755a4cb63a1334cfaa53ac5532c2d44557fda2a22f718d69f0dceafce18179678b30ae8c97eac2fc499790d2532ae1b3fc5401b088ea1fa3a49eab2604"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed37_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1a1a4a3bec7bbdf98f53592418d903aed3e114a7f0114563"),
+		nonce:                 decodeHexString(c, "f0b7b7424f108f6db6cfcbfd2d40a5b6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "6f78afb310ee0dae6732e0ed979c63a3ad8792333662f624"),
+		additionalInputReseed: decodeHexString(c, "9f050542a1097f935c68f373824ab9cac17827badbe07cf9dee48af33a31991f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "38d68cc7c89866d8d2708a215776af154b3c082d550c555e1aaa5a72ef2f5be0"),
+			decodeHexString(c, "40f8314489c3258dd4b13ba59b7e8f3ec95db00829a2353a08cd758b4989c053"),
+		},
+		expected: decodeHexString(c, "15cc0ce77ee55ca4d72b2e75c32887694dcac97f7d261fbe9ee1d09970b7b0313fb318630afa4ac369b9979c22647f60a3799739942d7808d4fbb14f7ac49037"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "71e73c32cd9205d45c255a5e30ba6d98475385f166176006"),
+		nonce:                 decodeHexString(c, "10a5557cc3a1268449b9a440f3e57eb7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "290c465c47f76fe11c2dddee3543886e838318411aac6922"),
+		additionalInputReseed: decodeHexString(c, "4a2f94d6d857540679ea0b031a8690191aea68199af394e2f64186e41cfaa3d7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "22eaa24b0a5cdb2361fe82861f33c242bb4a5b9e0f7b10e2efde2bc32e42d720"),
+			decodeHexString(c, "219c4168957f030f6021d035a52a5cd666e9bf26ead95388a8cc6f5931db8dbd"),
+		},
+		expected: decodeHexString(c, "7633dcb4ee8ee10c82ac4e6fae5fe6453dda9b83f38316d3d68db1ce7261db921a7d5382824ce9d4fb12a383ea273478eeeba97dca2eea9b3b5cba7c978c20b5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8aaf10eb8677c88fcbc3d4b8418341a538cc28b1c72d9597"),
+		nonce:                 decodeHexString(c, "d583c85266a9eee28d623f24cd5e16bb"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "15dcf65bbe6fd3974aeb4bf1f25abed2a37a6f46c8df48ef"),
+		additionalInputReseed: decodeHexString(c, "77411de24f03352864e33b9a2b34d37f915003e28e31bdf0b4355e900830d6b2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "130702d1326b4e6dea87967e9ed7efe037f1e560704244738f3ed5d62f57f726"),
+			decodeHexString(c, "bdfe4c8912ab00670bacf142310a9222558541997d366590887104ed9546a2af"),
+		},
+		expected: decodeHexString(c, "fb5c7316163c8ec1cb1b9fbc30a81040fd4e6e0d1b6d35dac6ced9e67804828807c12926cb1e7b28449625dc11fb98c1fd71d6693d7734cf403e80e090d6a82f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "814a71f17b4d83eaba1642b53b42ab5fcf3749531e052c6a"),
+		nonce:                 decodeHexString(c, "1970b24974a6e45fcd099f7f81e98968"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "583ddd4b2d88dde25b7e2285478b06a2e1ba41c005e2b939"),
+		additionalInputReseed: decodeHexString(c, "e12514eaa3f68d7f2cf0377736360b2a14459c0b741d0432d041b98de3f11edc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c4ccc66d9b2f4d09e23025b0c0436ccc7a7f02973405df09344d7421aa5692a1"),
+			decodeHexString(c, "00e6c49a0166e47e4b812fed1b2f9e662a6e7b906adae6486757ca65f0ad8aa3"),
+		},
+		expected: decodeHexString(c, "c073da2488ad58c9b2b3c5c121de4081711086b62dafbfa23595b2deea862e89cd8bcdb166817392fbbfbc54ec070f1ffbe545fec8f5b04aeb3482f2cf5af4d0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "da3f840c1b9e656b1c20841aec392618d90527cf645a7691"),
+		nonce:                 decodeHexString(c, "1e156c5d97f3245a4e88f4f1d0afe5cd"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "6c71433ec988486e2930e72060f97157ebef1b410deda0fc"),
+		additionalInputReseed: decodeHexString(c, "1bc4ffa8c578259b65261d38a80887519ff05371e1824adb3ce890c8e2a6c1b0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7da1c487cd40ad88945babd350e98ff69ba65c92d9991bf2b9ee7cb62f592628"),
+			decodeHexString(c, "0e97655c3fda2f9c48cbf6d84897e09ea771f9833fa311879014289a09c0a11b"),
+		},
+		expected: decodeHexString(c, "1f02f7a8a29077eff915cca98d4436caa270aafea037c08d5a2a9171dcb6a618e99e7eacb0072807a61eae8f7557c183db67a186893316057f85f166013011d2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e51cc4dd6324eb3e2ee3cf6807a581c5fe69a4d90674a1b0"),
+		nonce:                 decodeHexString(c, "8ff0157eea81295aff85a62fc87fd5fc"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "011491b765e4f7927c2ad56bebb1c54466ce6a0050de0bea"),
+		additionalInputReseed: decodeHexString(c, "c9460ac85333d583dec696f8753274fb16ed0e273934bd18c8b9b800d82f1916"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "837a5b4c64968610cf67e1766b27665495de9a7958e83591af8a183328f0c427"),
+			decodeHexString(c, "6a2217a865f979a750b4b564b9d72e8ef9a051cf26639cfac83b0d1965fa2bf5"),
+		},
+		expected: decodeHexString(c, "e25f04c506eaad2c39e2a12858a3bfa5464cf4df77137b8286a33374eb6765d745c934afa0607dfe4600e28b69230d28a8cb931dfc3d434977b7a859a86d2d74"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1b9fc4e15d6dfa69184e905dc57d849d791628683cc71c07"),
+		nonce:                 decodeHexString(c, "a5902965d44b0e3c6392d96f2f0faee6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d988c4561c9f6d8adec72ea5abd370738e82d8c77b77a796"),
+		additionalInputReseed: decodeHexString(c, "42786f5c79ee03e39a7a7ff01c2d20e2a6d5aef7c7b161bc2ad1bc10ece7d451"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8219b7c30096fb4eee433c09a61c21eff9d29fb56d4a28a9e6dfac50f1564206"),
+			decodeHexString(c, "14870b1235e1cb178ee729ae455e05de8cabf7b31bf7c5a8ff6ac05ced3c8938"),
+		},
+		expected: decodeHexString(c, "cc7386b1bdd1869232fb948d899dbb0af66333d07b23ed3d105c377d7a15d5be678c7c530c79ad52c2dad5a35a2eac31a97497643992b4a581e7717de8bc4bde"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "50aa979421c7ccd42d6f05525092812fa610de8233557d1a"),
+		nonce:                 decodeHexString(c, "575bfb8f5c472498eb16b0b9e0b9ad10"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "8314c1b30b3416b3d138bbf2f690d0e45c06150d3535cb4d"),
+		additionalInputReseed: decodeHexString(c, "41981cc977e7276cf69b55814cb066528c906dc264f6f8563faa5ff0d4dd4e0a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3d4650b5f19cf19f3c037a110d64a2df4e81ed7ad6cc478b836374ba9b0a1591"),
+			decodeHexString(c, "521212557a42c654d8e28b3995f035bd57e8c57fcda6b89db60dd2cd11df9bf9"),
+		},
+		expected: decodeHexString(c, "87f983234603ffdcbd617d62d23c5f9d40ccb5e2cd55739d994b09591e6336d1a3ec92ec56074ee3fd783d5699e52da09ef2002ae8f2f853647a6bd9fff6a0e5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a53e5daf4a15618a2ba59ca1d3bd9abd75d58598e458ae7d"),
+		nonce:                 decodeHexString(c, "338cd866b0c405512947f4102f0e3d27"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "42ce3e84e8e8dc92d3948caa0a71248492f16ea6c54a444d"),
+		additionalInputReseed: decodeHexString(c, "01008ec0cce17f9f9f600ad682f0daea81ec4e5fad23adbd45ee954d7ce8449a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "69424003f08f5dcb7366e74024648d9bc01a5708bf15574b8167943027697555"),
+			decodeHexString(c, "8131406a803bd44fedb1a4513e4cc0dd19c0e1aef2cd91d77f91359ad665e2b7"),
+		},
+		expected: decodeHexString(c, "824856a7290828273faa88585c17d6c6e9395e6ad9eb8581fcbe15d26b11d1d78eecbf9a98a56af47845ac46d73ea6dc4754b596dc97c264c4abc40291fa26e0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1c1e9ccf0b05a931cad4d8a026d031364635a3856262b75a"),
+		nonce:                 decodeHexString(c, "61e948365f590ec363075cb6acc140f3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "0da4b5e8409bcc2ee6545eeeb6e9d785700923c03404d65b"),
+		additionalInputReseed: decodeHexString(c, "1006440f9137e57522887c93e7092881b78756fea22857d69cc155b0a8fb7dd8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7de4c757592ab99a0f0a9e94a51fc2d5de57280285f0f2a368814c4705fd2504"),
+			decodeHexString(c, "11c9468c286e6639536d513d1368ce25253f0e60357e450773385bd87c324958"),
+		},
+		expected: decodeHexString(c, "3712fad06fbbe39cb2ca2e8536ee1061b6ed74362d8cc6cfccfd49401e210d1013ee0d2128e9902cc343ede322d9e4cb5621c6b3ad27b0ca8d27a18d3139d153"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a15b7dab42f6304cbe201c67eef52cb72b92f7dde9cde9f5"),
+		nonce:                 decodeHexString(c, "3d6216c778fa796312281eb78e360dfc"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "86c59d108e18a072d13c836e70f9a3b5035d4a80a7384f15"),
+		additionalInputReseed: decodeHexString(c, "a61d90e6a94c096e41b4a9b69a1daba4e5f530a53da58510e45adc361be96400"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "92d374ffd369a71b9a963bb84c9a57bcbd02215317060aa1ba6f8db7f8a889d7"),
+			decodeHexString(c, "1b367d51c92fad59c7e76bb1eb67b986fe2b4b3dd7e3ad6cc736412a9018790f"),
+		},
+		expected: decodeHexString(c, "8314c992f978657dccb0e85886b671e2effe8a6276d24dd4a86bfc4ca17e43dbc5cfc06c59d521c2d91abc13e7ec7e99983f2fdd123194971b1d52bd7ef152de"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f024bb6554a31a62281e06314fd467112868cfc18d395080"),
+		nonce:                 decodeHexString(c, "bf8e1af5cd96315362f82be82e4b887a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "94623e66065f1528019491893c8c5d23464a977c7f30218d"),
+		additionalInputReseed: decodeHexString(c, "5d0a5511ca4f36d0b0fcce0fcd421f95ff659012d6674ad8e197b702f3588e91"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6b9cc597175c2c0a3ff485122f6e124935f23b48adbf0ab297f1b27fc11e99e9"),
+			decodeHexString(c, "08967a8dcdcf63275d799152178a752c7928a4307f5cbe7c01bb5ba607e5e6c9"),
+		},
+		expected: decodeHexString(c, "e02be557a6dc834972f3de0322b071e35d7925fe374e854cdbaa64892827b86445545df6cccc8f5343b211e025c9ea03d80ef2837ff06f4f206aa22625b9abf7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "820ad74a3c3c10b56452df57bfeafbffd09f1ad021652a9b"),
+		nonce:                 decodeHexString(c, "afb768e35678b67deeccd883a43e2cb2"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "3fe98072d4213d47517ec826ab9a4b5fff39e898702230b2"),
+		additionalInputReseed: decodeHexString(c, "36687fd74ecfbc15bc9f4007d2a360dbcc4f355ee9bcf7ec4cf1afddbdca0738"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0702e782def948c2778badb2f6a4b2ea77320e82b3edc2174deaa9cb49372448"),
+			decodeHexString(c, "3159bb5c1963243a58e53d236e09be0558a54871751d4604ba7e3fb2e3f382b7"),
+		},
+		expected: decodeHexString(c, "cf817510cd62d088ad8480dcc02238d3f943b429f91e4add15d87b4cb23afa3b5ea926eaf7c01f4ebfa85de1bc98307c4963c8189ebef46a8bef6ea1aa14b833"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "bf0339774a1d0b64a24ffa112c6d730746b7167a6495c6e8"),
+		nonce:                 decodeHexString(c, "cc9cecf904e873fa41bf51656334409a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "4d4e0e0ce33bd3633b332cb158ebf914c178ff195c80292b"),
+		additionalInputReseed: decodeHexString(c, "2c62ee3c5a44c11aaa31a004ea1175ee4f8e432144418b8a83f379ae07739a5c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4ba7c360343d98eda3a315843ef638795afd99b8527c07b567eed4d52b3aa046"),
+			decodeHexString(c, "380a1172c438c5546e3abcb0e9e3ff685196727ef67c62d1e517dd555dfe4628"),
+		},
+		expected: decodeHexString(c, "d3f2a7bc68023ddf2bd575767648b08e08e665890cf5baef717b6091bda5a32bc19dae9ca9642ae60fd416011be83c926766e36c9aff6166fed3a6b27da5b31b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed37_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed37_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "d531fd35f31cb0fdd6692055414c69e9a33f8ddd69764679"),
+		nonce:                 decodeHexString(c, "90b285dde81dac32399b10a260918a57"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c13a651618fe8b946dd3e4727416dd781048214f4e65bf05"),
+		additionalInputReseed: decodeHexString(c, "5d385072d25018f357c8255c330cc5ac3c490023232d6b42300c868ddbb18ba7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "843bdd124e610e6d4a8b8a570b6eaaa4208ac4c90a6346aec568bcb40e7efd9c"),
+			decodeHexString(c, "aec98664dad6634833e27781c62641f6749ccebb407ac2fa04063b47d187c6a1"),
+		},
+		expected: decodeHexString(c, "a497497e07223513b6decdcb3c1ca62043da0b2d65a1316a5d245f6170b27b08040c0cbdcc596e0eeb8f0fb8f3907a57f41cfea1e04dedc45c586bfd26ba4523"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed39_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e89d54f816f802a1256fb9c9c239887ebcf6c64d68557940"),
+		nonce:                 decodeHexString(c, "4f022171cace97c081df28cf425d0956"),
+		personalization:       decodeHexString(c, "53cc6834e9fcbb3eca6880a0ae90d3a7760aaf5a1c0d074b092b9f937031a68a"),
+		entropyInputReseed:    decodeHexString(c, "6e5c51ab74c8552c16be257bd1626df3af7926be67b62c0c"),
+		additionalInputReseed: decodeHexString(c, "73972f57c4a3e30a795d8c10ee801ef0f6c8be7f79fffb96b541d322ba7fd9cc"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ece1b64c51bb97ee3e72c1c7d4caa3a3d48b6410914240ca033f35ed5b898331"),
+			decodeHexString(c, "e7d5dabd56f92029a09cf17cd64aaad8ba6b4d72dbfa07003cd4eafd83c170e5"),
+		},
+		expected: decodeHexString(c, "b0e03cef0fbbfaec5754a0a2c1b396a7df6e44df6ac0554ae19d77e6fbe4f0136483380cbb81568c1c1f0ae7fc02758d8d1e796866b7a6a6d173ecc016b81f26"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "22f7798ac67c091de8687a849b7a2dd40452e65054d3543a"),
+		nonce:                 decodeHexString(c, "10a42146c7b0a412347f1c934b217bfb"),
+		personalization:       decodeHexString(c, "d6ee30bdd4c87150b79f88a1d11fe3889cdbdd3763002f6d6e27352f6e51eb93"),
+		entropyInputReseed:    decodeHexString(c, "ae4ae79bd90b36d2ab76f23d9e942b5c120219a078ec458c"),
+		additionalInputReseed: decodeHexString(c, "2128f348db64712574219654fba03175bac560cc2ab83f93dd43d5ba10ef8921"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c0e6b2eb2ec98c78ee46d25707d0f011c3264020ffcc81cd1b60c4c1ef56ab66"),
+			decodeHexString(c, "19c00177fb103078c0ff323c6523258231530d0d17954793b3637d9d6204689a"),
+		},
+		expected: decodeHexString(c, "deb74b2e7ee96766f32e96da12ea1da4dc4cb5275f2674879712ce7deb35cfd57861ef4f011b51f5aeb2f1676f32cca37729cc7a65358149704c6543282d9d9a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "82017fb78d3455958be32cfe22c120768f668816426430f5"),
+		nonce:                 decodeHexString(c, "c05973367c93868314d5ed91fe275b82"),
+		personalization:       decodeHexString(c, "5e9cc6695057a0bf1550fdf62c2e966abea013b9adc6f2a2a8dd9ddb7bb35071"),
+		entropyInputReseed:    decodeHexString(c, "7049dccb73d0431aee4733be2b1a269a55dbcc6df83f2de0"),
+		additionalInputReseed: decodeHexString(c, "ee731e2dabdc7131a1186e873935731a9318deef0efc845631ac80c9f91d925a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0d6e1049d9bfd6e5d5fbaae8728762822c2d26f45cfceaa42e8950b7971ec94e"),
+			decodeHexString(c, "ce6bb4b8695bd7bb48a1a9c274302f4ff2cbd33072e3c63563302ebcf825a633"),
+		},
+		expected: decodeHexString(c, "0cbaa6a067c4c5687367a33ab15fad90ec64df41ba5fc5f2cba001998328f8a94f3a4d8a498f8ca0c9704a86ecbce2e14d08234fab8c4cee79c4ab40522dd1f4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "16fa5365b5b5216dd8a5bdb8c7becc09a41c61623555a1c4"),
+		nonce:                 decodeHexString(c, "0c108cfcadd4a5eadefc66d06fcd637a"),
+		personalization:       decodeHexString(c, "7f4ccadd08e4bb1df1cbaa3292491d6609aa7f88afb074de67545bfc1d001136"),
+		entropyInputReseed:    decodeHexString(c, "f817114b9ee5ac7a7567ca0b0d64bffb80b9152f01af8645"),
+		additionalInputReseed: decodeHexString(c, "7a6c28a40d5181580166adb13bba1e8c2168c143bdcf78d0baba0502f9ced85b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "88fb836359f8e46e3d06820995cc58d61bb61f8a5e1287ece411b65b146831d3"),
+			decodeHexString(c, "a2ec3e730cb941d61655bfefbafb482cd5feda998bc3104fca6bf744fb184b13"),
+		},
+		expected: decodeHexString(c, "514c5b0cb67fe3a998692daf5ca45870ad3d84ea05631e53dbb140d431986603bd5b5bb0c0e02d51c13e4b33d5021571deb7e222d9a9fcaabbaaf88ef65ba8ef"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "db2231a8dcb60e154438be8d11b2219e2927e831d5b3f6ae"),
+		nonce:                 decodeHexString(c, "5f0f1721f273199f4175a97d535499da"),
+		personalization:       decodeHexString(c, "1c3764ee63bb1247350a4d4a682510f5d5f880211aadf9d4ea865f6ba3d2cd74"),
+		entropyInputReseed:    decodeHexString(c, "96560db1580869c39b9b46074de4c29995ec1bd8fe7813a2"),
+		additionalInputReseed: decodeHexString(c, "1a9d96d88244873025ac5845a1fb69d9aa9d182062e4b445268f579c778532fd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "014cc69f6ecf20d1ef39081d9b945aed9700b860530fb3a6e9eca87c6dac6bd6"),
+			decodeHexString(c, "26df8683ca3836e5922155d4e7e627f3f137d07c05624e764563ae68ab0d7519"),
+		},
+		expected: decodeHexString(c, "e82410f1bf2c0cace35e05cf44233e5cbcb3dda74572c69eef147193f47e40bc0d4d206ac80b77e36ea11638b35ab53f7a16eb5c01f2ab4349884b088ef877c4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "6911ebe9ede1dcd134db336f95ad1b8ba275bd56efe27a17"),
+		nonce:                 decodeHexString(c, "54f19ebb53d8edcf4eae8ca463126eb4"),
+		personalization:       decodeHexString(c, "05e1a0f5b3d964f3e63a1058d7e2aba7fe58a9ae97c2aa374527af296f4d184d"),
+		entropyInputReseed:    decodeHexString(c, "10b48f4a15fa121c51498c2a86700fc47a55d83405165569"),
+		additionalInputReseed: decodeHexString(c, "2f7e0d7957b18e034b9ca9a1196109ca6ce3a5ac80600385e00514acf715e81a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3bb13cc2970e8f147dfb24fb0b761f0de6327b0fd177bac75acaa72dfe60e266"),
+			decodeHexString(c, "714b135df699531a72c57ceedd3990f9d53d68e78dec0b68d2add1f3a494afbb"),
+		},
+		expected: decodeHexString(c, "9970d7202ff77e95f42251545853cfd50d1e5ad7a51719a391ede00b3f8f5007ce0503484b83d0f014e65ac027829a5c9fc7f6092c62e7ec47515d200b39b618"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a3d8659c097d5c7e274283647aad26c07fe751172ca12e10"),
+		nonce:                 decodeHexString(c, "ea0f68dd7b6878d6d139a935c24b7feb"),
+		personalization:       decodeHexString(c, "84515e0519279740ce7a00fa1b31f6fb2bb14b36368b9bbf95b4c432e1382e99"),
+		entropyInputReseed:    decodeHexString(c, "7de47811574a94e6ecc4a2d16c4147cfb69e411b66aa6d0c"),
+		additionalInputReseed: decodeHexString(c, "f884459884e22dd06a7b4e2343022577221213c861ee61d6a9b596942299c772"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "35842edb5dfbf02c72caf9e248f3c07ef0f9b38071695c0a2852506d65e5252e"),
+			decodeHexString(c, "9a433fdc6f80b2cfb81380c9f9b44bb4a264e5fbc75934ba635fdfb696ec5d23"),
+		},
+		expected: decodeHexString(c, "e6efbf12fed1c64c3a98175571460a19a4c62ceae4153beb7a04784ea4d8ddc41d9c8c6e89f7b64a95c6fe3d57e7b36488e93631648e1f94e0fc6ff3c058569d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "ddc137a725957f7f36275a2f2ee1bf8ae92afe711a7a3f77"),
+		nonce:                 decodeHexString(c, "4dc7e3c75d206e4e3e7fc033de542c20"),
+		personalization:       decodeHexString(c, "76443ddbcffad40ad8c7c0b2811045216ea16c7f5425919b137866cc17bdd2db"),
+		entropyInputReseed:    decodeHexString(c, "4af4e3e877ca4b1d6fb9f4dc422108dc47c924faaf931f6b"),
+		additionalInputReseed: decodeHexString(c, "aa28f723363214acd082ccd2358be8c72f2d3a90315383d4b67993f8d8dfdccb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8c427d260fdfed813351ea2cef64315278b33a087891e36aea4160574ecddd74"),
+			decodeHexString(c, "8bca366dc90b9a2a9faf8556820c6431e26e0fdb7d9c7c2c94fcc89da60818f1"),
+		},
+		expected: decodeHexString(c, "8347068ebb42b359228a84340369d51a73f85ab2cda2e32dd2663fc83d2c6474e38a08b8e9e60d6ec0bc1a4ee9f093fb69f0cc4281258d72c6e4c7a4d10f08ac"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "3cf4e261f726eb75dcb35629f44a3102968b6c94790f4116"),
+		nonce:                 decodeHexString(c, "167abca4fdaf21a30b554314d2defc7e"),
+		personalization:       decodeHexString(c, "cc87bc66ae04ea9b35ef847f92909f8dd23641d6ec2610bcdf1db78ab0fa4f2d"),
+		entropyInputReseed:    decodeHexString(c, "b59be5dd93d7d2d400d9bc93b6c4416015f70fdc3ac80978"),
+		additionalInputReseed: decodeHexString(c, "32387332346c566ec9456a16e916e9a467fa0db0c8a315b67121e30035029938"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c4cf2cb92cf856e333cd953aab500b3fb7a259c6981b2206f39ba16bf439c581"),
+			decodeHexString(c, "acd98e1c9ad49f1b309eefe95a5ba36f35c411fc4241afbe067e6ade67ffa09e"),
+		},
+		expected: decodeHexString(c, "f9599d402a9f26fd6f1fe98fde3422546b7d751162a7288bfc6b32f863ae98b1b204828632d3ad5e900cb0fe54d84b2ceb4df155ccfd991e93a263e1e04fdbdc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f8fea209a8abf3d6700f051291bff98655f99c1041d69b61"),
+		nonce:                 decodeHexString(c, "fccfb400db6f4bbfafa51bdac03580d8"),
+		personalization:       decodeHexString(c, "7170c1548df5c48eee3b076516396cd355cd761dd29b8a534263a3b9af299dca"),
+		entropyInputReseed:    decodeHexString(c, "963e222af3ed7d4b6d33d92f8efb7dbd4470dd86ef4a2203"),
+		additionalInputReseed: decodeHexString(c, "34a10d365333bc694024e7e087280d5fa27f0f69c48e53799b0d3f55bbbe5821"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bc95ea099fd7eb907bcc9669ff2aed110db88c30b09a10a6a50b45146c19a2ba"),
+			decodeHexString(c, "87121149b25eb1e5500e782d7cd0733f9dff8e5973acfd0bba04932cbb058cf6"),
+		},
+		expected: decodeHexString(c, "b325c7fadee911ab38de35bb02fe63f704bdaae8ebd2e9750d273b6552e34286e472a01c054d5a846a64ce0be15fc44afdf5c6465b50864b2465894c8388c6fb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "2dbbc1b41eca69aeeb3f161907b12281653656f15c879341"),
+		nonce:                 decodeHexString(c, "7d88a124a3bd8471a5b561dad2ceb9b2"),
+		personalization:       decodeHexString(c, "a1b66f79b48fdaf8191ab27035b0a3a8bb1ced658d03005814c2494b68026485"),
+		entropyInputReseed:    decodeHexString(c, "50e0df187dd9c27d5a0e962c2c8615bfe7228d1475e2f4f7"),
+		additionalInputReseed: decodeHexString(c, "8598c80caf70e2e6ffce3c6cb4f06933114015d7c9c5d273b428b4fbc2d14b7c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8394e945a421e9bc684f49876a011596a22c6c988b83c7309f3dbcbd9cb19d8c"),
+			decodeHexString(c, "705258f5b78048207e1e3f8efd9eafeefede23b4e51c79c03104b156865627d5"),
+		},
+		expected: decodeHexString(c, "b7f5396c9d2dbb14fbe1622d1540e5dfe72bba85cdd49515114728dc9a35ef386ad5c1b7c7b7c40b06904f71190a39d5be419b29a42b9470e6b973830f0187d3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "607b26929e2a9326cd3bb26e7dd10b13095cca93949575f5"),
+		nonce:                 decodeHexString(c, "bff291e59812d10a4d65b38a6144d008"),
+		personalization:       decodeHexString(c, "52aa9810f26f284e915aa38f20d58b38949e5db92780511d69cf73c08bb9926f"),
+		entropyInputReseed:    decodeHexString(c, "6489ce0e80eb12de88cbcdc4e6a1f164f8c34109a84221e9"),
+		additionalInputReseed: decodeHexString(c, "f9d65f818dc0806eaaa90f22a61b7cf3de69542fd72239693613841b924ad2b0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d85920fa2d321ef617b2398e438c6aa4552291249c544a65e62fe1dbfa77fe75"),
+			decodeHexString(c, "77f964780f6198e521a1d3111cc4a8aac7cd842d8bb6904495c8bb25578286d9"),
+		},
+		expected: decodeHexString(c, "b8c1a53ea07af7cbcfec57b7c489faf85161d9dde7c2734b605f6238bc3aafdc4483d241352caf04479ba67c84c1bfeb19a8bbf0c4c0e707288d2c2c69701122"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e1b5b91f0f5ef3d66518ca65098c6af790806624bf6c2e98"),
+		nonce:                 decodeHexString(c, "e9278ea5f8643511cd787a71e39b4c4d"),
+		personalization:       decodeHexString(c, "0cab8f63d08fadaa11c1e80a1e29829506be3720963bad7fe908ea74880e4138"),
+		entropyInputReseed:    decodeHexString(c, "cf204bbc35e977fb77cb048acb7a3cd5ba1d8e1dd6484313"),
+		additionalInputReseed: decodeHexString(c, "3c60d516af0f43612e2e0db1ad91ba12ad5a9bdb20cb3c807a7a30fdc00dac8e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4b697bdf6ee015faacfa9596cf4ab664d47dbbc198ac77112b2e64e33251a030"),
+			decodeHexString(c, "89dc88d0ba7c9dd831f0cf11bebd080e1c38d16970cf487b46e0aa7ebd468240"),
+		},
+		expected: decodeHexString(c, "8d84ec1a7b11ddeddddd6d6b90b2604e6d6c872c9d3ece424cae84be9b71d8c0c1395afebd955020cca15b03a5f509d88d515b3bbcd58fe90a3052b007f7e8f5"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "b46c57d261d5949f47129828cd1a7fc8bea08261132557e0"),
+		nonce:                 decodeHexString(c, "829f0e692055f6baf7f55d364213bdb1"),
+		personalization:       decodeHexString(c, "4e00001a12f532eb499df4710e47db80c15b08c00ca92b8485d3b4a8e021a4be"),
+		entropyInputReseed:    decodeHexString(c, "56c50b701634b937969010c3ac5053ee6c7ea690aa652d6b"),
+		additionalInputReseed: decodeHexString(c, "cdbc8731a1e39a36ac03790277fa02ee09d835d6cd7370f93d78fb184c6cd79c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e0c2bb2dc1872f856f7f1594b9f652b638a0f780855ce499a7cf2628e1b1763c"),
+			decodeHexString(c, "0eec40f486ffbda83efca889b5f8e8436fbae0cf89c5a401286b81913aaf95d1"),
+		},
+		expected: decodeHexString(c, "91cc030972e6c2856f490311b74c23adf05d8791e58fff2b0348016348c6c99fa96863e630fafe105a81c34c2f93e7f0ff09fa74233e6f8802ceb9cf04409ca3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed39_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed39_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a71b17c7428f2b3e675a0c46cfd17d891590046202df4a3e"),
+		nonce:                 decodeHexString(c, "558c6ec09d4833bd1eb289a58d9a80e6"),
+		personalization:       decodeHexString(c, "ee6d71f0bd0664ea86e4b04ff6e47510e9c4293247cefb9fea3b5cc1c8edecf7"),
+		entropyInputReseed:    decodeHexString(c, "1180c575b99d09c750e44fed756e755fd8b010bc7511bfde"),
+		additionalInputReseed: decodeHexString(c, "857565dfefedbebc2b9307795d8342dd374ccfec43bd454f7b922431e9368307"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c266019bef294faec287d149276c9bef20258c3ef06851c50b630f7681a687ed"),
+			decodeHexString(c, "8d8b34c301866213579e2d4a0ded89502c68373ea23453ba896f183c3537610f"),
+		},
+		expected: decodeHexString(c, "e53633d49fa56428c0812ed0e2ecbb8c973b91b930959aae4f1854e25b52fb10230b580d7fd01c0e54ec25dc4fc4415124ab5b22a00712d3d1dd01c093466f9b"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed41_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f0e217214a4b7f8585d5244263859e645ce01e76eb7c5553"),
+		nonce:                 decodeHexString(c, "d1d4dbb0cba2f0b0396c4138e4321e61"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e3c7493ddef25d62818c85619c3b383c5b7e968fb6043cb1"),
+		additionalInputReseed: decodeHexString(c, "a97463fb3037ceee5ed22fda8f59c370739089e89fddc24e79f03822032e1993"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fc62d7cd9ac13977181120cde57c93a683922843c309343c9aa8c6761710b411"),
+			decodeHexString(c, "f6b9b01724daea70f2ced24bed572f611008eb9e0c21d90286971713821c75e6"),
+		},
+		expected: decodeHexString(c, "9597e69f09d57785bf83b5db3d042ea767604244190a65765dea8983415fe8842046b9ab90008ec68a3e4c8bd3c7a4ccbf7dc688ecf0d12e53760dcc9df2664b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "b15a2ac54b2b7c0371af00cafc27d8e1501dba2fe8a26f40"),
+		nonce:                 decodeHexString(c, "1eee881de437cbcf27738d7c167d123d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b47e4299526b93f05f321432be034599fcbc12d4654a97b8"),
+		additionalInputReseed: decodeHexString(c, "365634711576c7c8707b26a3675d84db8d79a9fda6995da20dfa1afae0cfe4c0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d4e645e2aaadbcbf972f552288a36be9daed48833795e82b8dbec45a84681d7a"),
+			decodeHexString(c, "d6ca414b2790593323e1b1f175c60ef214fe6b045c9c059c99a4f71bcb6fc331"),
+		},
+		expected: decodeHexString(c, "acbbb48228c9fac4ab9946ecb77f830c0c38dafe95ba64a237d786bd144635c81f5207c0a5b20d56b559aefe53a4bfb8b23083e7fa4f5bb1ddb5097755b599ed"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "8ef456812c1dd664f5d6e68d333416283d07fa726fb7aa11"),
+		nonce:                 decodeHexString(c, "41a4e49b5297216ede17283ab158f6fb"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "595e6ea06672aabff89867c266e138840ead1f8a3eae74b9"),
+		additionalInputReseed: decodeHexString(c, "d0efd9f75f21d2a3f4e93f5efe4f285b6e33456b3781f08095f8855f1a43a46a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "440cb68e0c9d6db8b91e8a3e32e4b47dd1bdeae240fa6c1812acb5814e2468b4"),
+			decodeHexString(c, "5b27881c735ea7322db03975054b955a2e995cc0d3ea3a982a03b8f84f6b9767"),
+		},
+		expected: decodeHexString(c, "77f903a40beef1f92abebb58f5e1fb508239103aa863e0300591e5c58a9680b57e4668150d553d390be059a2c6dbc9f7e25442c6abd11768b1178df9934ef6d9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "c9568142404f28a2b2ffe183decee1bed566785aed71420e"),
+		nonce:                 decodeHexString(c, "14ef70093327884117c0183a4bd54558"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "673a9f7a68ee4201c2c4e4507b23c50363ade2c037063c40"),
+		additionalInputReseed: decodeHexString(c, "f341c1c55a40471cf252396fc65a90afa664d993eec4c03b4e54bc0b12fe00f5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ea209140d930083242fe4a2f7cbacc0a73ebdd5e73771b9d9e1bccf7a30923f1"),
+			decodeHexString(c, "05eacd560d537f910ea2d9c77f169efe75a06c06e435dc3cd9c64d50eedaa9dd"),
+		},
+		expected: decodeHexString(c, "6b40ab76f10b30383b2c98394f2695ba4d2ecf96148112ca5e3a2b2e00c6b0cd051a447fe19d32b48e2e1a89b86b48d52f05bd26d28c2426b0e57a761da831e6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "5b3e48456cad2bf7882ff69bdc2c3b38e2a9858fcc375877"),
+		nonce:                 decodeHexString(c, "124ef0afb66b6e4197ad8714808980f0"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "55b852c8eef9fab4f0b2dbf23ae72a7c24c97ac76f802fc6"),
+		additionalInputReseed: decodeHexString(c, "f70aef2e5b2a95fa78d5a4f545c341b54832c9d9c91abf33f946eab8649e2ac3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "78252eacb9815e933051f5251c0739b85973924b1734188a9a59cdd48a7b7d8a"),
+			decodeHexString(c, "8e391f33d6bbca154288c69c95d8a55a18a4e00d773c88f5044c184d7e160bcf"),
+		},
+		expected: decodeHexString(c, "592077a6bdeb539a7ff9681eb860b8a39c53d5a41204a8e01a5a8ac31a4088efeb15a165a5d9be5bb01a0ab83d5d46d3987137a63bda382114bfd1502eeb25ab"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1255642a14c222a908c7d6672f8cb6045870231be7dd6cf3"),
+		nonce:                 decodeHexString(c, "32707c7dc9d0f81754ddfbb3970f5b9f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "08c8682adb948ab0b73b3e7f1aeb72afb77c594ac4e03a17"),
+		additionalInputReseed: decodeHexString(c, "d09ea03b81ca3f393748b1b086380970dafd79a36449c226f7d97d8831f56b96"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cb085f55a5e5746ca1241fab16b545c537b8f5e0fe8db7432e1083da0707e143"),
+			decodeHexString(c, "83ce1cd0bfa5384ee87472fd88fe87bfe1cfd20f695e0dac035af84775f9fcc6"),
+		},
+		expected: decodeHexString(c, "8101d98b42af973ceee81f8ef36af9aa41d7aa93a9fd0e3c91cb9a8e6baae5d073596e1be2b92bd302f2501aed36af2e4b2ef46ce22a16cf8894045d892f6f1d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "fbc5793478afe0522e2f90879ba8cd0c2b2f2d4efa4e9474"),
+		nonce:                 decodeHexString(c, "6cc1cc67325b900d0624e2793ec35e96"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "508e1ab755b026faabe73d354507b3495a1d6de1bbf49911"),
+		additionalInputReseed: decodeHexString(c, "cbd2f61a84c5f085ee5bf34e1ff751bcf33a047838998e0eb04af0ff30285c45"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4cae131d3e366185b8b1e4caa34faf28e359f46ed4f36bd9072aa5be936bc4a1"),
+			decodeHexString(c, "437f31f2a4b3f546469df7260a3e5f05129516a84af758e759e44831ed132e36"),
+		},
+		expected: decodeHexString(c, "656da512323fa8261708cfc971cf7cf7afa8cb419ffa31076967c5e6629a2490297aeebb582a05b2b6678a82d8a41f24672d35db2ecac4866d78118a2421283b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "ee379f3cc9908429446bf22b7ce1b5b946eb2b16dce509d8"),
+		nonce:                 decodeHexString(c, "c396d83d90b42a67e4ffea011c379d26"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "524c96989ff430b14241ecbf5d237bb0d9c561076eeba421"),
+		additionalInputReseed: decodeHexString(c, "4d0eb18cbcc7883a07b99997adcaa5c1320a24050b4407d7550c9ce6bbbfbf56"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c9e85f42d72b2f348e723ff267ca8a37ecf50706a75b36b7c645852c0d002e71"),
+			decodeHexString(c, "3ff6d957ddb1ed2713cf3d40698fe88a62f536b3f8fd684fe01da3c32319c1d6"),
+		},
+		expected: decodeHexString(c, "bb1c04561064f8c729fd62098a32516bc47298869e426f49d52a269b744d823977eaa0a0ea802fb08edac6f1304c4dbe5e1712d2bb88b6af99579dd4bad47837"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "5c0d92a3a3c7e310422175090c749973c30f83ec2de79a98"),
+		nonce:                 decodeHexString(c, "f48e7ff74b318f6583beba9aa8bcb79e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "37f91fc9431eccb2a062bf78d314aaddfd2ce25f32d37e32"),
+		additionalInputReseed: decodeHexString(c, "77f81befdffdccf983783a6b70a8d8fa6e640a7476db2f283f42e049855005e3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d0bc32865e0475d0bd77a38c2d9aa7bffafdfd44bcc133ff1ebd56dfae897884"),
+			decodeHexString(c, "2270a5d71d584f3aa0fb2eaf6999877996aa1d03c0e88fa2ec63813be6391ab6"),
+		},
+		expected: decodeHexString(c, "2f4dca3e8e580e5333dae904436baa80b7a9b95f024a48ac8a3f0fec2b38c10805a38e84292720bfb8adbca77e9ccb7abbd68e7010fffa351452d337ba421f61"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "4f43ad1bad3bf928eeb01ff9956cb689bbd6ae70dd5a0849"),
+		nonce:                 decodeHexString(c, "8e11ecb98928075c77857fd44848c300"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "abee57c4f5c8e3750864fd56d153928ff162140e6a4a3ef0"),
+		additionalInputReseed: decodeHexString(c, "75593a0045b2508360a904be270e381b439f5c58e5d6dc80a45fb176f8be2e9e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ad68adcc9fe681d2e5ea02bc025be792885073403f79b32a15b9e9a3ca619f89"),
+			decodeHexString(c, "203409af2d63c0898d8aad3e541571cb36316ee2806d262b2dfea63e65e9e5f1"),
+		},
+		expected: decodeHexString(c, "4dc0e68c07b2cef2450883672bd5716de88ce94b5f72400fb749ade2f4a5c6dabd01c3d326c7a8ec4ba5bcb33cc45c206498e145ca2aeafc5b426dc165af33fb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a44a50f5303a770f1b5873334e7c7d42ecfd8377782355b2"),
+		nonce:                 decodeHexString(c, "ab866925757537a18b57557fdecffd30"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "fc81c0abef73ef4b7bfa3873f0dbaeb9ea72ce6fbd235f22"),
+		additionalInputReseed: decodeHexString(c, "ee7bd667b38e2dfd799620478ed858a321eba28d2342c27e5afbd5a6ac89635a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5611fd323952599240eb28c51c4ef0f3fd508eb459dc652adf17fd19e7c2be66"),
+			decodeHexString(c, "e1ac2abd693ef6f1e584a5a793fcb3d23a388efe75025a8652c54f99f6e3fb5f"),
+		},
+		expected: decodeHexString(c, "0e11bc63c86a9396fe206a73ab7d6ddd83be9b67a94527092924f1f8b22954b9a4b42854a1e9581614004620577d687775657a8d33ffb3ebd6f7542f421a757a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "5b91580f90c706ba39c3845e26cc7e3979356cbefb1166c5"),
+		nonce:                 decodeHexString(c, "04faa19a8a1406eda3e2280ae2d1c78f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "daf14493f42f75b70cfeccc76b9554bc7c5a9d8116e88db5"),
+		additionalInputReseed: decodeHexString(c, "93c629bbb98dfd26eb016ac4c4d5c2dd1b37db626c2161ada7fc47ab77089ba8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "96c601d4824b37e76cfc1a7179c65e8c96fa42f3c1ab6a56469a18423efa45c0"),
+			decodeHexString(c, "e833c47ff98b521b2b1bf623794b95fea73b81b3de0b178c5d1dd316d564a0ac"),
+		},
+		expected: decodeHexString(c, "39b27f3536b93adf14785443797b9c1c5929f0d7920ca2932580e2ff0dcae3981dfc86c155f138ac2b9c638a093b65e9e3de715535cf729e4fce4658fe350c6b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "268578f14df320002e79d1174d281ceb14349e0da1e72356"),
+		nonce:                 decodeHexString(c, "75cf7e7b84a11ecfce106468adc28796"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "28c5642a8923e737eadd24f0aec08977201d08caa0c24327"),
+		additionalInputReseed: decodeHexString(c, "af7b0e351d2ca795592b1cad167ae3f699cf01f0f1d0cc8cfdc91482d3042f57"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4726eb119ca62effe205990b943e8bc9cfd493dbf317ab70ab966b8d2257aef7"),
+			decodeHexString(c, "8e35ac0431b9ea89df698fad94573cf6aa962aca44091ab73f6ab0c15f9f72b1"),
+		},
+		expected: decodeHexString(c, "bd97f149f8b60fcafd1648587f65623ab9e8c7e5f43c965f695ed730543a6efa58bb25387072a5251a7cd3cb9210b2a798573935c74154a9a77f418b066a6adb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "06650e55f21436ceea530615e143575ef59e0fb6e13e1b48"),
+		nonce:                 decodeHexString(c, "870b65af36df39cc204cd32bd0962420"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7b2c199cae21e4a328ecee6b8f2b8c28630e3c390f401ae1"),
+		additionalInputReseed: decodeHexString(c, "29ba0b55a4f2ee63c858615fe393e6d704d04588f51901d575f6247cf52d69a5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7c34329a91b1d15e8a2f3352f7cc1876ecbdd66ead5c6d9dfb6b9048bc7e20f1"),
+			decodeHexString(c, "4e75788492aa55f632d59bdf96b64cede3cf1e9f976c43ec7a3258c68c0e0308"),
+		},
+		expected: decodeHexString(c, "8ace58ad55df744d2d19dd8d68f29674c30baa5aaf4dd6748624acd63ab0a8dcd626fd94e131a100c15815ebc056972f80b338e5a9f622cfb159c9f9e3160046"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed41_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed41_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "46b5b273b4464d53aa43baca413cc9daa305e9d9889cc28f"),
+		nonce:                 decodeHexString(c, "23d3ddcb8ad9890cf4480e84cb7a1bf1"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "437a213dd1a06c1ac5069d55c0b21aabd723f1fd84e45a92"),
+		additionalInputReseed: decodeHexString(c, "cb242d02dbdb8f93673735ddbe4513c3af98010f82729b2ceed08fe02d390a39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "73113a6bed92935e4b6c58bb788ea62003383741508ccfe9fff14322870f198f"),
+			decodeHexString(c, "129ca535a8a9eced5aa8c0c96a018aa1a860648a5fc2c5657a49dab7793154dc"),
+		},
+		expected: decodeHexString(c, "037a2b9ba13be212dbe8ae28f4aaff9c9b3635edebe0ad29bd13ff6420f97904324549ba247ec3d5764f662367d9494977e2f9eff2a3aaa484395a9e9e5b776c"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed43_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a9b3bbf19c1d80623297f7c50e9deb3b6cc497d18c48d244"),
+		nonce:                 decodeHexString(c, "e0aa9a803e296e3f37001e77654e2339"),
+		personalization:       decodeHexString(c, "ccefb2c8bc0dfaa16c14ef3c9d98546e476658ede3f35621488f1d03ad490633"),
+		entropyInputReseed:    decodeHexString(c, "cd2a7104da1b303011817de73e83e46c6ef893952fa92145"),
+		additionalInputReseed: decodeHexString(c, "b9edaa9d7db667066ca85a461991b781bd877cae1200a47ba089bb8165fbb95a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "01c5aeb25cfb8f31631f6e7b69b8449845034435758b9747d3812223709a55a5"),
+			decodeHexString(c, "930ebe68b02f331fb1a9e7e5ed2fd0334b45b50313a614eddc06fd6780492de9"),
+		},
+		expected: decodeHexString(c, "18bacdea0c71dbea09485ad0b9210daf6b175c8afaa7d6158fa74e5ae370d338216ca027574786d414f0ef87b418c47fc587a01e578d8d416f8020a445e20f3e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "083531412b219d9d1b0848bca35272ca96d49afd4b0b5c8e"),
+		nonce:                 decodeHexString(c, "5c8ffecfd65b9ca2a4286ba44138627d"),
+		personalization:       decodeHexString(c, "26c9a7b2f15a590e0e92a2708bc306e68750476e9626d542f1577075f4e594ed"),
+		entropyInputReseed:    decodeHexString(c, "8513b32eff61740cf9d19cacc7ab0288903d3f1886f28534"),
+		additionalInputReseed: decodeHexString(c, "0f1f76a1928e49076be7f02f70312d0ac5224987d0098d2eb3a453e37a0d5f7b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1bd80db1d740223429808c1e09cef690c38faf31dc3bf29494cef34a74a68972"),
+			decodeHexString(c, "19b36f9075b10e9159a89954dbc8350a722d1b2114d0f93afb9bba0cc5a7459e"),
+		},
+		expected: decodeHexString(c, "f6e84c6e1653e1cf38d3ddac0c02be3cbbdc0712f7f79e159bbc5019c4196aba1333d34aeda794a86622f5b926f4ce929de9d8ee046043ae4893f67c19572bf7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "89e582558a26fc33d4048aaca2b5ba4d7c0fcb70a25ad754"),
+		nonce:                 decodeHexString(c, "3fd2d191d966b0d553d14ef3c5135d35"),
+		personalization:       decodeHexString(c, "4b68da99c5a995f4a203a8d1c8dc85a2cd96da5dd66a8fed108d213e34720725"),
+		entropyInputReseed:    decodeHexString(c, "84e588a5a595ab01db9cc1d05f932cc42d623f7eff596651"),
+		additionalInputReseed: decodeHexString(c, "587f5266b6d72843557494decfa5f7841428f896c65046bea9468115e8ebccbe"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "731543e0d0b3a913e01383054412250a267b991741b5e83612bae7c6234da3ec"),
+			decodeHexString(c, "6faf161ba8e1d6a65a21f50620764a28db128a55eae92750f5eb0749ab2a5ef5"),
+		},
+		expected: decodeHexString(c, "15913065133ab31ceb6cb6d073db1b5634792da460673109716a3f7633824f62d740bfe5059ad3a9911ee2df27cc22661eaa0081f075ea26353c634745014e0b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "05106b71aa27411bf51dd3862c150db356c9736233d16f64"),
+		nonce:                 decodeHexString(c, "b1960f1005f20d6ffd10db51dc289ecd"),
+		personalization:       decodeHexString(c, "2979474c0799b35f94da6813b2644b3a79fa83c6c3da5fffc82f4e0f661ed92d"),
+		entropyInputReseed:    decodeHexString(c, "52ff4430bf265932eed42c8c70ebdb130500f8111a29fb5f"),
+		additionalInputReseed: decodeHexString(c, "ce4840a65ab3cb9742b7aa582e428f851a70d18dd916de63647fe3fa2bd92994"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4d6dba3fe52098e4f570124197486d8cd9c606210f4f212e98b45f104acc1772"),
+			decodeHexString(c, "9429e510011bcdd1b43a8b841d9a75f14c6655a5232ef08477a54ebd144883fc"),
+		},
+		expected: decodeHexString(c, "6a7fd07fd4063fd6efa3597ad8b81792c79e748e8ed6cab009e4b841d988d97257ebe025ad5619e1dd9dabf1ef1c59a4544990e0c68193e59c28647bd696a9c7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "0c5ec7881cbf9957e109d8b976f82bff1df2a945fa6dae0c"),
+		nonce:                 decodeHexString(c, "f18ef1250b608dbf067cb6abee216b67"),
+		personalization:       decodeHexString(c, "c64fda600e24953f36eb53058905cc2e94a4e661e1c54af9f8b29f48a96c69fb"),
+		entropyInputReseed:    decodeHexString(c, "30df03d1a32db7a74c338c80331b04302ede616dfd23053e"),
+		additionalInputReseed: decodeHexString(c, "27409830b607cd33520666dd291c3dd20c38bed52999c16fb72877c5954e94e4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b1f2f16deb47a7290d79251c4aec38a05db35496fc498929653db540d301f939"),
+			decodeHexString(c, "918db2c31fd40d06f074b0f92a1327f81d8cbc47d835b08a698b083e5759dedf"),
+		},
+		expected: decodeHexString(c, "d12239c30a44582ed058f2b435e075ba234169dbf30270d75d00ebf38ebf32f5d433ad1bb8d8ae2b153f6f3fbfed7494f5ab9a9c19256c4b10a9fccb28298287"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "133077d82c26f9448a28900fe6bade080b3816c3f8c898fd"),
+		nonce:                 decodeHexString(c, "68725745960d174eef8a762bc87c0b9f"),
+		personalization:       decodeHexString(c, "459b7a154d7a66dc787b89e5db981c690e95d311d8a168c4d26c4878902664b9"),
+		entropyInputReseed:    decodeHexString(c, "f1ea44f020a5572ade8a843fdf1e9c4e5b0a067756670c1e"),
+		additionalInputReseed: decodeHexString(c, "f373059638dcb7602a3088730ba00cb3179076a27952d465fb0159f46a191791"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "204c3b20ea88281b5c7668bd474fa43f61921f702ba6df17616ad6e9eb149045"),
+			decodeHexString(c, "a004cd5d294a4a96b76b689cc777f4f63357858d7e512127ca9c6e9adfbc547a"),
+		},
+		expected: decodeHexString(c, "705af2147b04248b0b7cd17b5b6fb891f3b1a8420e253cc70c42f8b3ccf779cc128ba009581740d80d2e4cfae6624340efe1a6a920c29afd8af63cbe0f667ce3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "0509df0708544e7a575b3d5b9e07b49ee93519fc33e08f99"),
+		nonce:                 decodeHexString(c, "02c866336ffe75df647f5c5f81a1188f"),
+		personalization:       decodeHexString(c, "3ddad3ee67d06414b78825fb0e75778ed050db006bef2b0188d19a1562ecb415"),
+		entropyInputReseed:    decodeHexString(c, "5638e2a22e7b1ab20af27d83de26c3cdee625a811dc75079"),
+		additionalInputReseed: decodeHexString(c, "41fbd0aeed309666b073afb01411b7c462673db9202637030142327ac109256d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "96c17e3c80b0905713b3216dd119e9c0b5a4e88e55a201b4307b0d44d1f7e24c"),
+			decodeHexString(c, "40905aced987181f0c5e3bb4df7ea9990c87ccc587370b9237cea65f80378627"),
+		},
+		expected: decodeHexString(c, "7f68ae023799a328dabe2b18225b510b2dbc89d3fd8540ffc24a41906703b3212bf810090d6d2d0a5366fe64bf8ff4f876697b7bf8099767853bedc3f37a3495"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "d0dd329f934dce8bf0871601409c2e21cbf0350304d3a79c"),
+		nonce:                 decodeHexString(c, "a3a04c1644d1ba80eafdde17c44e08dc"),
+		personalization:       decodeHexString(c, "da53b00d0af564221e37cd681cbb639a77704b376a598e164b056ca1ae4c1c50"),
+		entropyInputReseed:    decodeHexString(c, "2e50ffc1627593c255cc72a998edfc9067a31eee74fdf0b7"),
+		additionalInputReseed: decodeHexString(c, "314d8ea4096970ae48d32f402b0cd75eea72ca463da305752eba67bf23f083a2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac237313070a9806034be9db87994056f66ab06b000eee7d8e1dde9eac24f898"),
+			decodeHexString(c, "c245ee9ac60800b8f3d13515c5102edadbf373e133ab8f81d51a3ce6e2268295"),
+		},
+		expected: decodeHexString(c, "b2360870ea54d6a240372b7ed82b25b497897bdc5f2374640d06f22e2ae07822f99a768fc95f508493241f573d5f865e8780a3b27963e2b45100aeb71a38332b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "81889a65458e06f448a616353e1fcc5f82dc1bb74b5541c7"),
+		nonce:                 decodeHexString(c, "39043144b45feb3a3a4923ab33646a71"),
+		personalization:       decodeHexString(c, "3df63771f9f40479d12a1f246ef6e6591b18187ed11dbdf04f1fd450f0d21c38"),
+		entropyInputReseed:    decodeHexString(c, "62b140dc4b7d685d82f74cd133fc49cc0060c4ebb9f1f6dd"),
+		additionalInputReseed: decodeHexString(c, "0b331bd38c943ab11fd1a2eeb5635ce66d7325f261f028953c3b63026312204e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "13fe4d0902de136278b14ed77494798444b3da6e03edde64b0df11e29b25cfcb"),
+			decodeHexString(c, "e80f4a99014a520d0d4fddcbd9b73811103cd98e12e10a692d454f7c245e5ee9"),
+		},
+		expected: decodeHexString(c, "142d3dc20f1778378201b3da58ac7f32a05aba7d91aec755f32ef3fdd80ba2ea3110cd76b7ad3c54c78d14eda634c74ea83b82f631f4cf01754a58334ea9316e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "03ec84379944aff7e0adb08c9291127ed37ecb05a3ec9e39"),
+		nonce:                 decodeHexString(c, "c691d7435431e1d811e4a743e52b7135"),
+		personalization:       decodeHexString(c, "d97f3fd86ba412dbe6d4bae7ef32b4d106086adea3f4df74c56f65e2e48209db"),
+		entropyInputReseed:    decodeHexString(c, "41d886d85227786a308776ad7ca529dd1f3e9b7c4c09a212"),
+		additionalInputReseed: decodeHexString(c, "2f3443eec29c512a55770c4ca6a3f4637fa94152d74caea5aa4bac9d21584d22"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3225470b5b9b5281560389de7a7e3fd53149c5aabf9407748778f6de9bb51bf2"),
+			decodeHexString(c, "4ba59a6fb87b8d977c6f92ac3c623997f78a67a6a05f0d151922da692609f521"),
+		},
+		expected: decodeHexString(c, "14c693c37a433e2ca16f30b417abe565104b41898d6acb75fc3e866608cbe512acd856d0efb2cbbf82e8e93101f03366a78688e1443fafdcfd82e5857a8e51e6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "d2acf08bcc40e9dfc59a6406fc4e9c8b7e00740d589b98c9"),
+		nonce:                 decodeHexString(c, "6023284ffb138bc59491dd9937441dae"),
+		personalization:       decodeHexString(c, "b9c75334669df31c8b6abd9d25c40fe315adfad4c43b2f683e0cf2673359d67f"),
+		entropyInputReseed:    decodeHexString(c, "4a8940b0180d216b6350b8b3ea55a1f2707fed06e6723e42"),
+		additionalInputReseed: decodeHexString(c, "cd9de00b55ffbe8e02c831c298b3c13a4cbc4c3c6eb7b2b6258de7c2d95d4d9b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "aa3754c13dde616aa4621fe08bd2aba25087976703939c71e84832debcf39864"),
+			decodeHexString(c, "5206e71f69ac988e7092ccfdea6041ae1678ab21607760a85f4fb3c99c27a15a"),
+		},
+		expected: decodeHexString(c, "a27f4351f8573387c1df57f20b75c1de59f8bb42e27fba731cf608e749a76c4dd0904e2d13723fe5318d9b69f1020362ce23df7efe2c023cee72fefae04d1d82"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "1b03f6895505653de5b34c21ac40b5b9669a9db138887900"),
+		nonce:                 decodeHexString(c, "3c76d7a2ae122050886d23b6f53f6d86"),
+		personalization:       decodeHexString(c, "234ade4d967af7df54d501270cbfd658d1c96dee79bcbd4ce5552553b113ef05"),
+		entropyInputReseed:    decodeHexString(c, "0e240b436e48ebfd50b2e00fa2d5b4e04976f7f894a1df4a"),
+		additionalInputReseed: decodeHexString(c, "9b43b734d711985f69900f6a0b09dc9f8eb00af4e54f7f5b64ee095bcadd2c89"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f91d3ab7caeead5e2f29adfa0fa970c37a96d633d9dc42e427197d121e345805"),
+			decodeHexString(c, "3e97025915a516b221f627983245c28a6aa662ad78ca82b295fdbc916e062f02"),
+		},
+		expected: decodeHexString(c, "1863ad4e4da5ee1131dc40c2a08781177fa8f34519884ab1af436a4ea69d0aca1b9710862b700d5c47bbd48b56000ccfb3d24467afc5d1d6ad5811ee0a45dcec"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "faff695a255dbb2fa67e64af834c95acc272a975842bcd35"),
+		nonce:                 decodeHexString(c, "8339a7d49dbb6b36a8469af740c87f27"),
+		personalization:       decodeHexString(c, "bbbaf27249f30e1212980284b837de12010249efba78a3f8c7657539ea7080c7"),
+		entropyInputReseed:    decodeHexString(c, "13b2be945b68b98571ac82f591819538c441c4556c5815e2"),
+		additionalInputReseed: decodeHexString(c, "7b6c0c3ddfd4813f4e8aea819943067f25a4b8939a43e3cdf32fad5d159d69ad"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bfee5752379d9fe8cce55b197f3c46debc66c933e5f9ba374b9dd6f184202dd7"),
+			decodeHexString(c, "a608479433bcef517e81448c912f257e6687747c9924b8f88a0ec1442d90e19e"),
+		},
+		expected: decodeHexString(c, "7cc65e6383aa891934e5cf1e6d29692ea5f278f35f4d5e48fc21f604e4f42eedad07d2b1ad70fa7462ec0ed6686b27365fa0a7b34ec84ef3aa9bb08e027d6ca0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "d098df2d5d7a8e96d479f6ac30a1771500ecac0e2b829d22"),
+		nonce:                 decodeHexString(c, "8da4d62331edecf828eb5852ed92010c"),
+		personalization:       decodeHexString(c, "c61d8a1418c0e0eb3d0652e55b770f8710c84aed5e24d3c631485b15bc037090"),
+		entropyInputReseed:    decodeHexString(c, "812296b1fcd47bbf5d3dec6625fc85d1e141ab26655fb188"),
+		additionalInputReseed: decodeHexString(c, "b1328165610bef7a3238690c03549f06faf872d642827c385d6ce039465cbe56"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "41034ba9ac78987f21ebcddc7e228985b71833453e14eb7129261b5fdca5faf7"),
+			decodeHexString(c, "398fbe1dca9a361f276864b0cde0e5f25cc37b294bb0c0483b109d7b36878a5b"),
+		},
+		expected: decodeHexString(c, "c6d544dddebe427b73e75d9d659d4998e72304ca64c56d07f68b70125e90feb9ff70afd2b8598667cb6b0843655769855ef3a7832b86055543acfe4d377c018a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed43_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed43_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "17b7bb5b076a5f4c5b87b9cb11383ddb38c494b7b89eed83"),
+		nonce:                 decodeHexString(c, "2dd928dd7eee5f039779e7cd05044937"),
+		personalization:       decodeHexString(c, "77e9d3bc69ed06c4d9709971dfac2ab77532350c2a860de7b01147756d594131"),
+		entropyInputReseed:    decodeHexString(c, "42ef85737b472bae820215f1a7f00ce6805026563c703d87"),
+		additionalInputReseed: decodeHexString(c, "b228a3113abc0e1e450339cbf61b74b1386716f8674e737cdf3845cb672b3807"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1336ba38c04d6f3a2d43b19f6570befc0506a3d02b0b6296f4d51221665b8f45"),
+			decodeHexString(c, "bf2b086499558c15c1d60ad7a2cc90b2b9ac411fa213a20144aca386483f50df"),
+		},
+		expected: decodeHexString(c, "0ecec0e34a4d319c1e4134aef633bf5d2ae09e9311b29b74fc7651c6a42953cfc047f6f68927626a6ffcc9a205fd3a3346a1105804fc1b4d6076bdd11ba37190"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed45_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "2c09490dc86710a6bcdb450d07fa52aa6bbd5ee15590140a"),
+		nonce:                 decodeHexString(c, "1d407120f3b6835d0df0866d0ecd05f8"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2e52a068bd4d9c4279b183f1a45f1d2ce503105a428cee9e"),
+		additionalInputReseed: decodeHexString(c, "31cfc68ccbe680f18075e21605024faa3979ee70c6ffaafaef170b57c57f4c14"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2626ab5a06508b34fd64904e756ffc52a1c6af2829c9eec008f21b284043fb67"),
+			decodeHexString(c, "ce4126da757e5d88cb8627721b5491c2866ed0d1d6738a68be1b49839d4bf6c2"),
+		},
+		expected: decodeHexString(c, "a7a92c0ff5dff9241e2f0f876ae4c1a319e8fb00fd39151e727736a1dda7be1b9fdcaa82c88bfa5b149dbc246bd672034a9f70ac2ebe72f70b83418173ccbd04"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f95cd38c3e18fa19c365022fba6cb197c3aa31e3482349e4"),
+		nonce:                 decodeHexString(c, "ab14f6e3ac82ffefa1b20cb127145b54"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7904442f0871db6727fbf2cc3426fd5c3053d1f93f574b27"),
+		additionalInputReseed: decodeHexString(c, "74ced249be05cc23d0c18ff96199d866454a52c962d6aac40a4293603f2c97a2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ad3391c8a810619e504dab12fd1baa1d43343246865319c6a70308282ff60326"),
+			decodeHexString(c, "6cf4f2a9ba561160cc0f9102d77f56634a867d4f4aa0afce175d994a407445dc"),
+		},
+		expected: decodeHexString(c, "89cbbd15b4f0d1aca84a447313e9bc83a64a87c7075b1c74de184bda6c6ab669c8ef7b8c6bca3de328a5d324bfa27952a83424bbd40cac99510330e959b02dc7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "c4f088cc369b2c227667e82978f34d2678d1a53de1f05655"),
+		nonce:                 decodeHexString(c, "6195e02670bae3bedb2ff0ca0f7a0549"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "1f37e780fb27d743c52de9bb71d4ddca743900154a8d4622"),
+		additionalInputReseed: decodeHexString(c, "5f059ab2c47e54f7735d850d49230696d52238c6ab28f2b11994545389350f78"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cc3e9ebcf2add463177bc18addc330600d42431f7788f762cd69cee21e141b9e"),
+			decodeHexString(c, "ec292f2e19d9510dc3993c796093f7e23726d2ae1c4fa76b95f118ce390610c5"),
+		},
+		expected: decodeHexString(c, "ece8af0e89f0ad9dd210e8b32826c15d153e579d260446bdf10812cae3d68755618ae3c2efe329387e0904aec15410b30100bfd5d2b3e4df8791f673dc05e493"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "7358d43739e2d31d553ea4842c38f8b9446f722421ebb002"),
+		nonce:                 decodeHexString(c, "efc26b24505bc457a233982b8abf64a0"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "8fa789ddc0a5314d8e9fad3ef9a9f83600e5b0190168c548"),
+		additionalInputReseed: decodeHexString(c, "ce6b37646401f7806c6c9f9a4bec98f70ccc5c1ef1f4eea1ce8afd092f31626d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f0315b4cdb0c92d346144bdbc35732f4e3ebeca5f39074bf9b849170b6a3144b"),
+			decodeHexString(c, "91c28961eb16da3715e95446238eddf34602b369f7f807bdb74b97f1e1a1c8b8"),
+		},
+		expected: decodeHexString(c, "8150caed3608ad8ba10a605a9cca688d2a1d97d4f652d3b35cd6c5ebae3f62dfbcabeba8e113877b281b70d23d5ae9a205fc46d9e6383291b0b54e132410915e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "599be501c1fdd8aac4df294f32c0159b00c661645955938e"),
+		nonce:                 decodeHexString(c, "dc4abfa86c4b7a474668a564d5621e17"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e0b7a400b23ab2cecc2af1ed4c803913087a9af85a7dc508"),
+		additionalInputReseed: decodeHexString(c, "dd24c897576002bc665fd5a2c57a439345acd04690ba7bfa1cfd655c736767f1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "87eb59a19bf8726b413ce8ffd859c0bf9639f0013d4a58a0ab8ee93aa5b3f79e"),
+			decodeHexString(c, "8c12fc58833fae3ef2f0876beb2deaf6cad95cf49b048121e0593acf64c92299"),
+		},
+		expected: decodeHexString(c, "f3434fdb75f2e21efee261fe9afbeb7b71e210f16e3b612340e2f587d958df6d8a83f1916e7577b89c7cd3b01c604e92b0dac3a04a3c58d7377bb205cec1a523"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e7a63969853b21c8a41f9cbd1125bac66abc8771f349c5b5"),
+		nonce:                 decodeHexString(c, "45e5898e4cd7f6ee15eeccaa204376af"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "4681c0dc6435483abe87711fd2d1292a3dbba7ee13a18b79"),
+		additionalInputReseed: decodeHexString(c, "43790f50882ef2cc65b3736adc17052c2f659904579c48fbbc8bf896c00dddb6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "68666c2a3911c6ef220b6765b437a5f69931d5c54763b642e4c384d8af76c0ac"),
+			decodeHexString(c, "3121d71c5d3d56442c17c37fbf7e5bf67982da1dbebc0c9cd511ec81059ff701"),
+		},
+		expected: decodeHexString(c, "d2979bec6923cd21065e7be34fa18d3e591ced669b0293b3cd0dbfcd79d0a706273842d3792f77ad67853a411aa28d7682ff37de2b4f36ffbf7f4003b279627d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "c6ee4ed1611b36197c29e72e27af2e5b50476c853188d715"),
+		nonce:                 decodeHexString(c, "873a275e5aa1e9de62a18c25b146c236"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c0e1e5d4a73ab1eb78fad23a81d5f72bea2fecd5ac2d877e"),
+		additionalInputReseed: decodeHexString(c, "3cbc7ea5e634ca5ff0fb8229955d860e1bacb2ea41d0f8f782c8b02e0016cec9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "beeb148ca471842021defc365cbb5709bbbf70e1213ce6ffe60db0ceaf9eacec"),
+			decodeHexString(c, "8e81c7ecafc365a320c4adea72943e1bb0eeab84ee0e37d2a49e6bf0a52db1a4"),
+		},
+		expected: decodeHexString(c, "9b4dfc6835a9f64d7780f474d2b6e1dcfc77423c4ab03f3eb5fd2a5052df3f719d1d548e3e5a2cd50b8a49a180a3b3a2fe26a1feae15a9f75a81d7a18aa774e4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a7c90401ead7cd9784f605197d5ed8bdae93f35d390ed4f9"),
+		nonce:                 decodeHexString(c, "e0bd52a2cca3ba7c6cf8f65fe6521fb6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "cf4b11d8276162c2f3c63d386f9faa34e3420070c7a10945"),
+		additionalInputReseed: decodeHexString(c, "21eb57525a88df1b5af4f5f18a2e5f2a4c8a1879d76de9b92ac753ec924c0240"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c545361ddee8150ae98a9de9ff46965fb42616ea85fe258a34dc2626732abf73"),
+			decodeHexString(c, "374c4d9663981b1fcff22fb2bffaf2a5766f7fb73ae76b1f4a49e76c41bfe0ef"),
+		},
+		expected: decodeHexString(c, "7aff3bbcad25d1c68b3ba0dfd4c34095d5d656374cb0d669cb3242c610a697a7e2f36ce9416af2c85fe021f4a5eb24ec72e9cda1459cb912eab06a0dbef3a501"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "53814b3e9645f177bfb2ccf758f12ec145f679ed856221eb"),
+		nonce:                 decodeHexString(c, "76bd9b8ed536d38df7cb496db5b15623"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7ab20adbd82752b2292d9f17aecb01dbb27c3149aba6c6df"),
+		additionalInputReseed: decodeHexString(c, "82eaed42fd77e6ad8f81e7bf1821691c2c00bab94c857a6ec02c2ebcd3fca2ee"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1b52b0270442fe5b87de640fa860747fb30194a9e9d18895002a3d378f54335c"),
+			decodeHexString(c, "9354ed258f0e5995b4ae1382671fe065924b5477668d88e4ebce362b2d9493ec"),
+		},
+		expected: decodeHexString(c, "3b24613228820885345ec8eb703b34c19bab1503b424d65ea372e83f2abde7bc74b03bdd43a90265a179c434ac7d9369ed0b5e8adea684047974aa8947ddea88"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "b7dbea9d0a65430695f45c58adc6689677d3b3f32469b94a"),
+		nonce:                 decodeHexString(c, "125e6485ef1d71d49c64176f5fbe13f6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "860c031647a2e022c345745a84ef63603414e11e64b3ed32"),
+		additionalInputReseed: decodeHexString(c, "7e00caaafd46464534725c0d99b5265456a5d659b763ddf6798134341fa6a4bb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fdd913fcac4d32b231303a65368424855dcbba49c1e5f51813a6253653d99447"),
+			decodeHexString(c, "14dd4b3bbf476cc770dc3aa001d5473cc99a77b4cb13d51f6efc370adf4b902b"),
+		},
+		expected: decodeHexString(c, "a2b15d9984dd5cb00a3339ed0afb3cf3b90dfcca4cdf878a6efacc9ee548b8318c20fbc6144a0fa8db23008cb2fcfb0948f04b17c65cc684de927245ffedd55a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "06a9bcdd5bd871339bb8f036eeb1a32e1c6553c990c626d6"),
+		nonce:                 decodeHexString(c, "43b30d3c04d87deaa623718add57d8c6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "310a0648fa838131e8bcbbed29de0f397da2981137e1f14d"),
+		additionalInputReseed: decodeHexString(c, "230debdf54935213ae5b3c19758df92b8d635969cb3ccb802938ccf93b3bcb92"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b5bb93ab9da9cc5b57712c649e46e99dc92b634b1828f909e98eb238bdd461c8"),
+			decodeHexString(c, "4895709c29d402df999e4301fcee4abe5ac5c6ab13bf31ab5de0946e75039702"),
+		},
+		expected: decodeHexString(c, "5ef5161ca1a5a9ac4f9e930f3bce13d4122ce27e0db9339e05e1038e3589e300bf723d50370161b75d5af0490c74ba3cb94e4acf1050d4775da96cfa9d108986"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e32cce1d9622f8f04508e3661e635c46626e0070f6560799"),
+		nonce:                 decodeHexString(c, "d489ae9d83011e3239b1d111ff89c20b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "8491cb654e464b0ebcf0372971dcb08762a7df8284daf90e"),
+		additionalInputReseed: decodeHexString(c, "69462c9f148628df54324ec854de816e5fa6366f8f5e0a3ade9c125e2d88c12b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "535b2cc4726521b0a66fb80fcecc8c0c6aa7ab30b9356181ebbdcedfd9b75f76"),
+			decodeHexString(c, "4e081399a2b7784d9e85dfdf488b6ac906518d71d1439337a50b6be9370964d8"),
+		},
+		expected: decodeHexString(c, "ab2e87a3d65f422ffd67715c985bb5bc77dc150551e242eb9df098bc6b8354e0b3b4698be9b1946bf0eee758177b6e51070b24bba007936223cafe981f3c64d8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "dc0d1249fe31364f9b7c9613d9d7180d5982968af8ab6085"),
+		nonce:                 decodeHexString(c, "4d44aaf179b43544259bd4d31df3c382"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "541961c1cf4cbc0428c3c93fda65a837432bf8a4bbc9cdd9"),
+		additionalInputReseed: decodeHexString(c, "3957b3ac7ed35b46875fc579c5fd5e915052024816f912b71f7de9b0b31eda38"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "20cc95b4d7b18789ad6cab1f7a444d7ecd1a3306700d0846e352eff15aedb7c9"),
+			decodeHexString(c, "b40a26da42e3d66a8e02ff16bc91e525c8299026be41d468a44bf93d74bcaba3"),
+		},
+		expected: decodeHexString(c, "288996d01d282f1cc2806f857be669d911a6bf9ac4cc59ab58acbe7cd9713deacffb7a2cb390c8f2dff442792b5d63089a334bf43d2d1f4625f50994813542a9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "e42d177d30f06321d1ae1798993f2480584b4a6d3dded354"),
+		nonce:                 decodeHexString(c, "109f5155c6d2ac7b8c9663836139e7e4"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "cb4d71b6d6c35b91ff4c50fd88d8f4e8dd51c0c13325aed5"),
+		additionalInputReseed: decodeHexString(c, "d7f730cc17f70ae64775fd593be43b9eeb41db8c58804d4faf8b4a57e8e9a165"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "03c0d2f72ab66a18db4109df3fccd6a6174174a453de17931c87854fd12e4ab5"),
+			decodeHexString(c, "9dfad6a1b158a1ad24b466999e169b320b4724f58d80ed89ade8d26b67a01567"),
+		},
+		expected: decodeHexString(c, "be7d618ea4773e3ef5ee2a9d9ab2652fbe5c8cc7657abe111816085ac35d7f0907409e0041377e87f9e58cf6f15aaa583f84e77d7481d51284a359e231df7767"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed45_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed45_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "b57eac6d167dca493cf1bd581726580bbc142caee0a9312a"),
+		nonce:                 decodeHexString(c, "5d6f1f44438a312c194de740e5e72cc4"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c9b3f4740e5076278b2302100739c9aa1ab3a2ac82f46287"),
+		additionalInputReseed: decodeHexString(c, "27f6b71ba60b62ff29d2baaf5bbfbe345ac5955c80ce1c21355c256f692663a3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "afdeaa87965c4ea33aff1c32ce370652d43e89f2ff4b63215d84d0f76ac097c7"),
+			decodeHexString(c, "5c7ead30d442c957fbdeb5c1e3e93c094d9647b00844b1239786c88484d2fbe5"),
+		},
+		expected: decodeHexString(c, "951bd358bc1457011b34317478eb82a6bf618e342c4505030559baf2ee2af8a26b4ea20bb54ec257847e05e5615ef418ff8b88fb681b36a4e5ebcb817ebd6eb6"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed47_AES192(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 24, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_0(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "a6013786b2e78af97a4ccce8fc711b538869b78009803ac3"),
+		nonce:                 decodeHexString(c, "8b974d923ae096a61f2c063a1bfa20c4"),
+		personalization:       decodeHexString(c, "4afe7d39b36850b8b14003f3930fd68ad32dc6c469b8185dba213c77086093f7"),
+		entropyInputReseed:    decodeHexString(c, "5b751bb1150f672a47c212807beb2b2daaf5a19c4b94cfc7"),
+		additionalInputReseed: decodeHexString(c, "b111d82ae4b61c4e21d27beed00511014f4cffac62d96878115cd41f83a7dbe5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5a307a087f9c09ed8e667d1c3cbefa772222d09011f00f80b6f6306e24ef6747"),
+			decodeHexString(c, "ee9419fed145a9fcf4ae567186ccc4ffedf8bc00008b00b606ccfcb8f4f3fb99"),
+		},
+		expected: decodeHexString(c, "60a077b6b5c3a4f59c6a9fce46ee8eb16f1433b24f99290f17b2fbe1890a33b98cd01cd37350130c301177df0a6f0c44aef63082e6a13cc74a2a51f896aa27f6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_1(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "f47150c1b3c4e1ea7f195c81d2a4a3ee9b7b59b7ad553695"),
+		nonce:                 decodeHexString(c, "849cf70bcb231df7a8673003d65db5f0"),
+		personalization:       decodeHexString(c, "84b363ef90b38afc042b3f81796b0fcf0513739ccc337872f16cdb7ba8125147"),
+		entropyInputReseed:    decodeHexString(c, "b6a931ea34ee8b2b4ff43c5c3a325eff1afc74b263c454db"),
+		additionalInputReseed: decodeHexString(c, "1ee9a056362fdce4718870e170d504f0e67d9d4f02813a9bc0f174d9106ecbfe"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3dd221da19d47b0d2bb8197b0706a59ec95099a884c30ae06feae68c3f175aed"),
+			decodeHexString(c, "e53fcbf8ab850f160bfca684da911f44727c7cd124faed956fcbf0832deb4141"),
+		},
+		expected: decodeHexString(c, "1b6c7923037a87f7a6d3322cb0ac73bcaad5ea5b2426796c105c6d6c759e34a4d6bb8a064989fac7b11930b3772dc04fea902354bd4c81755fad6e880199313b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_2(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "d93ffdb351c64e5dead18a253d518561370f7b388f6c14b3"),
+		nonce:                 decodeHexString(c, "0b8aabbfb50c34e2b4cef355cce02d16"),
+		personalization:       decodeHexString(c, "ea2846142ef9e5e9151564e7e480da1c53fd7f716ab47c86ff77d2c7e48d0a31"),
+		entropyInputReseed:    decodeHexString(c, "6907691bf822892682a287a548b0214401f0e285eee235d6"),
+		additionalInputReseed: decodeHexString(c, "388e4709e24f8cfc33fc4eb6200030c8e33b756efd63517a549582aeb7abfc3c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b31f056e610bc0552ecc3039e8bcbd3a948edaff21fa089f69d2d59655ef5a5e"),
+			decodeHexString(c, "78f1f02d50a88417adc9572c4472a86d2ef42b37571031ceb4a6d6a9d48afb78"),
+		},
+		expected: decodeHexString(c, "cd8791495abe44465ad1f2f7866d183db8375f1c325bceaff2a5df279ac262e34b589eb37c496cdd1d17f5fe4fd91feea46e03bbc76b94137e128bcef302ae4b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_3(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "5e260db362dc6ca67ceed06189c48c6b565a5a97652bffa2"),
+		nonce:                 decodeHexString(c, "938c4e17ae2d58a0eaba1cb0fb171f5c"),
+		personalization:       decodeHexString(c, "4d077d2db8c1c07137a1f0186ddeacb9ad410313b889f92213e3cbe6bcb51533"),
+		entropyInputReseed:    decodeHexString(c, "1c06f799ed96d72f1a3bc6431199f813385651353a580bc2"),
+		additionalInputReseed: decodeHexString(c, "c52fa7aa5300b7f904c8a0414bb952f631155af17405ef95b77c6ffdda769478"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7dc86dd23c8a0f39858b6b04217f908ffc8070b506de369a7690850799cd510f"),
+			decodeHexString(c, "b4b01bf46819bfb70c6962643cee8e720510b11f546509f009cfb36a2a5964fc"),
+		},
+		expected: decodeHexString(c, "fbb50d0dd0f45ca907ffc728556b2b8057077edef038236a30a35bf23c3b02475eda2a76fe9afcb9d38d4e9115ce4e3285a1723580d7c7cf310d45ed282f7212"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_4(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "ece48be49e9796610bd183a99e8785955acee48cedcbcd1f"),
+		nonce:                 decodeHexString(c, "8af5ce393c241dcb993b4e2bd141ff0d"),
+		personalization:       decodeHexString(c, "592b01bfc748db7ba6fdc517f871ed9621abf38b183c7b92e73a87b66cecb02c"),
+		entropyInputReseed:    decodeHexString(c, "925e83e853ed17b9a51c3a5dc1a558ad469c729abf33c364"),
+		additionalInputReseed: decodeHexString(c, "b9c515e379d427b3b52649a4f4e79aa1f8d7e3320db1f9537e860eb6ce9fa30c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4d77bc15f77eefac578bffb45ab773792a4b8815198118e4de50fc5763fd491c"),
+			decodeHexString(c, "ba5a18499332d27b1470abf05265a25aa97e542d3562298e8ca1803bd3d5f2e7"),
+		},
+		expected: decodeHexString(c, "86eccf869bb133e0570a8021e1589afea2f4bb880ac84ddeffd59628d6771d2d0c1a03bb752b2daa2c28d048570e0f493cef76650f4c83f88d079b3fc68fb447"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_5(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "697d5785300204cadb612034d3e098651ff1019412cf3718"),
+		nonce:                 decodeHexString(c, "b43042d9dbce8ef4962889ea3aec2160"),
+		personalization:       decodeHexString(c, "fd40e04013f5430cec9356abcc5a3d71fdd70c5ef298c38d559182aad1f15fa4"),
+		entropyInputReseed:    decodeHexString(c, "c65217192526ba93681fd153394c32ba4a78cb9224ab5765"),
+		additionalInputReseed: decodeHexString(c, "9e1c823201943632e3b5e9dc15a600c995460c0471d8c892b1d6e0b6cda69adf"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ee911fc353cad8511b97a3fae495c70728229b2b79596a6d6574f5476aa384d5"),
+			decodeHexString(c, "eb466dd84506b3fdc3cfcbac869ca04770266c80689a0ebb2af0d2e6fadd0c2e"),
+		},
+		expected: decodeHexString(c, "5f667ef0e3e589dde349963c464b1680ae7c3064b11bf2cda92e0407037591d2a4782c89172dcebac396453688d786aa6d61bf80e83f3ac3963a07153ebb77f2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_6(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "201a2293317a8d5bd740c0e871b3526bb8aa4dbb042cdb9f"),
+		nonce:                 decodeHexString(c, "cfba928a4897fab8bf01e195b9beb7f5"),
+		personalization:       decodeHexString(c, "8906596cfda68eb499d5c84ebb044d2310f39c16565a4a6db127090b0c15a162"),
+		entropyInputReseed:    decodeHexString(c, "3858a9995404c5cca0a04ac590dbc79e7f21e042ec237993"),
+		additionalInputReseed: decodeHexString(c, "f9ca9677b1dd89486afd2a521f7212c41daab368505178be494b779618b615f4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f66037b8b577d4b866b0171ce16bed3b904794a09ef02a4138e7be472688b8b4"),
+			decodeHexString(c, "b54eb93fb6653f7a571f3e0792398424d50b75fb6aae6f457fdc0b2dcdae38f4"),
+		},
+		expected: decodeHexString(c, "3e94657c6c08c04a2a56f63072197c72e1244286675be35d8657a92fb1573cffc7e876631284501d076457f0745179162d903ff42e8a2919ec5f326c936dfaf7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_7(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "823349050bed4f8059715fcf8de4570cf37e454f833b59bf"),
+		nonce:                 decodeHexString(c, "23e778be62177fbd73563640767cd7ad"),
+		personalization:       decodeHexString(c, "76554fef6feb95973912d4af33d5380ec13e17eb9c0720c52ef0110deef427a0"),
+		entropyInputReseed:    decodeHexString(c, "29f40aa88b68ea61ecdc0fc60ded69580423fd4a1943117e"),
+		additionalInputReseed: decodeHexString(c, "5b326236ce66274cc98f3453db137eb3a394ba6b1fa72aff98269026a470fde6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "18ef72d235852de3f1877c5d67aaffda71d0e20ae313acca5eeca5d02e0d7a81"),
+			decodeHexString(c, "d428de121a20f710c82b04784b420f3fc132cbd6fbe4c1c8b24173a70c279751"),
+		},
+		expected: decodeHexString(c, "730a7b365d8e38c30d6fc88e1c875cfef7146cac3a14e5bbbb922d0e03ae6ba5e119848487293dd04cec93439989b2dd9b4b8e6110e1ead04de81c212a010655"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_8(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "78852ab6f6b97fd33d0af296feb8201b84c0698e94d87149"),
+		nonce:                 decodeHexString(c, "2eecbe98c10ddce7b3dc43d821b96514"),
+		personalization:       decodeHexString(c, "22ae687bbd32903d7816d2476e14528fbe12e99fa62fbf616bd08f66152dbaa2"),
+		entropyInputReseed:    decodeHexString(c, "cbf0654eaa4e2481f32ab74ba019577c52c2eb4511bbff26"),
+		additionalInputReseed: decodeHexString(c, "750e5d393e18beb3238145779ce1265bd473c9d313037b1e3f3433ed47f0955b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4a63211a209d5b076bde3a43e4ebc551e4b696857acf6b2be92a7362b7046d1b"),
+			decodeHexString(c, "dad1952cf6c4db6315c7b47c53741dc02d66c336d708af18cfff9edfec8822bf"),
+		},
+		expected: decodeHexString(c, "d1290b3dfd54b00e0639d96b171c5711efd7a769ab532c09631434a10b6b336ac37aaddb5d0394963cedea3f919ad5f6ea106e81cecf7f0105326388eab74533"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_9(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "52266e3d432c327b879d69707a26ccd82f1c71369913c997"),
+		nonce:                 decodeHexString(c, "7e774e992eb9fc629d20bb968f1139a9"),
+		personalization:       decodeHexString(c, "d74f4aa6949b4c4ca728abfe122f641511087b85686f79328556cff8bbcb1158"),
+		entropyInputReseed:    decodeHexString(c, "d480d86efb6c9efcd7412e1f3782fd5a87b54198a30fca6f"),
+		additionalInputReseed: decodeHexString(c, "f205a6751d2325c79dbb3143795367475d2c8d3248c1bbeec889ce2cc4fdd692"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e68b67be2e8b184f193b3754b029b96bdad8d1d1cafda0603705813cecad75d7"),
+			decodeHexString(c, "8b83bff6536e4b3cb1c1d425f02e07b9d88ca61541d259324210ee488b59baf7"),
+		},
+		expected: decodeHexString(c, "197545ab717f4b156bae393c7e86cb2f3da753a2e78c331793d9f2b6767dbf07d7aca1228e452e3968a04b48cb9d7f941c53462f988cbd12c0adc7c716085d69"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_10(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "5023d526991c0ba4d7809347c43d9900425b59967cb97619"),
+		nonce:                 decodeHexString(c, "eae2912f806d1bed45a0d83c025cc3f9"),
+		personalization:       decodeHexString(c, "a48bd5fb24e675b7d47c662b7c57ae1cdc43e645c7b39e1c5b5497be55c31edf"),
+		entropyInputReseed:    decodeHexString(c, "c01237cca41cc77f9686fed078f567cafbcbca2316e9c5d9"),
+		additionalInputReseed: decodeHexString(c, "bd59b890806b0f67308292c67327c47ff439bd76b050fb87d955d11481e28f95"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c1eb4e0eb4088cdb9feed0bb19e15a1e48e0c06c60e86a4a0c77998e8d600456"),
+			decodeHexString(c, "bf841c1b1fc55c2f01f96a3c2fe4ce503ffd4099bd884fc620a15d4527fd1e21"),
+		},
+		expected: decodeHexString(c, "bf7a3a2a430efcf4eb9b30d2c76d3c2db3dc670bccd514b4bcb50c56d342d9a9fe1d4589e0b8cc0d4226f10d518b36c115d8e4a29106c3a072423f1f3c09c7fd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_11(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "36dd90ad3a99ef0f039d30d2c99f2b07bf8b1ab7a4efdb01"),
+		nonce:                 decodeHexString(c, "1790210b263d0f66d199df75907483ba"),
+		personalization:       decodeHexString(c, "771004b454c3c2c418cd7e39bcf8b3349d8dd0165fb9c5f56f7249f7258a4304"),
+		entropyInputReseed:    decodeHexString(c, "3103dded1e53b3ae63a4207ebaefcb86271ffe9d737118af"),
+		additionalInputReseed: decodeHexString(c, "0350cbee80aaad1bcdc9453bdb12af36d5a0337af365d46705305b5dbc8d0d4b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a3357c6e97b7f2eaedd45d8b17b187eaa58cea7f6b90cd711109337ac6401b38"),
+			decodeHexString(c, "f1a8787b45430128ecf1608abf7df539753e59b742f1400beae35f87f76e600a"),
+		},
+		expected: decodeHexString(c, "03b0e5103b44cc72b3a76c6e3fe53b2a216de6a6a257144deb7475c8c917c203174cf5d2593516ee1316cff5c10a133a3bd80e067140ad9e7caf39a706ddb471"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_12(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "32a4bc55fe00933411bc1463c004b7ddb6affba185df625f"),
+		nonce:                 decodeHexString(c, "4f936c59f1dd36aed04044020e6064ab"),
+		personalization:       decodeHexString(c, "31cb2a446633bb01b9d9024d16bfc3872ffa2d1c8f9592c472657a925d6ec314"),
+		entropyInputReseed:    decodeHexString(c, "de9e648bf15406ca398d6b1c68b70b3ead20b46690b99c26"),
+		additionalInputReseed: decodeHexString(c, "133c9879411612bc049251987f202613020453a618acba0f45d505e2b6c1b945"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9b6c103339ede700564185cd26d6a72a0b2b559ec901a0da1a68c75fc6ad949b"),
+			decodeHexString(c, "d1c602294b4a1e6606fad11c53887e90470a0500ef54be0b569f8f48aad9e1aa"),
+		},
+		expected: decodeHexString(c, "6aec608942d400868d4a490a708a77196c56cf0140e250e3fd7e1ee5cd904925ed7fbdfcbb8ac3899e6329030efac6b7aec3fe4c172ffc3c7837b9695fec58de"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_13(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "fa45678e548eca6f7d552d03fef9f500a41e63a9af5f6de7"),
+		nonce:                 decodeHexString(c, "e214b4230cb2ae428e317c5211283f47"),
+		personalization:       decodeHexString(c, "f32a3262ca7a6b52372a86a720b1e3b3eed9f228a966e3e9ebc594723b83139d"),
+		entropyInputReseed:    decodeHexString(c, "4b4f7a51df6739e8839ea111b8098348629f8996cfce8adf"),
+		additionalInputReseed: decodeHexString(c, "21dfbcee16b0581a4eaa7f22a7c1156266de871467f327e805397841189bef6e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cdd8366b0e7be77b00e847f6898cfedd5013321d151e6a4a01f8e1e4451e7318"),
+			decodeHexString(c, "3666e9f27c2be75d707fdf0e08230c5e22ee30729ffd70cfce62ca82ca976a3b"),
+		},
+		expected: decodeHexString(c, "ea8b6ec1ddc498d59c976921a8746aef37c41a1ffae27d514fc9db9d75a0ce181c94b1229c09d2e484c81abfaf2fdc23124e518502f7dbc7967198a5dd0eef71"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed47_AES192_14(c *C) {
+	s.testCTRGenerateAfterReseed47_AES192(c, &testData{
+		entropyInput:          decodeHexString(c, "66c1b0ef8bacf016366d2d9ae1aa167591d8607485f16a9a"),
+		nonce:                 decodeHexString(c, "cea9902a8ec1acbca4b10e1325ca6fff"),
+		personalization:       decodeHexString(c, "eedcc9ba4ea501ca23af2f411852b4bafdd92f3d4bb0817c3c47b74577fbd163"),
+		entropyInputReseed:    decodeHexString(c, "d497e55556a1119c02a0e12dab8c1f8f77a41717a1fe4aa6"),
+		additionalInputReseed: decodeHexString(c, "81da6af97d93abfc11a7040a2a88a16765ef29b6bab5260a6c2c4bab1fa5df3c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "32130c14e592cafb1da746ae4634c5ebfef08f3184639a447b96ef12b4802df5"),
+			decodeHexString(c, "429b9f442c75c76615492582d6dcc007c91406abfa88208f8b06e80ef2290cc5"),
+		},
+		expected: decodeHexString(c, "5c37de235a55d3747744e84eb4416b6e2da0da09f32c29f72cba6343b327b488dfa0d8a603666d8ba33b417c717951ddeec47d549d0f6e091e1bb7daeb9e2e20"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed49_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "6f60f0f9d486bc23e1223b934e61c0c78ae9232fa2e9a87c6dacd447c3f10e9e"),
+		nonce:                 decodeHexString(c, "401e3f87762fa8a14ab232ccb8480a2f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "350be52552a65a804a106543ebb7dd046cffae104e4e8b2f18936d564d3c1950"),
+		additionalInputReseed: decodeHexString(c, "7a3688adb1cfb6c03264e2762ece96bfe4daf9558fabf74d7fff203c08b4dd9f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "67cf4a56d081c53670f257c25557014cd5e8b0e919aa58f23d6861b10b00ea80"),
+			decodeHexString(c, "648d4a229198b43f33dd7dd8426650be11c5656adcdf913bb3ee5eb49a2a3892"),
+		},
+		expected: decodeHexString(c, "2d819fb9fee38bfc3f15a07ef0e183ff36db5d3184cea1d24e796ba103687415abe6d9f2c59a11931439a3d14f45fc3f4345f331a0675a3477eaf7cd89107e37"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "fce31ff0d84b134959c8a3631668dd8126eb2ff9f40a0d1d74a371b1d2bc523e"),
+		nonce:                 decodeHexString(c, "2e18419b16aa23d2230ef878371981b9"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "75fe1b33ea930b2573c491fa892c15e09911e3479e127cd6f86ecb89568e6ddd"),
+		additionalInputReseed: decodeHexString(c, "ae1552906d13a34fadd1e3daccc1e9075dae64bfe80dcbf6921c96df8897929c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c9bddd01237a8c4610c61622ec28a80b811c288c2dbfbab496b49ac15e2e540f"),
+			decodeHexString(c, "899fd8d36215cb4ecba7df3337ce5060fefd63fb7d6381cd0db7fb9ad49293cd"),
+		},
+		expected: decodeHexString(c, "88fb20e47ee63865fa9ee19a7d4f8c1b48948af176b5783a28541eba3ac67c58b933b5937e486e1fc1827e27e36bd8f86f22adaed794cc571cf625442f82a89b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "944df34ca49cadbe78d507ad48ddead903a43f6c2b7fd7f76980754458ef9121"),
+		nonce:                 decodeHexString(c, "55c02c461be38ac2919f96f31142ec61"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "689a4f4d06e249db862399e58af510d80967fa7c07bf1bce0dbc786306273b57"),
+		additionalInputReseed: decodeHexString(c, "90caddd0c97fea34ed6dd9676771c918053d88b1809d5634d5c5cb8935b4075e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a4f05fdb448d8c2ab7e4c165a315351086aeb194833808b20eaffd55d119a2d2"),
+			decodeHexString(c, "b18355c75f0dd40920a04ddc229140abe22181d12c8661948153e9c69281da58"),
+		},
+		expected: decodeHexString(c, "3d7ea8046f78493ca776537755451e5e7f063fcb4d53f6a622764048c25bc48f05c39f8c8d79338cf93ead21b455cfa59c9b1bdd81eea23d75cfd63ca1fda9bf"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3bb3b5112e2fa8c37b22e499ad910d2a7cfece4ec114ada1e52ee545be0ce0bb"),
+		nonce:                 decodeHexString(c, "54b5d6431b84aa207b550acdbaf4e0f1"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "0da082edb7d7ee0349c90ed3f4d4cd5975fa38a1e795dbef9a92af71118cc867"),
+		additionalInputReseed: decodeHexString(c, "4496e579c086e6590ae5e086331fc5b8d6854feb94b649bbf8e212ddf1cfc527"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "58522d812241563fc16796d793586b1f7fdcbcbe2d807865df4a20e9f50430ea"),
+			decodeHexString(c, "848a24b8452fd6792378df382217bf72392e9435375d27b3e70e88c79c9050c9"),
+		},
+		expected: decodeHexString(c, "3c644fdd0764250c7dc7e8f02d559bbcbef8e7f5391626d563054e6c0cdc11408cca6dbc06e573e6d5719ea77a19913ae12753c28ffce872b13f484377e2339c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "1d602aec1601e2ff65f16628bddeac6697713d2f5d4335c7013507885b0d50c9"),
+		nonce:                 decodeHexString(c, "03a5bca1bfd385ac0e14f1dc9da417bd"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7c5ed5898a5ff49b36f7aa8d38600d33109035750384fab2be26adc85909402d"),
+		additionalInputReseed: decodeHexString(c, "3f1164df7265fd56e701d51ef1fb3996d2cfc7c355873653d127b9e2dccc1da3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "02a7d68d2e6f4de2a35c97e7aadf25a2f14a9b4076940050ffe64482e62718a7"),
+			decodeHexString(c, "40b4ff19609f6266e450e1cdb184f1aa0b551a05b912a1251b9caf7ee15a7184"),
+		},
+		expected: decodeHexString(c, "5bc4e4c09a19d5f394ee6003437843974dfe4430684d394d6c7cc8eb4d7a722c615707d0ede88ef1fbba81e45fdd93d2096632cf21b630dd933f52a052aa9be4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "57548bee6b453da6b0e650aa0445ddfb13238a3c647c4f410ecc522748d8a5e8"),
+		nonce:                 decodeHexString(c, "01019daf8aa3bd7279d0952bc7a30c1c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "80bcb9b9506c8117e84cd8ae22c4d9070a950e049b597ff482c6f90809f4ff22"),
+		additionalInputReseed: decodeHexString(c, "174a42c248dd176e65d9374870bd78cccf3f3b1b5ca222b0fa3cb128242723b3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "86d885e924646eade6a2d90af3185f11776c409001f19b04283ea6f21a25ff9f"),
+			decodeHexString(c, "22d90581a8550f0f3cb2966bf18c046710797d5654904652aca27d1c73d75ff0"),
+		},
+		expected: decodeHexString(c, "67c326663c1231a3f5d6be9422300bfca1641c3a3ddd1b07b85191caa134af4cfd61e47b732044fcca0d45fc632377168574639b684d3d58751bc302bb2037d2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "488f11f5215e5a3d2dd3a6b8996242df86638a9c20d80bd94fc1f6da1d9a6550"),
+		nonce:                 decodeHexString(c, "c0f331d022e80fa21ae0ee815937d2aa"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c7326a104c33ccdc06f6139355468aff1fb543e3e9675e1dc2c7ae0b42ce4ab7"),
+		additionalInputReseed: decodeHexString(c, "bf61d5694681108d735d4d15f0ae34588238f946b33ff3fc140da26759bc03dd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5ca247c681b0008a4d4c2aa0c0f582c519e1b513494305aeb1265be94cde3f5e"),
+			decodeHexString(c, "eb5f567883ece6efc4234f8ef35c26c45b56909b96e47fd21fc61ed56ebbb3cd"),
+		},
+		expected: decodeHexString(c, "a6e6c9989be3e19b08b2a23a25c15face61aea671a1904bb7614bc2fc51291d101b737eb3287f7b0e686d6e8b38099853cd8c20ebcd82b1be67356911c62d894"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3b1266f1afc07a3cb212a779f32976e3334a3432ceec46b9d9d0f0f7b1ad5b1a"),
+		nonce:                 decodeHexString(c, "87e0b3c27cc5573e6cec5e3bddda943c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "65cc6c454a0341e15fffb5b405c40e7774980654c62b06012f60c2c3a784b029"),
+		additionalInputReseed: decodeHexString(c, "3cb75a6762be008d71ad48577672f2ccab0a3f6884e661f4270edf8ecd8ffa1e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3791e55dacf027c828e76eabe25ccad33b74278db85fd273232c733623017c8a"),
+			decodeHexString(c, "01ea3c8c6663dedceccf311d3af3c279e400de3d7bddcdbda40d786af1d96c7b"),
+		},
+		expected: decodeHexString(c, "d46648fa06db61d4d070cd92f4202110ff076722e5fbb49592c0203116ce8d38733e44a8c48ae7b7e762f26714968f15e6e43373bef1a7a672be70fa437f5fed"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "0204774158e7454935f3f9ade7c6f046cc2db526cf38249de03b23538b9f88f7"),
+		nonce:                 decodeHexString(c, "d0912dc4922aac887026a238b9413d7e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "1898a3701c360e173d873799ac6ab02d52dc1a45ccfe1c69cd9e8a66a28012b9"),
+		additionalInputReseed: decodeHexString(c, "26721f70f3516f48245f053392d32f48ef7c50ab6c050c92f671068d79f78375"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fa106c6bc9cab8035d64a2a18bcec3435d5fb32340c8367d5f2c1dd18f818abf"),
+			decodeHexString(c, "b781b4f52da6e701f4af17d6c96b3e7d867ac7012c43356a5afeeec48ff48637"),
+		},
+		expected: decodeHexString(c, "f9ba4c30d33d85eb8b99eacdadb1c1459466b9c9cf24e4c0e0c4b6b058e93b88250d31896b738a95ebd3c81c3a1f9cd09228fdb3aca30c25adec990c53fc53a3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "428e20b96dbbfebee79ab1db8c0cc1fb40d0009be9dbd58f3f9b37a74e1e56ec"),
+		nonce:                 decodeHexString(c, "c93a22c9437f022becdd12ffaebb0fc4"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "eaaae4be7121c8f5c073c791a9a18393d9ad66153bfc98a0d645697a463928a1"),
+		additionalInputReseed: decodeHexString(c, "823e71bb843c54009e8d02d2ec0e5d7b49f0d53bc0f0c383f6c9273a25a6f312"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f0d5ad129999d710f8e5504c955b78d052a1cc6337d4632eaa85bdb985759ea6"),
+			decodeHexString(c, "dd1078198db2dd5e7e6325256236eb2be2620ee0ee85970129808fd1640bdf41"),
+		},
+		expected: decodeHexString(c, "993a6a73fc63bd506293ba73b76cb2cdc8b056d2f87e21079125624399c2fbec291697718793db1ffdd876d27a689ecd49e7c9f5bba1910691e56f8176eb844b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "72e7735c3b8b44ca9557b2939034ef4c383d23bc68cea0fe3552b5ebd4885a9f"),
+		nonce:                 decodeHexString(c, "35f4112d4de39705b6ad6d422ec1d59a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7159184bb4628e7ec795f94f054f7bbde9c364c60ba3f07670dbf615d1faf512"),
+		additionalInputReseed: decodeHexString(c, "896898b9a47ebefe20cb20141a167648ac0aa8151f491bd1d13a00f5cf6f17b4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9cfbbf1bd7b6f55243672759177fa906016791d45d1ea502af2cc569e6d7c882"),
+			decodeHexString(c, "4d9add7b30f3a855038bcbbb9a3cf637be18ddd1c6721f4cb2dd654e8ef2571c"),
+		},
+		expected: decodeHexString(c, "11afdc0fe15c215130648b3dcabd8b7625ad20fc65985a70ee0561401bb0af02d5c428276512347a3f4b76ca997caad178a7f8cdaddfd77d5fe735755e7d37ac"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "fd0692716b92abbc87534e70d0fc5ad07bab29682e33f43001ecdad7ab92b326"),
+		nonce:                 decodeHexString(c, "4f3cd8b42ab890c77eda4afe96c53574"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c551f57927680d8eb78908701f34d8ca7e031b7a252245ee53b83dc9382ea52d"),
+		additionalInputReseed: decodeHexString(c, "a84119f773b3d3bed28dae7c791369f9e9ba333ba6037370db64c0b6557c1137"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6b0c619f00e04ea91e2e7cd37a1f4d5ae72efb552af55d273722c371d968ebc3"),
+			decodeHexString(c, "b58ffd71fc2166d386c94275bd97e436177dd0b5c6fa9e809760c84910b8e6f8"),
+		},
+		expected: decodeHexString(c, "ddb767ecd3b3d2cdc925e70b9019d551185fad94285655c2cb96dca7feded81dc61a5981a445965f59f9862e9a63da20e3b2894861d62ee99ecc5f90467cff69"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "8e1b9f2828c2a798672c6cb603396bd4b73dbce819487ce8155448f026ef1607"),
+		nonce:                 decodeHexString(c, "60f4a076cdd0a2a3f332ea1867db0277"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "07582e14ea30d8660881425f9d56fa005c4fe2f4282ecefe74c9d9fe5954211d"),
+		additionalInputReseed: decodeHexString(c, "a24c19bf7263fa8b5264ad71360cf5866af43b638b3904b8fa32188e4c157840"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b25007d2d4e5f81c3b7c8d49388b8cd013aebf00e92d904f0d129797ed6535d6"),
+			decodeHexString(c, "3f1160a6770f7141eee7590db2d2f74126e728b80a3a5ead5aa3675000637ec0"),
+		},
+		expected: decodeHexString(c, "7b9158c978ea13ef7adfda03fa2a011b780e485bc9bbce327a958b980c7338df222a792aabea0f7465b4386e1c5108cafb728bbb660f8534c6252134323c39fc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "a6e3c038c033b31bc92d32c09296f7facefe1e4aaca03c197d1c0354b49758f5"),
+		nonce:                 decodeHexString(c, "e725a5a81a7b4778ea1ccaec7777231b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "091fe53d98c7ff8e64179145027ac6bef455a8f4d16730f3123531de4cfb3259"),
+		additionalInputReseed: decodeHexString(c, "959b30406479118431a2653d0f0d08f8fccc68141166fb19db716ee2d78ef012"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9a0b0de5f8f825e758b9fb28e2a06f9fac290a1611976ca9980925089f5ee6f7"),
+			decodeHexString(c, "b3e422e0ba29e8823696cd82982258ce936a51e80e6408700a2bd5ca512949bb"),
+		},
+		expected: decodeHexString(c, "7b8ab6d879aa2907e441db2ff60c840b684a981f8d0867c0f7cfc30323ee321e7fb1adee16adb6c314b00ed4115d9cb57608d50f2980c3a1fa9a242d1a5ce409"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed49_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed49_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "8b605635138ab196a96192ab3aa695857ffd197a5520ec65e2ad44d050bd97c4"),
+		nonce:                 decodeHexString(c, "c0a259d4cd872b351ac60182a67c4faa"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "de78f45fbf92dd2e8a1f19e6cc9cafcddd93617d3a1da401534507f52d63f51a"),
+		additionalInputReseed: decodeHexString(c, "155febedef2354b44e86eb66d5730c6d6c9c7d49977882dbb6515b836747fa34"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ae78dcb812845e9f42e4fc867581181dd846c4fe98b5b2805f551b6c407bcf5f"),
+			decodeHexString(c, "5f0762172dcdc6407375559ac8b286f4afcf5202a3e7164d72fd5e353f90a141"),
+		},
+		expected: decodeHexString(c, "2696baa67d11fa125a8dfd4ef889e6b31620ef6fdde583506c4c9c7f93c4eea0552c08ff8f00988ef6124ad226cdcc043606c54b3858ef6220091eaf45906f82"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed51_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "174b46250051a9e3d80c56ae7163dafe7e54481a56cafd3b8625f99bbb29c442"),
+		nonce:                 decodeHexString(c, "98ffd99c466e0e94a45da7e0e82dbc6b"),
+		personalization:       decodeHexString(c, "7095268e99938b3e042734b9176c9aa051f00a5f8d2a89ada214b89beef18ebf"),
+		entropyInputReseed:    decodeHexString(c, "e88be1967c5503f65d23867bbc891bd679db03b4878663f6c877592df25f0d9a"),
+		additionalInputReseed: decodeHexString(c, "cdf6ad549e45b6aa5cd67d024931c33cd133d52d5ae500c3015020beb30da063"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c7228e90c62f896a09e11684530102f926ec90a3255f6c21b857883c75800143"),
+			decodeHexString(c, "76a94f224178fe4cbf9e2b8acc53c9dc3e50bb613aac8936601453cda3293b17"),
+		},
+		expected: decodeHexString(c, "1a6d8dbd642076d13916e5e23038b60b26061f13dd4e006277e0268698ffb2c87e453bae1251631ac90c701a9849d933995e8b0221fe9aca1985c546c2079027"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "4a92748137f999160a6a75a2a14bc87863f7d27aef0d535c72c7f6c2e96da245"),
+		nonce:                 decodeHexString(c, "3f1af8a23af9e13095a0ada3a96218db"),
+		personalization:       decodeHexString(c, "f7fcfc356cda3a71c4c4729a2ca63a0be6b7178612e643ead78a44efa35d1100"),
+		entropyInputReseed:    decodeHexString(c, "efa6fda84b4d01b116b39dc514baef49ff51f01841b1949e94fdee2ec746bdd4"),
+		additionalInputReseed: decodeHexString(c, "5d20bf1e3a06193ab9e1e025c30059149030b1996b727ce65d07649b62fa1bc7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b53f780806a9ad5903acdd1f851f0b0fe72a3390663b40682075b25ac92c0fd5"),
+			decodeHexString(c, "46e84839a10ebb41694e55fd06424e494be580c5e18e4744df8a6463ff734a40"),
+		},
+		expected: decodeHexString(c, "dc676285e8dcfccffbb1c2bf414f4b20fecd3e99e7a9f4d90bc86506054dbd444a7c740f48e71f12931e864ee63c690374b14d1820eaefc1bf5f0d8b57150b5b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "0ab7995cb7936f22fea03240fd87866ed39075eed94bbfc6be785ad052552ab4"),
+		nonce:                 decodeHexString(c, "5f1b0e417d867a38ee0994f96ed6e8e1"),
+		personalization:       decodeHexString(c, "4305a7e01f931e2dd76830cfc38bd166b235934d250584884f9b6a4d7837838f"),
+		entropyInputReseed:    decodeHexString(c, "5cc48cd4c19e8c17cd9fccf67fb4aa8008a745f922f3e7e51fd29cc1c1490ae7"),
+		additionalInputReseed: decodeHexString(c, "89632c6a52e92573214f50289ac743165ec7b22e6c9ef95be8ee4a8d3ad968ab"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9bad67ae472d901d3eb044c5394e4968b2c2bfed1fa65103aa35b121d7eadaf1"),
+			decodeHexString(c, "af715eb5889f22fb63d004b3d7ed485c60b0342d4af737ac32e07ca5546e74a3"),
+		},
+		expected: decodeHexString(c, "9237d5a404f7eba157f1d9b8bc82f6ed1f829925c2c690f905b1030ff4b3a592f5e221e99d76c1421a41e8f74bc1f78ab4a77001e39d87d42f4260cbaf4a40c1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5f04399165a2392f61c588fe646e9d8cdc9b2c356f7b00502716dc433ecf913d"),
+		nonce:                 decodeHexString(c, "d3c9b9336bcdef76be6da42d67b77c73"),
+		personalization:       decodeHexString(c, "f31cb8ec30e087c6f932500877b9d7b3c47566cd919e79d187340baa4d389ced"),
+		entropyInputReseed:    decodeHexString(c, "7362fd81355adb2d4221fd66a85ecd20e949b912c4aef9c12851b7916d441867"),
+		additionalInputReseed: decodeHexString(c, "f811563823d046625642e052aadb89bd6414673be1419d342a7e3dc3bb1add17"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6a06f30779569b7d561ee16bd52eb8fa7ce60d236e8192f8018310d901adb654"),
+			decodeHexString(c, "9bf489bd45e4dd75207dbe7339b9e0466f5371822f8e90dccaa2a31b3c788a2b"),
+		},
+		expected: decodeHexString(c, "00d88e7fa528f830be3ead61ddba1298dcad366c0ab1a4e90f49f13587b9326932d8e1972c4e7b335ceedd2fb17d334647ef6f406e3082a1c33ff4de986a5557"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "a7a05361d428af23a0d4f132768a4b24fbd78e1f42fb46205d7b52891b2297a8"),
+		nonce:                 decodeHexString(c, "8177600cb1ffea161277a839ad5d05fa"),
+		personalization:       decodeHexString(c, "79ce51a1c295c9a38d11db5023c349fba347e193961c90af9e2e7326420d9028"),
+		entropyInputReseed:    decodeHexString(c, "664038f3e8bfd6b0ba6552e83698b3f4945f182c400bffab74b46f07ad42764e"),
+		additionalInputReseed: decodeHexString(c, "a582b450eff21dc5c0bbde225cf902a4858891ff42b2cdc5208091106448582e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1fa8be0676ba5b09b84d43ac44c78432858efa4bda7b4aad8d6a7e64d155cc89"),
+			decodeHexString(c, "b7368a0e32ea9e176163679219580fd050f7566a318f1b6c5faf1e84e2e9070f"),
+		},
+		expected: decodeHexString(c, "56ebc22bd25e87233e27448f3d78d027fd9ab606f00ad17d9c427c7ad88a297b940f044a7e6dc548a9ec12074ac9cb87148b6b2d48d70b24cfd6e20344e7b85b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "2d0666507cc6e1e6ab6d8744833538056722d6720af88d0109d0ef563ec1d13e"),
+		nonce:                 decodeHexString(c, "cb71964e05721fc4e6fd2279df81ee45"),
+		personalization:       decodeHexString(c, "0d07efdd5a8e152526b7bd5921774ce504f0c4ff8ccaca1d8615e074f8c9931b"),
+		entropyInputReseed:    decodeHexString(c, "c9218f42a2a5631e757e6e92ccdb848b51b0c9bac8945888cb9fda7ee10956b8"),
+		additionalInputReseed: decodeHexString(c, "f8305247d7cca7b065db7eaeeb13abc31871e7a8cd7663c291083c87d9cbc184"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b9c48f3381f9cc54975f9bd46d00386644183f1716b2e04cf1072c0e53f5a4eb"),
+			decodeHexString(c, "ef190e7eb3b60f614665638fb3bae566d25e77902170423854601840849e6288"),
+		},
+		expected: decodeHexString(c, "e62e6a4788657ba4e9b9371d1e72e7b070e58857318f4d3a7f0ef370214a2f4eb4b45d32976af79c7cfdc449447b51714892be31c99230996fa6a18f23658076"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "491cc31291ac33e369ded4e7aeb07ee5777f3e183e30a8327b4e564980928258"),
+		nonce:                 decodeHexString(c, "4d380f5ae877cecf4d70c6560e9226ba"),
+		personalization:       decodeHexString(c, "a32205ba78253d5421fe61be3c8ba8990311fddca181503b2a85b98274506f90"),
+		entropyInputReseed:    decodeHexString(c, "57c84abf8e4180a68d843206369a6a5db13e02f99f65751f9222e74b06a7dcab"),
+		additionalInputReseed: decodeHexString(c, "b2792641d5422b276a56b9972124375275b0bb2e52d2ea652e53d8bed5fce8b6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "17a69c862fffd1b0f355716fb10c9fc9fa8dc7e29ec746ed3af262085303a895"),
+			decodeHexString(c, "0beb0af41fa79ec539261c8561176ceda3888b569024fd44caddc7d7b99a9a6c"),
+		},
+		expected: decodeHexString(c, "2781006597c92ee68fd5b1791301a564307125de30dfe3830c0bff4827f74be3a11c21fda39e4cffd292cfe74d691e00e91f431560d32fcdf5e6e5a3aeada90b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "44c9d4361c639ee350882203e08f81a5ffec044c35d84e3b60117d45dafb33fd"),
+		nonce:                 decodeHexString(c, "42b302faf1981a5c90c684c6d4ae1c66"),
+		personalization:       decodeHexString(c, "6561d6f298205a0bf052edf73dfdd1d58eef8ab6df9393545e1fc7691e23de88"),
+		entropyInputReseed:    decodeHexString(c, "9f0efee86b426762f1d65e2c702efe93942930c3f368fd17bb3aafa03e472e77"),
+		additionalInputReseed: decodeHexString(c, "1faf3b762a40ad815c67be4efec9ac0f2ac294c7226fe7ac8a9d68a34609911d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7dbad157b098141773f9630cfa4e71eedf36329b92500b65551cecab57ae9944"),
+			decodeHexString(c, "0314f5ea3aabadbc0c3db25f7fd145610ba350b2b278d405d00a3689b6750af3"),
+		},
+		expected: decodeHexString(c, "de136a0f97447d24ea5160ec1ab93ba7fe8044fe3b8ae869f5c448cc9e27a48e1844d8fae068705b6cd7867ea1aeb5a3f0d49e79ea9f5137694eca286596404d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "b5430c9622ac2ddef303eeac62db0575ba071ffb73ecb019f7f3c5b8d73f8a05"),
+		nonce:                 decodeHexString(c, "d3a30722d6b430bc9e9ae61347744691"),
+		personalization:       decodeHexString(c, "3fb28f0a48d56d8713c859d2fc050cc28ec3a6a10e2060db250f73b21e7983b4"),
+		entropyInputReseed:    decodeHexString(c, "dda822a696851571aa5b1e0726616ce1122e71dce33d54fb75f23ff2b91af955"),
+		additionalInputReseed: decodeHexString(c, "076335d23db40231634d4c90d2191bbb25a52e2f20f277eaec90e2c06c9fde82"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5f34c61b82f5516b67bed510209807ade3a6687a3c5f03b294ad1164a4d7a152"),
+			decodeHexString(c, "83d40fd55b12fc4085653330e67361b086bb003a2d002d4f1ac919108e317f1a"),
+		},
+		expected: decodeHexString(c, "f8d4abc5b48fba894a6e96fb21d2b81c1afca1ed0b0f027c05c3a837e05fe6359a314f34c505413142356d33ba4fbd2271673408813a487c68f6f4560883c475"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "da0a38a4638f1b7dbda590abb5a37d5935f1e2e724f50cd3fe9ab131d10fdcd9"),
+		nonce:                 decodeHexString(c, "7d1173ea9d0c565129e362c39b5414d1"),
+		personalization:       decodeHexString(c, "939238533e73aac1f24670a586368bc54be248136529f86abc6b50791474ff8c"),
+		entropyInputReseed:    decodeHexString(c, "f5f91227852b78ad755a284a3f43f38e88d3e93f78d44a0d348f1013561ba29c"),
+		additionalInputReseed: decodeHexString(c, "3df6c03d2f09cc64ca133908347cedd611062bf69ea6912686e4244bd5cf421b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "54af874c0d142ab90777974c1c9c7fce24d43bd56c9437f5c774bff5f5446124"),
+			decodeHexString(c, "4f264561d6f3ccdbebcf3ff5862e4dbaa3aef67ff4bd66e3f25c3af1f41cfec8"),
+		},
+		expected: decodeHexString(c, "fa04d2d72d5bd04e6b6a585f848547cd84cb185f1882505fa8c5d4add1c8f5475e83e256d8d6e415083c065f8b06440fa1474ef4e84969363dbdb39645407375"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5af6b65908b5461c07d40ec4c98f7c261c082a4fb85c1f040cf3c18f78979691"),
+		nonce:                 decodeHexString(c, "55d33b62b425fa0e109f2433777cd937"),
+		personalization:       decodeHexString(c, "63a058bd4c6c72691061d21ac169d2b33d02ddc7b1de1c2ca1e5f610dc287682"),
+		entropyInputReseed:    decodeHexString(c, "b078b3af068d7e1328ed8f00a0e42a658c292a475043996b10b7056e1e497102"),
+		additionalInputReseed: decodeHexString(c, "2a2afe6e45f1f48b7ab0433120b2b8a37b79b2e6f2ab921f12a5bca9c67364ce"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "072f69d00dff6f5ab5950cc954dc3637bd68555a180b89f1c52a1d47201c02f3"),
+			decodeHexString(c, "f8d06bdd5410fd6692da7e23c64b30d1de240b345918653b845b2bf9eac167be"),
+		},
+		expected: decodeHexString(c, "8feb4e9d8a899500763f24c57ca1052a4403c2ceaa1796bbc1eb1e26e87fbe0521e7a34d005f9d1e5e2c976abe71aca8bdfa434e803049b759ae717cac67721a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "f2e0471870fe34f9b6b59f929ec2c092449fa08771881311c0e81f7af137905b"),
+		nonce:                 decodeHexString(c, "3437456db35a5bda24ae47bf87c5be30"),
+		personalization:       decodeHexString(c, "1f8ed16fa86a2484a72b35c1f9701ac694aba07188f69a645182cde488ca1138"),
+		entropyInputReseed:    decodeHexString(c, "7ea6cc5ca19b0ee8df42a30101871d35bbc0c3dfecd47865571579b1a8962282"),
+		additionalInputReseed: decodeHexString(c, "ab49733ee06c08f8827ad4f83b5b438ec443e138906ca6794cd861c0c028951a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f78cc7e90dcd9ca2808b85946b686f5021b899413b7e344c3857c009135b832a"),
+			decodeHexString(c, "3d8e21e42c5c0ec988c9d9c590c0ffbe24700abec7bbe9000f3b46aea7132d2c"),
+		},
+		expected: decodeHexString(c, "807e473bbeec288e1e7bf5803e56ea91b8a752f4c9e9694dfb869a13344873f379c6b685e582385b6950523c2e93c0335a9f845667eb990ccf0ffde16f929918"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5bde92bbc83a68e82cef67cb60d47d9351c233f3fc6460c8fb61ef557882ee26"),
+		nonce:                 decodeHexString(c, "f5c072c05d074460305e89f8cecb5b9c"),
+		personalization:       decodeHexString(c, "ab1b199978e57f14b9e19d81636bddef53bae42aa78e96c7b3f857578a4c6c3e"),
+		entropyInputReseed:    decodeHexString(c, "50d90ce47412cab98e4221efa1ac7cdb788e033fdda4ffcc6272e1b897cc4412"),
+		additionalInputReseed: decodeHexString(c, "46839ec6c103df722e856e1a106bad55cd6601d188d41031e175da097c019a39"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c3a3efb695b68278c63510e079d97406d9f573e21d7b35dd446a14ce68fa0dea"),
+			decodeHexString(c, "b0427c4f4d9085144162bd6c1df97c07445ff2afcb186756f34c1f1924dd403a"),
+		},
+		expected: decodeHexString(c, "238435bfb26f014c7652b5e6708809435ca058f4f3b6a030ed83aa4152b52ce0bb03c0ec49fc0326cf5caba296b4c918b18e0bdd89ef338179b72b6cc0ad6de8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "480bd3973dc04dfaac134035fa45f2bb92200df8ec468c23c5b954d0693eea88"),
+		nonce:                 decodeHexString(c, "d4f013d58773e76ef52197a68fba4a31"),
+		personalization:       decodeHexString(c, "d704f9e2fc2b24a0be98a6eb443a7f99cf8c1baf62970ccd0f1e929a8d2e475b"),
+		entropyInputReseed:    decodeHexString(c, "1dd9139e18c3b8d541ff47a5495f13a72a3534a9ee4a122542ee33065128d57b"),
+		additionalInputReseed: decodeHexString(c, "1b1dde5e7064891acd5ce80eb87264a3915340d225bbda81fa3d79cb25027d0c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7119226cd5f2cf7a00746149335c567e88634a0b8286fddbd12ab76c3f05e77a"),
+			decodeHexString(c, "2ff3838824fb0320a83323358b3a0b501b060f6eb168d0dd56eed403f361f31b"),
+		},
+		expected: decodeHexString(c, "4802d4fa854793f9eff02fca1d7768759886cfaf807e694318352f8461f478c4c983a6f605a32182b5bc010346614a5fb2b80cead47ac7540a8f913e53d054bb"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed51_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed51_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "7f7264a57c9851cbc7d017107e0edbd554aefd5a98483ee76fa5ef17745eecb4"),
+		nonce:                 decodeHexString(c, "e624be628f27817c1806ad40640b5770"),
+		personalization:       decodeHexString(c, "8c769b0724b3813e71573d506698897d4de7e6c96c1fb3b103de29a00b3d5f32"),
+		entropyInputReseed:    decodeHexString(c, "f13e8bc2c19f0ab73987ce587c666401e1c3d01a76de6685b700638f4860bb7d"),
+		additionalInputReseed: decodeHexString(c, "02922d34eb8613d5c88041f446b1b876ef534545b8748b8a4cb8e10c3d9a2ab9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d6b761c83513405c3b25149d477b35b3cd9b2839dcaaa07174ba9488f00ddd89"),
+			decodeHexString(c, "50886c503fd4864ce32710f83bd675b67037c45e68ca8e541166caee957969a4"),
+		},
+		expected: decodeHexString(c, "5f079ffbdeca18da7b13cc710ebcd4aedf7f475c2a7d969b4a1eff3a3348b577cc2ba8d92611370970c9bf022dcf09dbdbc0a442a0acdfd31ad9257c62cea1ab"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed53_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "44a690d590f443bca7abe4c20c70ddb0df0ee29ed23edfc1cbe923ae7a4eb6c7"),
+		nonce:                 decodeHexString(c, "334fc355f9f07459d8f014ebde24bcb6"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "1bb49e9bad9fc94d363df01c02388af391f4564abd8cce10298875d2934df891"),
+		additionalInputReseed: decodeHexString(c, "0092b99efa09a6b30bb6f0d9fd5fded490e745c4be3fa5615b318444b5593db5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "f5f698f0dd171c38d24a5bb3c5bf6115bf1af23c38517292e94dd7f576597db5"),
+			decodeHexString(c, "2da719aa44a96910e73fcf27e46d8dbb1c7b5d82f5713a2980aada6cf2a45104"),
+		},
+		expected: decodeHexString(c, "27a2fb7704a714e207fd31a796c4c053b0355a1599d47d201b1b5bb37f79cf32f9289bd263ac6bdd8e83cc451b3a3baa8f27cf3b5ba6a9a4a7d2d6ae607dbc22"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "649db3cd3989a3b6c773d72b16723de903ac457640f2a970b9fce2f5bf24a1f2"),
+		nonce:                 decodeHexString(c, "0283f0db14bd729f96842e35baa9c82f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "422ab53672d67d4ec19de8d0a189f8100e77de8f79d9528ee5adcc4ffdb49a9a"),
+		additionalInputReseed: decodeHexString(c, "56b527e78f33e2ba91a6f54911576eb9dc15b9da407c28c8131d7a5f33ef6fd8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "7d5838fc84cfcef3bd11d27f3d8c791503add838dfe695c9489a5b3c9ccd327a"),
+			decodeHexString(c, "199b5164bfcb0e9158a19a2fdfcedc8f00c39b9704246253697c8ee01fc08e2c"),
+		},
+		expected: decodeHexString(c, "8227edc60f95c789eb190082199b1ad430bb8a83f1c40912fdf73ca9979a2b52df52b5e6521c86a79d681e0105a11b485a474d09ff774e5730df10c744198e15"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3e7d7c8797dc0164fc3adb595badd0d8eb26f3a82879e54a1046af140be737b4"),
+		nonce:                 decodeHexString(c, "62993dd2fc88ccaa2438e21483aba244"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c7311f9f1e1b6189fa0510ec9693b8f5de6c2ab900c93fb0e38eb09e83135d22"),
+		additionalInputReseed: decodeHexString(c, "7d0ddaced921bd0187a2b58669e46e072cd0151c90513dc81cff206ea4b1f3d9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b000107d1a93c5bdbb486a4b7edc5fbdec1ec1abd71fcdc6b248333207422779"),
+			decodeHexString(c, "fbf8ac5f689bbdb36c9cf4ffc884e32af9a600ca7928f87ca32240bfbd9c89dd"),
+		},
+		expected: decodeHexString(c, "4dc22ea72ebe04fe6e0bbbc485a21d24964998b8948e5d08f15857c60e7e25428accf24dacec40ad7d7d39b34d2153dd95f4e6b72d2d35d1d95ef6d099886e4c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "c76339f1e09ba2e8a47be1bef7bab49a222ba9a1c8492e7164ab36ebcea7ea5d"),
+		nonce:                 decodeHexString(c, "d4657333ca9fba1ed33164d8b3bbe4d7"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "64c25b2fd33ddc3ec65e84c1ac14c9d3e8645cd1f5fe85222c5bfb8c5901a247"),
+		additionalInputReseed: decodeHexString(c, "fca600411fd3fba554ada76f90972f818acd57431a48d81000f1dea2e2830002"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ac98cf17064b933cb5d7182130f10b0f72117fcd2c914c0dbd461ddb7ec1a1d0"),
+			decodeHexString(c, "e822109e3baa54a0bfb54b9a52aa7c945cdc48b41d1a5e544fbceac1147a36ca"),
+		},
+		expected: decodeHexString(c, "b48b4c1d9db071c7df5ed9f78f48ffb376c392c51d2d0e764247b794a762d08574311bc3e61c84c812d83f5ab17a2b47467f84c0a4d4e85ab990989c561aa20c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "1012601e1360247c8fc248cb1d6b761e78e623cdfe857939db98b4c157b73dad"),
+		nonce:                 decodeHexString(c, "0d6fcf7c63c20a41dddff5e001ad0de3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "089120c478d334b397cbafa7ad1cf2a9b3aafb65b79b0e0ad1c4d86272f0c296"),
+		additionalInputReseed: decodeHexString(c, "d2ed4cf90d3fb8a07c96522eff6fda6be4511150fa8bf327e43c859861abcb02"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "95220e367895985fa9a5a0ba2b1084ae96ca37bd7b90976e636dafe59993c4f9"),
+			decodeHexString(c, "ccb2bf64a7e706a8a7c86d30d72f89a7a87cb98569242a72a1d3285877238037"),
+		},
+		expected: decodeHexString(c, "6e251047fd4f9d1044de50d5f3da3a9de27560f2c2efbbfaaaef1a0306087569f5a82d8bde094c0c451b5e5238111493d5ee6ea65e7d39977bed45ddb7f0eaf8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "8acecd8986caeeddcda8b7e18ba284440557f8d4eb741930d9c964c628a5b027"),
+		nonce:                 decodeHexString(c, "b3bc9f793d6a8bd3c67d986e7db3349d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "1b7f8af00c7dc7bc89c25225b157365a66c01d5159691d66e479fa9e6c164679"),
+		additionalInputReseed: decodeHexString(c, "ec9a53bdb4b514409ba1a4a1415e84da6223197a97c2f9d89a9cd027bae67a93"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "87b96aeb33f615bc91baf8b09fbb179cd336424f4b5e6371df55be6687f94b1e"),
+			decodeHexString(c, "f3622de5dd4097a0dbc71bc7ac01cf70d8837ec296cb844c7a66206885c71e80"),
+		},
+		expected: decodeHexString(c, "c5c749a80ace0d8334bc8558320578916780d59ac6a81742ab0faf0f3d1ace4f33d2ed6fb4e147e1dd157e348566354d249cf25f36cc46ae3615e32d517ab64c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "665bb9cef9e93b943aaf7f7534367d88113bde7996fc922b26b934536f4e4780"),
+		nonce:                 decodeHexString(c, "80a57f450d8163dde1aeffc174245519"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "7a24a2bd4f5e2010f600cdf033031dbd20e1c95d2b31db824e6616d315b14867"),
+		additionalInputReseed: decodeHexString(c, "d6d1911b53b434224531f8eab56f0ad4f46cdb389224affec3bf61bbcc843e51"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a1d04200ea02112948e0a9b0229d63697d6896cbcd1a9b97953817bdd00fe661"),
+			decodeHexString(c, "8934bc9a6229bd257879f6d84d753bd7b151e616fffda330502b2d7ef203531c"),
+		},
+		expected: decodeHexString(c, "d950cfe323ef9f24dcef3e8765a9909ccdd60a5d6359b51ca2937e11ca38c9d8ca89dc4ddf3e7a5b27320f18e96dc18a3799cb228d5906c93ef1380f10a66aee"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "722bccd6f55fe0bae6998707911efb591cd4b48efd95d69317bf2bcc50f1c1bc"),
+		nonce:                 decodeHexString(c, "53e39a2991dcaefcca3dbe53ca3b6c4d"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d7fc5afef403b9305ec3cab0bfd8479119666ad08fe244c65aa1b835962e598f"),
+		additionalInputReseed: decodeHexString(c, "ee1ad1322b4f23d6bc1a58d0a32673eb8942b6e53c9ec22569f3fcafd2db3397"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d516aeaef68b7077d4314eb694bc0b4ca661ec26431459a44d15e9df27333bbe"),
+			decodeHexString(c, "f6c3723adb8eff9600b84a452adb00719777c952329afe7dc2f4129175247ab0"),
+		},
+		expected: decodeHexString(c, "c95b757549931f030f70796eaf0383d980362794cf24fdacf5a6101f968d099c194cc70607a6f86ba0404addd2ac04d25e4a0d51ceb45e2f9ffc2da49913ea5b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "647fa5680869a08f9fb19d6af62747852688f5870a5b5d80926c69d08503cc12"),
+		nonce:                 decodeHexString(c, "66a1c152b8db5456d917637bf33486ac"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a658b2559313f16181af98000d058b20c7c1223b2258d68de543fa8347568855"),
+		additionalInputReseed: decodeHexString(c, "4460ddd3bde8532853d3c867c4edcc32ebac9b04086095e181f4248418688a85"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "79364bafbe6ceb9ee5f6b9ee932a467a50e1aa1d5fdbf40380e67d6602f833cf"),
+			decodeHexString(c, "4233a11aea168c43ebcf8d2d3ee003f7cc0f3b68b859cd81c721447c0577308e"),
+		},
+		expected: decodeHexString(c, "81406745e997b73d6ca314e0acfa087618e967ec934878a5a7e008f4c3b3a7e02d9e759293a4a488fff48ef9693767e17e07a089211ecaee1bddbe546e95b5c2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "b2b6fe286e934e1edb9169dba314ea1364d5972ae45a343fa3a29ec7d22e630b"),
+		nonce:                 decodeHexString(c, "6de0b61fb0852711c0b78eacca490108"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e74074cffe004db90f2485220dddb0bf81ddd9ec2fb83ebd4249ba39ab1b2a20"),
+		additionalInputReseed: decodeHexString(c, "72aa7bd3f4c32994ceebd374ba559644148e55c14bbabea5536af8cacdb2ce34"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c1ff35de77f0713ab35265420d0bcde113c185bcbd147522b4b64998451b3895"),
+			decodeHexString(c, "77abb29a421b8bd48cefe47cff730be66ab9f5b5224f3f69399afe813e2a24fb"),
+		},
+		expected: decodeHexString(c, "b396a29c98318e0f1bb2279fbac677eca06342287e6d4aec0cef36e87ec433337d004a5a0ec6d8f35af70558f5dc6cdff9144836a6705e0d3159e6904213903c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "2297aa406e589fe630faf8e57c75f0843b0307a4ef46a5a353e0d5c219efd5da"),
+		nonce:                 decodeHexString(c, "921825e5ecbc1951cbfba8bb05cfda30"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "ff27dcdd3cb7476fa77401fdd25ea042a3f3b6dca75d7a6be0d3938432eb7ca5"),
+		additionalInputReseed: decodeHexString(c, "bd65c11d7e421e17de4619656ac9ab7d5d112b28c95d5117963a198965fc75cb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bf1c52e81127a53be231346d9d827541221de0994a23f8d5d57f7b168af59fd9"),
+			decodeHexString(c, "6bf300fc6505ebdeb70d961bf5b8897a4ff4288d12f4f3f7f791d0a7c533b6d2"),
+		},
+		expected: decodeHexString(c, "277beb9511df115f448bbf373a73fb8e835b30a28781ed8ec320bc775a46c0600890533ec60567a1c50570d4cdecdeba52432ddc758ea86cc34b3d83cd9e3c81"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ac7205c81f9b2f869a85fd092403a79f821ee984ec54529bd38adc7a625b428b"),
+		nonce:                 decodeHexString(c, "568f2b58e84de057bf00630c125e384b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "14674dc6203e9319fa810f480737daa347990e8303b59cb8e4763dabb10ba2ae"),
+		additionalInputReseed: decodeHexString(c, "9096ef0dc538c514d78550660b424c7b95f03dbd1390eea41885c3f0a59bf357"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "35743199bdb956d269cddc55a8af52e49816882956ebe317fd7e095a6f1830d8"),
+			decodeHexString(c, "29845f688d6f7c00a14a72b0a4bc5e6c3195d0b0436ea67c098c0abe05850b90"),
+		},
+		expected: decodeHexString(c, "c6c6d6db9ae3fc25bc5b17cc448b95e8c7f1a07bb3d02647bc88cc8e8ed10758416ac0a76c5565e38fa5d69be65284405f517a846c3e4311a6f382583cf89646"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "267d9056dbf86031eb8c5a9828f7991c67a8e041aa62afd0f65b514bfcd6a4f9"),
+		nonce:                 decodeHexString(c, "4397da37ff90731f2723482a2bdc9911"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "ba2a7241bbf3b5c6fcfd20600f69314f2906978575b120a759ea4fc834d07010"),
+		additionalInputReseed: decodeHexString(c, "7eced65d87c55a81fa01c46bfd80958a87e671f86a628a3ad0a1c5b0639ce4b3"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "09b5de1681b5526efde58fe9d3abe4cd4e74f5dfd48392a851f885596fd5b8bd"),
+			decodeHexString(c, "48ee8611aa8c0e75a2d45a65826a49f0d21dfb4af3fd1d17cd649f52bfe26a9a"),
+		},
+		expected: decodeHexString(c, "ffe8bdbefd0cf821da1e0a3cd8e812e29b2c10fb00b5ccbd35810b74a0c96d5488fc6cd20d4a3635af1428216a754c32aa0c4a2edfb8bda371a25ae77f6b050c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "1226887cecc5eef47392745cf929ffff4dd6e9c0da8bbe5e32aa0abdaaf42884"),
+		nonce:                 decodeHexString(c, "67975b45eef894aa8d404fa298b0aaa1"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e7aff46f2b771899238fa6c09c094821664611c66a578c25bb3ef5e53db4bd8b"),
+		additionalInputReseed: decodeHexString(c, "cfbdad53ab7cc8cb78512c7f195d955448fa80cc08e1b50281a7e98b0eddd780"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3d83a60149487cd44f1269c4a2becb2620939645e689868551286c70f37f61c4"),
+			decodeHexString(c, "7a20bc5e65a9bf88669de626a57bfffdf67ffb311054191126ce18819ac707cb"),
+		},
+		expected: decodeHexString(c, "6805b315c0bc3edd65748592b5b2dea16783c201fc4693d40c1e2b9cba533453024f07d8a70bcde4bf8d1f62f358b9bf53372706e924062a16037462538300cd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed53_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed53_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5eaf7544a832c9c9ea6d44feb9323f5fad6be9dd7eb3583e37d26d0a113968a4"),
+		nonce:                 decodeHexString(c, "c82d1ba5b21f0063ca686706be556472"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "3cbd807ae5a1283e8cd8bc36f89dbc747434e58721d8387f3d3fef48c66e2595"),
+		additionalInputReseed: decodeHexString(c, "3550198be99e1084ad87f13fab4121333c389961ef48919d9bb837b246df5611"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "bd20f72663ccaeb086328a3c59d3ee4a2db2d8b010ff8f4146af45058b2af62b"),
+			decodeHexString(c, "c6b19e4cd3d8df2c953e0addacbff6f447441fe2309bd8c437137bec1bb9b819"),
+		},
+		expected: decodeHexString(c, "019d322a41a6cd1f4f7a06eddb64af1f84170970b938f427e24b7caa3f821704ba6b73ac67c298fc09c076e56cda065de3d0682abe6e55841f685e4ab327702d"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed55_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "6c0ff37351e787d35805810750394854dfc7b3704cadea32593458e1ef67f2dc"),
+		nonce:                 decodeHexString(c, "f0d342f2cb1270ed3cc935b1d3059d0f"),
+		personalization:       decodeHexString(c, "e1b95c7069bb22475d5a7a99fc8beedced73bbed785c73ce5663740c46568884"),
+		entropyInputReseed:    decodeHexString(c, "1140a47dbe3b89362922b375502300c7e7566224accac3ebdb99c8fa776594dd"),
+		additionalInputReseed: decodeHexString(c, "66ccb8ddaf0201a7f2f7fef04939f2c802e480e4acc1c3177571f34248bbfce1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "53f74ba9d0eb69010cc4eda1da037c8e6056c1154248bcf4632b44d6a59811f1"),
+			decodeHexString(c, "1cdbb531803e7bcac8de8aaf9c3534184cf737c9ceda1a7a16056b0c53a828ff"),
+		},
+		expected: decodeHexString(c, "743e9cb60389d649113a93e9ba3500adcff05193934602797c5a36084dc1b3f2db7c65d7b6425dbf3bb572239e8845a05b3ee5366b538a1010d4fe2a0919c1a9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "0c029bad3e7f1ddf542d544882fe1a0092edb6cf2a3a2202d88486904eef7859"),
+		nonce:                 decodeHexString(c, "9e6ee02c4b520d4fc1262e2833d8e246"),
+		personalization:       decodeHexString(c, "2f24a5d9bf8893a0f2d33a665b1b18729e96330e22f6e5a29bbbb4a9e889ec30"),
+		entropyInputReseed:    decodeHexString(c, "7ec45063b877f49738ac8020c0a764efbfc1667c7dba37a652f0fc6a03d0b153"),
+		additionalInputReseed: decodeHexString(c, "74b71d1d5b8b5d8c24f44b757ba87989d3ea757ccfc5b7f4c426e7d72cbde9f8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "ec30eb4c56b8f61f5d61526bf1830745fde9f07a4dbd50fb502b27087f42f42f"),
+			decodeHexString(c, "b40b2e8f9d517e64356fd89817601961d22196fdbe749279b321baa61e72d628"),
+		},
+		expected: decodeHexString(c, "70db969c96755d28a13adfff666c0aa62f0dbe13205222b64ec497031e734aa957bdf87b72b2be5653e1051ab5551931007978e87f6bda215f4358dc08427746"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "68c4f136b5c4e23d676ca241b90132d830d8f3c4478a9bc0639600e9c062dda7"),
+		nonce:                 decodeHexString(c, "4f35042bc418d6cd9b1b1ff6676bb8f3"),
+		personalization:       decodeHexString(c, "7d9ee589159990f126db66b0ee594758b752037c06084cae354f02130f0fce05"),
+		entropyInputReseed:    decodeHexString(c, "b7e683d1797fe364dd95e84f47d216e04de2ef9dfc51db887c568a16221c8cbe"),
+		additionalInputReseed: decodeHexString(c, "e4488b565419707a4614785fe7de4318a18abf7bdaee54bd609c173987a26a2d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4ed5cb9b2b7e2bb7a966cacb9e7c7ee7c58cb6de45e6f7d91da43de0c625c43b"),
+			decodeHexString(c, "4548140cf5fc7902edee67340f38ed2ed8301cc35cd4a6bf271efa897b1eba6b"),
+		},
+		expected: decodeHexString(c, "8b91dbf2a5679f9587ebc3514a3645a68810dc87746c66a22cea599a90f34dde9d4c130baec35edc0c2f104637b6d40a4b695a11bb55e86a36175e63124a4e5d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "a9363e0b2b0997e11c5df68ccd5bc53d10d9b9c684e069761141dcf771ac6476"),
+		nonce:                 decodeHexString(c, "b8f8dffe03481c632115ec4e95d20622"),
+		personalization:       decodeHexString(c, "134f93f5ee3c5d88416ac0f4eea905d4ba2bfce31bc40412e8a3b902a9feb649"),
+		entropyInputReseed:    decodeHexString(c, "d0cc63e9ced82924de6a8e91724cc39136bc2ae39289b439ad90277ddcfd28cf"),
+		additionalInputReseed: decodeHexString(c, "8c176a3da66216f0f347640e34f6979eb521c8db3e4475b81390ad8fd89bf2ae"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e647756500cafe3eafdb934169c836841039263f90a44c1d78977b794fbc4b01"),
+			decodeHexString(c, "56e75d3aa5f9b4d434f53d1863470903dd71bd127e301a7e59b353c229c2aee0"),
+		},
+		expected: decodeHexString(c, "83423125595fa9d020b235918db928ef5de2b7b57a2ab394071e5777d252cd136918d9f433920f09dad13dbf36449e2c9c2686599a2094657116797492be7327"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "f2e65a05b75c8750c179bf07715daf3508c08cdc04acaa223c93cfaebad20015"),
+		nonce:                 decodeHexString(c, "a3340ac88fca360a728b5c9a73537cac"),
+		personalization:       decodeHexString(c, "13646fbac9383056091cad95f8c6d877b0916f3bb9c2acb1aff6a6e97fc3f539"),
+		entropyInputReseed:    decodeHexString(c, "34d69777cb993a4be66583309ce0bc2a6766dff05a26ef4183f11f7ee654e436"),
+		additionalInputReseed: decodeHexString(c, "8031ea879209691a6824068034311d7c9153bb26634b4f7285dadb9bbddf895f"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fb68416c48542721a20f2edc1ee3ad210dafb6b5291838c2171b79c7e84578fa"),
+			decodeHexString(c, "ee2066a210d96d2ae2de62c3b7cd8f62a282006d6fc0d69fa4035704909b981b"),
+		},
+		expected: decodeHexString(c, "44f33450ff56593e77fc5116bdbba5a17083edaf0dd0d2070796c555f3ea2d3589a55d541dcd834b5e3df281454e84f81fdae941358b5752a366eeee0a565ad0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5d48062e6dbeb69d090929d89d127ce54ef2c3373e222c3ced1f1da233d0f6a9"),
+		nonce:                 decodeHexString(c, "9701395320dbd4437e67876f978342d8"),
+		personalization:       decodeHexString(c, "b976fa12841dc6314efdc9b3b4d2e3cc1e5d8df4345f33adc047a8e8135ebda0"),
+		entropyInputReseed:    decodeHexString(c, "d9ef5e9a534ae320f17058df52c0bb3aa02260bdd51919e0d68c7b6d58e1ca43"),
+		additionalInputReseed: decodeHexString(c, "120bd1c3c21be3465203e2912e9ad5ef2f8336a20e5dbf87353da565322b1852"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "db2d4a5cff0ef5ab757526fc0466631085adbb88208687c10a7281b5a25d5838"),
+			decodeHexString(c, "0f3fc916b1f660466e0adcf2c42df0762cc6ac4a1e07d1420e04486c593e40ab"),
+		},
+		expected: decodeHexString(c, "200f5de466cf4ad57427543d95502b5042a8c23e0dc9d8af459f2776bd3c78a76a91aac48fa349b3e02833f1b7e19774f351dbf81c2a66f0e9a0c01689d388a8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "d259f3fd16feeb67d17667fe82ea291761918fc294766269ba2cb56a3676edd2"),
+		nonce:                 decodeHexString(c, "582c05838e16381e6dc1046d784ffdf8"),
+		personalization:       decodeHexString(c, "94ca52da424cc07172c20750df5feddb68f28fe794461e51c92cc6451ff58c0f"),
+		entropyInputReseed:    decodeHexString(c, "1b98e4a8620ca5f9520583b753c222eda5540a8736d8a3e784d01b75fc8ae35d"),
+		additionalInputReseed: decodeHexString(c, "e6e1fb6be907c843c99b5a85e621afd22eb1ac18b541a6959c2aef14aa8eb854"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "436bfcb80f974d5e2815e21ec0925c8e0e4146dabeb2ad6ae76d118bf4d9fa9a"),
+			decodeHexString(c, "11d4153cf77fa5b1b58ace5ca01d737099b4c2adb57fc2fbf28fb58e5fd3ea50"),
+		},
+		expected: decodeHexString(c, "1c39ba5ed96328ec66568d3ceb77894f12240f0fdcf065119cd841151cb860caa64f74bb1b19983225254b3b58fe97bffbd20b57a9492389d62c2b542d53fb64"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "f36e6ab16a4dc1a68ead3c8fb5fd4a9b22eb15e243964657895d02ceb5ca9b75"),
+		nonce:                 decodeHexString(c, "cb55561e35c4418b6c2275b50de57df1"),
+		personalization:       decodeHexString(c, "9c604ba9910366685798f0c21044789eb8fa3a51f99a7ed451ca3a6e223ec34a"),
+		entropyInputReseed:    decodeHexString(c, "9ff79aeab2498fdee09a35557998e800ecc162ffe0d56291e576011e236809dc"),
+		additionalInputReseed: decodeHexString(c, "0b865e50b619821f53e63e0684d1cea27abac0be27f1206ab1a6e47ff03ecf47"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4e2b142f77db9ea7f29f6a9385a4ae22bfcccf811f7fdf8a5e5f4a0f6f325c99"),
+			decodeHexString(c, "46922ad38771549011fc80e746334e15853c044619aed6847fc7c62e6004f298"),
+		},
+		expected: decodeHexString(c, "e13d046e9da6a60366ee3c7ce20b59cf555e41faf58bab051aa40c35a207a316634d17951f8c1751a26413ca25ea2e9462cd3d9ce8fff3b353f91076a32ad6e2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "f9b29d40982ea273a6b35bec953c6e9b77ab904fef3b55408eb4de517319b792"),
+		nonce:                 decodeHexString(c, "765c542bc6fada9f6872faaf63e7b953"),
+		personalization:       decodeHexString(c, "9cefad9c60511e2f67a169560f7d4e5ec531afa74e83a569e839edcd47ef46aa"),
+		entropyInputReseed:    decodeHexString(c, "977e45dff878ecec24be759ffe703732f61673db626f07c00e9464c69b2e0824"),
+		additionalInputReseed: decodeHexString(c, "a4b150288623bb82216a96ef1fb6734fda3224bea565a565dee41e5b7cec9500"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6a165ab041c12c31b98a4078d8ca907c2a084120604f859c630943ef25131c6f"),
+			decodeHexString(c, "5e5918cc9439637a96fb3cb3b17e468bdacd8b874e2cf14b564034ddb47d1e20"),
+		},
+		expected: decodeHexString(c, "e397c6104655592cbc9b8e14ab5d0822866de431488f452eacfe423e6941109c47ea4a4388a6723b4073c0e896377b0d2f352d6fb9601d7fb5bc73c04c524de8"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3ddfa0f57809be7456fc8fb8c4ebbc2040496aef792758eebb7284e23699c20c"),
+		nonce:                 decodeHexString(c, "a1839a77561ff3e4061978f8f422708c"),
+		personalization:       decodeHexString(c, "889b72246e71333945c7cf9f4d706d6ddd7b1cf09a59c57ce882dbf3ab3c88c7"),
+		entropyInputReseed:    decodeHexString(c, "6d26d61aec8f122b50f9022bda1f0973b14c5c3e5d16be2c88398e3528654b6b"),
+		additionalInputReseed: decodeHexString(c, "50138a1c118b36c75a052aad170cda2cd4c01136d62b884097d64b8be2a88760"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "45e5702461dd9bc726158e6c96c696f519f807a58eddfec79e50f38a03b65a29"),
+			decodeHexString(c, "348f61370ca804e64d4219aec7b7a9610de4431905107b2ab93362f4bc19d8f1"),
+		},
+		expected: decodeHexString(c, "fcc0dc7aed0e5694058ed3c621346d5cb5cfef49d3c046738023456f17577bc0861594ec018149b366b402dd64303d4b0e36fcb895f3c6a5083fd28980355bc1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "77828efce82dfc955f7784997a70dff8fe11ccc725cd1ba2d6a11ed673a06b38"),
+		nonce:                 decodeHexString(c, "5e2de9fe7eeceb0a5bd7c1fe5fb6301e"),
+		personalization:       decodeHexString(c, "2678115152d3a5d25a8630312987565509fd85cbc0accc262c14030e5ed448a8"),
+		entropyInputReseed:    decodeHexString(c, "af7749415de1b553fa6b20a1923ef348f7ef60190d0288155d5794cd8fff4e45"),
+		additionalInputReseed: decodeHexString(c, "97e81174b50769bdb0b43dc744b1fabe085505c354b2f6a7de38a530c106069b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6fc02bbcc3075946dd5cd810e677188cf69118665d04f15ce6671e5bb5bbe7a3"),
+			decodeHexString(c, "e7674e18ae38aa10f44a0e241c9c74f8d6e570666bf53e023ce11e5c1c2c0a02"),
+		},
+		expected: decodeHexString(c, "1389c904cac5908ac57285bc5fa5befe12f8100d0e50d09f01d137a97d6cf62114a6bd18a4d8bc8123ae4cbc6303e29830e6b301ac294fcd0fd41d1739bb280d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5557edbd85349f616b8b5259c955d67e198f96a9e36c2366024648538f11d9da"),
+		nonce:                 decodeHexString(c, "33ce4059e8bde08d74a0259c14109467"),
+		personalization:       decodeHexString(c, "81d26ac87852ec428101bb00e4cfd3f0c3bb46f2e9f05fc789fb589693fe6616"),
+		entropyInputReseed:    decodeHexString(c, "6afc5003b7c196c5e5c686207655385f55f7e207f7ab28b53a94b0ab5b2adf8c"),
+		additionalInputReseed: decodeHexString(c, "661f9d57131b7889d65df4e444ecd41b325c112285eab136739f117e6ecca4b4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "03983095b312f815e01d0c2403cda2bb222fccd5b5a6a5f16c8596f556fa8070"),
+			decodeHexString(c, "14b844644687776022ae0d4e5cc35ba9b77feb700d17ac5bdb7e5c6274477cfa"),
+		},
+		expected: decodeHexString(c, "5cd94c38b34a1318468864394c5a0e8f3bbe99a5bc7627e60571ed0f0eb59d2fa589afb2dca4726306b09c11e079e1d6009b6e5203368b239dd5931d8a3ea857"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "b7a48379bb3760eaa61a733c9b13d0079bc762ecaf7cb33adc47fdabe160b6ed"),
+		nonce:                 decodeHexString(c, "90cee09275cc0da2955cbdc817c9269d"),
+		personalization:       decodeHexString(c, "3a933b4764074afbd75f080b7e6d7ea7ad28837f14bcae1873bde7a7ab7b085b"),
+		entropyInputReseed:    decodeHexString(c, "e1bd1f8120c8dc418c5cca4e767e4ab7748337cef988b2598800d609a02ba145"),
+		additionalInputReseed: decodeHexString(c, "04ed95647976ce36e0bbb32ebdafa7d32d011fc6f13f098e70dc10f51a2b411d"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4e4312c69f4156dcd633481cf82d9f777d402ffe17584e6da77214476f00116e"),
+			decodeHexString(c, "cedbaf297dc8c83820db6147d4ad9cc806cf632689b81f02dbc95a1e74eaac81"),
+		},
+		expected: decodeHexString(c, "7461df9d634fd47385677090c478d0a4d967cd9cec61600883d700a5d5f8d2a547fb3aae9c2b6417aaef1c5c3fa628fd25b012600b78bb88eddd8c809c77cbfc"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "1b4bc04168f21afa76e65a7f80bace5e1a285309ac936e665b9a3f45d090e342"),
+		nonce:                 decodeHexString(c, "8fb3f4a6c8ef5725d0b9efdf17f2d02f"),
+		personalization:       decodeHexString(c, "5e7c4b723bc8fe19c2e249ba3e3ace3e441bccdd33ce353cbddfc2e26e81d8e8"),
+		entropyInputReseed:    decodeHexString(c, "1d8fbfa1e832d30a9c9cf78f6e0146cd5dc7ec01c445ada432c76a79a303d370"),
+		additionalInputReseed: decodeHexString(c, "519e20102d0310d77d2aca93b8b92037056cbc0a9eb25fd3d0f23a9479ba441c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "94633dd0c6f337debfc218c5960f716d5d42cf01b7968d7d9e50d83cc35bdc71"),
+			decodeHexString(c, "f1e70c2124ec84f1e3222944177dd7ee7414294c35456ec44ef0ae9b03044f63"),
+		},
+		expected: decodeHexString(c, "58e9e683d1bc064c836e362015d0e82b8cd12eb05c5c3f94832f81dfd7c07197a3a5e1d3c5b8be3311c7349e05d468042e74bb51a4a30dff9431d27d77b56e6c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed55_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed55_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "c168c7c4ec2aab2a43eb9106cc7b015b51f963bea75055bddf309ce4c4bddd35"),
+		nonce:                 decodeHexString(c, "78455e6437ea206529ec02ca1031e3a8"),
+		personalization:       decodeHexString(c, "2d1f735d27a98685594ebd7d1f338519b03981b4e91c20a669df5b066853d3a7"),
+		entropyInputReseed:    decodeHexString(c, "3f3853d3d1d69f43c1f331cc0610a6d34e524b151fbd074a2f924e4fb717bd62"),
+		additionalInputReseed: decodeHexString(c, "dbf6a2e038cc1820e87683a8ad6ed005a48b3f460868343776dc76f1d7748e00"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4cc22a0b233f3170e01902ca804a45162b73f550c19caf2c9741cc25854587d1"),
+			decodeHexString(c, "48238c9be5cef57d5b1c45a0456cce1e42bd459a7ab3e3483bcdafae90941e64"),
+		},
+		expected: decodeHexString(c, "f2da418906191b76b3c5e2921a17e5cbf4820369e8c8b1c2a2663c3fdf9d73095be4c541add9b8dca44a486c31368b1c64b1c3d2c5bf14f33558411cca1f2ce7"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed57_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "9f073580368ab5edea6d6d667bfcf36a0105982d53c7b7b05575964b9f32fdd6"),
+		nonce:                 decodeHexString(c, "4a08d6e7b53d7829266fd849aa2d576e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "09c11834d1a273d5c5d12ac71c11ff0daed3b520d62b8041cd608ba7853ac1a3"),
+		additionalInputReseed: decodeHexString(c, "e24426c159bde6e1f0c1ed20af189f155260a8f20a02da693df33ada4aba5c32"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9055b015aeed80a3edd5226c64331fd0a65f82e781dedc03453f5dcbb1a27032"),
+			decodeHexString(c, "b634353f5b713e1ce0778a6a19325a1a1deb02bcf1ccf1de5c2c2cb6d469e42f"),
+		},
+		expected: decodeHexString(c, "43e7e62ffa98f436efa34b1fe0e4e633bdfe10fd20a2ab1c6f7d8f5ca551dcd14a8b9696e549b4e6fee4c6d69a890c6aa42468dad9c566aaaf164a9c81983f11"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "748b9bd22e6e7c58b3bc018fa2aee9ee3445aa054b2a509dcaede5139b3fb8d6"),
+		nonce:                 decodeHexString(c, "e204ffc9bc514c9c5566086117590e4c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "05585a0c8eb3c7061d24e09afc8440ced5fd6e748aff0b5e38d7d5eb74f0dc6a"),
+		additionalInputReseed: decodeHexString(c, "8352d0bbcbb02627c7115ec7889e342f6c6dd43aa56509c6337b2d882df6abc4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d8a98a4d9df5a79d17968dbe37eac89729d492a49374f7eaf6e03f53ceaec0b7"),
+			decodeHexString(c, "5269e1187ff582a5e3f6417d9e1abd689fb2a9d828ec3058d8dc1c444cfdf224"),
+		},
+		expected: decodeHexString(c, "e4a1ec1fa573337bca649bbfcde2eb52e0bd6170c5b12968e3046074aad8a5e33d120468b86a0764a103d848d5a5adf630315cc9141ddc071ede8696c4ae0c9b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "950af3e5e53982027c70bea55340026b14deb046b7b562fc2a704e8744885844"),
+		nonce:                 decodeHexString(c, "e9e1e5cf21ca35b5bdf09d52e8a20a67"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "4fe13c82f3fb4e9fe765c2afc77dc76012e1514f90c82e83d48ac0a93bbcacdf"),
+		additionalInputReseed: decodeHexString(c, "86e82b150496ca2f7d10266e93c5344c7bc27e3d94a6e230dba8044005445a59"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2a48d7a7b6515352468196a88c4b015c57544cb83310bdecf1a8be5b53a4875e"),
+			decodeHexString(c, "e2f20cf70c849659b19f034b46239635f76c2d0c929d2dcfaa1e31d945f02baa"),
+		},
+		expected: decodeHexString(c, "f12aa1756bdd090b64aebf99f8628440dcab1591d51ca10f71acf4a6079eebe3ec500526be2dbfb0fbb0d25f61d15fccccbacd143561914fb921d434daaa023f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "842b5dcc519c45e78019c0c8d0ff9f1f89e13b103395c4db67e656c798009655"),
+		nonce:                 decodeHexString(c, "59876af458614e4c71e72e1632c2bf2e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "5ea5bafb705ffb0a051238f780ab027793b64a2d9db4ef15c6503097f8b317a8"),
+		additionalInputReseed: decodeHexString(c, "1f6fce9f01005bfc9ac55c2820c326f5ba8a1027aa492a11306d35671bd15a96"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fdbabb5ee136488271fb8604506c59b2b1b1b0a5cba4241fe9c33d59ffbee7c6"),
+			decodeHexString(c, "bc6c2dca4ceb0145d968c554fc9de7f0882c9272be9bbe76cbedd3d72292db96"),
+		},
+		expected: decodeHexString(c, "540da0c1d1da6d0e7c3d1e5c649743923ee924a2a854c22c034ff53b6c8666863fc639ebe9f4de4c48618591bc46ce693aaecb6e9c32e8635b2583285bd79185"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "96cd1ac93fbde2ce8433992df6410813897fdd93a26db8e6955360045cd55470"),
+		nonce:                 decodeHexString(c, "1f258261baa39aa3aebd7e8b167dd6e8"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b765d4dd23adcd9c5b92ae10e5f7d72c6f2874ad0805de3d12d318d08c70b298"),
+		additionalInputReseed: decodeHexString(c, "7b6e37909dfdcce4b15356aa4b5cca649215705fff00a230a94aedf16fba858c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "eac77cd7e6cabc397109a6669328bb78896041c83b6cc6e3f6eaa6c48b3ffbca"),
+			decodeHexString(c, "7b08a256540de3ede2a68a882299d5bf7b55dcf66b021a442e110a1bc0688acf"),
+		},
+		expected: decodeHexString(c, "39ae15fd0e416792259c75e15d305f77b0920d9913ab17d34f6b025a78c9d14c25f7bbcc11ae8f9cbdbea413c332d0fa53b5016d62f5925163d1f9f3ebc37316"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "bbe7caee69afdedca4d565e352bf4a51f1d3a5ae2a2d721b6ea481d8c25e1182"),
+		nonce:                 decodeHexString(c, "c9e5c075b289b58cbc920feb999da9cb"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a751bc7373e19cac00c7206f065d70f6a3cf4ac2bd8f19a956ed816805404259"),
+		additionalInputReseed: decodeHexString(c, "df894e68f61d34ae10a2dcc0ca7ae04b41afd7ba58aac9b2b081216d214177c4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2c43a2e1aa4779994b1b74b4510915daa7eb0f90bbae83b5fdceb67fac1e2376"),
+			decodeHexString(c, "6a77a68f3d079237bc777cf41c38ad49c7c0053cdadd0bb1aa41b5d8b81dde48"),
+		},
+		expected: decodeHexString(c, "34b5e22a8624734b7d5f6b35930799eceb7dbfc46914f479e34bf64eaa154309d85ceca6241e17fda04f0970457ecfd8a9f7003046c1bdfce3b311ba2efa97a9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "fb337b69c9ace8defac7f68535cc6fee72b80bf91d226a3477b90a0da02c3e71"),
+		nonce:                 decodeHexString(c, "581d7f09c11e7c408a993684e516a307"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "b0cb88e07ac0a00ae7af469cb976c16cbc3e9311b6927a5374d49a9ab76eb8e3"),
+		additionalInputReseed: decodeHexString(c, "c1efdf70b216ab0fb7814d0c923d26699749f62a720b9bbcdbd147170364504c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "4f86ec3b4c3b48896717275b746be20fcf593f3979f4be3b8e16da5039cf796e"),
+			decodeHexString(c, "868204de4b0dce601b59fb692b0891f44fa08b44090248109f5012fd21056364"),
+		},
+		expected: decodeHexString(c, "7aee747a7d70d26e942e564289c8403dce2e707daaedf2794603c3bef035d0ff14e8f61d1235e8f8362d18f2c4f1e7dcf557777d4442c5d5eb46e39756db986d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "15b74090b362e9b5c8ba9fb7f9841d608851a9f6d70cd071d346a27f5e1a8f95"),
+		nonce:                 decodeHexString(c, "ca94433a651a873c10c2bc4626846a29"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c864b786b4f7da6ce9e1154044768210f6ff3e6fb67e9c1c05997fac3d6aed6b"),
+		additionalInputReseed: decodeHexString(c, "ed7d933474ebcf2d246194b8d9e281a2b65c1d4c63a44a6b3ddf868e052bdb1e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "58d85c1f697651d7e18e902f716bc3eb7cbc31b127cd85d706d699c4a42a2d62"),
+			decodeHexString(c, "e916429ed3822ab6c884c2cdd5d71613eb41037d18e3d6a893356481a14513f8"),
+		},
+		expected: decodeHexString(c, "e97f838eef0fb6d03cd6510e47171692f463a69ed5621f7c4248399ea7705148ea6e7c4bf34500da895046e171e514941c43030ca5dbfcc26a3c7e5c305646a4"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "65e3db8d0a6e3dc12842f055c80eae31f818b1a14d75c8711b8c181d0d18747b"),
+		nonce:                 decodeHexString(c, "b79f9cf855e0cb6a841c080bae634976"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d4cf1166b338c642d9ac013891352013034fb8e71b19f46a5e6bb8de034477b0"),
+		additionalInputReseed: decodeHexString(c, "c44307387c1ff4eea194169b00624210522dfc9a156624e8225dc49576dfc1f1"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e8b10c6e30e4a2f406d5e65c397df0de25199a148fe316266869e9fedc711587"),
+			decodeHexString(c, "b60551596747b7f14391acce63c7f1de7aa596f643a36c97c82fbd8f343ef71a"),
+		},
+		expected: decodeHexString(c, "886cc06f8841b2ece389422ca88bc156d396a7e62c018180840ab09b2c8b084c0cd063cc2756755c6e350d42a7ea85ae047f4d8629becd702d35cf2ee4039c4e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "c57b697925a2b2ca7ee124252ad75d451a3331cde2078cc349d73e55cec50b86"),
+		nonce:                 decodeHexString(c, "5f593158794c514c7d3447871c8ec9ef"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "71653ebc9e18ba5d3e5f0a7ae5b3802ec69615a50f3ae8704a8c3dace06d146b"),
+		additionalInputReseed: decodeHexString(c, "79d9322a06e4c66406b37666d7714c24997db007557f4907a1809cc788326978"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8f53c1c6a11dfee652132b864e4707b2236d315c464fcf5e8458721266d15368"),
+			decodeHexString(c, "84c784637cdef2053a2dd5dcd6a75ed2119209e7da454b1d9022fd7ef7d41675"),
+		},
+		expected: decodeHexString(c, "990d41421f545a758ee415938a05077f56ab3e96f03db62b6c885a987b70dd2d72ccb1882633ab8fbab70021041ea94cced7205b6550156a3d7371a237e9016f"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3e473c909e54ca0bef5de853664f311382ed00522601dfea2ca03acd10593fa1"),
+		nonce:                 decodeHexString(c, "5e415a9141dab4df171adad3997952d8"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2e76a186771e1d7059c9d6df5aab3e30421d34dd318b5e1edd59c0c2f21036ce"),
+		additionalInputReseed: decodeHexString(c, "1810e5b963dffb7fa77b761b6d3cc9cafda7b77510e4445785268910b995c788"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0abcce8553e1570da07ad5165c95a71ef0a9cee746963995dc7abb2c9b4dc560"),
+			decodeHexString(c, "d39b08ed9b49921c7ec735d17723d7c847e061cfd8c3db4fb914e09bc3989265"),
+		},
+		expected: decodeHexString(c, "21d77a3706df282892373003954e953cf9091b3502b8028559919d615b7453395e1203c9858c236ff4a39d264dbefab48dc7b3e083a1a2134c1bf70543b81859"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "d535a09b2405e4388ccbd1f61a5518cfe9d0b311f641a1f2def7394e7ee38943"),
+		nonce:                 decodeHexString(c, "8b079843b53f415f4849b60f6c4b6f5b"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "40e4ad890e3ae38b0ef0bb458ab579d7d98904c3f0f1f32bd27205355f2a0a18"),
+		additionalInputReseed: decodeHexString(c, "46f05c8f15bccf47fea0991380fc407e367f1b11dddfd4b3dd0ea8614454998a"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "97881bf63cf3e9cbefa8999621dd8f6f19be231b12e266b77479d715e76566f2"),
+			decodeHexString(c, "20b320d272e02c04c4502a094e22462e1ea76a8126878715ba17415a3b5a1116"),
+		},
+		expected: decodeHexString(c, "3dc47d6786c2cc418b6ece22dad21a8d759ce7c4b1982a78d8b326ee7262c64a189f5985e7974f6f7c2dfc43ba37a112637bb9bac1f8b4e6c62452d453f8a2e6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "5414aa61c99a61a837957d4e4834af5a1fa1af06473b2a0092e864377ba60b37"),
+		nonce:                 decodeHexString(c, "21dc0ac48c7cbb7497010835fcc6fa0e"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "88072af8d067fc9f63731a62413c3aaf44b4b6801206156075dfc90b0ac9fe91"),
+		additionalInputReseed: decodeHexString(c, "96651fd4555162494926bd865afc186b4e9a93852f7c9ab4f7599627aa963774"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b31b152f877bfd3dbe5516567d78e14881948a60560ef7c3dd6c48e45af61763"),
+			decodeHexString(c, "aafab7769b57805fef548d32ed95e70a94190cca0cb990f6bcb5be520f8ad7dd"),
+		},
+		expected: decodeHexString(c, "4315ad179d6a54efa9a2438d46029f9df522090bdb69a35191561de0005fc7f074edc45d544ba361cf37ac94a9f9eddb9e5c24e2e41677e5da2ac964913be202"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "e8fc2fb6f92473ef5cbebee638d58bdd07e5860d87a26670de5e8305a21ba82b"),
+		nonce:                 decodeHexString(c, "c03c340bb377e036d2f1b9ed018330df"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "6b1e3a62e77c814c22cddeaf6310b751771bf0a86f5f557fe1318ea0fe2ed7dc"),
+		additionalInputReseed: decodeHexString(c, "abd7ebbcae2e268804ab4b98ad33fe6cc2129d7f17b3c714185ff2406096b922"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "65669e7db614527536cbf932ad42e4395ccbef38873bd55d1813d80159e1fff4"),
+			decodeHexString(c, "b843fae8f8dc655d8421733a6204346884ac335a05e3b29a8adf036deb808855"),
+		},
+		expected: decodeHexString(c, "a3044087465c1426f454bacc2dad1f9d9e23539aebd8036dd7f58f16d6f2f5556970e75d7283e1ef912542f20896aa98c5cbb1ac1f76ce64d53c7e36761de29b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed57_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed57_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "8dca78c7874b3cc305c56a4779501badb71c292774e9d1d893b4390cf132c26a"),
+		nonce:                 decodeHexString(c, "43ff3aacccee9e4a112a3470ffa6770f"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "da524715b45de99391ebb34a1a70621553aab245044a6523b73881c00cb1b2c7"),
+		additionalInputReseed: decodeHexString(c, "8db7dab58df1c438f56a722c148c4a02b394d1d7866b6154fd02f0bb2669e604"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "43e70ef3d472e2cdd737e8a0bbb75a550f6079e2a5026271ccc3dcbf568b84b1"),
+			decodeHexString(c, "94f44259b1a3d3b465571960c6d88b9fa40c7c0beb30de5f8f6df5c374f4b348"),
+		},
+		expected: decodeHexString(c, "2b46adfc92d22277111aba056032d79e9c1f857d2a94c627efa3327d6f19e8c900f20eb9e0cb1643016c03efb96618d270e15e4a7e91522f0e1e8144032564da"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed59_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "fafa5b9d43aefb062aff960c01d1f7439f8f00e5de1b2328c8ddf1dfc6cc5f33"),
+		nonce:                 decodeHexString(c, "6cf9c5925efd886cab50ce85bb078bd3"),
+		personalization:       decodeHexString(c, "bfc8c5eb0e41077eb9fbb0aa82bed7a7692a3abf897f00a021897a0183d85901"),
+		entropyInputReseed:    decodeHexString(c, "234761b58f9f7935ed4e4201a876cf796465f90b94d885e8b724894a19a6723f"),
+		additionalInputReseed: decodeHexString(c, "43a4e484d147a9255299ebb89345f2a2b9f38bb58fd295d737e8ac2f4f02a676"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0ce18400ccf510a38fe7e2da4af7d93874b1282d8aa49074b7de924adb40dc3e"),
+			decodeHexString(c, "68742f4543d1a2506600f2ae8fb718decb2fa30b24cc5bd6d3daf0511a9d91e8"),
+		},
+		expected: decodeHexString(c, "966db3b1c92715cb59ac23860d2b134b54112a99b116b8d498366c2926f1ccda76ba3f7d7c282d5edc1f664d22738a45d4bb2440e55b6fd92be89ca7c1ce875d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "282f3f1ef12e70537ea53f17705799fdcc0048a88e2dcc7df223251a709ef9f5"),
+		nonce:                 decodeHexString(c, "7012a2a5d01412095744ed5306815d57"),
+		personalization:       decodeHexString(c, "4de79831903f0e24b95962054eed0616a3a7a945ff2b9de8fd631ea08baef3d0"),
+		entropyInputReseed:    decodeHexString(c, "ace329d79af481c1ca9dc2881d734a10567948b596b7beeb0fc513840e5c583d"),
+		additionalInputReseed: decodeHexString(c, "7321a3305273694eba15a9ca8109b909981627f693a6f1a9616e63f8dbe4cb50"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3bd434981f58faf82122e612ae8a925f6abb6a2c950a4861107efa699227c66d"),
+			decodeHexString(c, "6836965c8875278ca78ead9e596289b07153f5c42d9973f1b8b530244ad1aa3d"),
+		},
+		expected: decodeHexString(c, "c4ce3a78f6be467a08ed783a957f6397fcc905ee836dcfe047e28aa7e92d66986f41f86bfcc7ceef9323e0053977276814278c3d3b606ae1195defdbab7141ac"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "97b902f2888929aa89b87514b1221eeba8eda12d6c5a60d64ad12d185767fa51"),
+		nonce:                 decodeHexString(c, "8f075105edf86da40db76f5cc977695a"),
+		personalization:       decodeHexString(c, "1b0517ee640f1ec6bbfc4fac4373e4c5ee2c8e1f4a721b41487a968c5c058c99"),
+		entropyInputReseed:    decodeHexString(c, "4b440899f98b9b71d0fc14a100308f1e74b8bbe61f60e47f887e6043405397a2"),
+		additionalInputReseed: decodeHexString(c, "05d33103390bfba03eeffc140379a81cfc843d27a625b523b40e3dfdfde9ddfd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "de7a2f05700c70712908b2c745b4fb885b2ae8791f9a177ddf98ab8934266c6e"),
+			decodeHexString(c, "62335d94b4673526db732f1237de72308b32e7cfc7a138716c4baa6117b8fc99"),
+		},
+		expected: decodeHexString(c, "efcd4fd2232a484eee5447a11ee2acfc452377534d453f320ba73be4c4a15ea12dda1149d85f8050c7a20ff681b996ea786480d82e885dfcb64aba558aaacdba"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "150a91b63c28a2374c06f70a08db874e587e172f36d2c8044f0858c61b1aa9fd"),
+		nonce:                 decodeHexString(c, "349b8228c22dd762aa86080809deda5f"),
+		personalization:       decodeHexString(c, "8f32a77da1af4ad141960f1a69f4efc9905073d4243d9b0ea0996ff45f24c720"),
+		entropyInputReseed:    decodeHexString(c, "358b5edb24c9a94d3b4b91d925162c52432803fb90268aeff85e027e47fee949"),
+		additionalInputReseed: decodeHexString(c, "0e2eb11e8f712bb5f6227a589788f8911c838021866fb93a875044130d549bae"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d0d3d602b9e43d8a4bbde73ee93eecbe78dfa534f1f74bade7eb386690f5b303"),
+			decodeHexString(c, "2de24b4917b9d6420e646c3141310c45e493c31d5325a85c1a6f56dd873aba20"),
+		},
+		expected: decodeHexString(c, "b5298889758bcfec3183875b4d73f84a28a78393be7ebd4ba3d42efba74ed6f5a585d9e6775685862dc45d37e132200855f8f8644b9359d846d74d00082afddd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ce3c0974583f1aa6d24ca012857344694a010dfc4acc2605d3d73b12cf228ae7"),
+		nonce:                 decodeHexString(c, "f82bc8ab0a5564e3de71263a8a5f943b"),
+		personalization:       decodeHexString(c, "de0bde27604019724435795efd204cb4c93999527c5b11c15d11e11d3aa482b7"),
+		entropyInputReseed:    decodeHexString(c, "1ef1c0f6f50024cddacbed96f2909ca0a2946b7c9b87417ed5f68c4f9c20f367"),
+		additionalInputReseed: decodeHexString(c, "5c4441f11b37995c9a6ed17101c3cd1f4b473fb0dc9c1388fac6a145ab0bb7d2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "5cd74aa3c2c94064187b00808c18cb6ee43958b9f8caab17e77352e730c101af"),
+			decodeHexString(c, "de68a7f75ef18abbb246543984a278a11a6a37de685a715b08a8a3e079bb9ea8"),
+		},
+		expected: decodeHexString(c, "1b3456825faa798f770318687ba62df861a10781b850d3254b5281502039cc0e73eeb85a9c7931734174eb3e086b70491fd735c39f55e67f928ddfb4e8ece3d0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "f34560ff22fe4c0919cae7399bb8fc99228edeb6524bbc6207edc6368aada0fc"),
+		nonce:                 decodeHexString(c, "394b73da65ab35ccbad61aa3010d7ae0"),
+		personalization:       decodeHexString(c, "4cb42f764081415f1c3468f925f5e3c01c3162d552017d9b4ccc49a3ac9a1931"),
+		entropyInputReseed:    decodeHexString(c, "2cdf1e131fec0de653b784e892388986b2f28177c4f5a7135017bf17da30d6f8"),
+		additionalInputReseed: decodeHexString(c, "37c03b055428778efe9e2a49781b02ca66aa0dc4c274800109203eda12a34273"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "2b381252d6ad419356e7d778aaf40d0c1b7e7ba8862f90756723e6ab84baf0c8"),
+			decodeHexString(c, "d036ef8e089c5352f8007dedbf493dc3662dbd4751529d95a6755d3e5a27ed80"),
+		},
+		expected: decodeHexString(c, "a28369dbdee9a84bd0e5997ac15058115a22c9a3119d2438ca86a717b3e160fe6750d288ca73f3bb4a93dcd537502628de0dcb75aefd19c7ecff0444f19f7874"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "cc20f67eef219f30e5108c0a14af055a53b4a0e8805c0afbb7965467d5581eef"),
+		nonce:                 decodeHexString(c, "60bbca8abb5380e62da26f8eec80212a"),
+		personalization:       decodeHexString(c, "f98d537e64d3263ee41a2f1c93dd7617d457e08a0d49046bc17410ece7b1427c"),
+		entropyInputReseed:    decodeHexString(c, "614587086cec146fd15c1c45602396174135960696bf7854660f504ddeb1fc03"),
+		additionalInputReseed: decodeHexString(c, "432aedc093e9a3f5cff34337f9d1f0b6b2f4d9e955156a55fffc591703873aa7"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "13c3850d8a13e205a8e816d3eea31b96c471b8c29ad037d68cdaf05372f98266"),
+			decodeHexString(c, "fe4311ce3a9bf6e105a07a9f6ebdaec81fab968205cef64156db09f6fdce6284"),
+		},
+		expected: decodeHexString(c, "98e0dca20d956b4be80e62cdc03d5ea545057061e72bf606057dfcea0e0f485b95552638d44beecc5cc6db876dff0ba95a0d151aa0b72f799bfe49a93d86ddb9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "09e4c1e0bc54013baa0f5f697cda897a0fa47c9a9185e2d0348a756695769143"),
+		nonce:                 decodeHexString(c, "c592fae4aacc3e2f6a417c5af6c5c030"),
+		personalization:       decodeHexString(c, "6602680dd937f7ac34bccc7ba779329e37ab46ef70b381dc6571e025e0ea3a2e"),
+		entropyInputReseed:    decodeHexString(c, "45f2bd8ebc9b2f5774e93de001ed97f25f76515d7482a55e1812941f795e97b7"),
+		additionalInputReseed: decodeHexString(c, "58ba0eda15dbf5b90def6dcaddbff875da07892d2bc3cc4befb5608926283182"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a90eb4ece1a10a5b3eb444770b9fae2db95b524d722a61fb681c8de9c888f3d2"),
+			decodeHexString(c, "77ac3ae246c418ba00fbf1110aac883782fe899b697b830f72904949a231c712"),
+		},
+		expected: decodeHexString(c, "6a9c6e15551994774de094270460248807efeeb1b16b7dff102ebc33f043dca3a68d46ec55ccbd891bf4099599c195fe386807f64e612d5cd56496195a1bede7"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "62cf2b159e287215e963a289f363c410de2e19ddce44fac9e26b7ed44ad1f971"),
+		nonce:                 decodeHexString(c, "c4e5b221ae8bcaeccc3481f1c50638f5"),
+		personalization:       decodeHexString(c, "147f1524bee0b05126611100f778e22307ca5893c5868e13c3415d08c3f2d998"),
+		entropyInputReseed:    decodeHexString(c, "ba3705c6aeb66dd12786b8e35d6e5aacd4c2030a95093a8eb08ecb06d5ab876f"),
+		additionalInputReseed: decodeHexString(c, "327e5580f4c9b36f99949274b391ff1ac465f1ff305d044b0c2e9d4ffc09f9f8"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cd1b4935869894fee3ca2e183416e44bf098239462f9a5a43595ae5927c40d2d"),
+			decodeHexString(c, "a4e7b47c9de1f9d36355e2fc992001a37297a7cae7352c272af0191a6f54bb2c"),
+		},
+		expected: decodeHexString(c, "89aae170abce1e86ea5275dd8c960dfe29bab54992ea013e82dc89d81caee92e720cad6f261af2b20ba7fbfba1fc2f6843db82f91a404c08b265df06f95b6d4e"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "8b61ac65fe61a62d1c142dd443a2a93911b5e35c6626f8c4d0c91b81dd2fe559"),
+		nonce:                 decodeHexString(c, "05c2a2119adbc096951a35d922cb7ed0"),
+		personalization:       decodeHexString(c, "12f1c2d9debeb89ab640bd0fdd0bfb3e9f356c22e9925176d00d3b1d79f59e41"),
+		entropyInputReseed:    decodeHexString(c, "987630fe622190d0993e79dc0a694d358adf0975993cc16e7bde35cb9baad842"),
+		additionalInputReseed: decodeHexString(c, "3d6864d4d07652feab9269adadf1a759e3f8723ac0cf3b05b846398eb21babac"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d890614d33be07df3780644ee479389a7ae7887e28c25d14f766f289c75f2c22"),
+			decodeHexString(c, "d2b029a2dd166fc175c67df9c98b4e16900b1dc020fa113933aba6c77209e330"),
+		},
+		expected: decodeHexString(c, "1462b79be25cc48b7be81f44df5fbb21baff037ea86e2a344409cb483157ef84859d346f5c9250ba4539a8d59834b15673d4303652f5c6d273106e053c578d02"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "139916e74a7405a70c09e31b6511e85fb5f387bcdbfc1c5e4d93b783da94984a"),
+		nonce:                 decodeHexString(c, "709dba3de6f799ed20a8fcc71ca7eb47"),
+		personalization:       decodeHexString(c, "082ff0b52f79f28f635686bf9ad0415a94ea2a4039144c7e3dcef8e3a8d6cb4e"),
+		entropyInputReseed:    decodeHexString(c, "72097ff83c0466c18dc664bca1f217bfd467bd38a8aac1949f4996e19670b87f"),
+		additionalInputReseed: decodeHexString(c, "92eaf348c820cc30d00b9dd6b402d076158ee957b19e27e5dee3ea482bce0a77"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6b9af27cf794bae56e69d0e879cbdb82fac1e372d00a3158ff73d4cc7659014a"),
+			decodeHexString(c, "dd18c8139fe9bd59efd536022416f0e0380f5f1dfd5e3e6a1954a730f00708c7"),
+		},
+		expected: decodeHexString(c, "ddf3e7ae967dd3a1eefb828af420170598d464d3c2f78dbabf10176e90bfdac2d00d9aea4247db053581d0b540a1fce0929c6f24dd647a6e86cb8c422b569029"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "d25d0a118d9d3f6237b6e56f5eacff1bb9d5df8cb0945c14f09c4b6d778be39a"),
+		nonce:                 decodeHexString(c, "745573c0917934cdd615a6a21dd68bb9"),
+		personalization:       decodeHexString(c, "bec1bce132aa26ae4b44c9dbb91af4b9bdc6a0c90e4a7a978f36dca0ff1727dd"),
+		entropyInputReseed:    decodeHexString(c, "7ee565be81b5b6ba0d60f2d333902b45b435581c5bb4a819030c151b51b61c35"),
+		additionalInputReseed: decodeHexString(c, "b1bfd9ef0b5401107fcafc1a5f15ac63fc5886efaebb1dea9c8eaec4a4ca2714"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "d87d6833815e5aafdac71791b2827953527672d3c692b42c6a2240d8471a5c95"),
+			decodeHexString(c, "ef92f46e53ea61bde175e666e97c62f5a4b1f376f901a798411ef90559460079"),
+		},
+		expected: decodeHexString(c, "27fa85c2ebd431025b1e1b6698b5f08f059a65c093fc3cc96e49ac74390404dce00c3456d597d3c59599fb7d856ae55a04b5c8b28200847bb953c33ef556eb1c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "05746b55ef8970e35f379c58f6ba8f8c21d3c4e241f9a8880f811dfad085dccf"),
+		nonce:                 decodeHexString(c, "c52f6cc43119b08fdca995c715cbee15"),
+		personalization:       decodeHexString(c, "bfc139cdc8b46c4cefc1383a9f4289bd4f79c16a46a64c87fb991e9102d41dd2"),
+		entropyInputReseed:    decodeHexString(c, "78fe981dd959e9dd5573a69da8d638c44fd8e9a37c346327d6db1aed04287a17"),
+		additionalInputReseed: decodeHexString(c, "f16683a7fa56fe77fe2ec5e0fcfc8c7306ac9640e90e12d0f890188435980766"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "fc5a69e0798962c72297f018fc6a85161e97a8029b664c789eb995048ff30206"),
+			decodeHexString(c, "e269aa7916f548445209a875da37842ec9eaa46b3013f6ee087bf11307923129"),
+		},
+		expected: decodeHexString(c, "bf53fe5c0d485e2cb84daaad94991f3c1a1c7e5fcdda3cfee97a632f44439710e83d15800ab35d6d6c2205b3f423a4d68a2b36c32497f248e5be80efd72fb1c1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "7882b2a44394f373c240f15982592cc5144ea099d69a6da3ddd531f49844d0c7"),
+		nonce:                 decodeHexString(c, "bf39eea31493f35655a7b475e75f4ab8"),
+		personalization:       decodeHexString(c, "76c60c2f171d5d3567dcf439778ce3aa920c04462370dab27ed1175b17dc3b1c"),
+		entropyInputReseed:    decodeHexString(c, "9b04f2a8cd91f045344404c1389b73c17284fb80e3d23280b407a33bef91a8af"),
+		additionalInputReseed: decodeHexString(c, "6afd74bbaa0620638d49b68631db751e6120b1171edf8a4bb329decdca3505b0"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "01059b5ef0faa01d1e7a8d04a2028fe0b9307bb1dc19ff0549a1acaa69d49897"),
+			decodeHexString(c, "06e86c7f79a2cb16e636cf4d778c10f61f9ed7e24cd7fe9213447f0190c3080e"),
+		},
+		expected: decodeHexString(c, "9abdc06e5a7abfb7451cc26ae47df14d33dec8f7923a9d3573e5d3fc1f354b480d8383dbe2e9b7b7346038b9a5bd3307f8b56d9dd6197b92c80e11e3c16b4a84"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed59_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed59_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "4c4ebf43e21c24299475818abc84fdd534ebd9e65b6108428db8f9a549d50d9d"),
+		nonce:                 decodeHexString(c, "50fa19039429d957d34742366c8a07fe"),
+		personalization:       decodeHexString(c, "6de83c16f91070e6e301da2e18d55ba2ad77ec054b2706fcea032cf49b0da9e5"),
+		entropyInputReseed:    decodeHexString(c, "3e42752a39d1551864f0187f35e3033018498984e496f8e4ffa91bde1c355e81"),
+		additionalInputReseed: decodeHexString(c, "9a11109a3327b3eb22c20c74cad74647bed3d0220fab4f6f2c13c9ac378abddf"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "308ea9fd629b0194aff155ea406d68047e7da4005592857cb8ade404478071a3"),
+			decodeHexString(c, "891a8b0abf78eb7eae64690e48857cde9da4af415dff59fded6305c57ef3d833"),
+		},
+		expected: decodeHexString(c, "8597c5c2e5d63dbaed95acef7bb41536fc362b0fbd18780fdfb6f125a97db0a0ed94a8934317d80c93b14cb3601f4511a2d8dbdcbb324f9e9075978d5c9a4f21"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed61_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "a6e860414e2fe8d4740ea204b877c76b50280722c3b91863257434c75304dafe"),
+		nonce:                 decodeHexString(c, "8f12c9327d28e2c2741e4ad7e27bb124"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c32e3b4cf97c06fab41b545870add8c3f98fa6751aab02988d2d34c95d199965"),
+		additionalInputReseed: decodeHexString(c, "f0d9a64fabbf346c871d7731e71586bcce748b08ff0726d68d54bfed27b10b27"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "c72f45581a7973cb4148fb9e8eacfca0e513c40ab8925313b499b1b83a99e372"),
+			decodeHexString(c, "7dfacd72c084c324f721f03addbe72b646a4a723e78b5e401aef844cf2b91333"),
+		},
+		expected: decodeHexString(c, "db2529862011f45d95918d843b7ef0d7ab18a6d6e3f0bcec109497502b68b5ed9ceae85514af51597e8479196d59190cda414e566ad638d39156351afbaeafd9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ddbfecb88df6627552b913e636a2dfcc8a0093f4c5d6ec3b0a3007cfce1b08f2"),
+		nonce:                 decodeHexString(c, "b862f9d492d93d736201b5cef15b5c5c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2ae9d19f0aaf6688d78ab91b11f0668c1616e81a6279abaf911b4686e046d1db"),
+		additionalInputReseed: decodeHexString(c, "404c84943637c22fced49555839dababa0d6df25c7a049aa2bb7114bea93ff67"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "79539a1fe56c5e1d7201292d507c5edb554cde37968105c3865df9f7dc36d1e7"),
+			decodeHexString(c, "8f3319f843e08244e8d27d7eb5db681e9ffd83657ddb40659fde20b2b4376c01"),
+		},
+		expected: decodeHexString(c, "87b7a3e5bfd7a5f8ba93fb020f213cefb0b2afc6a733d99b53e56e51ca06068f1a37ff8d88b7c77c23487bdf63b098761040f5f3d49489c38fb6fd3a7eb33ff1"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ca44841ba83accac8a90e8e7ede86a9bcc1e42a736f317be3ec25dd8c015e0e0"),
+		nonce:                 decodeHexString(c, "d159a415b81bf26e13b6ce3798631f7c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "dbdfb6757148704b56a16c4017e4daa20c1a403b790bd6483d3f4c1ab4cc96a8"),
+		additionalInputReseed: decodeHexString(c, "8e222523a93e06117dd2be55ed5130ce590dcbccb705a423867a56a6c78751ca"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "9f0d6ca9f4d3b79f369f3763254fe80a7703df5a96dd2ff53d57820b70095c1f"),
+			decodeHexString(c, "c9019927c40ce12c1bd596c22c72654ccea3ee5291cce11ce550e60eb7f03931"),
+		},
+		expected: decodeHexString(c, "cfdb90641288c8571748c9ea5934acb3230a847d1deed48014cc1b2578e40539dfab2bc6118057b18608399edf198dadb487aa4af20bc5f44d8c4fbbc96056b6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "10e26c674e99f1866778e316507f7a15cf5d82fbcab3b91ff7f66b9261467bb8"),
+		nonce:                 decodeHexString(c, "1276fa826b68f385f23a43786d62be18"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "eca2bfae3fa6b271fb51ef89a641f89230ad3efb23a250534a342dbfffc43bdf"),
+		additionalInputReseed: decodeHexString(c, "8c1c673b3a06bd9b10c787e609442d7f6dba9def1d596c031d393c9165674114"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "12ce47002f815700e79ac66f69ba65874427a520e5a033a09605ded1ace9b0d2"),
+			decodeHexString(c, "0580ae03359c94d3276e67878a01fc99cbdc83bb832dbd85a61a116038d6284e"),
+		},
+		expected: decodeHexString(c, "c65a716f716e12e8884b685fbd612f8adfc02b0d1753786208802aca3fe697031f514a470c09635030f0397381bc6195e99ff24bcf20f516a0b4c655a6451305"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "52998a71ea17fc993f67d8bbb177d7e1939b585c2136ff16112a89a89d36ad6d"),
+		nonce:                 decodeHexString(c, "4dd676a42415b48187ecbb8f27057a2c"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "f7673a0f9b2150ee9567cdf4814a409941a1760cbfc369e8c7dfc71b02c27838"),
+		additionalInputReseed: decodeHexString(c, "d161c18abb23d0840bd377bf7bf4d6e6aa2febe4542bc53807afd50dd32e711e"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "92c180e77c48f9b4a0fa85f3812e0b2a19ceaf56890b5782af2cc91f738fc665"),
+			decodeHexString(c, "505067be2250e083f32ebb38feab5fd1af1b7179cc4b73a4ea75f3adf3e7fc5b"),
+		},
+		expected: decodeHexString(c, "9c3db70621f2e9b66d94a72cf9652727bd76e16fb98e3f780b218a3f84c4d5d38604ac8571fb7076aea0d669206b37b978787767dcb4e8f2cb64092e1cfb9739"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "71037df5d1852fa6d5852692b364bf74d8913e4bcc015ec97b8cb45d4562e851"),
+		nonce:                 decodeHexString(c, "f7aed4631bfa3de4a0f028edc9baaee0"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "d6ce6095eb531c5ec94220978fb4293c8f627e970b0d34cd2f44bdb38eb9edd4"),
+		additionalInputReseed: decodeHexString(c, "99a6e1f00cc4b9c4f77957d4f83a0241cf4ec14c59df8def35dfde2b5b441d75"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "def6f79603de4466cd17c0a93b582ea2bc2d94ded24d74bde57e8108566730c5"),
+			decodeHexString(c, "8805f093a67f02b208fa3744511158f3fac07a7884fdbd2e5a96eec9645764f0"),
+		},
+		expected: decodeHexString(c, "870335d83576cf60b974ef6b2dd1e2a973901667a6905e181e5a049a7af0f483bed1ff1165d5ff094e8856bd7f93342dbea5e4a5407e7a5e2041a96c943a2554"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "4e40ed65deafbe08d81aca6607518fa9e558ba83235cb923ae5ec2d4819e4fb2"),
+		nonce:                 decodeHexString(c, "ecd1c0863892cd096ec000d1f8295886"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "381bc24ef1fea404c685eb7b06c40db6972af2f99804dfa88759147aad41a862"),
+		additionalInputReseed: decodeHexString(c, "2d28445ea881ec3a423741b170b5ef8529e5dc53a26f2d63452af428613d56d5"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b7ca5fb6d8a7ce2a5d25bcbac246978a2601832fcd9ea2350bbb7bb834fca785"),
+			decodeHexString(c, "c5dd4328a110d69aa1fe1b24281b8bbf7a15e78621d62a6656f3a03c87dd92a7"),
+		},
+		expected: decodeHexString(c, "b97b220c2c447029c158759f0a5e944e353c15f03d3a745552f8d5415335e8c84b8038e630bd82183b0c1a3c4f75c4e208e27576373653eea7b84b1ec704f496"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "c7a8479e9a97a04cb31a75b1cc8c12897383d4b358d630806793931d67e29f2e"),
+		nonce:                 decodeHexString(c, "6952336695e2f51842e50d47ac031e3a"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "4dbef96013f0b035dccefb03362074e425e4a74916be7c9c8add3768359f6310"),
+		additionalInputReseed: decodeHexString(c, "dda0cd22f24cff552ab96381986782bbdf4fa91d17bb25265b8f30cca931b3f6"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8a0898e1eaa5ca96cbffd0aef4aafb59e55300990ff4e4d2a557449a9f452b0b"),
+			decodeHexString(c, "c0b48ae5e4cff60d9d8092104105a485d400c4e62a2087b6eefb8c45c7251a15"),
+		},
+		expected: decodeHexString(c, "8ea61e740080edcd50d8536edf1fb09cab9514afd3f5d70c61e06253cfe29c357f58dcccc7a9478cb911d8b078d028fc28449678a47e12c1ef80edbd6828055b"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "df2fc41f0bd9d185dc15c6eab6b9e9e7267e8cce272281afa5d6545a75ea7a18"),
+		nonce:                 decodeHexString(c, "2865dc91bdf6bb25bdf9ecae6810be24"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "2101febe4904befdcef6089453ac1b3c82cbee725d969f0977cb574cd2a4412e"),
+		additionalInputReseed: decodeHexString(c, "31b8d29848a04f8159b802d6ec982749e7fa4aa0b872291d2cc9da0310344d43"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b0aad9d5685788fe821bb2bb81d3420f49a51aec118f5487f4155284788576e8"),
+			decodeHexString(c, "ba68cc2ede4838a834938dcea694fa6341b0732860c0eda9cd0fd3c6e687c988"),
+		},
+		expected: decodeHexString(c, "4dcf23ca7fa98721651c0ccf5f7ae8cdfa512cba1a90f4cb31ac8d1316c1d3672ed846554cd62eb85cbd0ed9b28f6e2aac87a1b29076d3278abe1dc4d9813795"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "79864cd2d69fc5b75faca2a93503ecf21b60176754c7e6c028ecbb674f2bbaac"),
+		nonce:                 decodeHexString(c, "619b1f7ed28f451cee9ba73f614b0590"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "a618dbbf6acb2e29b273ee89ce866ea293b28b4b11b47cef8c48bec293397cf1"),
+		additionalInputReseed: decodeHexString(c, "d22db190f2a71745a7bde0723fdef05880f8e373865c6e8b9333aa9333b0db55"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "760ce12b9a1f09ed4c0b9ae5cf4785ad0a8e6f4e69923dccf82138bf2c575273"),
+			decodeHexString(c, "e61761dc83fdf94e910b25b1c16b836530be7cd3306b4f2981ba1a054332e78d"),
+		},
+		expected: decodeHexString(c, "ef45a0e11a2ec4008945bbf2e2a39ff26bf4ce1262401293326486412e77e7135fc3bcba60c2613b4893d3755bd22537ab347585931216151910cbf96876b300"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "23f32fd6a80979d004ddeba2fbcea7306594206807e66ed05e8aa464ec91b714"),
+		nonce:                 decodeHexString(c, "753114f03f8fa514b7d309adc90aa549"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "e03291ac01958946c9688eaa3ae793357e9f75b47153d71b26375f6a10070add"),
+		additionalInputReseed: decodeHexString(c, "7ad9398a3137a1d522e0e2229502059bedc0b4854959809eef19adaf9f593a70"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b0d4e896b9a0bea073d429c9628c2375aa8966fb3ef44cf4e4010297635babd8"),
+			decodeHexString(c, "08b1f2d69c90007caf10bb988baf3f7ed9edc5fa49f91ea682675960958826c0"),
+		},
+		expected: decodeHexString(c, "0b24d8fadde949b8ce0a44a55cff2afd20358be7579932b3a5bbc41cc9cce2bc107847dd14e334da5c8eb3fe0397604627a93f8791d64a416c6f832242af05de"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "7ff49d51b6bc7301d2d33a1376782c9510f2b16e839ce2d28563fc2878f62e16"),
+		nonce:                 decodeHexString(c, "88b7489ab9754503e98058c4cd9a18f4"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "17cbc9236b1a435d17ed3e7f4384833940b874bc26dd64abda0183f2f14b7aa4"),
+		additionalInputReseed: decodeHexString(c, "55780b471628cbcca5bb716c42c8083e1d455ebe569d39fa656b0bee1bbae1fd"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a5f94dfa7988bcf88bde68f7311248e4df8be9af8df3f4814e976b751c23113a"),
+			decodeHexString(c, "5987bfb27d2fe8f5ca95539a8535a8cc3da26770c73ff34ee8d376474483f32a"),
+		},
+		expected: decodeHexString(c, "63071a08f1c255ad8987e834882da0ebffe5ee72fdf4b4bfcdc4b78082eecc5e3a59b218b9d9084defdf061fe6af5dd570cb932ef44ff641d474aa04587fd712"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "59c624972540133029e91562332ccf40f7b556286407a73ea7c9df4304d2f325"),
+		nonce:                 decodeHexString(c, "c0e47a74bb19d6b16096364c37ba0ce5"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "cca8c1bb4482a4833439197657b11d64a5e656e0e61ae71d905158c0d9bfa3af"),
+		additionalInputReseed: decodeHexString(c, "412878f568083161e5c8608ba61280773396730f791600390103395c7e80c600"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "048eccc929ef23bb414d3d1a4e6ec703b032f21a23d5940815efdb060be59542"),
+			decodeHexString(c, "4330d5487d7170f55edb3a50936c75bbf5230f247b295245ca1078d8b646e52d"),
+		},
+		expected: decodeHexString(c, "6c581277556d56a33d1548cae0320c5e40a79a8131bfe564604d5e05b10cce0a9f69cf324ba3d52a04a856358df5ef720ca25af4d66a8d5bf9162176fac7f170"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "4360d1f92ca7600f954eab310aa1b4e584f32794a27cb4a4998fc516973262af"),
+		nonce:                 decodeHexString(c, "acd8b947d3f3252cc11f22d47ce728f3"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "815c19406b7f659b6561c7232ce30e719fca7004c66ed6f0596472340c24ed13"),
+		additionalInputReseed: decodeHexString(c, "b4e5c9b9d454cb1098bb949614a84c36cee8fb57c627ea8631f5c0b6303a2137"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "abefd6a5f2e88a697906d74b23b39af97a195a30b8c63d226bae6b2ddf2956be"),
+			decodeHexString(c, "d3f2277e1e89dc6cd975e7d77dca4b74bf67c68b4e8dbbc2bb1cd0298b3df075"),
+		},
+		expected: decodeHexString(c, "1af3586299e7fb069d13cf8e1697cd3d24fd1b1c656b64c2c56cfb5f321568c435ae1524f57a86097abdf088fd355db98a1bd24ce82af7fb0bd3fe5e0b263615"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed61_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed61_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "181421b5ee17841e2392df0be3bebcb4e905bb5cdf7cdda6b9604f81450bfa23"),
+		nonce:                 decodeHexString(c, "7e9de5b37241f1c4ea910700d8f86094"),
+		personalization:       decodeHexString(c, ""),
+		entropyInputReseed:    decodeHexString(c, "c3e2e38de2b26b359962abf56bbfe4cb73634f79c121469d4544688d65e9cec9"),
+		additionalInputReseed: decodeHexString(c, "cf24f34cc1d765e88293a7707cf522c298ea335bfcc9d9a6e80bce3d5755582c"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "1be24010850f9aa3aa0f50c98be815709d5e7a3dcff9758b1ac51b5a66641c68"),
+			decodeHexString(c, "3908250e9ac3b3a8823f6d6156348e55c35dab681b4851c39ad6393e42a3469e"),
+		},
+		expected: decodeHexString(c, "d47663de213d5a15dcf37674d713c850c14cfd7b1efd62f0e3dd1cdb51dcaed43fc0b660aeef3858ee5e911e17c0bd748c3b762ebd595a0275902b69e753c111"),
+	})
+}
+
+func (s *drbgSuite) testCTRGenerateAfterReseed63_AES256(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, 32, data)
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_0(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "e2f75cf553035b3cb4d21e567ca5c203623d4a4b5885326f63ea61a020a4984e"),
+		nonce:                 decodeHexString(c, "a666ee4b26dae5897fc5e85c643fc630"),
+		personalization:       decodeHexString(c, "19275bbd7a0109d8179334c55337bc0a3f5ac48cb8c4959c888c0b65f7ac9a84"),
+		entropyInputReseed:    decodeHexString(c, "f6672d022226b05db5d3c59c0da5b20a1be05ecabbd1744483ca4ce5571d93f4"),
+		additionalInputReseed: decodeHexString(c, "8c8f940af45aec864c8aa8be60b100f82bb9670c7e2a392a4ab6f4b20eefbbaa"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "26b5f0dadc891e0b1b78878e7ae75aee843376c0968c54c12759c18def21d363"),
+			decodeHexString(c, "ff6791f4d4b29996b0399d95a14a28b8e2e20787531d916e7ed2ec040bbd7c84"),
+		},
+		expected: decodeHexString(c, "eb8f289bb05be84084840c3d2c9deea0245487a98d7e1a4017b860e48635213d622a4a4eae91efdd5342ade94093f199c16deb1e58d0088b9b4a0f24a5d15775"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_1(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "0babcecc5d90f7e5dfde2c3c24a07669e0f719aa4ff5bfcc02edddc55f2c48f7"),
+		nonce:                 decodeHexString(c, "2c3e8afcaaeff94ab339e39aa5cf1abe"),
+		personalization:       decodeHexString(c, "94d95ddfb02feff3950c03a28545bffba98400f9cad004cb22b8a77b67ed6180"),
+		entropyInputReseed:    decodeHexString(c, "1782e8626909686c379cfca78b939f7c0cb589ea0bd316f3aec8dc5a0493799b"),
+		additionalInputReseed: decodeHexString(c, "7b5f37adbad31d71cadd3d32b57284b5f9d7d67221f451df258193a140d4a138"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "750c2c67d1a3d5b0417527450fded204a5aa9ff6e9726a33dfe8db52f85cf29a"),
+			decodeHexString(c, "6242c00a5c732f38008791870973be60b83c043a1bb3f0bedb4e46170fda5be2"),
+		},
+		expected: decodeHexString(c, "c0b7acdff7a33628fbb68bb399693d0edfb22623fbcb1fe64cb503cc527f81c705a57de8e7ed656ce328e99cbba0decd253cc9468bc8042f49d3a48c51ebabd2"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_2(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "02e0c4bed4ff5a3a01a2573cb1344a55a8edd68c83e111da83eaee2217b7b0f9"),
+		nonce:                 decodeHexString(c, "606a909c1eb426e86f6564cbe0177273"),
+		personalization:       decodeHexString(c, "519758933d0c75ad844ac8b7b98c314522dcb5b8082af368cb489bcacb5dfaa9"),
+		entropyInputReseed:    decodeHexString(c, "81b0923997a786f91ed0c2783a372c87fe0fee2b8305238efff957566451f712"),
+		additionalInputReseed: decodeHexString(c, "576e8dc36e4cc8afe80edfb94f192274bc904b8659f3e727284fd377e9f9fb38"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "8c6563bd4a5fdb598100355810d3af0e0e07b209b78cd56ce533aba38ab75b02"),
+			decodeHexString(c, "ebecb4613457150d8a285a354251cff094a635c3e18563c800b5f5ea71032efd"),
+		},
+		expected: decodeHexString(c, "dfdb7f53424560b5fa21bfbcfb6a17dc6cd693681bb978c2d04cf88c4678b68af84fe541913e633fdedc21a87fb5cd1ffe74251d45ac15d8e4ecb30798d06951"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_3(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "c074a9e5ac43390437d12d7162853aa9abd76ec7ecb417417b304e164b60cb6f"),
+		nonce:                 decodeHexString(c, "59e303f0be5c528e45258d52614b8518"),
+		personalization:       decodeHexString(c, "4cd74f78461d879a90c26e16d7333ef459c2d632e089497a891a9ee6184e981d"),
+		entropyInputReseed:    decodeHexString(c, "3161ef4f92bfc32faf7fc1d70b195cc1b051f7f0afc5902f4f28d046203182f1"),
+		additionalInputReseed: decodeHexString(c, "ab16c417442b01f3372508c172c7f237e28f2b01fa1394e393a871ee508bd5b2"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "81c73b8780e87169494230f04fed33bb5b251b6a42bc60a0ddfe3fce78a1eb5c"),
+			decodeHexString(c, "29df724164ffa38269183d55e05b22deb8defc0d40fe9c23297be0b69261f653"),
+		},
+		expected: decodeHexString(c, "d4bc09c391f5ae449369d9267e76448d6493a260adb9c3870cd50bccbf236b6bcff21334c693929c83938fc9d67a7d96a17e754a8b68829a135d6fb63bfc7a26"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_4(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "9f06ca93ae6af2ab0fbf6af0eb1eb583b8f6f8b50ae9e168ed6a85e6ca5609c5"),
+		nonce:                 decodeHexString(c, "1c3fe6424b3a6d4ea41edf35f977b385"),
+		personalization:       decodeHexString(c, "1164b2c03299b68dceb2107a616e1efe4d111d59688b6e24812f65715fc98023"),
+		entropyInputReseed:    decodeHexString(c, "cda65fa8c4e0bf37f3aaa9c2538d8107fc1cbc0725f38ebeb4b8741e23b6a632"),
+		additionalInputReseed: decodeHexString(c, "44d6f14be3aa7a46854baa839c82dde239c6fdf237c61890e132a54822842136"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "e50e5192f4ebd5770b17df642070a94e7ab8e364fbfd42b5f4f0f6c3f3120b5c"),
+			decodeHexString(c, "ad9626e58bdcd430cdf817245d04f8be6edfba8a6cda9d1c44b86648996308ef"),
+		},
+		expected: decodeHexString(c, "ac1e0cf228c14a827a7d817d3993b503bfb7530524e6a603f89318128e5b0892d8e2beb705978b5c255c868ef0c4789312d9d0a22307bec2042247f3df60126a"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_5(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ecd138bbf1d55495f07921b4fb586078505be5f6586eba7fe1adf574f163d35a"),
+		nonce:                 decodeHexString(c, "e5aef8e641c92b0a05e3ca178bcec877"),
+		personalization:       decodeHexString(c, "d3e26573b896bc3284c04c786d3fb5eb299dada03fda129e93d118c13c469bca"),
+		entropyInputReseed:    decodeHexString(c, "3bce4b4e9cd3baf9e0b0cc7fc79a48a3265525d74315d3666e018e06c8e8df84"),
+		additionalInputReseed: decodeHexString(c, "f685cb185ccf41dd928e90f8675c27f52c7b6b90ff6c8c9f40125118c5827949"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "03803868d59f85df25af5300f99210b5a95f88483ce6b97768c5532976592c2b"),
+			decodeHexString(c, "2c9032cbfe8bafc94880bac991b469531afe0619d71dd3841e14c7244578ae95"),
+		},
+		expected: decodeHexString(c, "a0fdbc3d3628479f47ea6694efad2ba9bec2f5e7d1552331870c036af10192ff0d0ce8a4f100dde2b22ebdacb889ec1dc6bf8c34b41e42c06cd968e2d062312c"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_6(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ee7f43065d9481d23c4ec56ec42dfbeac20cd36a748541d1ad50526d3947b4e7"),
+		nonce:                 decodeHexString(c, "659e135871af57780067c216f272b4e7"),
+		personalization:       decodeHexString(c, "4ab0cb88781aa9c1a69c7daaf5394b482c1f2a13f409a0f0aa35ab84897ff89a"),
+		entropyInputReseed:    decodeHexString(c, "fcaf456baee38132dc4304c5c1798c76c4ea2626aa6a912332ae2e0486c1b548"),
+		additionalInputReseed: decodeHexString(c, "e9c8f1544b2e49e9498106f64305a1e099883bc23f000c26cfeb7b4dca50b2c4"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "a5679bf8c297ac086bee3ac6c25ffb895d17ebae81d56053c88f2dca4f705ef8"),
+			decodeHexString(c, "0c0eae3c9b02242bd86d38733d028e490ee7cfb6f07c9bc1d7618f6daa2056c1"),
+		},
+		expected: decodeHexString(c, "29c09fa19795a7ab052ac55684e68357539c80a428f71931ef4cef5f9099f752a844f21c546622d8a44bf6d46f9ec496720dfee61188dcab6868be18c826d230"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_7(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "d6c4953a45716f3216bed8be446cd3dfce251d7fad76e7264e7283f97bd561d6"),
+		nonce:                 decodeHexString(c, "e876f3f57df4f6c69dedd5b772e7a480"),
+		personalization:       decodeHexString(c, "4c1a21f8061c95d322aadf4a4c5dbc090dd0697ec3f2028aeaaa00937604027a"),
+		entropyInputReseed:    decodeHexString(c, "d8bcf4d161ea13f6f5d52a04998ef7daef4179c405832dd6e3e1c37fbf2d2f53"),
+		additionalInputReseed: decodeHexString(c, "01f6465095712d5d1be32d24bad47a1ddea1dff9f72897a0546e18799c51c1fb"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "0f845ce1cd1039f40054f06e05c954dddb0d92978557c7aadac49048517db9e2"),
+			decodeHexString(c, "59fb2f133caad5c95d428ff8b5d596f643bce664ba134f921abdaaa487768a93"),
+		},
+		expected: decodeHexString(c, "11927f5041613a7192be58697d66a43e30247101730b944ceb1e35bc1cfe4da40e4070783aff20142f73c4c3a8e797ebbaba9e639d28119c8c67731d61091dd9"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_8(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "2b08ea1885cd66804684868446fd795c94105e72f8b4a0997ed178e0cd6959b2"),
+		nonce:                 decodeHexString(c, "306b93b93b2ab7e94c2a7f0b401d18ea"),
+		personalization:       decodeHexString(c, "7a491aae8a65eb0240262f604bb00239ea8ad4c14068a46106ff684d0f5e9cc4"),
+		entropyInputReseed:    decodeHexString(c, "38390f357d7770ef3ea7df82371e7ecf1ed176fdba0d776f112723e3d338f0d6"),
+		additionalInputReseed: decodeHexString(c, "75ce688028177aabe8e95f0f50494cf2b13b218b1b71526ced0977bc6b6e47a9"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "807092a74623f463e5ff4d4ab84a1b539c346bf4798b4c661a7817838b41fde7"),
+			decodeHexString(c, "dbcb02357c44b770e6753fbbb1622ca2893e7ca404d793c54cf402ffb78dec6c"),
+		},
+		expected: decodeHexString(c, "a60bc75307f68334510ec3224a8a1eb1c989251455a8aa89ff1f9143537b4edd35ceb0a9cefd7b4f715ee1709fc7dae719fdfae8b20279097cf86b7f485d34cd"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_9(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "836f18d7e0a91e3726dd8330a23d096a7ee5f81ad276750a53e872fffe36d28a"),
+		nonce:                 decodeHexString(c, "32019ff29bfc4729c7639f74bad7224b"),
+		personalization:       decodeHexString(c, "feb78bd629eeecf4fc0400d58c4c8715fda965bf76905d146d58f89f90f40052"),
+		entropyInputReseed:    decodeHexString(c, "7a963348b1ddd69ca374adba0c8b5776c9b98c293a67a0bd9b76328513c75d4b"),
+		additionalInputReseed: decodeHexString(c, "8a91078ef7085e8e6a1427aeac3fc7931deba0a78ac18662216ac9a6aaffd7ea"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "b0723393419e29fcbc029743ce53d0d6d1905ad19c0d80e6ed681a3bb1aa71a0"),
+			decodeHexString(c, "a2d3e96cd66ce77d7276d8819235abcb00df30f3b9b8188e89507c97811ae770"),
+		},
+		expected: decodeHexString(c, "03457127523ce25ae9a7ddedd657cc2e3620d2c3ec18637a00394b1a072c04dfb805b5b7ac917ffa474a7a5ec4721d29abecdc9841d35750c6e3fcaa8fc54fd3"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_10(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "99dde897b5a3c45c307f68921aed2c5805ef3b2ee2fe6dbdf0f58f677cac5f34"),
+		nonce:                 decodeHexString(c, "d376d5b1bcd41ea1611371d57213119b"),
+		personalization:       decodeHexString(c, "ce0fa43eb5729529ceaf3e7c6d63196c7108daec1a302d38fd6f5235a3cb593a"),
+		entropyInputReseed:    decodeHexString(c, "498d106084169b38f9db61e10c876739264e0d35a3314cf16bc72dfb67bfbb36"),
+		additionalInputReseed: decodeHexString(c, "c1959dbbac36efcaf190154810cd765be4ac050db93bc767b0a4efbad6841b05"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "07c948e68792fe9cb89db93fed75a941a91e552c8026204e90307e360cc30440"),
+			decodeHexString(c, "36d3deb7a321eef9c19fad4d79b31bdf40845356db3a3fcce9f2147ffbe0cc8a"),
+		},
+		expected: decodeHexString(c, "911d89a65cc14b71dbae07587dc0e4238c9713a5d776acab916f099e23f3d78de617c5f697c95e70c7a0ec784a4192adce1efc90c336ef6c21a519a6295dc6b6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_11(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "e141d45d2bafcb32d727c52d0079188adb4e140b0abbb257fa4b76cb14b56b48"),
+		nonce:                 decodeHexString(c, "d014021d82d71e7da07db67c751b6a13"),
+		personalization:       decodeHexString(c, "23b49839c82213fccf8e82114db3819cfdd8c0440d64bdeae46e798bedcaff4d"),
+		entropyInputReseed:    decodeHexString(c, "6832cdf2ab897707534666fd47126c07efa3c5383535ac85cfeec8c6ba1e172b"),
+		additionalInputReseed: decodeHexString(c, "cc229c81a1c0bb7c5e6326c612f6f30d1a544fb8bfdf55d060dad6ae014d9433"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "6807bd4a3ce849c72d02215f970e8e2aca54fed1630e910707b301d63be98762"),
+			decodeHexString(c, "0ad142dcebfdf22a2d2eb5e758bc79c5af8ed64039028ee8a5c3e8c24d4f4713"),
+		},
+		expected: decodeHexString(c, "fb5ba7a18f1222201dc0bfa54cbae4c5ee42dfe48f58d62c50b3dadf5dca021aa8484921f45d89962b5a828e4bed53cab67ae28cf8f0654a3c38eb0bc36a13f0"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_12(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "ec78d9f385fcd46df1b01dc0568cbf23afe0a7196a1c083f05a53c5bee610048"),
+		nonce:                 decodeHexString(c, "1e183f9d7024cbc85ec698491c890b56"),
+		personalization:       decodeHexString(c, "5d090b15e489723121bfdc9c2b8f8287718dcad06544f065902de6869c5f22e6"),
+		entropyInputReseed:    decodeHexString(c, "3a3911415f45d3f9f665ab3d28c5e95ca0d7f86a5e5bc9c76dc1e35a5ac6fe06"),
+		additionalInputReseed: decodeHexString(c, "baca0fb13ef45e9c1dde22f56acf048d5301cfa92784a1e957316b9337da2515"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "cfa00bdc20dab77df9becd0e219cec4e2661e2e015a50aa6469125a3d09ffda8"),
+			decodeHexString(c, "113796927f70aa34a827afb892abaa38af1615da0da13434f5be6ce448e43fe2"),
+		},
+		expected: decodeHexString(c, "79201954e9b5544195bac5462ebf5c502300458524533fdfd7c8e4cc1a6d1b284f12a003ed494b67169cb17d0fcd9eb57c93b80f5fc3f6d4fa983c63bda595a6"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_13(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "3b4c1f225175862c15f566f6e840a52c71ad241976288b95211351441f55edb0"),
+		nonce:                 decodeHexString(c, "c210674f9322b5d1ecd3b57065e6bbe8"),
+		personalization:       decodeHexString(c, "fc4639e3971bba34ae3adaf88cb3c1007c98613f573958ea748c3d01a11d0dac"),
+		entropyInputReseed:    decodeHexString(c, "bb42e191b617e01de83434f13975c03ae1d11df34704637815fe71b6876d9d7b"),
+		additionalInputReseed: decodeHexString(c, "b65bb9ac14eeac53aab6856f3f904b353b6db911d5e1a405414bd69b8ef82f8b"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "3c1e5fe0212b72ab2a8dc5d8a12e38e97fcb0c3dafb7d87935c46785e4c17cb0"),
+			decodeHexString(c, "b6791eae5c22059965472b7a7c7199e5c637a53f92b0a710290a9ddeecb76ec6"),
+		},
+		expected: decodeHexString(c, "d7745b5d74aeee1f90e5d92b3f7252ae55bc03b2db0c073d4358a397e3972b6e8688448485e22631bfe2f0e156523aca163ebe392ddcb1e524a8398f754b4c4d"),
+	})
+}
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed63_AES256_14(c *C) {
+	s.testCTRGenerateAfterReseed63_AES256(c, &testData{
+		entropyInput:          decodeHexString(c, "be6923ef05eaae729b5b761b8668ab9c72083804df8796a300419474dd663387"),
+		nonce:                 decodeHexString(c, "7806458ffe9f206eea8a966b1b23eac2"),
+		personalization:       decodeHexString(c, "8b44c7f2e1f6b1ba3798e51f9b048c8c8b08df3c83584578712b9f8b737ba11b"),
+		entropyInputReseed:    decodeHexString(c, "40f0fe736e7c94c694eb8539ec8162661f73a5df5cf3d696b19fa3facf3e32d1"),
+		additionalInputReseed: decodeHexString(c, "86677096cd2fc19fb2b7431cb25f8b3f0cc1dda2783af6d49e0f02de44d91958"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "639824768081b8f8d09b9b4eb51c0bd1ea5666067ade2628d45e72721384b1dd"),
+			decodeHexString(c, "7492ada1c96f7b2de329cd54651bde17b4fc69471280931180bbdecaa2889435"),
+		},
+		expected: decodeHexString(c, "5c37c829eee0a9acf2ec0af816c7974a09994e744c070f58d4fcc216491a35be0d32854cc4bf6956ea5c43370c02084dd30a66fda089f5c47b4975d59a01a022"),
 	})
 }

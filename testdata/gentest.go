@@ -82,7 +82,7 @@ func scanTokens(data []byte, atEOF bool) (int, []byte, error) {
 	return adv + len(tok), tok, nil
 }
 
-type testCase map[string]string
+type testCase map[string][]string
 
 type testSuite struct {
 	name string
@@ -112,7 +112,7 @@ func (p *parser) handleEndTestCaseParam(tok string) (stateFunc, error) {
 }
 
 func (p *parser) handleTestCaseParam(tok string) (stateFunc, error) {
-	p.currentTest[p.currentName] = tok
+	p.currentTest[p.currentName] = append(p.currentTest[p.currentName], tok)
 	return p.handleEndTestCaseParam, nil
 }
 
@@ -159,7 +159,8 @@ func (p *parser) handleParamValue(tok string) (stateFunc, error) {
 	case tok == "[" || tok == "]" || tok == "=":
 		return nil, fmt.Errorf("handleParamValue: unexpected token %v", tok)
 	case tok == "\n" && p.currentTest != nil:
-		return p.handleStartTestCaseParam, nil
+		n, _ := p.handleTestCaseParam("")
+		return n(tok)
 	case tok == "\n":
 		return nil, fmt.Errorf("handleParamValue: unexpected token %v", tok)
 	case p.currentTest != nil:
@@ -393,7 +394,49 @@ func (s *drbgSuite) TestHash%[1]d_%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[7]s"),
 	})
 }`,
-			i, suite.params["HASH"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["ReturnedBits"])
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/no_reseed/Hash_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			h, ok := hashes[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["HASH"] = h
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testHashGenerate%[1]d_%[2]s(c *C, data *testData) {
+	s.testHashGenerate(c, crypto.%[2]s, data)
+}`,
+			i, h)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestHashGenerate%[1]d_%[2]s_%[3]d(c *C) {
+	s.testHashGenerate%[1]d_%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[7]s"),
+			decodeHexString(c, "%[8]s"),
+		},
+		expected: decodeHexString(c, "%[9]s"),
+	})
+}`,
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
@@ -427,7 +470,51 @@ func (s *drbgSuite) TestHashAfterReseed%[1]d_%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[8]s"),
 	})
 }`,
-			i, suite.params["HASH"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["EntropyInputReseed"], test["ReturnedBits"])
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/pr_false/Hash_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			h, ok := hashes[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["HASH"] = h
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testHashGenerateAfterReseed%[1]d_%[2]s(c *C, data *testData) {
+	s.testHashGenerateAfterReseed(c, crypto.%[2]s, data)
+}`,
+			i, h)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestHashGenerateAfterReseed%[1]d_%[2]s_%[3]d(c *C) {
+	s.testHashGenerateAfterReseed%[1]d_%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		entropyInputReseed: decodeHexString(c, "%[7]s"),
+		additionalInputReseed: decodeHexString(c, "%[8]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[9]s"),
+			decodeHexString(c, "%[10]s"),
+		},
+		expected: decodeHexString(c, "%[11]s"),
+	})
+}`,
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["AdditionalInputReseed"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
@@ -483,7 +570,49 @@ func (s *drbgSuite) TestHMAC%[1]d_%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[7]s"),
 	})
 }`,
-			i, suite.params["HASH"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["ReturnedBits"])
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/no_reseed/HMAC_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			h, ok := hashes[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["HASH"] = h
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testHMACGenerate%[1]d_%[2]s(c *C, data *testData) {
+	s.testHMACGenerate(c, crypto.%[2]s, data)
+}`,
+			i, h)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestHMACGenerate%[1]d_%[2]s_%[3]d(c *C) {
+	s.testHMACGenerate%[1]d_%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[7]s"),
+			decodeHexString(c, "%[8]s"),
+		},
+		expected: decodeHexString(c, "%[9]s"),
+	})
+}`,
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
@@ -517,7 +646,51 @@ func (s *drbgSuite) TestHMACAfterReseed%[1]d_%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[8]s"),
 	})
 }`,
-			i, suite.params["HASH"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["EntropyInputReseed"], test["ReturnedBits"])
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/pr_false/HMAC_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			h, ok := hashes[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["HASH"] = h
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testHMACGenerateAfterReseed%[1]d_%[2]s(c *C, data *testData) {
+	s.testHMACGenerateAfterReseed(c, crypto.%[2]s, data)
+}`,
+			i, h)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestHMACGenerateAfterReseed%[1]d_%[2]s_%[3]d(c *C) {
+	s.testHMACGenerateAfterReseed%[1]d_%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		entropyInputReseed: decodeHexString(c, "%[7]s"),
+		additionalInputReseed: decodeHexString(c, "%[8]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[9]s"),
+			decodeHexString(c, "%[10]s"),
+		},
+		expected: decodeHexString(c, "%[11]s"),
+	})
+}`,
+			i, suite.params["HASH"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["AdditionalInputReseed"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
@@ -573,7 +746,49 @@ func (s *drbgSuite) TestCTR%[1]d_AES%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[7]s"),
 	})
 }`,
-			i, suite.params["KEYLEN"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["ReturnedBits"])
+			i, suite.params["KEYLEN"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/no_reseed/CTR_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			c, ok := ciphers[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["KEYLEN"] = c.keyLenBits
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testCTRGenerate%[1]d_AES%[2]s(c *C, data *testData) {
+	s.testCTRGenerate(c, %[3]s, data)
+}`,
+			i, c.keyLenBits, c.keyLenBytes)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestCTRGenerate%[1]d_AES%[2]s_%[3]d(c *C) {
+	s.testCTRGenerate%[1]d_AES%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[7]s"),
+			decodeHexString(c, "%[8]s"),
+		},
+		expected: decodeHexString(c, "%[9]s"),
+	})
+}`,
+			i, suite.params["KEYLEN"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
@@ -607,7 +822,51 @@ func (s *drbgSuite) TestCTRAfterReseed%[1]d_AES%[2]s_%[3]d(c *C) {
 		expected: decodeHexString(c, "%[8]s"),
 	})
 }`,
-			i, suite.params["KEYLEN"], j, test["EntropyInput"], test["Nonce"], test["PersonalizationString"], test["EntropyInputReseed"], test["ReturnedBits"])
+			i, suite.params["KEYLEN"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["ReturnedBits"][0])
+			return err
+		},
+	); err != nil {
+		return err
+	}
+
+	if err := generateTests("testdata/pr_false/CTR_DRBG.rsp", nil,
+		func (suite *testSuite, i int) error {
+			c, ok := ciphers[suite.name]
+			if !ok {
+				return errSkipSuite
+			}
+			suite.params["KEYLEN"] = c.keyLenBits
+
+			if suite.params["AdditionalInputLen"] == "0" {
+				return errSkipSuite
+			}
+
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) testCTRGenerateAfterReseed%[1]d_AES%[2]s(c *C, data *testData) {
+	s.testCTRGenerateAfterReseed(c, %[3]s, data)
+}`,
+			i, c.keyLenBits, c.keyLenBytes)
+			return err
+		},
+		func (suite *testSuite, i, j int, test testCase) error {
+			_, err := fmt.Fprintf(f, `
+
+func (s *drbgSuite) TestCTRGenerateAfterReseed%[1]d_AES%[2]s_%[3]d(c *C) {
+	s.testCTRGenerateAfterReseed%[1]d_AES%[2]s(c, &testData{
+		entropyInput: decodeHexString(c, "%[4]s"),
+		nonce: decodeHexString(c, "%[5]s"),
+		personalization: decodeHexString(c, "%[6]s"),
+		entropyInputReseed: decodeHexString(c, "%[7]s"),
+		additionalInputReseed: decodeHexString(c, "%[8]s"),
+		additionalInput: [2][]byte{
+			decodeHexString(c, "%[9]s"),
+			decodeHexString(c, "%[10]s"),
+		},
+		expected: decodeHexString(c, "%[11]s"),
+	})
+}`,
+			i, suite.params["KEYLEN"], j, test["EntropyInput"][0], test["Nonce"][0], test["PersonalizationString"][0], test["EntropyInputReseed"][0], test["AdditionalInputReseed"][0], test["AdditionalInput"][0], test["AdditionalInput"][1], test["ReturnedBits"][0])
 			return err
 		},
 	); err != nil {
