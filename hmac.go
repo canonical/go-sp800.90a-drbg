@@ -83,9 +83,10 @@ func (d *hmacDRBG) generate(additionalInput, data []byte) error {
 	}
 
 	var res bytes.Buffer
+	h := hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 
 	for res.Len() < len(data) {
-		h := hmac.New(func() hash.Hash { return d.h.New() }, d.key)
+		h.Reset()
 		h.Write(d.v)
 		d.v = h.Sum(nil)
 

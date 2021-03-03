@@ -52,8 +52,9 @@ func bcc(b blockCipher, key, data []byte) (out []byte) {
 	out = make([]byte, b.blockSize())
 	n := len(data) / b.blockSize()
 
+	input := make([]byte, b.blockSize())
+
 	for i := 0; i < n; i++ {
-		input := make([]byte, b.blockSize())
 		for j := 0; j < len(input); j++ {
 			input[j] = out[j] ^ data[(i*b.blockSize())+j]
 		}
@@ -79,8 +80,9 @@ func block_cipher_df(b blockCipher, keyLen int, input []byte, requestedBytes int
 	k := dfKey[:keyLen]
 	i := uint32(0)
 
+	iv := make([]byte, b.blockSize())
+
 	for temp.Len() < (keyLen + b.blockSize()) {
-		iv := make([]byte, b.blockSize())
 		binary.BigEndian.PutUint32(iv, i)
 
 		var data bytes.Buffer
@@ -131,8 +133,10 @@ func (d *ctrDRBG) update(providedData []byte) {
 	mod := new(big.Int)
 	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
 
+	v := new(big.Int)
+
 	for temp.Len() < seedLength {
-		v := new(big.Int).SetBytes(d.v)
+		v.SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
 		d.v = zeroExtendBytes(v, d.blockSize())
@@ -196,8 +200,10 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 	mod := new(big.Int)
 	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
 
+	v := new(big.Int)
+
 	for temp.Len() < len(data) {
-		v := new(big.Int).SetBytes(d.v)
+		v.SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
 		d.v = zeroExtendBytes(v, d.blockSize())

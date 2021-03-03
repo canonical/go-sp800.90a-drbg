@@ -66,13 +66,16 @@ func hash_gen(alg crypto.Hash, v []byte, requestedBytes int) []byte {
 		panic("unexpected seed length")
 	}
 
+	h := alg.New()
+	newData := new(big.Int)
+
 	for i := 1; i <= n; i++ {
-		h := alg.New()
+		h.Reset()
 		h.Write(data)
 
 		res.Write(h.Sum(nil))
 
-		newData := new(big.Int).SetBytes(data)
+		newData.SetBytes(data)
 		newData.Add(newData, one)
 		newData.Mod(newData, mod)
 
@@ -91,9 +94,10 @@ func hash_df(alg crypto.Hash, input []byte, requestedBytes int) []byte {
 	requestedBits := uint32(requestedBytes * 8)
 
 	var res bytes.Buffer
+	h := alg.New()
 
 	for i := uint8(1); i <= uint8(n); i++ {
-		h := alg.New()
+		h.Reset()
 		h.Write([]byte{i})
 		binary.Write(h, binary.BigEndian, requestedBits)
 		h.Write(input)
