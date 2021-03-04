@@ -22,80 +22,117 @@ type hmacDRBG struct {
 	reseedCounter uint64
 }
 
+// update implements HMAC_DRBG_Update, described in section 10.1.2.2 of
+// SP800-90A.
 func (d *hmacDRBG) update(providedData []byte) {
+	// 1) K = HMAC (K, V || 0x00 || provided_data).
 	h := hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 	h.Write(d.v)
 	h.Write([]byte{0x00})
 	h.Write(providedData)
 	d.key = h.Sum(nil)
 
+	// 2) V = HMAC (K, V).
 	h = hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 	h.Write(d.v)
 	d.v = h.Sum(nil)
 
+	// 3) If (provided_data = Null), then return K and V.
 	if len(providedData) == 0 {
 		return
 	}
 
+	// 4) K = HMAC (K, V || 0x01 || provided_data).
 	h = hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 	h.Write(d.v)
 	h.Write([]byte{0x01})
 	h.Write(providedData)
 	d.key = h.Sum(nil)
 
+	// 5) V = HMAC (K, V).
 	h = hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 	h.Write(d.v)
 	d.v = h.Sum(nil)
 }
 
+// instantiate implements HMAC_DRBG_Instantiate_algorithm, described in section 10.1.2.3 of
+// SP800-90A.
 func (d *hmacDRBG) instantiate(entropyInput, nonce, personalization []byte, securityStrength int) {
+	// 1) seed_material = entropy_input || nonce || personalization_string.
 	var seedMaterial bytes.Buffer
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(nonce)
 	seedMaterial.Write(personalization)
 
+	// 2) Key = 0x00 00...00. Comment: outlen bits.
 	d.key = make([]byte, d.h.Size())
+
+	// 3) V = 0x01 01...01. Comment: outlen bits.
 	d.v = make([]byte, d.h.Size())
 	for i := range d.v {
 		d.v[i] = 0x01
 	}
 
+	// 4) (Key, V) = HMAC_DRBG_Update (seed_material, Key, V).
 	d.update(seedMaterial.Bytes())
+
+	// 5) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// reseed implements HMAC_DRBG_Reseed_algorithm, described in section 10.1.2.4 of
+// SP800-90A.
 func (d *hmacDRBG) reseed(entropyInput, additionalInput []byte) {
+	// 1) seed_material = entropy_input || additional_input.
 	var seedMaterial bytes.Buffer
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(additionalInput)
 
+	// 2) (Key, V) = HMAC_DRBG_Update (seed_material, Key, V).
 	d.update(seedMaterial.Bytes())
+
+	// 3) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// generate implements HMAC_DRBG_Generate_algorithm, described in section 10.1.2.5 of
+// SP800-90A.
 func (d *hmacDRBG) generate(additionalInput, data []byte) error {
+	// 1) If reseed_counter > reseed_interval, then return an indication that a
+	// reseed is required.
 	if d.reseedCounter > 1<<48 {
 		return ErrReseedRequired
 	}
 
+	// 2) If additional_input ≠ Null, then
+	// (Key, V) = HMAC_DRBG_Update (additional_input, Key, V).
 	if len(additionalInput) > 0 {
 		d.update(additionalInput)
 	}
 
-	var res bytes.Buffer
+	// 3) temp = Null.
+	var temp bytes.Buffer
+
 	h := hmac.New(func() hash.Hash { return d.h.New() }, d.key)
 
-	for res.Len() < len(data) {
+	// 4) While (len (temp) < requested_number_of_bits) do:
+	for temp.Len() < len(data) {
+		// 4.1) V = HMAC (Key , V).
 		h.Reset()
 		h.Write(d.v)
 		d.v = h.Sum(nil)
 
-		res.Write(d.v)
+		// 4.2) temp = temp || V.
+		temp.Write(d.v)
 	}
 
-	copy(data, res.Bytes())
+	// 5) returned_bits = leftmost (temp, requested_number_of_bits).
+	copy(data, temp.Bytes())
 
+	// 6) (Key, V) = HMAC_DRBG_Update (additional_input, Key, V).
 	d.update(additionalInput)
+
+	// 7) reseed_counter = reseed_counter + 1.
 	d.reseedCounter += 1
 
 	return nil

@@ -48,64 +48,110 @@ func (b aesBlockCipherImpl) blockSize() int {
 	return aes.BlockSize
 }
 
-func bcc(b blockCipher, key, data []byte) (out []byte) {
-	out = make([]byte, b.blockSize())
-	n := len(data) / b.blockSize()
-
-	input := make([]byte, b.blockSize())
-
-	for i := 0; i < n; i++ {
-		for j := 0; j < len(input); j++ {
-			input[j] = out[j] ^ data[(i*b.blockSize())+j]
-		}
-		out = b.encrypt(key, input)
+// bcc implements BCC, described in section 10.3.3 of SP800-90A.
+func bcc(b blockCipher, key, data []byte) []byte {
+	if len(data)%b.blockSize() != 0 {
+		panic("data length must be a multiple of the block length")
 	}
 
-	return
+	// 1) chaining_value = 0(x outlen)
+	chainingValue := make([]byte, b.blockSize())
+
+	// 2) n = len (data)/outlen.
+	n := len(data) / b.blockSize()
+
+	// 3) Starting with the leftmost bits of data, split data into n blocks of
+	// outlen bits each, forming block[1] to block[n].
+	blocks := make([][]byte, n)
+	for i := 0; i < n; i++ {
+		blocks[i] = data[i*b.blockSize() : (i+1)*b.blockSize()]
+	}
+
+	inputBlock := make([]byte, b.blockSize())
+
+	// 4) For i = 1 to n do
+	for i := 0; i < n; i++ {
+		for j := 0; j < len(inputBlock); j++ {
+			// 4.1) input_block = chaining_value ⊕ block[i].
+			inputBlock[j] = chainingValue[j] ^ blocks[i][j]
+		}
+
+		// 4.2) chaining_value = Block_Encrypt (Key, input_block).
+		chainingValue = b.encrypt(key, inputBlock)
+	}
+
+	return chainingValue
 }
 
+// block_cipher_df implements Block_Cipher_df, described in section 10.3.2 of SP800-90A.
 func block_cipher_df(b blockCipher, keyLen int, input []byte, requestedBytes int) []byte {
+	// 2) L = len (input_string)/8.
+	l := uint32(len(input))
+
+	// 3) N = number_of_bits_to_return/8.
+	n := uint32(requestedBytes)
+
+	// 4) S = L || N || input_string || 0x80.
 	var s bytes.Buffer
-	binary.Write(&s, binary.BigEndian, uint32(len(input)))
-	binary.Write(&s, binary.BigEndian, uint32(requestedBytes))
+	binary.Write(&s, binary.BigEndian, l)
+	binary.Write(&s, binary.BigEndian, n)
 	s.Write(input)
 	s.Write([]byte{0x80})
 
+	// 5) While (len (S) mod outlen) ≠ 0, do
+	//      S = S || 0x00.
 	for s.Len()%b.blockSize() != 0 {
 		s.Write([]byte{0x00})
 	}
 
+	// 6) temp = the Null string.
 	var temp bytes.Buffer
 
-	k := dfKey[:keyLen]
+	// 7) i = 0.
 	i := uint32(0)
+
+	// 8) K = leftmost (0x00010203...1D1E1F, keylen).
+	k := dfKey[:keyLen]
 
 	iv := make([]byte, b.blockSize())
 
+	// 9) While len(temp) < keylen + outlen, do
 	for temp.Len() < (keyLen + b.blockSize()) {
+		// 9.1) IV = i || 0(x (outlen - len (i))).
 		binary.BigEndian.PutUint32(iv, i)
 
+		// 9.2) temp = temp || BCC (K, (IV || S)).
 		var data bytes.Buffer
 		data.Write(iv)
 		data.Write(s.Bytes())
 
 		temp.Write(bcc(b, k, data.Bytes()))
 
+		// 9.3) i = i + 1.
 		i += 1
 	}
 
+	// 10) K = leftmost (temp, keylen).
 	k = make([]byte, keyLen)
-	copy(k, temp.Bytes()[:keyLen])
-	x := make([]byte, b.blockSize())
-	copy(x, temp.Bytes()[keyLen:keyLen+b.blockSize()])
+	copy(k, temp.Bytes())
 
+	// 11) X = select (temp, keylen+1, keylen+outlen).
+	x := make([]byte, b.blockSize())
+	copy(x, temp.Bytes()[keyLen:])
+
+	// 12) temp = the Null string.
 	temp.Reset()
 
+	// 13) While len (temp) < number_of_bits_to_return, do
 	for temp.Len() < requestedBytes {
+		// 13.1) = Block_Encrypt (K, X).
 		x = b.encrypt(k, x)
+
+		// 13.2) temp = temp || X.
 		temp.Write(x)
 	}
 
+	// 14) requested_bits = leftmost (temp, number_of_bits_to_return).
 	return temp.Bytes()[:requestedBytes]
 }
 
@@ -125,9 +171,13 @@ func (d *ctrDRBG) blockSize() int {
 	return d.b.blockSize()
 }
 
+// update implements CTR_DRBG_Update, described in section 10.2.1.2 of
+// SP800-90A.
 func (d *ctrDRBG) update(providedData []byte) {
-	seedLength := d.blockSize() + d.keyLen()
+	// 1) temp = Null
 	var temp bytes.Buffer
+
+	seedLength := d.blockSize() + d.keyLen()
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
@@ -135,85 +185,137 @@ func (d *ctrDRBG) update(providedData []byte) {
 
 	v := new(big.Int)
 
+	// 2) While (len(temp) < seedLen) do
 	for temp.Len() < seedLength {
+		// 2.1) V = (V+1) mod 2^blocklen
 		v.SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
 		d.v = zeroExtendBytes(v, d.blockSize())
 
+		// 2.2) output_block = Block_Encrypt (Key, V).
+		// 2.3) temp = temp || output_block.
 		temp.Write(d.b.encrypt(d.key, d.v))
 	}
 
+	// 3) temp = leftmost(temp, seedLen)
 	temp.Truncate(seedLength)
+
+	// 4) temp = temp ⊕ provided_data.
 	for i := 0; i < temp.Len(); i++ {
 		temp.Bytes()[i] ^= providedData[i]
 	}
 
+	// 5) Key = leftmost (temp, keylen).
 	d.key = temp.Bytes()[:d.keyLen()]
+
+	// 6) V = rightmost (temp, blocklen).
 	d.v = temp.Bytes()[d.keyLen():]
 }
 
+// instantiate implements CTR_DRBG_Instantiate_algorithm, described in section 10.2.1.3.2 of
+// SP800-90A.
 func (d *ctrDRBG) instantiate(entropyInput, nonce, personalization []byte, securityStrength int) {
-	var seedMaterial bytes.Buffer
-	seedMaterial.Write(entropyInput)
-	seedMaterial.Write(nonce)
-	seedMaterial.Write(personalization)
+	var tmp bytes.Buffer
+
+	// 1) seed_material = entropy_input || nonce || personalization_string.
+	tmp.Write(entropyInput)
+	tmp.Write(nonce)
+	tmp.Write(personalization)
+	seedMaterial := tmp.Bytes()
 
 	seedLength := d.blockSize() + d.keyLen()
 
-	seed := block_cipher_df(d.b, d.keyLen(), seedMaterial.Bytes(), seedLength)
+	// 2) seed_material = df (seed_material, seedlen).
+	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, seedLength)
+
+	// 3) Key = 0(x keylen) is done in NewCTR.
+
+	// 4) V = 0(x blocklen).
 	d.v = make([]byte, d.blockSize())
-	d.update(seed)
 
+	// 5) (Key, V) = CTR_DRBG_Update (seed_material, Key, V).
+	d.update(seedMaterial)
+
+	// 6) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// reseed implements CTR_DRBG_Reseed_algorithm, described in section 10.2.1.4.2 of
+// SP800-90A.
 func (d *ctrDRBG) reseed(entropyInput, additionalInput []byte) {
-	var seedMaterial bytes.Buffer
-	seedMaterial.Write(entropyInput)
-	seedMaterial.Write(additionalInput)
+	var tmp bytes.Buffer
+
+	// 1) seed_material = entropy_input || additional_input.
+	tmp.Write(entropyInput)
+	tmp.Write(additionalInput)
+	seedMaterial := tmp.Bytes()
 
 	seedLength := d.blockSize() + d.keyLen()
-	seed := block_cipher_df(d.b, d.keyLen(), seedMaterial.Bytes(), seedLength)
-	d.update(seed)
 
+	// 2) seed_material = df (seed_material, seedlen).
+	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, seedLength)
+
+	// 3) (Key, V) = CTR_DRBG_Update (seed_material, Key, V).
+	d.update(seedMaterial)
+
+	// 4) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// generate implements CTR_DRBG_Generate_algorithm, described in section 10.2.1.5.2 of
+// SP800-90A.
 func (d *ctrDRBG) generate(additionalInput, data []byte) error {
+	// 1) If reseed_counter > reseed_interval, then return an indication that a
+	// reseed is required.
 	if d.reseedCounter > 1<<48 {
 		return ErrReseedRequired
 	}
 
 	seedLength := d.blockSize() + d.keyLen()
 
+	// 2) If (additional_input ≠ Null), then
 	if len(additionalInput) > 0 {
+		// 2.1) additional_input = Block_Cipher_df (additional_input, seedlen).
 		additionalInput = block_cipher_df(d.b, d.keyLen(), additionalInput, seedLength)
+
+		// 2.2) (Key, V) = CTR_DRBG_Update (additional_input, Key, V).
 		d.update(additionalInput)
+		// Else additional_input = 0(x seedlen).
 	} else {
 		additionalInput = make([]byte, seedLength)
 	}
 
+	// 3) temp = Null.
 	var temp bytes.Buffer
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
 	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
-
 	v := new(big.Int)
 
+	// 4) While (len (temp) < requested_number_of_bits) do:
 	for temp.Len() < len(data) {
+		// 4.1.2) V = (V+1) mod 2^blocklen.
 		v.SetBytes(d.v)
 		v.Add(v, one)
 		v.Mod(v, mod)
 		d.v = zeroExtendBytes(v, d.blockSize())
 
-		temp.Write(d.b.encrypt(d.key, d.v))
+		// 4.2) output_block = Block_Encrypt (Key, V).
+		outputBlock := d.b.encrypt(d.key, d.v)
+
+		// 4.3) temp = temp || output_block.
+		temp.Write(outputBlock)
 	}
 
+	// 5) returned_bits = leftmost (temp, requested_number_of_bits).
 	copy(data, temp.Bytes())
 
+	// 6) (Key, V) = CTR_DRBG_Update (additional_input, Key, V).
 	d.update(additionalInput)
+
+	// 7) reseed_counter = reseed_counter + 1.
 	d.reseedCounter += 1
 
 	return nil

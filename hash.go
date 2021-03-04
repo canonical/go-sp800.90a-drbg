@@ -49,11 +49,17 @@ func seedLength(h crypto.Hash) (int, error) {
 	}
 }
 
-func hash_gen(alg crypto.Hash, v []byte, requestedBytes int) []byte {
-	n := (requestedBytes + (alg.Size() - 1)) / alg.Size()
+// hashgen implements Hashgen, described in section 10.1.1.4 of
+// SP800-90A.
+func hashgen(alg crypto.Hash, v []byte, requestedBytes int) []byte {
+	// 1) m = requested_no_of_bits / outlen.
+	m := (requestedBytes + (alg.Size() - 1)) / alg.Size()
 
+	// 2) data = V.
 	data := v
-	var res bytes.Buffer
+
+	// 3) W = the Null string.
+	var W bytes.Buffer
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
@@ -65,47 +71,65 @@ func hash_gen(alg crypto.Hash, v []byte, requestedBytes int) []byte {
 	default:
 		panic("unexpected seed length")
 	}
-
 	h := alg.New()
-	newData := new(big.Int)
+	tmp := new(big.Int)
 
-	for i := 1; i <= n; i++ {
+	// 4) For i = 1 to m
+	for i := 1; i <= m; i++ {
+		// 4.1) w = Hash (data).
 		h.Reset()
 		h.Write(data)
+		w := h.Sum(nil)
 
-		res.Write(h.Sum(nil))
+		// 4.2) W = W || w.
+		W.Write(w)
 
-		newData.SetBytes(data)
-		newData.Add(newData, one)
-		newData.Mod(newData, mod)
+		// 4.3) data = (data + 1) mod 2^seedlen.
+		tmp.SetBytes(data)
+		tmp.Add(tmp, one)
+		tmp.Mod(tmp, mod)
 
-		data = zeroExtendBytes(newData, len(v))
+		data = zeroExtendBytes(tmp, len(v))
 	}
 
-	return res.Bytes()[:requestedBytes]
+	// 5) returned_bits = leftmost (W, requested_no_of_bits).
+	return W.Bytes()[:requestedBytes]
 }
 
+// hash_df implements the Hash_df function described in section 10.3.1 of
+// SP800-90A.
 func hash_df(alg crypto.Hash, input []byte, requestedBytes int) []byte {
+	// 1) temp = the Null string.
+	var temp bytes.Buffer
+
+	// 2) len = no_of_bits_to_return / outlen.
 	n := (requestedBytes + (alg.Size() - 1)) / alg.Size()
 	if n > 0xff {
 		panic("invalid requested bytes")
 	}
 
+	// 3) counter = 0x01.
+	counter := uint8(1)
+
+	h := alg.New()
 	requestedBits := uint32(requestedBytes * 8)
 
-	var res bytes.Buffer
-	h := alg.New()
-
-	for i := uint8(1); i <= uint8(n); i++ {
+	// 4) For i = 1 to len do
+	for i := 1; i <= n; i++ {
+		// 4.1) temp = temp || Hash (counter || no_of_bits_to_return || input_string).
 		h.Reset()
-		h.Write([]byte{i})
+		h.Write([]byte{counter})
 		binary.Write(h, binary.BigEndian, requestedBits)
 		h.Write(input)
 
-		res.Write(h.Sum(nil))
+		temp.Write(h.Sum(nil))
+
+		// 4.2) counter = counter + 1.
+		counter += 1
 	}
 
-	return res.Bytes()[:requestedBytes]
+	// 5) requested_bits = leftmost (temp, no_of_bits_to_return).
+	return temp.Bytes()[:requestedBytes]
 }
 
 type hashDRBG struct {
@@ -120,36 +144,56 @@ func (d *hashDRBG) seedLen() int {
 	return len(d.v)
 }
 
+// instantiate implements Hash_DRBG_Instantiate_algorithm, described in section 10.1.1.2 of
+// SP800-90A.
 func (d *hashDRBG) instantiate(entropyInput, nonce, personalization []byte, securityStrength int) {
+	// 1) seed_material = entropy_input || nonce || personalization_string.
 	var seedMaterial bytes.Buffer
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(nonce)
 	seedMaterial.Write(personalization)
 
+	// 2) seed = Hash_df (seed_material, seedlen).
 	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen())
+
+	// 3) V = seed.
 	d.v = seed
 
-	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen())
+	// 4) C = Hash_df ((0x00 || V), seedlen).
+	d.c = hash_df(d.h, append([]byte{0x00}, d.v...), d.seedLen())
 
+	// 5) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// reseed implements Hash_DRBG_Reseed_algorithm, described in section 10.1.1.3 of
+// SP800-90A.
 func (d *hashDRBG) reseed(entropyInput, additionalInput []byte) {
+	// 1) seed_material = 0x01 || V || entropy_input || additional_input.
 	var seedMaterial bytes.Buffer
 	seedMaterial.Write([]byte{0x01})
 	seedMaterial.Write(d.v)
 	seedMaterial.Write(entropyInput)
 	seedMaterial.Write(additionalInput)
 
+	// 2) seed = Hash_df (seed_material, seedlen).
 	seed := hash_df(d.h, seedMaterial.Bytes(), d.seedLen())
+
+	// 3) V = seed.
 	d.v = seed
 
+	// 4) C = Hash_df ((0x00 || V), seedlen).
 	d.c = hash_df(d.h, append([]byte{0x00}, seed...), d.seedLen())
 
+	// 5) reseed_counter = 1.
 	d.reseedCounter = 1
 }
 
+// generate implements Hash_DRBG_Generate_algorithm, described in section 10.1.1.4 of
+// SP800-90A.
 func (d *hashDRBG) generate(additionalInput, data []byte) error {
+	// 1) If reseed_counter > reseed_interval, then return an indication that a reseed
+	// is required.
 	if d.reseedCounter > 1<<48 {
 		return ErrReseedRequired
 	}
@@ -164,26 +208,34 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 		panic("unexpected seed length")
 	}
 
+	// 2) If (additional_input ≠ Null), then do
 	if len(additionalInput) > 0 {
+		// 2.1) w = Hash (0x02 || V || additional_input).
 		h := d.h.New()
 		h.Write([]byte{0x02})
 		h.Write(d.v)
 		h.Write(additionalInput)
 
+		w := new(big.Int).SetBytes(h.Sum(nil))
+
+		// 2.2) V = (V + w) mod 2^seedlen.
 		v := new(big.Int).SetBytes(d.v)
-		v.Add(v, new(big.Int).SetBytes(h.Sum(nil)))
+		v.Add(v, w)
 		v.Mod(v, mod)
 		d.v = zeroExtendBytes(v, d.seedLen())
 	}
 
-	returnedBytes := hash_gen(d.h, d.v, len(data))
+	// 3) (returned_bits) = Hashgen (requested_number_of_bits, V).
+	returnedBytes := hashgen(d.h, d.v, len(data))
 	copy(data, returnedBytes)
 
+	// 4) H = Hash (0x03 || V).
 	hash := d.h.New()
 	hash.Write([]byte{0x03})
 	hash.Write(d.v)
 	h := hash.Sum(nil)
 
+	// 5) V = (V + H + C + reseed_counter) mod 2^seedlen.
 	v := new(big.Int).SetBytes(d.v)
 	v.Add(v, new(big.Int).SetBytes(h))
 	v.Add(v, new(big.Int).SetBytes(d.c))
@@ -191,6 +243,8 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 	v.Mod(v, mod)
 
 	d.v = zeroExtendBytes(v, d.seedLen())
+
+	// 6) reseed_counter = reseed_counter + 1.
 	d.reseedCounter += 1
 
 	return nil
