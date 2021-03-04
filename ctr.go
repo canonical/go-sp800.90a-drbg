@@ -171,13 +171,19 @@ func (d *ctrDRBG) blockSize() int {
 	return d.b.blockSize()
 }
 
+func (d *ctrDRBG) seedLength() int {
+	return d.keyLen() + d.b.blockSize()
+}
+
 // update implements CTR_DRBG_Update, described in section 10.2.1.2 of
 // SP800-90A.
 func (d *ctrDRBG) update(providedData []byte) {
+	if len(providedData) != d.seedLength() {
+		panic("provided data has the wrong length")
+	}
+
 	// 1) temp = Null
 	var temp bytes.Buffer
-
-	seedLength := d.blockSize() + d.keyLen()
 
 	one := big.NewInt(1)
 	mod := new(big.Int)
@@ -186,7 +192,7 @@ func (d *ctrDRBG) update(providedData []byte) {
 	v := new(big.Int)
 
 	// 2) While (len(temp) < seedLen) do
-	for temp.Len() < seedLength {
+	for temp.Len() < d.seedLength() {
 		// 2.1) V = (V+1) mod 2^blocklen
 		v.SetBytes(d.v)
 		v.Add(v, one)
@@ -199,7 +205,7 @@ func (d *ctrDRBG) update(providedData []byte) {
 	}
 
 	// 3) temp = leftmost(temp, seedLen)
-	temp.Truncate(seedLength)
+	temp.Truncate(d.seedLength())
 
 	// 4) temp = temp ⊕ provided_data.
 	for i := 0; i < temp.Len(); i++ {
@@ -224,10 +230,8 @@ func (d *ctrDRBG) instantiate(entropyInput, nonce, personalization []byte, secur
 	tmp.Write(personalization)
 	seedMaterial := tmp.Bytes()
 
-	seedLength := d.blockSize() + d.keyLen()
-
 	// 2) seed_material = df (seed_material, seedlen).
-	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, seedLength)
+	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, d.seedLength())
 
 	// 3) Key = 0(x keylen) is done in NewCTR.
 
@@ -251,10 +255,8 @@ func (d *ctrDRBG) reseed(entropyInput, additionalInput []byte) {
 	tmp.Write(additionalInput)
 	seedMaterial := tmp.Bytes()
 
-	seedLength := d.blockSize() + d.keyLen()
-
 	// 2) seed_material = df (seed_material, seedlen).
-	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, seedLength)
+	seedMaterial = block_cipher_df(d.b, d.keyLen(), seedMaterial, d.seedLength())
 
 	// 3) (Key, V) = CTR_DRBG_Update (seed_material, Key, V).
 	d.update(seedMaterial)
@@ -272,18 +274,16 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 		return ErrReseedRequired
 	}
 
-	seedLength := d.blockSize() + d.keyLen()
-
 	// 2) If (additional_input ≠ Null), then
 	if len(additionalInput) > 0 {
 		// 2.1) additional_input = Block_Cipher_df (additional_input, seedlen).
-		additionalInput = block_cipher_df(d.b, d.keyLen(), additionalInput, seedLength)
+		additionalInput = block_cipher_df(d.b, d.keyLen(), additionalInput, d.seedLength())
 
 		// 2.2) (Key, V) = CTR_DRBG_Update (additional_input, Key, V).
 		d.update(additionalInput)
 		// Else additional_input = 0(x seedlen).
 	} else {
-		additionalInput = make([]byte, seedLength)
+		additionalInput = make([]byte, d.seedLength())
 	}
 
 	// 3) temp = Null.
