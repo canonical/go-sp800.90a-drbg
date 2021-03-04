@@ -38,7 +38,7 @@ func hashgen(alg crypto.Hash, v []byte, requestedBytes int) []byte {
 	// 3) W = the Null string.
 	var W bytes.Buffer
 
-	mod := twoExp(len(v) * 8)
+	mod := twoExp(uint(len(v) * 8))
 	h := alg.New()
 	tmp := new(big.Int)
 
@@ -166,7 +166,7 @@ func (d *hashDRBG) generate(additionalInput, data []byte) error {
 		return ErrReseedRequired
 	}
 
-	mod := twoExp(d.seedLen() * 8)
+	mod := twoExp(uint(d.seedLen() * 8))
 
 	// 2) If (additional_input ≠ Null), then do
 	if len(additionalInput) > 0 {

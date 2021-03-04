@@ -40,7 +40,7 @@ var ErrReseedRequired = errors.New("the DRGB must be reseeded")
 
 var one = big.NewInt(1)
 
-func twoExp(n int) (out *big.Int) {
+func twoExp(n uint) (out *big.Int) {
 	d := make([]byte, n/8+1)
 	d[0] = byte(1 << (n % 8))
 	out = new(big.Int)
