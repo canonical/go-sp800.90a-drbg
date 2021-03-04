@@ -185,9 +185,7 @@ func (d *ctrDRBG) update(providedData []byte) {
 	// 1) temp = Null
 	var temp bytes.Buffer
 
-	one := big.NewInt(1)
-	mod := new(big.Int)
-	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
+	mod := twoExp(d.blockSize() * 8)
 
 	v := new(big.Int)
 
@@ -289,9 +287,7 @@ func (d *ctrDRBG) generate(additionalInput, data []byte) error {
 	// 3) temp = Null.
 	var temp bytes.Buffer
 
-	one := big.NewInt(1)
-	mod := new(big.Int)
-	mod.Exp(big.NewInt(2), big.NewInt(int64(d.blockSize()*8)), nil)
+	mod := twoExp(d.blockSize() * 8)
 	v := new(big.Int)
 
 	// 4) While (len (temp) < requested_number_of_bits) do:

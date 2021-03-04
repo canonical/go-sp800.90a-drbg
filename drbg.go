@@ -38,6 +38,16 @@ import (
 // it can generate random bytes.
 var ErrReseedRequired = errors.New("the DRGB must be reseeded")
 
+var one = big.NewInt(1)
+
+func twoExp(n int) (out *big.Int) {
+	d := make([]byte, n/8+1)
+	d[0] = byte(1 << (n % 8))
+	out = new(big.Int)
+	out.SetBytes(d)
+	return
+}
+
 func zeroExtendBytes(x *big.Int, l int) (out []byte) {
 	out = make([]byte, l)
 	tmp := x.Bytes()
