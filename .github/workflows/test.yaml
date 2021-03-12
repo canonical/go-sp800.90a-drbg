@@ -5,32 +5,60 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  tests:
+  legacy-tests:
     runs-on: ubuntu-18.04
     env:
       GOPATH: ${{ github.workspace }}
     steps:
-    - name: Set up Go 1.10
-      uses: actions/setup-go@v1
+    - name: Set up Go 1.16
+      uses: actions/setup-go@v2
       with:
-        go-version: 1.10.x
+        go-version: 1.16
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-        path: ${{ github.workspace }}/src/github.com/canonical/go-sp800.90a-drbg
-    - name: Install govendor
-      run: go get -u github.com/kardianos/govendor
+        path: src/github.com/canonical/go-sp800.90a-drbg
     - name: Cache Go dependencies
-      id: cache-go-govendor
-      uses: actions/cache@v1
+      id: cache-go-modules
+      uses: actions/cache@v2
       with:
-        path: ${{ github.workspace }}/.cache/govendor
-        key: go-govendor-{{ hashFiles('**/vendor.json') }}
-    - name: Get Go dependencies
-      run: cd ${{ github.workspace }}/src/github.com/canonical/go-sp800.90a-drbg && ${{ github.workspace }}/bin/govendor sync
+        path: ${{ github.workspace }}/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Vendor Go dependencies
+      run: cd ${{ github.workspace }}/src/github.com/canonical/go-sp800.90a-drbg && go mod vendor
+    - name: Set up Go 1.9
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.9
     - name: Build
       run: go build -v github.com/canonical/go-sp800.90a-drbg/...
     - name: Test
       run: go test -v github.com/canonical/go-sp800.90a-drbg/...
+  tests:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        goversion: [1.16, 1.15, 1.14, 1.13]
+    steps:
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.goversion }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Cache Go dependencies
+      id: cache-go-modules
+      uses: actions/cache@v2
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Build
+      run: go build -v -mod=readonly ./...
+    - name: Test
+      run: go test -v -mod=readonly ./...
     - name: Go vet
-      run: go vet github.com/canonical/go-sp800.90a-drbg/...
+      run: go vet ./...
